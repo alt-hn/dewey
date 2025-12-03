@@ -1,0 +1,97 @@
+<!-- Slider -->
+<section style="width: 100%; position: relative; overflow: hidden; margin: 0; padding: 0; height: 600px;">
+	<div class="slider-container" style="position: relative; width: 100%; height: 600px;">
+		<!-- Slide 1 -->
+		<div class="slide active" style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; opacity: 1; transition: opacity 1s ease-in-out;">
+			<div style="width: 100%; height: 600px; background: linear-gradient(135deg, #0a2a6c 0%, #1a4d8c 50%, #2563a8 100%);"></div>
+			<div style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: white; padding: 60px 80px; z-index: 1;">
+				<h2 style="font-size: 2.5rem; font-weight: bold; margin: 0;">CHẮP CÁNH ƯỚC MƠ GIÁO DỤC MỸ</h2>
+				<h1 style="font-size: 3.5rem; color: #ffd600; font-weight: bold; margin: 16px 0 0 0;">HỌC BỔNG DEWEY 2024 - 2025</h1>
+				<p style="font-size: 2.5rem; margin: 16px 0 0 0;"><span style="color: #ffd600; font-weight: bold;">Lên đến 50% học phí</span></p>
+				<div style="background: #00bfff; color: #0a2a6c; border-radius: 20px; padding: 8px 24px; margin: 16px 0 0 0; font-size: 1.2rem; font-weight: 500;">
+					★ Dành cho học sinh <b>Lớp 6 - Lớp 10</b>
+				</div>
+				<p style="margin: 16px 0 0 0; font-size: 1.1rem;">Hạn nộp hồ sơ: <b>21/02/2024</b></p>
+			</div>
+		</div>
+
+		<!-- Slide 2 -->
+		<div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; opacity: 0; transition: opacity 1s ease-in-out;">
+			<div style="width: 100%; height: 600px; background: linear-gradient(135deg, #0d3a7c 0%, #1e5aa0 50%, #2f72b8 100%);"></div>
+			<div style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: white; padding: 60px 80px; z-index: 1;">
+				<h2 style="font-size: 2.5rem; font-weight: bold; margin: 0;">TRƯỜNG HỌC QUỐC TẾ</h2>
+				<h1 style="font-size: 3.5rem; color: #00d2ff; font-weight: bold; margin: 16px 0 0 0;">GIÁO DỤC TIÊN TIẾN</h1>
+				<p style="font-size: 2.5rem; margin: 16px 0 0 0;"><span style="color: #00d2ff; font-weight: bold;">Phát triển toàn diện</span></p>
+				<div style="background: #ffc107; color: #0a2a6c; border-radius: 20px; padding: 8px 24px; margin: 16px 0 0 0; font-size: 1.2rem; font-weight: 500;">
+					★ Chương trình chuẩn quốc tế
+				</div>
+			</div>
+		</div>
+
+		<!-- Slide 3 -->
+		<div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; opacity: 0; transition: opacity 1s ease-in-out;">
+			<div style="width: 100%; height: 600px; background: linear-gradient(135deg, #082558 0%, #143d74 50%, #1f5290 100%);"></div>
+			<div style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: white; padding: 60px 80px; z-index: 1;">
+				<h2 style="font-size: 2.5rem; font-weight: bold; margin: 0;">MÔI TRƯỜNG HỌC TẬP HIỆN ĐẠI</h2>
+				<h1 style="font-size: 3.5rem; color: #ff5f8f; font-weight: bold; margin: 16px 0 0 0;">CƠ SỞ VẬT CHẤT ĐỈNH CAO</h1>
+				<p style="font-size: 2.5rem; margin: 16px 0 0 0;"><span style="color: #ff5f8f; font-weight: bold;">Trang thiết bị tiên tiến</span></p>
+				<div style="background: #21d6e2; color: #0a2a6c; border-radius: 20px; padding: 8px 24px; margin: 16px 0 0 0; font-size: 1.2rem; font-weight: 500;">
+					★ Campus xanh - sạch - đẹp
+				</div>
+			</div>
+		</div>
+
+		<!-- Progress bars -->
+		<div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10;">
+			<button class="progress-bar active" onclick="currentSlide(0)" style="width: 60px; height: 6px; border: none; background: rgba(255,255,255,0.8); cursor: pointer; transition: all 0.3s; border-radius: 3px; opacity: 1;"></button>
+			<button class="progress-bar" onclick="currentSlide(1)" style="width: 60px; height: 6px; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; border-radius: 3px; opacity: 0.5;"></button>
+			<button class="progress-bar" onclick="currentSlide(2)" style="width: 60px; height: 6px; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; border-radius: 3px; opacity: 0.5;"></button>
+		</div>
+	</div>
+
+	<script is:inline>
+		let currentSlideIndex = 0;
+		const slides = document.querySelectorAll('.slide');
+		const progressBars = document.querySelectorAll('.progress-bar');
+
+		function showSlide(index) {
+			slides.forEach((slide, i) => {
+				if (i === index) {
+					slide.style.opacity = '1';
+					slide.style.zIndex = '1';
+				} else {
+					slide.style.opacity = '0';
+					slide.style.zIndex = '0';
+				}
+			});
+
+			progressBars.forEach((bar, i) => {
+				if (i === index) {
+					bar.style.background = 'rgba(255,255,255,0.8)';
+					bar.style.opacity = '1';
+					bar.classList.add('active');
+				} else {
+					bar.style.background = 'rgba(255,255,255,0.3)';
+					bar.style.opacity = '0.5';
+					bar.classList.remove('active');
+				}
+			});
+		}
+
+		function nextSlide() {
+			currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+			showSlide(currentSlideIndex);
+		}
+
+		function currentSlide(index) {
+			currentSlideIndex = index;
+			showSlide(currentSlideIndex);
+		}
+
+		// Auto slide every 5 seconds
+		setInterval(nextSlide, 5000);
+
+		// Initialize
+		showSlide(0);
+	</script>
+</section>

@@ -1,0 +1,221 @@
+<style>
+	/* Layout container */
+	.intro-section {
+		width: 100%;
+		padding: 80px 0;
+		background: #f9fbff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.intro-container {
+		max-width: 1400px;
+		width: 100%;
+		padding: 0 60px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: center;
+	}
+	.intro-left { display: flex; flex-direction: column; gap: 24px; }
+	.intro-label { font-size: .95rem; font-weight:600; color:#999; letter-spacing:1px; text-transform:uppercase; }
+	/* Star (4 bars) */
+	.intro-decoration-star { position:absolute; top:-36px; right:50%; transform:translateX(50%); width:84px; height:84px; z-index:2; }
+	.intro-decoration-star .bar { position:absolute; left:50%; top:50%; width:60px; height:12px; background:#FFD600; transform-origin:center; border-radius:1px; }
+	.intro-decoration-star .bar.r0 { transform:translate(-50%,-50%) rotate(0deg); }
+	.intro-decoration-star .bar.r45 { transform:translate(-50%,-50%) rotate(45deg); }
+	.intro-decoration-star .bar.r90 { transform:translate(-50%,-50%) rotate(90deg); }
+	.intro-decoration-star .bar.r135 { transform:translate(-50%,-50%) rotate(135deg); }
+	.intro-title {
+		font-size: 2.2rem;
+		font-weight: 800;
+		color: #0a2a6c;
+		line-height: 1.3;
+		margin: 0;
+	}
+	.intro-title span {
+		color: #0a2a6c;
+	}
+	.intro-link {
+		display: inline-flex;
+		align-items: center;
+		color: #00d2ff;
+		font-weight: 600;
+		font-size: 1.05rem;
+		text-decoration: none;
+		margin-top: 8px;
+		transition: color 0.3s;
+	}
+	.intro-link:hover {
+		color: #00bfff;
+	}
+	.intro-badges {
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+		margin-top: 40px;
+	}
+	.badge-row {
+		display: flex;
+		gap: 32px;
+	}
+	.badge-row.three-cols {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 28px;
+	}
+	.badge-item {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
+	.badge-label {
+		font-size: 0.68rem;
+		font-weight: 600;
+		color: #aaa;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		line-height: 1.4;
+	}
+	.badge-logos {
+		display: flex;
+		gap: 16px;
+		align-items: center;
+	}
+	.badge-logo {
+		height: 42px;
+		width: auto;
+		min-width: 70px;
+		background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+		border-radius: 4px;
+		object-fit: contain;
+	}
+	.intro-right {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.intro-image-wrapper {
+		position: relative;
+		width: 100%;
+		max-width: 600px;
+		aspect-ratio: 4 / 3;
+		background: linear-gradient(135deg, #d4e4f7, #e8f0f7);
+		border-radius: 24px;
+		overflow: hidden;
+	}
+	.intro-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 24px;
+		box-shadow: 0 20px 60px rgba(10, 42, 108, 0.15);
+	}
+	.intro-decoration-triangle {
+		position: absolute;
+		bottom: -15px;
+		right: 60px;
+		width: 0;
+		height: 0;
+		border-left: 28px solid transparent;
+		border-right: 28px solid transparent;
+		border-top: 48px solid #3B82F6;
+		z-index: 2;
+	}
+	.intro-decoration-rect {
+		position: absolute;
+		top: 30%;
+		right: -15px;
+		width: 42px;
+		height: 42px;
+		background: #FF6B4A;
+		transform: rotate(45deg);
+		z-index: 2;
+	}
+
+	/* Responsive Tablet */
+	@media (max-width: 1024px) {
+		.intro-section {
+			padding: 60px 0;
+		}
+		.intro-container {
+			grid-template-columns: 1fr;
+			gap: 40px;
+			padding: 0 30px;
+		}
+		.intro-right {
+			order: -1;
+		}
+		.intro-image-wrapper {
+			max-width: 100%;
+		}
+		.intro-title {
+			font-size: 1.8rem;
+		}
+		.badge-row.three-cols {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+</style>
+
+<section class="intro-section">
+	<div class="intro-container">
+		<div class="intro-left">
+			<p class="intro-label">GIỚI THIỆU</p>
+			<h2 class="intro-title">
+				<span>The Dewey Schools</span> là hệ thống trường học song ngữ tiên phong mang đến nền giáo dục đẳng cấp quốc tế
+			</h2>
+			<a href="#" class="intro-link">Về chúng tôi →</a>
+
+			<div class="intro-badges">
+				<!-- Row 1: CIS only -->
+				<div class="badge-row">
+					<div class="badge-item">
+						<span class="badge-label">THÀNH VIÊN CỦA CIS</span>
+						<div class="badge-logos">
+							<img src="/src/pages/pages/gioi-thieu/images/cis-schools-member-1.png" alt="CIS Member" class="badge-logo" />
+						</div>
+					</div>
+				</div>
+				
+				<!-- Row 2: AP + IB + Warwick (3 columns) -->
+				<div class="badge-row three-cols">
+					<div class="badge-item">
+						<span class="badge-label">CHƯƠNG TRÌNH ÁP DỤNG</span>
+						<div class="badge-logos">
+							<img src="/src/pages/pages/gioi-thieu/images/Logo-AP.png" alt="AP" class="badge-logo" />
+						</div>
+					</div>
+					<div class="badge-item">
+						<span class="badge-label">ỨNG VIÊN IB</span>
+						<div class="badge-logos">
+							<img src="/src/pages/pages/gioi-thieu/images/ib-logo.png" alt="IB Candidate School" class="badge-logo" />
+						</div>
+					</div>
+					<div class="badge-item">
+						<span class="badge-label">ĐỐI TÁC ĐÀO TẠO</span>
+						<div class="badge-logos">
+							<img src="/src/pages/pages/gioi-thieu/images/Logo-The-Mount-Vernon-School.png" alt="The Mount Vernon School" class="badge-logo" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="intro-right">
+			<div class="intro-image-wrapper">
+				<div class="intro-decoration-star">
+					<div class="bar r0"></div>
+					<div class="bar r45"></div>
+					<div class="bar r90"></div>
+					<div class="bar r135"></div>
+				</div>
+				<div class="intro-decoration-rect"></div>
+				<img src="/path/to/students-image.jpg" alt="The Dewey Schools Students" class="intro-image" />
+				<div class="intro-decoration-triangle"></div>
+			</div>
+		</div>
+	</div>
+</section>

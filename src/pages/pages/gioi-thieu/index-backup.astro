@@ -1,0 +1,2381 @@
+
+---
+---
+<head>
+  <meta charset="UTF-8" />
+</head>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+	
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+	
+	html, body {
+		font-family: 'Be Vietnam Pro', Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
+	.navbar {
+		width: 100%;
+		background: linear-gradient(90deg, #0a2a6c 0%, #1a3d7c 50%, #0a2a6c 100%);
+		color: white;
+		position: relative;
+		z-index: 2;
+		font-family: 'Be Vietnam Pro', Arial, sans-serif;
+		min-height: 110px;
+	}
+	.navbar-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 40px 0 160px;
+		height: 64px;
+	}
+	.navbar-logo {
+		height: 80px;
+		margin: 0;
+		background: none;
+		border: none;
+		padding: 0;
+		box-shadow: none;
+		position: absolute;
+		left: 40px;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+	}
+	.navbar-btn {
+		background: #ffc107;
+		color: #0a2a6c;
+		border: none;
+		border-radius: 20px;
+		padding: 10px 24px;
+		font-weight: bold;
+		cursor: pointer;
+		font-family: 'Be Vietnam Pro', Arial, sans-serif;
+		font-size: 1rem;
+		transition: background 0.2s;
+	}
+	.navbar-btn:hover {
+		background: #ffdb4d;
+	}
+	.navbar-menu-wrap {
+		width: 100%;
+		background: linear-gradient(90deg, #0a2a6c 0%, #1a3d7c 50%, #0a2a6c 100%);
+		display: flex;
+		justify-content: flex-end;
+		padding: 0 40px 0 160px;
+	}
+	.navbar-menu {
+		display: flex;
+		gap: 32px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-size: 0.95rem;
+		height: 44px;
+		align-items: center;
+		font-weight: 600;
+		letter-spacing: 0.3px;
+		text-transform: uppercase;
+	}
+	.navbar-menu li {
+		cursor: pointer;
+		transition: color 0.2s;
+		white-space: nowrap;
+	}
+	.navbar-menu li:hover {
+		color: #ffc107;
+	}
+</style>
+
+
+<!-- Navbar 2 dòng sát mẫu -->
+<nav class="navbar">
+	<div class="navbar-top">
+		<img src="/src/pages/pages/gioi-thieu/images/vp_vp-logo-dewey-02-1.svg" alt="The Dewey Schools" class="navbar-logo" />
+		<div style="display: flex; align-items: center; gap: 0;">
+			<button class="navbar-btn">Đăng kí tư vấn</button>
+			<div style="display: flex; align-items: center; gap: 18px; margin-left: 18px;">
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">HỢP TÁC ĐÀO TẠO</a>
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">TUYỂN DỤNG</a>
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">TIN TỨC - SỰ KIỆN</a>
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">DỰ ÁN W</a>
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 1.3rem; font-weight: 600; margin-left: 4px;">🇬🇧</a>
+			</div>
+		</div>
+	</div>
+	<div class="navbar-menu-wrap">
+		<ul class="navbar-menu">
+			<li>VỀ CHÚNG TÔI ▼</li>
+			<li>CƠ SỞ ▼</li>
+			<li>CHƯƠNG TRÌNH GIÁO DỤC ▼</li>
+			<li>TUYỂN SINH ▼</li>
+			<li>HỌC PHÍ</li>
+			<li>THÀNH TÍCH HỌC SINH</li>
+			<li>GÓC TDSERS ▼</li>
+			<li>ĐỜI SỐNG HỌC ĐƯỜNG ▼</li>
+			<li>LIÊN HỆ</li>
+		</ul>
+	</div>
+</nav>
+
+<!-- Slider -->
+<section style="width: 100%; position: relative; overflow: hidden; margin: 0; padding: 0; height: 600px;">
+	<div class="slider-container" style="position: relative; width: 100%; height: 600px;">
+		<!-- Slide 1 -->
+		<div class="slide active" style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; opacity: 1; transition: opacity 1s ease-in-out;">
+			<div style="width: 100%; height: 600px; background: linear-gradient(135deg, #0a2a6c 0%, #1a4d8c 50%, #2563a8 100%);"></div>
+			<div style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: white; padding: 60px 80px; z-index: 1;">
+				<h2 style="font-size: 2.5rem; font-weight: bold; margin: 0;">CHẮP CÁNH ƯỚC MƠ GIÁO DỤC MỸ</h2>
+				<h1 style="font-size: 3.5rem; color: #ffd600; font-weight: bold; margin: 16px 0 0 0;">HỌC BỔNG DEWEY 2024 - 2025</h1>
+				<p style="font-size: 2.5rem; margin: 16px 0 0 0;"><span style="color: #ffd600; font-weight: bold;">Lên đến 50% học phí</span></p>
+				<div style="background: #00bfff; color: #0a2a6c; border-radius: 20px; padding: 8px 24px; margin: 16px 0 0 0; font-size: 1.2rem; font-weight: 500;">
+					★ Dành cho học sinh <b>Lớp 6 - Lớp 10</b>
+				</div>
+				<p style="margin: 16px 0 0 0; font-size: 1.1rem;">Hạn nộp hồ sơ: <b>21/02/2024</b></p>
+			</div>
+		</div>
+
+		<!-- Slide 2 -->
+		<div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; opacity: 0; transition: opacity 1s ease-in-out;">
+			<div style="width: 100%; height: 600px; background: linear-gradient(135deg, #0d3a7c 0%, #1e5aa0 50%, #2f72b8 100%);"></div>
+			<div style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: white; padding: 60px 80px; z-index: 1;">
+				<h2 style="font-size: 2.5rem; font-weight: bold; margin: 0;">TRƯỜNG HỌC QUỐC TẾ</h2>
+				<h1 style="font-size: 3.5rem; color: #00d2ff; font-weight: bold; margin: 16px 0 0 0;">GIÁO DỤC TIÊN TIẾN</h1>
+				<p style="font-size: 2.5rem; margin: 16px 0 0 0;"><span style="color: #00d2ff; font-weight: bold;">Phát triển toàn diện</span></p>
+				<div style="background: #ffc107; color: #0a2a6c; border-radius: 20px; padding: 8px 24px; margin: 16px 0 0 0; font-size: 1.2rem; font-weight: 500;">
+					★ Chương trình chuẩn quốc tế
+				</div>
+			</div>
+		</div>
+
+		<!-- Slide 3 -->
+		<div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; opacity: 0; transition: opacity 1s ease-in-out;">
+			<div style="width: 100%; height: 600px; background: linear-gradient(135deg, #082558 0%, #143d74 50%, #1f5290 100%);"></div>
+			<div style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: white; padding: 60px 80px; z-index: 1;">
+				<h2 style="font-size: 2.5rem; font-weight: bold; margin: 0;">MÔI TRƯỜNG HỌC TẬP HIỆN ĐẠI</h2>
+				<h1 style="font-size: 3.5rem; color: #ff5f8f; font-weight: bold; margin: 16px 0 0 0;">CƠ SỞ VẬT CHẤT ĐỈNH CAO</h1>
+				<p style="font-size: 2.5rem; margin: 16px 0 0 0;"><span style="color: #ff5f8f; font-weight: bold;">Trang thiết bị tiên tiến</span></p>
+				<div style="background: #21d6e2; color: #0a2a6c; border-radius: 20px; padding: 8px 24px; margin: 16px 0 0 0; font-size: 1.2rem; font-weight: 500;">
+					★ Campus xanh - sạch - đẹp
+				</div>
+			</div>
+		</div>
+
+		<!-- Progress bars -->
+		<div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10;">
+			<button class="progress-bar active" onclick="currentSlide(0)" style="width: 60px; height: 6px; border: none; background: rgba(255,255,255,0.8); cursor: pointer; transition: all 0.3s; border-radius: 3px; opacity: 1;"></button>
+			<button class="progress-bar" onclick="currentSlide(1)" style="width: 60px; height: 6px; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; border-radius: 3px; opacity: 0.5;"></button>
+			<button class="progress-bar" onclick="currentSlide(2)" style="width: 60px; height: 6px; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; border-radius: 3px; opacity: 0.5;"></button>
+		</div>
+	</div>
+
+	<script>
+		let currentSlideIndex = 0;
+		const slides = document.querySelectorAll('.slide');
+		const progressBars = document.querySelectorAll('.progress-bar');
+
+		function showSlide(index) {
+			slides.forEach((slide, i) => {
+				if (i === index) {
+					slide.style.opacity = '1';
+					slide.style.zIndex = '1';
+				} else {
+					slide.style.opacity = '0';
+					slide.style.zIndex = '0';
+				}
+			});
+
+			progressBars.forEach((bar, i) => {
+				if (i === index) {
+					bar.style.background = 'rgba(255,255,255,0.8)';
+					bar.style.opacity = '1';
+					bar.classList.add('active');
+				} else {
+					bar.style.background = 'rgba(255,255,255,0.3)';
+					bar.style.opacity = '0.5';
+					bar.classList.remove('active');
+				}
+			});
+		}
+
+		function nextSlide() {
+			currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+			showSlide(currentSlideIndex);
+		}
+
+		function currentSlide(index) {
+			currentSlideIndex = index;
+			showSlide(currentSlideIndex);
+		}
+
+		// Auto slide every 5 seconds
+		setInterval(nextSlide, 5000);
+
+		// Initialize
+		showSlide(0);
+	</script>
+	</div>
+</section>
+
+<!-- Section Giới thiệu -->
+<section class="intro-section">
+	<style>
+		/* Layout container */
+		.intro-section {
+			width: 100%;
+			padding: 80px 0;
+			background: #f9fbff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.intro-container {
+			max-width: 1400px;
+			width: 100%;
+			padding: 0 60px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 60px;
+			align-items: center;
+		}
+		.intro-left { display: flex; flex-direction: column; gap: 24px; }
+		.intro-label { font-size: .95rem; font-weight:600; color:#999; letter-spacing:1px; text-transform:uppercase; }
+		/* Star (4 bars) */
+		.intro-decoration-star { position:absolute; top:-36px; right:50%; transform:translateX(50%); width:84px; height:84px; z-index:2; }
+		.intro-decoration-star .bar { position:absolute; left:50%; top:50%; width:60px; height:12px; background:#FFD600; transform-origin:center; border-radius:1px; }
+		.intro-decoration-star .bar.r0 { transform:translate(-50%,-50%) rotate(0deg); }
+		.intro-decoration-star .bar.r45 { transform:translate(-50%,-50%) rotate(45deg); }
+		.intro-decoration-star .bar.r90 { transform:translate(-50%,-50%) rotate(90deg); }
+		.intro-decoration-star .bar.r135 { transform:translate(-50%,-50%) rotate(135deg); }
+		.intro-title {
+			font-size: 2.2rem;
+			font-weight: 800;
+			color: #0a2a6c;
+			line-height: 1.3;
+			margin: 0;
+		}
+		.intro-title span {
+			color: #0a2a6c;
+		}
+		.intro-link {
+			display: inline-flex;
+			align-items: center;
+			color: #00d2ff;
+			font-weight: 600;
+			font-size: 1.05rem;
+			text-decoration: none;
+			margin-top: 8px;
+			transition: color 0.3s;
+		}
+		.intro-link:hover {
+			color: #00bfff;
+		}
+		.intro-badges {
+			display: flex;
+			flex-direction: column;
+			gap: 28px;
+			margin-top: 24px;
+		}
+		.badge-row {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		}
+		.badge-label {
+			font-size: 0.85rem;
+			font-weight: 600;
+			color: #999;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+			min-width: 140px;
+		}
+		.badge-logos {
+			display: flex;
+			gap: 24px;
+			align-items: center;
+		}
+		.badge-logo {
+			height: 50px;
+			width: auto;
+		}
+		.intro-right {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.intro-image-wrapper {
+			position: relative;
+			width: 100%;
+			max-width: 600px;
+			aspect-ratio: 4 / 3;
+			background: #e8f0f7;
+			border-radius: 24px;
+		}
+		.intro-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 24px;
+			box-shadow: 0 20px 60px rgba(10, 42, 108, 0.15);
+		}
+		.intro-decoration-triangle {
+			position: absolute;
+			bottom: -15px;
+			right: 60px;
+			width: 0;
+			height: 0;
+			border-left: 28px solid transparent;
+			border-right: 28px solid transparent;
+			border-top: 48px solid #3B82F6;
+			z-index: 2;
+		}
+		.intro-decoration-rect {
+			position: absolute;
+			top: 30%;
+			right: -15px;
+			width: 42px;
+			height: 42px;
+			background: #FF6B4A;
+			transform: rotate(45deg);
+			z-index: 2;
+		}
+	</style>
+
+	<div class="intro-container">
+		<div class="intro-left">
+			<p class="intro-label">GIỚI THIỆU</p>
+			<h2 class="intro-title">
+				<span>The Dewey Schools</span> là hệ thống trường học song ngữ tiên phong mang đến nền giáo dục đẳng cấp quốc tế
+			</h2>
+			<a href="#" class="intro-link">Về chúng tôi →</a>
+
+			<div class="intro-badges">
+				<div class="badge-row">
+					<span class="badge-label">THÀNH VIÊN CỦA CIS</span>
+					<div class="badge-logos">
+						<img src="/path/to/cis-logo.png" alt="CIS Member" class="badge-logo" />
+					</div>
+				</div>
+				<div class="badge-row">
+					<span class="badge-label">CHƯƠNG TRÌNH ÁP DỤNG</span>
+					<div class="badge-logos">
+						<img src="/path/to/ap-logo.png" alt="AP" class="badge-logo" />
+					</div>
+				</div>
+				<div class="badge-row">
+					<span class="badge-label">ỨNG VIÊN IB</span>
+					<div class="badge-logos">
+						<img src="/path/to/ib-logo.png" alt="IB Candidate School" class="badge-logo" />
+					</div>
+				</div>
+				<div class="badge-row">
+					<span class="badge-label">ĐỐI TÁC ĐÀO TẠO</span>
+					<div class="badge-logos">
+						<img src="/path/to/warwick-logo.png" alt="The University of Warwick" class="badge-logo" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="intro-right">
+			<div class="intro-image-wrapper">
+				<div class="intro-decoration-star">
+					<div class="bar r0"></div>
+					<div class="bar r45"></div>
+					<div class="bar r90"></div>
+					<div class="bar r135"></div>
+				</div>
+				<div class="intro-decoration-rect"></div>
+				<img src="/path/to/students-image.jpg" alt="The Dewey Schools Students" class="intro-image" />
+				<div class="intro-decoration-triangle"></div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Section Grid Giới thiệu Dewey Schools -->
+<section class="gioi-thieu-section">
+  <div class="gioi-thieu-section__container">
+    <div class="gioi-thieu-section__grid">
+      <!-- Card 1 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Môi trường Giáo dục của năm</div>
+          <div class="gioi-thieu-section__card-desc">Giải thưởng "Môi trường Giáo dục của năm" - SEI Awards 2025</div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--purple">
+        <div class="gioi-thieu-section__card-title">Liên kết đào tạo với Mount Vernon School</div>
+        <div class="gioi-thieu-section__card-desc">Top 10 trường đổi mới sáng tạo tại Mỹ (2017)</div>
+      </div>
+      <!-- Card 3 (Hero center) -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img gioi-thieu-section__card--center">
+        <div class="gioi-thieu-section__hero-bg"></div>
+        <div class="gioi-thieu-section__hero-content">
+          <div class="gioi-thieu-section__hero-title">Tại sao<br>The Dewey Schools?</div>
+          <div class="gioi-thieu-section__hero-desc">Thành viên chính thức của các trường quốc tế CIS</div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Trường học Hạnh Phúc</div>
+          <div class="gioi-thieu-section__card-desc">Phát triển học sinh toàn diện (thể chất & tinh thần) với hệ sinh thái Well-being khoa học, đa tầng.</div>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Hội đồng Khoa học và Sư phạm (ERPC)</div>
+          <div class="gioi-thieu-section__card-desc">Đội ngũ chuyên gia hàng đầu không ngừng cải tiến và nâng cao chất lượng giáo dục</div>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--yellow">
+        <div class="gioi-thieu-section__card-title">Chương trình Toán</div>
+        <div class="gioi-thieu-section__card-desc">Từ cơ bản đến nâng cao<br>Nắm chắc khái niệm, vận dụng thực tiễn.</div>
+      </div>
+      <!-- Card 7 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Cơ sở vật chất</div>
+          <div class="gioi-thieu-section__card-desc">Chứng nhận quốc tế và giải thưởng kiến trúc quốc gia</div>
+        </div>
+      </div>
+      <!-- Card 8 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--purple">
+        <div class="gioi-thieu-section__card-title">Đội ngũ Giáo viên, Nhân viên chuyên môn cao</div>
+        <div class="gioi-thieu-section__card-desc">Trình độ chuyên môn cao đáp ứng tiêu chuẩn CIS</div>
+      </div>
+      <!-- Card 9 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Hướng nghiệp toàn diện</div>
+          <div class="gioi-thieu-section__card-desc">Cá nhân hóa, lộ trình rõ ràng, giúp học sinh ứng tuyển thành công vào Đại học danh tiếng.</div>
+        </div>
+      </div>
+      <!-- Card 10 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Toshin Development</div>
+          <div class="gioi-thieu-section__card-desc">Tập đoàn Toshin Development (Nhật Bản) là nhà đầu tư chiến lược</div>
+        </div>
+      </div>
+      <!-- Card 11 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--purple">
+        <div class="gioi-thieu-section__card-title">Tiếng Anh chuẩn Common Core (Mỹ)</div>
+        <div class="gioi-thieu-section__card-desc">Phát triển tư duy nghiên cứu và giao tiếp tự nhiên như bản ngữ.</div>
+      </div>
+      <!-- Card 12 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--purple">
+        <div class="gioi-thieu-section__card-title">Chương trình Văn - Tiếng Việt</div>
+        <div class="gioi-thieu-section__card-desc">Nuôi dưỡng lòng đồng cảm, rèn luyện tư duy phản biện, khả năng sáng tạo</div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .gioi-thieu-section {
+      width: 100%;
+      background: #fff;
+      padding: 60px 0;
+    }
+    .gioi-thieu-section__container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .gioi-thieu-section__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .gioi-thieu-section__card {
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      background: #fff;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+    .gioi-thieu-section__card--img .gioi-thieu-section__card-bgimg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+      object-fit: cover;
+      z-index: 1;
+    }
+    .gioi-thieu-section__card--img .gioi-thieu-section__card-content {
+      position: relative;
+      z-index: 2;
+    }
+    .gioi-thieu-section__card--purple {
+      background: #1A1A5C;
+      color: #fff;
+    }
+    .gioi-thieu-section__card--yellow {
+      background: #FFD600;
+      color: #1A1A5C;
+    }
+    .gioi-thieu-section__card-title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .gioi-thieu-section__card-desc {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .gioi-thieu-section__card--center {
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 2;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 440px;
+      background: none;
+      box-shadow: none;
+    }
+    .gioi-thieu-section__hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #bbb 60%, #ddd 100%);
+      object-fit: cover;
+      z-index: 1;
+      border-radius: 16px;
+      opacity: 0.45;
+    }
+    .gioi-thieu-section__hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 48px;
+      color: #fff;
+      text-align: left;
+    }
+    .gioi-thieu-section__hero-title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .gioi-thieu-section__hero-desc {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    @media (max-width: 1024px) {
+      .gioi-thieu-section {
+        padding: 24px 0;
+      }
+      .gioi-thieu-section__container {
+        padding: 0 12px;
+      }
+      .gioi-thieu-section__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 12px;
+      }
+      .gioi-thieu-section__card {
+        min-height: 160px;
+        padding: 20px;
+      }
+      .gioi-thieu-section__card-title {
+        font-size: 18px;
+      }
+      .gioi-thieu-section__card-desc {
+        font-size: 15px;
+      }
+      .gioi-thieu-section__card--center {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 1;
+        min-height: 260px;
+      }
+      .gioi-thieu-section__hero-content {
+        padding: 24px;
+      }
+      .gioi-thieu-section__hero-title {
+        font-size: 36px;
+      }
+      .gioi-thieu-section__hero-desc {
+        font-size: 17px;
+      }
+    }
+  </style>
+</section>
+<section class="thanh-tich-section">
+  <div class="thanh-tich-section__container">
+    <div class="thanh-tich-section__decoration"></div>
+    <h2 class="thanh-tich-section__title">
+      Thành tích học sinh nổi bật con số trường ấn tượng
+    </h2>
+    <div class="thanh-tich-section__grid">
+      <!-- Card 1 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">145</div>
+          <div class="thanh-tich-section__card-desc">Học sinh đỗ 145 trường đại học trong nước và quốc tế</div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--purple">
+        <div class="thanh-tich-section__card-number">Top 1%</div>
+        <div class="thanh-tich-section__card-desc">Học sinh lọt Top 1% điểm thi SAT cao nhất thế giới</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--purple">
+        <div class="thanh-tich-section__card-number">30+</div>
+        <div class="thanh-tich-section__card-desc">Quốc tịch</div>
+      </div>
+      <!-- Card 4 (giữa lớn) -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--white thanh-tich-section__card--center">
+        <div class="thanh-tich-section__card-number">100%</div>
+        <div class="thanh-tich-section__card-desc">100% học sinh đỗ Đại học trong nước, Đại học Quốc tế tại Việt Nam và Đại học tại nước ngoài</div>
+      </div>
+      <!-- Card 5 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">153 tỷ</div>
+          <div class="thanh-tich-section__card-desc">Học sinh đạt 153 tỷ VNĐ học bổng và hỗ trợ tài chính</div>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--white">
+        <div class="thanh-tich-section__card-number">4500+</div>
+        <div class="thanh-tich-section__card-desc">Học sinh</div>
+      </div>
+      <!-- Card 7 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">96%</div>
+          <div class="thanh-tich-section__card-desc">Học sinh đạt học bổng trường quốc tế</div>
+        </div>
+      </div>
+      <!-- Card 8 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--white">
+        <div class="thanh-tich-section__card-number">45+</div>
+        <div class="thanh-tich-section__card-desc">Chuyên gia giáo dục</div>
+      </div>
+      <!-- Card 9 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">100%</div>
+          <div class="thanh-tich-section__card-desc">Bài thi AP đạt điểm 4/5 - Xuất sắc & 5/5 - Rất xuất sắc</div>
+        </div>
+      </div>
+      <!-- Card 10 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">1798</div>
+          <div class="thanh-tich-section__card-desc">Giải thưởng các cuộc thi trong nước và quốc tế</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .thanh-tich-section {
+      width: 100%;
+      background: #000;
+      padding: 80px 0;
+      position: relative;
+    }
+    .thanh-tich-section__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+    .thanh-tich-section__decoration {
+      width: 32px;
+      height: 32px;
+      background: #FFD600;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(15deg);
+      border-radius: 6px;
+      z-index: 2;
+    }
+    .thanh-tich-section__title {
+      text-align: center;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #1A1A5C;
+      margin-bottom: 48px;
+      margin-top: 32px;
+      letter-spacing: -1px;
+    }
+    .thanh-tich-section__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .thanh-tich-section__card {
+      border-radius: 24px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      background: #1A1A5C;
+      color: #fff;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+    .thanh-tich-section__card--img .thanh-tich-section__card-bgimg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+      object-fit: cover;
+      z-index: 1;
+      border-radius: 24px;
+      opacity: 0.55;
+    }
+    .thanh-tich-section__card--img .thanh-tich-section__card-content {
+      position: relative;
+      z-index: 2;
+    }
+    .thanh-tich-section__card--purple {
+      background: #1A1A5C;
+      color: #FFD600;
+    }
+    .thanh-tich-section__card--white {
+      background: #fff;
+      color: #1A1A5C;
+      border: 2px dashed #E5E7EB;
+    }
+    .thanh-tich-section__card-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #FFD600;
+      line-height: 1.1;
+    }
+    .thanh-tich-section__card--white .thanh-tich-section__card-number {
+      color: #1A1A5C;
+    }
+    .thanh-tich-section__card-desc {
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #fff;
+    }
+    .thanh-tich-section__card--white .thanh-tich-section__card-desc {
+      color: #1A1A5C;
+      font-weight: 500;
+    }
+    .thanh-tich-section__card--center {
+      grid-column: 2 / span 2;
+      grid-row: 2 / span 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      text-align: center;
+    }
+    @media (max-width: 1024px) {
+      .thanh-tich-section {
+        padding: 32px 0;
+      }
+      .thanh-tich-section__container {
+        padding: 0 8px;
+      }
+      .thanh-tich-section__title {
+        font-size: 2rem;
+        margin-bottom: 32px;
+      }
+      .thanh-tich-section__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 12px;
+      }
+      .thanh-tich-section__card {
+        min-height: 120px;
+        padding: 16px;
+      }
+      .thanh-tich-section__card-number {
+        font-size: 2rem;
+      }
+      .thanh-tich-section__card-desc {
+        font-size: 1rem;
+      }
+      .thanh-tich-section__card--center {
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 1;
+        min-height: 120px;
+      }
+    }
+  </style>
+</section>
+<section class="thanh-tich-section">
+  <div class="thanh-tich-section__container">
+    <div class="thanh-tich-section__decoration"></div>
+    <h2 class="thanh-tich-section__title">
+      Thành tích học sinh nổi bật con số trường ấn tượng
+    </h2>
+    <div class="thanh-tich-section__grid">
+      <!-- Card 1 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">145</div>
+          <div class="thanh-tich-section__card-desc">Học sinh đỗ 145 trường đại học trong nước và quốc tế</div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--purple">
+        <div class="thanh-tich-section__card-number">Top 1%</div>
+        <div class="thanh-tich-section__card-desc">Học sinh lọt Top 1% điểm thi SAT cao nhất thế giới</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--purple">
+        <div class="thanh-tich-section__card-number">30+</div>
+        <div class="thanh-tich-section__card-desc">Quốc tịch</div>
+      </div>
+      <!-- Card 4 (giữa lớn) -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--white thanh-tich-section__card--center">
+        <div class="thanh-tich-section__card-number">100%</div>
+        <div class="thanh-tich-section__card-desc">100% học sinh đỗ Đại học trong nước, Đại học Quốc tế tại Việt Nam và Đại học tại nước ngoài</div>
+      </div>
+      <!-- Card 5 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">153 tỷ</div>
+          <div class="thanh-tich-section__card-desc">Học sinh đạt 153 tỷ VNĐ học bổng và hỗ trợ tài chính</div>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--white">
+        <div class="thanh-tich-section__card-number">4500+</div>
+        <div class="thanh-tich-section__card-desc">Học sinh</div>
+      </div>
+      <!-- Card 7 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">96%</div>
+          <div class="thanh-tich-section__card-desc">Học sinh đạt học bổng trường quốc tế</div>
+        </div>
+      </div>
+      <!-- Card 8 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--white">
+        <div class="thanh-tich-section__card-number">45+</div>
+        <div class="thanh-tich-section__card-desc">Chuyên gia giáo dục</div>
+      </div>
+      <!-- Card 9 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">100%</div>
+          <div class="thanh-tich-section__card-desc">Bài thi AP đạt điểm 4/5 - Xuất sắc & 5/5 - Rất xuất sắc</div>
+        </div>
+      </div>
+      <!-- Card 10 -->
+      <div class="thanh-tich-section__card thanh-tich-section__card--img">
+        <div class="thanh-tich-section__card-bgimg"></div>
+        <div class="thanh-tich-section__card-content">
+          <div class="thanh-tich-section__card-number">1798</div>
+          <div class="thanh-tich-section__card-desc">Giải thưởng các cuộc thi trong nước và quốc tế</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .thanh-tich-section {
+      width: 100%;
+      background: #000;
+      padding: 80px 0;
+      position: relative;
+    }
+    .thanh-tich-section__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+    .thanh-tich-section__decoration {
+      width: 32px;
+      height: 32px;
+      background: #FFD600;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(15deg);
+      border-radius: 6px;
+      z-index: 2;
+    }
+    .thanh-tich-section__title {
+      text-align: center;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #1A1A5C;
+      margin-bottom: 48px;
+      margin-top: 32px;
+      letter-spacing: -1px;
+    }
+    .thanh-tich-section__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .thanh-tich-section__card {
+      border-radius: 24px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      background: #1A1A5C;
+      color: #fff;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+    .thanh-tich-section__card--img .thanh-tich-section__card-bgimg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+      object-fit: cover;
+      z-index: 1;
+      border-radius: 24px;
+      opacity: 0.55;
+    }
+    .thanh-tich-section__card--img .thanh-tich-section__card-content {
+      position: relative;
+      z-index: 2;
+    }
+    .thanh-tich-section__card--purple {
+      background: #1A1A5C;
+      color: #FFD600;
+    }
+    .thanh-tich-section__card--white {
+      background: #fff;
+      color: #1A1A5C;
+      border: 2px dashed #E5E7EB;
+    }
+    .thanh-tich-section__card-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #FFD600;
+      line-height: 1.1;
+    }
+    .thanh-tich-section__card--white .thanh-tich-section__card-number {
+      color: #1A1A5C;
+    }
+    .thanh-tich-section__card-desc {
+      font-size: 1.1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #fff;
+    }
+    .thanh-tich-section__card--white .thanh-tich-section__card-desc {
+      color: #1A1A5C;
+      font-weight: 500;
+    }
+    .thanh-tich-section__card--center {
+      grid-column: 2 / span 2;
+      grid-row: 2 / span 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      text-align: center;
+    }
+    @media (max-width: 1024px) {
+      .thanh-tich-section {
+        padding: 32px 0;
+      }
+      .thanh-tich-section__container {
+        padding: 0 8px;
+      }
+      .thanh-tich-section__title {
+        font-size: 2rem;
+        margin-bottom: 32px;
+      }
+      .thanh-tich-section__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        gap: 12px;
+      }
+      .thanh-tich-section__card {
+        min-height: 120px;
+        padding: 16px;
+      }
+      .thanh-tich-section__card-number {
+        font-size: 2rem;
+      }
+      .thanh-tich-section__card-desc {
+        font-size: 1rem;
+      }
+      .thanh-tich-section__card--center {
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 1;
+        min-height: 120px;
+      }
+    }
+  </style>
+</section>
+
+<!-- Section Thành tích Grid (Section 2) -->
+<section class="thanh-tich-grid-section">
+  <div class="thanh-tich-grid-section__container">
+    <div class="thanh-tich-grid-section__decoration"></div>
+    <h2 class="thanh-tich-grid-section__title">
+      Thành tích học sinh nổi bật con số trường ấn tượng
+    </h2>
+    <div class="thanh-tich-grid-section__grid">
+      <!-- Row 1 -->
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple">
+        <div class="thanh-tich-grid-section__card-number">Top 1%</div>
+        <div class="thanh-tich-grid-section__card-desc">Học sinh lọt Top 1% điểm thi SAT cao nhất thế giới</div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">1798</div>
+          <div class="thanh-tich-grid-section__card-desc">Giải thưởng các cuộc thi trong nước và quốc tế</div>
+        </div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple">
+        <div class="thanh-tich-grid-section__card-number">100%</div>
+        <div class="thanh-tich-grid-section__card-desc">100% học sinh đỗ Đại học trong nước, Đại học quốc tế tại Việt Nam và Đại học tại nước ngoài</div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">153 tỷ</div>
+          <div class="thanh-tich-grid-section__card-desc">Học sinh đạt 153 tỷ VNĐ học bổng và hỗ trợ tài chính</div>
+        </div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple thanh-tich-grid-section__card--decor">
+        <div class="thanh-tich-grid-section__card-decor"></div>
+        <div class="thanh-tich-grid-section__card-number">100%</div>
+        <div class="thanh-tich-grid-section__card-desc">Bài thi AP đạt điểm 4/5 - Xuất sắc & 5/5 - Rất xuất sắc</div>
+      </div>
+      
+      <!-- Row 2 -->
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">96%</div>
+          <div class="thanh-tich-grid-section__card-desc">Học sinh đạt học bổng trường quốc tế</div>
+        </div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple">
+        <div class="thanh-tich-grid-section__card-number">45+</div>
+        <div class="thanh-tich-grid-section__card-desc">Chuyên gia giáo dục</div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">30+</div>
+          <div class="thanh-tich-grid-section__card-desc">Quốc tịch</div>
+        </div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple">
+        <div class="thanh-tich-grid-section__card-number">4500+</div>
+        <div class="thanh-tich-grid-section__card-desc">Học sinh</div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">145</div>
+          <div class="thanh-tich-grid-section__card-desc">Học sinh đỗ 145 trường đại học trong nước và quốc tế</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .thanh-tich-grid-section {
+      width: 100%;
+      background: #fff;
+      padding: 80px 0;
+      position: relative;
+    }
+    .thanh-tich-grid-section__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+    .thanh-tich-grid-section__decoration {
+      width: 32px;
+      height: 32px;
+      background: #FFD600;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(15deg);
+      border-radius: 6px;
+      z-index: 2;
+    }
+    .thanh-tich-grid-section__title {
+      text-align: center;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #1A1A5C;
+      margin-bottom: 48px;
+      margin-top: 32px;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+    .thanh-tich-grid-section__grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .thanh-tich-grid-section__card {
+      border-radius: 20px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      background: #1A1A5C;
+      color: #FFD600;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+    .thanh-tich-grid-section__card--purple {
+      background: #1A1A5C;
+      color: #FFD600;
+    }
+    .thanh-tich-grid-section__card--img {
+      background: #000;
+      color: #fff;
+    }
+    .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-bgimg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #888 0%, #555 100%);
+      object-fit: cover;
+      z-index: 1;
+      border-radius: 20px;
+    }
+    .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-bgimg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 2;
+    }
+    .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-content {
+      position: relative;
+      z-index: 3;
+    }
+    .thanh-tich-grid-section__card--decor {
+      position: relative;
+    }
+    .thanh-tich-grid-section__card-decor {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 52px;
+      height: 6px;
+      background: #3B82F6;
+      border-radius: 4px;
+      z-index: 2;
+    }
+    .thanh-tich-grid-section__card-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      line-height: 1.1;
+    }
+    .thanh-tich-grid-section__card-desc {
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-number {
+      color: #FFD600;
+    }
+    .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-desc {
+      color: #fff;
+    }
+    @media (max-width: 1024px) {
+      .thanh-tich-grid-section {
+        padding: 32px 0;
+      }
+      .thanh-tich-grid-section__container {
+        padding: 0 8px;
+      }
+      .thanh-tich-grid-section__title {
+        font-size: 1.8rem;
+        margin-bottom: 32px;
+      }
+      .thanh-tich-grid-section__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 12px;
+      }
+      .thanh-tich-grid-section__card {
+        min-height: 140px;
+        padding: 16px;
+      }
+      .thanh-tich-grid-section__card-number {
+        font-size: 1.8rem;
+      }
+      .thanh-tich-grid-section__card-desc {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</section>
+<section class="program-cards-section">
+  <div class="program-cards-section__bg"></div>
+  <div class="program-cards-section__container">
+    <div class="program-cards-section__label">CHƯƠNG TRÌNH HỌC</div>
+    <div class="program-cards-section__grid">
+      <!-- Card 1: Explore -->
+      <div class="program-cards-section__card program-cards-section__card--white">
+        <div class="program-cards-section__card-content">
+          <h3 class="program-cards-section__card-title">Chương trình<br>Tích hợp Explore</h3>
+          <div class="program-cards-section__card-table">
+            <div class="program-cards-section__table-row">
+              <span class="program-cards-section__table-label">Cấp học</span>
+              <span class="program-cards-section__table-value">Lớp 1 - 12</span>
+            </div>
+            <div class="program-cards-section__table-row">
+              <span class="program-cards-section__table-label">Tỷ lệ ngôn ngữ giảng dạy</span>
+              <span class="program-cards-section__table-value">35% tiếng Anh - 65% tiếng Việt</span>
+            </div>
+            <div class="program-cards-section__table-row">
+              <span class="program-cards-section__table-label">Mục tiêu đào tạo</span>
+              <span class="program-cards-section__table-value">Bằng tốt nghiệp THPT Việt Nam</span>
+            </div>
+          </div>
+          <div class="program-cards-section__card-arrow">
+            <span class="program-cards-section__arrow-icon">←</span>
+          </div>
+        </div>
+        <div class="program-cards-section__card-imgwrap">
+          <div class="program-cards-section__img-bg"></div>
+          <div class="program-cards-section__img-placeholder"></div>
+        </div>
+      </div>
+      
+      <!-- Card 2: Discover -->
+      <div class="program-cards-section__card program-cards-section__card--gradient">
+        <div class="program-cards-section__card-content">
+          <h3 class="program-cards-section__card-title">Chương trình<br>Tích hợp Discover</h3>
+          <div class="program-cards-section__card-table">
+            <div class="program-cards-section__table-row">
+              <span class="program-cards-section__table-label">Cấp học</span>
+              <span class="program-cards-section__table-value">Lớp 1 - 12</span>
+            </div>
+            <div class="program-cards-section__table-row">
+              <span class="program-cards-section__table-label">Tỷ lệ ngôn ngữ giảng dạy</span>
+              <span class="program-cards-section__table-value">45% tiếng Anh - 55% tiếng Việt</span>
+            </div>
+            <div class="program-cards-section__table-row">
+              <span class="program-cards-section__table-label">Mục tiêu đào tạo</span>
+              <span class="program-cards-section__table-value">Bằng tốt nghiệp THPT Việt Nam</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .program-cards-section {
+      width: 100%;
+      position: relative;
+      padding: 80px 0;
+      overflow: hidden;
+      background: transparent;
+    }
+    .program-cards-section__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse 120% 80% at 0% 100%, #1976D2 0%, #1A1A5C 70%);
+      z-index: 1;
+      border-bottom-left-radius: 120px;
+      border-bottom-right-radius: 120px;
+    }
+    .program-cards-section__container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .program-cards-section__label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+    .program-cards-section__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+    .program-cards-section__card {
+      background: #fff;
+      border-radius: 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 48px;
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+    }
+    .program-cards-section__card--gradient {
+      background: linear-gradient(90deg, #f3f4fa 0%, #e3e6f5 60%, #d1d5e7 100%);
+    }
+    .program-cards-section__card-content {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+      z-index: 2;
+    }
+    .program-cards-section__card-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1A1A5C;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .program-cards-section__card-table {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .program-cards-section__table-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #222;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+      margin-bottom: 4px;
+    }
+    .program-cards-section__table-label {
+      color: #666;
+      font-weight: 500;
+    }
+    .program-cards-section__table-value {
+      font-weight: 700;
+      color: #1A1A5C;
+      text-align: right;
+    }
+    .program-cards-section__card-arrow {
+      margin-top: 32px;
+    }
+    .program-cards-section__arrow-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #FFD600;
+      color: #fff;
+      font-size: 2rem;
+      border-radius: 50%;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .program-cards-section__card-imgwrap {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      margin-left: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .program-cards-section__img-bg {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: #1976D2;
+      border-radius: 50%;
+      left: 20px;
+      top: 20px;
+      z-index: 1;
+    }
+    .program-cards-section__img-placeholder {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+      z-index: 2;
+      object-fit: cover;
+      box-shadow: 0 8px 32px rgba(10,42,108,0.10);
+    }
+    @media (max-width: 1024px) {
+      .program-cards-section {
+        padding: 32px 0;
+      }
+      .program-cards-section__container {
+        padding: 0 8px;
+      }
+      .program-cards-section__grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .program-cards-section__card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        min-height: 320px;
+      }
+      .program-cards-section__card-imgwrap {
+        margin-left: 0;
+        margin-top: 24px;
+        width: 160px;
+        height: 160px;
+      }
+      .program-cards-section__img-bg,
+      .program-cards-section__img-placeholder {
+        width: 140px;
+        height: 140px;
+      }
+      .program-cards-section__card-title {
+        font-size: 1.5rem;
+      }
+      .program-cards-section__table-row {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</section>
+<section class="life-edu-section">
+  <div class="life-edu-section__container">
+    <h2 class="life-edu-section__title">
+      Giáo dục không phải là sự chuẩn bị cho cuộc sống, giáo dục chính là cuộc sống!
+    </h2>
+    <div class="life-edu-section__imgwrap">
+      <div class="life-edu-section__img-placeholder"></div>
+    </div>
+  </div>
+  <style>
+    .life-edu-section {
+      width: 100%;
+      background: #fff;
+      padding: 80px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .life-edu-section__container {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .life-edu-section__title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #1A1A5C;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 40px;
+      text-align: left;
+      max-width: 900px;
+    }
+    .life-edu-section__imgwrap {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border-radius: 40px;
+      overflow: hidden;
+    }
+    .life-edu-section__img-placeholder {
+      width: 100%;
+      aspect-ratio: 2.2 / 1;
+      background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+      border-radius: 40px;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 1024px) {
+      .life-edu-section {
+        padding: 32px 0;
+      }
+      .life-edu-section__container {
+        padding: 0 8px;
+      }
+      .life-edu-section__title {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+        max-width: 100%;
+      }
+      .life-edu-section__imgwrap {
+        max-width: 100%;
+        border-radius: 24px;
+      }
+      .life-edu-section__img-placeholder {
+        border-radius: 24px;
+      }
+    }
+  </style>
+</section>
+<section class="campus-list-section">
+  <div class="campus-list-section__container">
+    <div class="campus-list-section__grid">
+      <!-- Card 1 -->
+      <a href="#" class="campus-list-section__card">
+        <div class="campus-list-section__card-bgimg"></div>
+        <div class="campus-list-section__card-content">
+          <span class="campus-list-section__card-title">Cơ sở Cầu Giấy <span class="campus-list-section__card-arrow">&gt;</span></span>
+        </div>
+      </a>
+      <!-- Card 2 -->
+      <a href="#" class="campus-list-section__card">
+        <div class="campus-list-section__card-bgimg"></div>
+        <div class="campus-list-section__card-content">
+          <span class="campus-list-section__card-title">Cơ sở Hải Phòng <span class="campus-list-section__card-arrow">&gt;</span></span>
+        </div>
+      </a>
+      <!-- Card 3 -->
+      <a href="#" class="campus-list-section__card">
+        <div class="campus-list-section__card-bgimg"></div>
+        <div class="campus-list-section__card-content">
+          <span class="campus-list-section__card-title">Cơ sở Tây Hồ Tây <span class="campus-list-section__card-arrow">&gt;</span></span>
+        </div>
+      </a>
+      <!-- Card 4 -->
+      <a href="#" class="campus-list-section__card">
+        <div class="campus-list-section__card-bgimg"></div>
+        <div class="campus-list-section__card-content">
+          <span class="campus-list-section__card-title">Cơ sở Ocean Park <span class="campus-list-section__card-arrow">&gt;</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <style>
+    .campus-list-section {
+      width: 100%;
+      background: #fff;
+      padding: 0;
+      margin: 0;
+    }
+    .campus-list-section__container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .campus-list-section__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      justify-items: stretch;
+      align-items: stretch;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .campus-list-section__card {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      min-height: 260px;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      text-decoration: none;
+      transition: box-shadow 0.2s;
+      background: #ddd;
+    }
+    .campus-list-section__card:hover {
+      box-shadow: 0 8px 32px rgba(10,42,108,0.15);
+    }
+    .campus-list-section__card-bgimg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+      object-fit: cover;
+      z-index: 1;
+      opacity: 1;
+    }
+    .campus-list-section__card-content {
+      position: relative;
+      z-index: 2;
+      padding: 32px;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(26,26,92,0.45) 80%, rgba(26,26,92,0.0) 100%);
+      border-radius: 0 0 32px 32px;
+      display: flex;
+      align-items: flex-end;
+    }
+    .campus-list-section__card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .campus-list-section__card-arrow {
+      font-size: 1.2em;
+      color: #fff;
+      margin-left: 8px;
+      font-weight: 700;
+      transition: margin-left 0.2s;
+    }
+    .campus-list-section__card:hover .campus-list-section__card-arrow {
+      margin-left: 16px;
+    }
+    @media (max-width: 1024px) {
+      .campus-list-section__container {
+        padding: 0 8px;
+      }
+      .campus-list-section__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .campus-list-section__card {
+        min-height: 160px;
+        border-radius: 20px;
+      }
+      .campus-list-section__card-content {
+        padding: 16px;
+        border-radius: 0 0 20px 20px;
+      }
+      .campus-list-section__card-title {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</section>
+<section class="english-program-section">
+  <div class="english-program-section__container">
+    <h2 class="english-program-section__title">
+      Chương trình Tiếng Anh
+      <span class="english-program-section__asterisk">*</span>
+    </h2>
+    <div class="english-program-section__subtitle">
+      The Dewey School truyền cảm hứng cho các em học sinh khám phá bản thân<br>
+      và những cơ hội tiềm ẩn trong thế giới xung quanh
+    </div>
+    <div class="english-program-section__grid">
+      <!-- Card 1 -->
+      <div class="english-program-section__card">
+        <div class="english-program-section__icon">
+          <!-- Medal SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M14 7l2.5 5h-5L14 7zm0 7a2 2 0 110 4 2 2 0 010-4z" fill="white"/></svg>
+        </div>
+        <div class="english-program-section__card-title">Tiêu chuẩn Common Core (Mỹ)</div>
+        <div class="english-program-section__card-desc">Đảm bảo thống nhất về năng lực, phương pháp và học liệu</div>
+      </div>
+      <!-- Card 2 -->
+      <div class="english-program-section__card english-program-section__card--gradient">
+        <div class="english-program-section__icon">
+          <!-- Handshake SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M8 14h12M14 8v12" stroke="white" stroke-width="2"/></svg>
+        </div>
+        <div class="english-program-section__card-title">Đối tác Mount Vernon (Mỹ)</div>
+        <div class="english-program-section__card-desc">Từ chương trình giảng dạy này, học sinh được tiếp cận hệ thống môn học tương tự học sinh bản ngữ</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="english-program-section__card">
+        <div class="english-program-section__icon">
+          <!-- Book SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><rect x="9" y="9" width="10" height="10" rx="2" fill="white"/></svg>
+        </div>
+        <div class="english-program-section__card-title">Chương trình Văn học Anh</div>
+        <div class="english-program-section__card-desc">Giúp học sinh đọc hiểu, phân tích và phê bình tác phẩm bằng tiếng Anh như người bản xứ</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="english-program-section__card">
+        <div class="english-program-section__icon">
+          <!-- Glasses SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M9 17a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4z" fill="white"/><rect x="7" y="13" width="14" height="2" fill="white"/></svg>
+        </div>
+        <div class="english-program-section__card-title">Chương trình học thuật chuyên sâu</div>
+        <div class="english-program-section__card-desc">Hướng đến phát triển các kỹ năng ngôn ngữ nâng cao. Sự lưu loát, chính xác, khả năng hiểu và đánh giá các văn bản phức tạp</div>
+      </div>
+      <!-- Card 5 -->
+      <div class="english-program-section__card">
+        <div class="english-program-section__icon">
+          <!-- Star SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M14 8l2.5 7.5H9.5L14 8z" fill="white"/></svg>
+        </div>
+        <div class="english-program-section__card-title">Giáo viên đào tạo bởi chuyên gia</div>
+        <div class="english-program-section__card-desc">Giáo viên đào tạo bởi chuyên gia từ các hệ thống giáo dục quốc tế (CIS, IB, Global Education, Mount Vernon School )</div>
+      </div>
+      <!-- Card 6 -->
+      <div class="english-program-section__card">
+        <div class="english-program-section__icon">
+          <!-- Globe SVG -->
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M14 8a6 6 0 100 12 6 6 0 000-12z" fill="white"/></svg>
+        </div>
+        <div class="english-program-section__card-title">Chương trình Tiếng Anh Quốc Tế</div>
+        <div class="english-program-section__card-desc">Học sinh dễ dàng theo học trong các môi trường học tập quốc tế trong và ngoài nước</div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .english-program-section {
+      width: 100%;
+      background: #fff;
+      padding: 100px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .english-program-section__container {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .english-program-section__title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #1A1A5C;
+      text-align: center;
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+    }
+    .english-program-section__asterisk {
+      color: #00B6FF;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-left: 8px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .english-program-section__subtitle {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #666;
+      text-align: center;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+    .english-program-section__grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 0;
+    }
+    .english-program-section__card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      padding: 48px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      min-height: 220px;
+      position: relative;
+    }
+    .english-program-section__card--gradient {
+      background: linear-gradient(180deg, #fff 60%, #f6f7fb 100%);
+    }
+    .english-program-section__icon {
+      width: 48px;
+      height: 48px;
+      background: #1A1A5C;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .english-program-section__card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1A1A5C;
+      margin-bottom: 8px;
+    }
+    .english-program-section__card-desc {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #666;
+      line-height: 1.5;
+    }
+    @media (max-width: 1024px) {
+      .english-program-section {
+        padding: 48px 0;
+      }
+      .english-program-section__container {
+        padding: 0 8px;
+      }
+      .english-program-section__title {
+        font-size: 1.5rem;
+      }
+      .english-program-section__subtitle {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
+      .english-program-section__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      .english-program-section__card {
+        padding: 24px 12px;
+        min-height: 140px;
+      }
+      .english-program-section__icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 12px;
+      }
+      .english-program-section__card-title {
+        font-size: 1rem;
+      }
+      .english-program-section__card-desc {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</section>
+<section class="extracurricular-section">
+  <div class="extracurricular-section__container">
+    <div class="extracurricular-section__decoration"></div>
+    <h2 class="extracurricular-section__title">
+      Chương trình ngoại khoá
+    </h2>
+    <div class="extracurricular-section__subtitle">
+      Chương trình Ngoại khoá tại <b>Dewey</b> giúp học sinh phát triển bản lĩnh, nuôi dưỡng đam mê, mở rộng tư duy và trưởng thành qua trải nghiệm. Mỗi hoạt động đều được thiết kế có chủ đích, dẫn dắt học sinh trở thành công dân toàn cầu giàu cảm hứng, sáng tạo và trách nhiệm.
+    </div>
+    <div class="extracurricular-section__grid">
+      <!-- Card 1 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">40+ Câu lạc bộ trải rộng các lĩnh vực</div>
+          <div class="extracurricular-section__card-desc">Toán – Khoa học & Công nghệ • Nghệ thuật • Kỹ năng • Ngôn ngữ • Thể thao</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">100+ sự kiện – cuộc thi – giải đấu mỗi năm</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">Kênh truyền hình thực hành kỹ năng</div>
+          <div class="extracurricular-section__card-desc">Kỹ năng MC, biên tập viên phát sóng trên FPT Play và TV360</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">Trại hè trong nước & quốc tế</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">20+ Dự án & CLB do học sinh làm chủ</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">Giao lưu quốc tế với học sinh Mỹ, Nhật Bản...</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 7 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">Hoạt động cộng đồng ý nghĩa</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .extracurricular-section {
+      width: 100%;
+      background: #fff;
+      padding: 100px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .extracurricular-section__container {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .extracurricular-section__decoration {
+      width: 0;
+      height: 0;
+      border-left: 32px solid transparent;
+      border-right: 32px solid transparent;
+      border-bottom: 32px solid #FF6B4A;
+      margin: 0 auto 16px auto;
+      display: block;
+    }
+    .extracurricular-section__title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #1A1A5C;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .extracurricular-section__subtitle {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #666;
+      text-align: center;
+      margin-bottom: 48px;
+      line-height: 1.6;
+      max-width: 900px;
+    }
+    .extracurricular-section__grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .extracurricular-section__card {
+      position: relative;
+      background: #ddd;
+      border-radius: 24px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      min-height: 220px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      transition: box-shadow 0.2s;
+    }
+    .extracurricular-section__card:hover {
+      box-shadow: 0 8px 32px rgba(10,42,108,0.15);
+    }
+    .extracurricular-section__card-bgimg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+      object-fit: cover;
+      z-index: 1;
+      opacity: 1;
+    }
+    .extracurricular-section__card-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 32px;
+      background: linear-gradient(0deg, rgba(26,26,92,0.45) 80%, rgba(26,26,92,0.0) 100%);
+      border-radius: 0 0 24px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+    .extracurricular-section__card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+    .extracurricular-section__card-desc {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #fff;
+      opacity: 0.85;
+      margin-bottom: 8px;
+      text-align: left;
+    }
+    .extracurricular-section__card-btn {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #FFD600;
+      text-decoration: none;
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+    .extracurricular-section__card-btn:hover {
+      color: #ffb800;
+    }
+    .extracurricular-section__card-arrow {
+      font-size: 1.1em;
+      margin-left: 2px;
+      font-weight: 700;
+      transition: margin-left 0.2s;
+    }
+    .extracurricular-section__card-btn:hover .extracurricular-section__card-arrow {
+      margin-left: 8px;
+    }
+    @media (max-width: 1024px) {
+      .extracurricular-section {
+        padding: 48px 0;
+      }
+      .extracurricular-section__container {
+        padding: 0 8px;
+      }
+      .extracurricular-section__title {
+        font-size: 1.5rem;
+      }
+      .extracurricular-section__subtitle {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
+      .extracurricular-section__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, 1fr);
+        gap: 16px;
+      }
+      .extracurricular-section__card {
+        min-height: 140px;
+        border-radius: 16px;
+      }
+      .extracurricular-section__card-content {
+        padding: 16px;
+        border-radius: 0 0 16px 16px;
+      }
+      .extracurricular-section__card-title {
+        font-size: 1rem;
+      }
+      .extracurricular-section__card-desc {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</section>
+<footer class="dewey-footer-section">
+  <div class="dewey-footer-section__container">
+    <div class="dewey-footer-section__logo-wrap">
+      <img src="/src/pages/pages/gioi-thieu/images/vp_vp-logo-dewey-02-1.svg" alt="The Dewey Schools" class="dewey-footer-section__logo" />
+    </div>
+    <div class="dewey-footer-section__grid">
+      <!-- Hỗ trợ -->
+      <div class="dewey-footer-section__col">
+        <div class="dewey-footer-section__col-title">HỖ TRỢ</div>
+        <div class="dewey-footer-section__col-item">info.tht@thedeweyschools.edu.vn</div>
+        <div class="dewey-footer-section__col-item">19003293</div>
+        <div class="dewey-footer-section__col-item">Mã bưu chính: 100000</div>
+      </div>
+      <!-- Cơ sở -->
+      <div class="dewey-footer-section__col">
+        <div class="dewey-footer-section__col-title">CƠ SỞ</div>
+        <div class="dewey-footer-section__col-item">Dewey Cầu Giấy</div>
+        <div class="dewey-footer-section__col-item">Dewey Tây Hồ Tây</div>
+        <div class="dewey-footer-section__col-item">Dewey Hải Phòng</div>
+        <div class="dewey-footer-section__col-item">Dewey Ocean Park</div>
+      </div>
+      <!-- Chương trình đào tạo -->
+      <div class="dewey-footer-section__col">
+        <div class="dewey-footer-section__col-title">CHƯƠNG TRÌNH ĐÀO TẠO</div>
+        <div class="dewey-footer-section__col-item">Tổng quan</div>
+        <div class="dewey-footer-section__col-item">Chương trình Journey</div>
+        <div class="dewey-footer-section__col-item">Chương trình Adventure</div>
+        <div class="dewey-footer-section__col-item">Chương trình Discover</div>
+        <div class="dewey-footer-section__col-item">Chương trình Explore</div>
+      </div>
+      <!-- Kết nối + Tài liệu -->
+      <div class="dewey-footer-section__col">
+        <div class="dewey-footer-section__col-title">KẾT NỐI VỚI CHÚNG TÔI</div>
+        <div class="dewey-footer-section__socials">
+          <a href="#" class="dewey-footer-section__social"><svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M16 8h-2a2 2 0 00-2 2v2H8v2h2v6h2v-6h2l1-2h-3v-2a1 1 0 011-1h2V8z" fill="#1A1A5C"/></svg></a>
+          <a href="#" class="dewey-footer-section__social"><svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><rect x="8" y="8" width="8" height="8" rx="2" fill="#1A1A5C"/></svg></a>
+          <a href="#" class="dewey-footer-section__social"><svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><circle cx="12" cy="12" r="5" stroke="#1A1A5C" stroke-width="2"/></svg></a>
+        </div>
+        <div class="dewey-footer-section__col-title" style="margin-top:32px;">TÀI LIỆU</div>
+        <div class="dewey-footer-section__doc-card">
+          <div class="dewey-footer-section__doc-img"></div>
+          <div class="dewey-footer-section__doc-content">
+            <div class="dewey-footer-section__doc-title">Tài liệu tuyển sinh</div>
+            <a href="#" class="dewey-footer-section__doc-download">
+              <svg width="20" height="20" fill="none"><circle cx="10" cy="10" r="10" fill="#fff"/><path d="M10 6v6m0 0l-3-3m3 3l3-3" stroke="#1A1A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dewey-footer-section__bar">
+      <div class="dewey-footer-section__bar-left">
+        <img src="/path/to/cis-logo.png" alt="CIS Member" class="dewey-footer-section__bar-logo" />
+        <img src="/path/to/ib-logo.png" alt="IB Candidate School" class="dewey-footer-section__bar-logo" />
+        <span class="dewey-footer-section__bar-desc">
+          The Dewey Schools là thành viên của CIS (Council of International Schools – Hội đồng các trường quốc tế) và là trường ứng viên IB (International Baccalaureate – Tổ chức Tú tài Quốc tế)
+        </span>
+      </div>
+      <div class="dewey-footer-section__bar-right">
+        &copy; 2023 The Dewey Schools.
+      </div>
+    </div>
+  </div>
+  <style>
+    .dewey-footer-section {
+      width: 100%;
+      background: radial-gradient(ellipse 120% 80% at 0% 100%, #1976D2 0%, #1A1A5C 70%);
+      padding: 64px 0 0 0;
+      color: #fff;
+      font-family: 'Be Vietnam Pro', Arial, sans-serif;
+    }
+    .dewey-footer-section__container {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .dewey-footer-section__logo-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .dewey-footer-section__logo {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+    .dewey-footer-section__grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .dewey-footer-section__col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 180px;
+    }
+    .dewey-footer-section__col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #BFD7FF;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+    .dewey-footer-section__col-item {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+    }
+    .dewey-footer-section__socials {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .dewey-footer-section__social {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .dewey-footer-section__social:hover {
+      background: #FFD600;
+    }
+    .dewey-footer-section__doc-card {
+      width: 120px;
+      height: 160px;
+      background: #1A1A5C;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 12px;
+      position: relative;
+    }
+    .dewey-footer-section__doc-img {
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
+    }
+    .dewey-footer-section__doc-content {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      height: 68px;
+      width: 100%;
+    }
+    .dewey-footer-section__doc-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .dewey-footer-section__doc-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #fff;
+      color: #1A1A5C;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-decoration: none;
+    }
+    .dewey-footer-section__doc-download:hover {
+      background: #FFD600;
+    }
+    .dewey-footer-section__bar {
+      width: 100%;
+      border-top: 1px solid #2A3A7C;
+      padding: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #BFD7FF;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .dewey-footer-section__bar-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .dewey-footer-section__bar-logo {
+      width: 120px;
+      height: auto;
+      display: block;
+    }
+    .dewey-footer-section__bar-desc {
+      font-size: 0.95rem;
+      color: #BFD7FF;
+      max-width: 500px;
+    }
+    .dewey-footer-section__bar-right {
+      font-size: 0.95rem;
+      color: #BFD7FF;
+    }
+    @media (max-width: 1024px) {
+      .dewey-footer-section {
+        padding: 32px 0 0 0;
+      }
+      .dewey-footer-section__container {
+        padding: 0 8px;
+      }
+      .dewey-footer-section__logo {
+        width: 120px;
+        margin-bottom: 16px;
+      }
+      .dewey-footer-section__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+      .dewey-footer-section__col {
+        min-width: 120px;
+      }
+      .dewey-footer-section__bar {
+        padding: 16px 0 8px 0;
+        font-size: 0.9rem;
+        gap: 8px;
+      }
+      .dewey-footer-section__bar-logo {
+        width: 80px;
+      }
+      .dewey-footer-section__bar-desc {
+        font-size: 0.9rem;
+        max-width: 100%;
+      }
+    }
+  </style>
+</footer>

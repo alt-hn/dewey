@@ -1,0 +1,103 @@
+<style>
+	.navbar {
+		width: 100%;
+		background: linear-gradient(90deg, #0a2a6c 0%, #1a3d7c 50%, #0a2a6c 100%);
+		color: white;
+		position: relative;
+		z-index: 2;
+		font-family: 'Be Vietnam Pro', Arial, sans-serif;
+		min-height: 110px;
+	}
+	.navbar-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 40px 0 160px;
+		height: 64px;
+	}
+	.navbar-logo {
+		height: 80px;
+		margin: 0;
+		background: none;
+		border: none;
+		padding: 0;
+		box-shadow: none;
+		position: absolute;
+		left: 40px;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+	}
+	.navbar-btn {
+		background: #ffc107;
+		color: #0a2a6c;
+		border: none;
+		border-radius: 20px;
+		padding: 10px 24px;
+		font-weight: bold;
+		cursor: pointer;
+		font-family: 'Be Vietnam Pro', Arial, sans-serif;
+		font-size: 1rem;
+		transition: background 0.2s;
+	}
+	.navbar-btn:hover {
+		background: #ffdb4d;
+	}
+	.navbar-menu-wrap {
+		width: 100%;
+		background: linear-gradient(90deg, #0a2a6c 0%, #1a3d7c 50%, #0a2a6c 100%);
+		display: flex;
+		justify-content: flex-end;
+		padding: 0 40px 0 160px;
+	}
+	.navbar-menu {
+		display: flex;
+		gap: 32px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-size: 0.95rem;
+		height: 44px;
+		align-items: center;
+		font-weight: 600;
+		letter-spacing: 0.3px;
+		text-transform: uppercase;
+	}
+	.navbar-menu li {
+		cursor: pointer;
+		transition: color 0.2s;
+		white-space: nowrap;
+	}
+	.navbar-menu li:hover {
+		color: #ffc107;
+	}
+</style>
+
+<nav class="navbar">
+	<div class="navbar-top">
+		<img src="/src/pages/pages/gioi-thieu/images/vp_vp-logo-dewey-02-1.svg" alt="The Dewey Schools" class="navbar-logo" />
+		<div style="display: flex; align-items: center; gap: 0;">
+			<button class="navbar-btn">Đăng kí tư vấn</button>
+			<div style="display: flex; align-items: center; gap: 18px; margin-left: 18px;">
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">HỢP TÁC ĐÀO TẠO</a>
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">TUYỂN DỤNG</a>
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">TIN TỨC - SỰ KIỆN</a>
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">DỰ ÁN W</a>
+				<a href="#" style="color: #fff; text-decoration: none; font-size: 1.3rem; font-weight: 600; margin-left: 4px;">🇬🇧</a>
+			</div>
+		</div>
+	</div>
+	<div class="navbar-menu-wrap">
+		<ul class="navbar-menu">
+			<li>VỀ CHÚNG TÔI ▼</li>
+			<li>CƠ SỞ ▼</li>
+			<li>CHƯƠNG TRÌNH GIÁO DỤC ▼</li>
+			<li>TUYỂN SINH ▼</li>
+			<li>HỌC PHÍ</li>
+			<li>THÀNH TÍCH HỌC SINH</li>
+			<li>GÓC TDSERS ▼</li>
+			<li>ĐỜI SỐNG HỌC ĐƯỜNG ▼</li>
+			<li>LIÊN HỆ</li>
+		</ul>
+	</div>
+</nav>

@@ -1,0 +1,227 @@
+<style>
+  .gioi-thieu-section {
+    width: 100%;
+    background: #fff;
+    padding: 60px 0;
+  }
+  .gioi-thieu-section__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .gioi-thieu-section__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .gioi-thieu-section__card {
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    background: #fff;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+  .gioi-thieu-section__card--img .gioi-thieu-section__card-bgimg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+    object-fit: cover;
+    z-index: 1;
+  }
+  .gioi-thieu-section__card--img .gioi-thieu-section__card-content {
+    position: relative;
+    z-index: 2;
+  }
+  .gioi-thieu-section__card--purple {
+    background: #1A1A5C;
+    color: #fff;
+  }
+  .gioi-thieu-section__card--yellow {
+    background: #FFD600;
+    color: #1A1A5C;
+  }
+  .gioi-thieu-section__card-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .gioi-thieu-section__card-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .gioi-thieu-section__card--center {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 440px;
+    background: none;
+    box-shadow: none;
+  }
+  .gioi-thieu-section__hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #bbb 60%, #ddd 100%);
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 16px;
+    opacity: 0.45;
+  }
+  .gioi-thieu-section__hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 48px;
+    color: #fff;
+    text-align: left;
+  }
+  .gioi-thieu-section__hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .gioi-thieu-section__hero-desc {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  @media (max-width: 1024px) {
+    .gioi-thieu-section {
+      padding: 24px 0;
+    }
+    .gioi-thieu-section__container {
+      padding: 0 12px;
+    }
+    .gioi-thieu-section__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      gap: 12px;
+    }
+    .gioi-thieu-section__card {
+      min-height: 160px;
+      padding: 20px;
+    }
+    .gioi-thieu-section__card-title {
+      font-size: 18px;
+    }
+    .gioi-thieu-section__card-desc {
+      font-size: 15px;
+    }
+    .gioi-thieu-section__card--center {
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 1;
+      min-height: 260px;
+    }
+    .gioi-thieu-section__hero-content {
+      padding: 24px;
+    }
+    .gioi-thieu-section__hero-title {
+      font-size: 36px;
+    }
+    .gioi-thieu-section__hero-desc {
+      font-size: 17px;
+    }
+  }
+</style>
+
+<section class="gioi-thieu-section">
+  <div class="gioi-thieu-section__container">
+    <div class="gioi-thieu-section__grid">
+      <!-- Card 1 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Môi trường Giáo dục của năm</div>
+          <div class="gioi-thieu-section__card-desc">Giải thưởng "Môi trường Giáo dục của năm" - SEI Awards 2025</div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--purple">
+        <div class="gioi-thieu-section__card-title">Liên kết đào tạo với Mount Vernon School</div>
+        <div class="gioi-thieu-section__card-desc">Top 10 trường đổi mới sáng tạo tại Mỹ (2017)</div>
+      </div>
+      <!-- Card 3 (Hero center) -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img gioi-thieu-section__card--center">
+        <div class="gioi-thieu-section__hero-bg"></div>
+        <div class="gioi-thieu-section__hero-content">
+          <div class="gioi-thieu-section__hero-title">Tại sao<br>The Dewey Schools?</div>
+          <div class="gioi-thieu-section__hero-desc">Thành viên chính thức của các trường quốc tế CIS</div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Trường học Hạnh Phúc</div>
+          <div class="gioi-thieu-section__card-desc">Phát triển học sinh toàn diện (thể chất & tinh thần) với hệ sinh thái Well-being khoa học, đa tầng.</div>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Hội đồng Khoa học và Sư phạm (ERPC)</div>
+          <div class="gioi-thieu-section__card-desc">Đội ngũ chuyên gia hàng đầu không ngừng cải tiến và nâng cao chất lượng giáo dục</div>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--yellow">
+        <div class="gioi-thieu-section__card-title">Chương trình Toán</div>
+        <div class="gioi-thieu-section__card-desc">Từ cơ bản đến nâng cao<br>Nắm chắc khái niệm, vận dụng thực tiễn.</div>
+      </div>
+      <!-- Card 7 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Cơ sở vật chất</div>
+          <div class="gioi-thieu-section__card-desc">Chứng nhận quốc tế và giải thưởng kiến trúc quốc gia</div>
+        </div>
+      </div>
+      <!-- Card 8 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--purple">
+        <div class="gioi-thieu-section__card-title">Đội ngũ Giáo viên, Nhân viên chuyên môn cao</div>
+        <div class="gioi-thieu-section__card-desc">Trình độ chuyên môn cao đáp ứng tiêu chuẩn CIS</div>
+      </div>
+      <!-- Card 9 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Hướng nghiệp toàn diện</div>
+          <div class="gioi-thieu-section__card-desc">Cá nhân hóa, lộ trình rõ ràng, giúp học sinh ứng tuyển thành công vào Đại học danh tiếng.</div>
+        </div>
+      </div>
+      <!-- Card 10 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--img">
+        <div class="gioi-thieu-section__card-bgimg"></div>
+        <div class="gioi-thieu-section__card-content">
+          <div class="gioi-thieu-section__card-title">Toshin Development</div>
+          <div class="gioi-thieu-section__card-desc">Tập đoàn Toshin Development (Nhật Bản) là nhà đầu tư chiến lược</div>
+        </div>
+      </div>
+      <!-- Card 11 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--purple">
+        <div class="gioi-thieu-section__card-title">Tiếng Anh chuẩn Common Core (Mỹ)</div>
+        <div class="gioi-thieu-section__card-desc">Phát triển tư duy nghiên cứu và giao tiếp tự nhiên như bản ngữ.</div>
+      </div>
+      <!-- Card 12 -->
+      <div class="gioi-thieu-section__card gioi-thieu-section__card--purple">
+        <div class="gioi-thieu-section__card-title">Chương trình Văn - Tiếng Việt</div>
+        <div class="gioi-thieu-section__card-desc">Nuôi dưỡng lòng đồng cảm, rèn luyện tư duy phản biện, khả năng sáng tạo</div>
+      </div>
+    </div>
+  </div>
+</section>
