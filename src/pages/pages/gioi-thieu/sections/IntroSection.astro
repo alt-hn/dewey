@@ -20,7 +20,15 @@
 	.intro-left { display: flex; flex-direction: column; gap: 24px; }
 	.intro-label { font-size: .95rem; font-weight:600; color:#999; letter-spacing:1px; text-transform:uppercase; }
 	/* Star (4 bars) */
-	.intro-decoration-star { position:absolute; top:-36px; right:50%; transform:translateX(50%); width:84px; height:84px; z-index:2; }
+	.intro-decoration-star {
+		position: absolute;
+		top: -36px;
+		left: 20%;
+		transform: translateX(-50%);
+		width: 84px;
+		height: 84px;
+		z-index: 3;
+	}
 	.intro-decoration-star .bar { position:absolute; left:50%; top:50%; width:60px; height:12px; background:#FFD600; transform-origin:center; border-radius:1px; }
 	.intro-decoration-star .bar.r0 { transform:translate(-50%,-50%) rotate(0deg); }
 	.intro-decoration-star .bar.r45 { transform:translate(-50%,-50%) rotate(45deg); }
@@ -83,11 +91,10 @@
 		align-items: center;
 	}
 	.badge-logo {
-		height: 42px;
+		height: 64px;
 		width: auto;
-		min-width: 70px;
-		background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
-		border-radius: 4px;
+		min-width: 100px;
+		border-radius: 0;
 		object-fit: contain;
 	}
 	.intro-right {
@@ -99,11 +106,10 @@
 	.intro-image-wrapper {
 		position: relative;
 		width: 100%;
-		max-width: 600px;
+		max-width: 800px;
 		aspect-ratio: 4 / 3;
-		background: linear-gradient(135deg, #d4e4f7, #e8f0f7);
 		border-radius: 24px;
-		overflow: hidden;
+		overflow: visible;
 	}
 	.intro-image {
 		width: 100%;
@@ -121,7 +127,7 @@
 		border-left: 28px solid transparent;
 		border-right: 28px solid transparent;
 		border-top: 48px solid #3B82F6;
-		z-index: 2;
+		z-index: 3;
 	}
 	.intro-decoration-rect {
 		position: absolute;
@@ -131,7 +137,7 @@
 		height: 42px;
 		background: #FF6B4A;
 		transform: rotate(45deg);
-		z-index: 2;
+		z-index: 3;
 	}
 
 	/* Responsive Tablet */
@@ -213,7 +219,7 @@
 					<div class="bar r135"></div>
 				</div>
 				<div class="intro-decoration-rect"></div>
-				<img src="/path/to/students-image.jpg" alt="The Dewey Schools Students" class="intro-image" />
+				<img src="/src/pages/pages/gioi-thieu/images/gt.webp" alt="The Dewey Schools" class="intro-image" />
 				<div class="intro-decoration-triangle"></div>
 			</div>
 		</div>
