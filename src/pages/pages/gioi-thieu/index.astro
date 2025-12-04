@@ -1,399 +1,54 @@
+---
+import Navbar from './sections/Navbar.astro';
+import HeroSlider from './sections/HeroSlider.astro';
+import IntroSection from './sections/IntroSection.astro';
+import GioiThieuSection from './sections/GioiThieuSection.astro';
+import ThanhTichGridSection from './sections/ThanhTichGridSection.astro';
+import ThanhTichAltSection from './sections/ThanhTichAltSection.astro';
+import InfographicSection from './sections/InfographicSection.astro';
+import ProgramCardsSection from './sections/ProgramCardsSection.astro';
+import LifeEduSection from './sections/LifeEduSection.astro';
+import CampusListSection from './sections/CampusListSection.astro';
+import EnglishProgramSection from './sections/EnglishProgramSection.astro';
+import ExtracurricularSection from './sections/ExtracurricularSection.astro';
+import Footer from './sections/Footer.astro';
+---
 
----
----
+<!DOCTYPE html>
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giới Thiệu - The Dewey Schools</title>
+  <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      font-family: 'Be Vietnam Pro', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  </style>
 </head>
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-	
-	*, *::before, *::after {
-		box-sizing: border-box;
-	}
-	
-	html, body {
-		font-family: 'Be Vietnam Pro', Arial, sans-serif;
-		margin: 0;
-		padding: 0;
-		overflow-x: hidden;
-	}
-	.navbar {
-		width: 100%;
-		background: linear-gradient(90deg, #0a2a6c 0%, #1a3d7c 50%, #0a2a6c 100%);
-		color: white;
-		position: relative;
-		z-index: 2;
-		font-family: 'Be Vietnam Pro', Arial, sans-serif;
-		min-height: 110px;
-	}
-	.navbar-top {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0 40px 0 160px;
-		height: 64px;
-	}
-	.navbar-logo {
-		height: 80px;
-		margin: 0;
-		background: none;
-		border: none;
-		padding: 0;
-		box-shadow: none;
-		position: absolute;
-		left: 40px;
-		top: 50%;
-		transform: translateY(-50%);
-		z-index: 10;
-	}
-	.navbar-btn {
-		background: #ffc107;
-		color: #0a2a6c;
-		border: none;
-		border-radius: 20px;
-		padding: 10px 24px;
-		font-weight: bold;
-		cursor: pointer;
-		font-family: 'Be Vietnam Pro', Arial, sans-serif;
-		font-size: 1rem;
-		transition: background 0.2s;
-	}
-	.navbar-btn:hover {
-		background: #ffdb4d;
-	}
-	.navbar-menu-wrap {
-		width: 100%;
-		background: linear-gradient(90deg, #0a2a6c 0%, #1a3d7c 50%, #0a2a6c 100%);
-		display: flex;
-		justify-content: flex-end;
-		padding: 0 40px 0 160px;
-	}
-	.navbar-menu {
-		display: flex;
-		gap: 32px;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		font-size: 0.95rem;
-		height: 44px;
-		align-items: center;
-		font-weight: 600;
-		letter-spacing: 0.3px;
-		text-transform: uppercase;
-	}
-	.navbar-menu li {
-		cursor: pointer;
-		transition: color 0.2s;
-		white-space: nowrap;
-	}
-	.navbar-menu li:hover {
-		color: #ffc107;
-	}
-</style>
-
-
-<!-- Navbar 2 dòng sát mẫu -->
-<nav class="navbar">
-	<div class="navbar-top">
-		<img src="/src/pages/pages/gioi-thieu/images/vp_vp-logo-dewey-02-1.svg" alt="The Dewey Schools" class="navbar-logo" />
-		<div style="display: flex; align-items: center; gap: 0;">
-			<button class="navbar-btn">Đăng kí tư vấn</button>
-			<div style="display: flex; align-items: center; gap: 18px; margin-left: 18px;">
-				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">HỢP TÁC ĐÀO TẠO</a>
-				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">TUYỂN DỤNG</a>
-				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">TIN TỨC - SỰ KIỆN</a>
-				<a href="#" style="color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600; opacity: 0.95;">DỰ ÁN W</a>
-				<a href="#" style="color: #fff; text-decoration: none; font-size: 1.3rem; font-weight: 600; margin-left: 4px;">🇬🇧</a>
-			</div>
-		</div>
-	</div>
-	<div class="navbar-menu-wrap">
-		<ul class="navbar-menu">
-			<li>VỀ CHÚNG TÔI ▼</li>
-			<li>CƠ SỞ ▼</li>
-			<li>CHƯƠNG TRÌNH GIÁO DỤC ▼</li>
-			<li>TUYỂN SINH ▼</li>
-			<li>HỌC PHÍ</li>
-			<li>THÀNH TÍCH HỌC SINH</li>
-			<li>GÓC TDSERS ▼</li>
-			<li>ĐỜI SỐNG HỌC ĐƯỜNG ▼</li>
-			<li>LIÊN HỆ</li>
-		</ul>
-	</div>
-</nav>
-
-<!-- Slider -->
-<section style="width: 100%; position: relative; overflow: hidden; margin: 0; padding: 0; height: 600px;">
-	<div class="slider-container" style="position: relative; width: 100%; height: 600px;">
-		<!-- Slide 1 -->
-		<div class="slide active" style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; opacity: 1; transition: opacity 1s ease-in-out;">
-			<div style="width: 100%; height: 600px; background: linear-gradient(135deg, #0a2a6c 0%, #1a4d8c 50%, #2563a8 100%);"></div>
-			<div style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: white; padding: 60px 80px; z-index: 1;">
-				<h2 style="font-size: 2.5rem; font-weight: bold; margin: 0;">CHẮP CÁNH ƯỚC MƠ GIÁO DỤC MỸ</h2>
-				<h1 style="font-size: 3.5rem; color: #ffd600; font-weight: bold; margin: 16px 0 0 0;">HỌC BỔNG DEWEY 2024 - 2025</h1>
-				<p style="font-size: 2.5rem; margin: 16px 0 0 0;"><span style="color: #ffd600; font-weight: bold;">Lên đến 50% học phí</span></p>
-				<div style="background: #00bfff; color: #0a2a6c; border-radius: 20px; padding: 8px 24px; margin: 16px 0 0 0; font-size: 1.2rem; font-weight: 500;">
-					★ Dành cho học sinh <b>Lớp 6 - Lớp 10</b>
-				</div>
-				<p style="margin: 16px 0 0 0; font-size: 1.1rem;">Hạn nộp hồ sơ: <b>21/02/2024</b></p>
-			</div>
-		</div>
-
-		<!-- Slide 2 -->
-		<div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; opacity: 0; transition: opacity 1s ease-in-out;">
-			<div style="width: 100%; height: 600px; background: linear-gradient(135deg, #0d3a7c 0%, #1e5aa0 50%, #2f72b8 100%);"></div>
-			<div style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: white; padding: 60px 80px; z-index: 1;">
-				<h2 style="font-size: 2.5rem; font-weight: bold; margin: 0;">TRƯỜNG HỌC QUỐC TẾ</h2>
-				<h1 style="font-size: 3.5rem; color: #00d2ff; font-weight: bold; margin: 16px 0 0 0;">GIÁO DỤC TIÊN TIẾN</h1>
-				<p style="font-size: 2.5rem; margin: 16px 0 0 0;"><span style="color: #00d2ff; font-weight: bold;">Phát triển toàn diện</span></p>
-				<div style="background: #ffc107; color: #0a2a6c; border-radius: 20px; padding: 8px 24px; margin: 16px 0 0 0; font-size: 1.2rem; font-weight: 500;">
-					★ Chương trình chuẩn quốc tế
-				</div>
-			</div>
-		</div>
-
-		<!-- Slide 3 -->
-		<div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; opacity: 0; transition: opacity 1s ease-in-out;">
-			<div style="width: 100%; height: 600px; background: linear-gradient(135deg, #082558 0%, #143d74 50%, #1f5290 100%);"></div>
-			<div style="position: absolute; top: 0; left: 0; width: 100%; height: 600px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: white; padding: 60px 80px; z-index: 1;">
-				<h2 style="font-size: 2.5rem; font-weight: bold; margin: 0;">MÔI TRƯỜNG HỌC TẬP HIỆN ĐẠI</h2>
-				<h1 style="font-size: 3.5rem; color: #ff5f8f; font-weight: bold; margin: 16px 0 0 0;">CƠ SỞ VẬT CHẤT ĐỈNH CAO</h1>
-				<p style="font-size: 2.5rem; margin: 16px 0 0 0;"><span style="color: #ff5f8f; font-weight: bold;">Trang thiết bị tiên tiến</span></p>
-				<div style="background: #21d6e2; color: #0a2a6c; border-radius: 20px; padding: 8px 24px; margin: 16px 0 0 0; font-size: 1.2rem; font-weight: 500;">
-					★ Campus xanh - sạch - đẹp
-				</div>
-			</div>
-		</div>
-
-		<!-- Progress bars -->
-		<div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10;">
-			<button class="progress-bar active" onclick="currentSlide(0)" style="width: 60px; height: 6px; border: none; background: rgba(255,255,255,0.8); cursor: pointer; transition: all 0.3s; border-radius: 3px; opacity: 1;"></button>
-			<button class="progress-bar" onclick="currentSlide(1)" style="width: 60px; height: 6px; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; border-radius: 3px; opacity: 0.5;"></button>
-			<button class="progress-bar" onclick="currentSlide(2)" style="width: 60px; height: 6px; border: none; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; border-radius: 3px; opacity: 0.5;"></button>
-		</div>
-	</div>
-
-	<script>
-		let currentSlideIndex = 0;
-		const slides = document.querySelectorAll('.slide');
-		const progressBars = document.querySelectorAll('.progress-bar');
-
-		function showSlide(index) {
-			slides.forEach((slide, i) => {
-				if (i === index) {
-					slide.style.opacity = '1';
-					slide.style.zIndex = '1';
-				} else {
-					slide.style.opacity = '0';
-					slide.style.zIndex = '0';
-				}
-			});
-
-			progressBars.forEach((bar, i) => {
-				if (i === index) {
-					bar.style.background = 'rgba(255,255,255,0.8)';
-					bar.style.opacity = '1';
-					bar.classList.add('active');
-				} else {
-					bar.style.background = 'rgba(255,255,255,0.3)';
-					bar.style.opacity = '0.5';
-					bar.classList.remove('active');
-				}
-			});
-		}
-
-		function nextSlide() {
-			currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-			showSlide(currentSlideIndex);
-		}
-
-		function currentSlide(index) {
-			currentSlideIndex = index;
-			showSlide(currentSlideIndex);
-		}
-
-		// Auto slide every 5 seconds
-		setInterval(nextSlide, 5000);
-
-		// Initialize
-		showSlide(0);
-	</script>
-	</div>
-</section>
-
-<!-- Section Giới thiệu -->
-<section class="intro-section">
-	<style>
-		/* Layout container */
-		.intro-section {
-			width: 100%;
-			padding: 80px 0;
-			background: #f9fbff;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.intro-container {
-			max-width: 1400px;
-			width: 100%;
-			padding: 0 60px;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 60px;
-			align-items: center;
-		}
-		.intro-left { display: flex; flex-direction: column; gap: 24px; }
-		.intro-label { font-size: .95rem; font-weight:600; color:#999; letter-spacing:1px; text-transform:uppercase; }
-		/* Star (4 bars) */
-		.intro-decoration-star { position:absolute; top:-36px; right:50%; transform:translateX(50%); width:84px; height:84px; z-index:2; }
-		.intro-decoration-star .bar { position:absolute; left:50%; top:50%; width:60px; height:12px; background:#FFD600; transform-origin:center; border-radius:1px; }
-		.intro-decoration-star .bar.r0 { transform:translate(-50%,-50%) rotate(0deg); }
-		.intro-decoration-star .bar.r45 { transform:translate(-50%,-50%) rotate(45deg); }
-		.intro-decoration-star .bar.r90 { transform:translate(-50%,-50%) rotate(90deg); }
-		.intro-decoration-star .bar.r135 { transform:translate(-50%,-50%) rotate(135deg); }
-		.intro-title {
-			font-size: 2.2rem;
-			font-weight: 800;
-			color: #0a2a6c;
-			line-height: 1.3;
-			margin: 0;
-		}
-		.intro-title span {
-			color: #0a2a6c;
-		}
-		.intro-link {
-			display: inline-flex;
-			align-items: center;
-			color: #00d2ff;
-			font-weight: 600;
-			font-size: 1.05rem;
-			text-decoration: none;
-			margin-top: 8px;
-			transition: color 0.3s;
-		}
-		.intro-link:hover {
-			color: #00bfff;
-		}
-		.intro-badges {
-			display: flex;
-			flex-direction: column;
-			gap: 28px;
-			margin-top: 24px;
-		}
-		.badge-row {
-			display: flex;
-			align-items: center;
-			gap: 20px;
-		}
-		.badge-label {
-			font-size: 0.85rem;
-			font-weight: 600;
-			color: #999;
-			letter-spacing: 0.5px;
-			text-transform: uppercase;
-			min-width: 140px;
-		}
-		.badge-logos {
-			display: flex;
-			gap: 24px;
-			align-items: center;
-		}
-		.badge-logo {
-			height: 50px;
-			width: auto;
-		}
-		.intro-right {
-			position: relative;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.intro-image-wrapper {
-			position: relative;
-			width: 100%;
-			max-width: 600px;
-			aspect-ratio: 4 / 3;
-			background: #e8f0f7;
-			border-radius: 24px;
-		}
-		.intro-image {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			border-radius: 24px;
-			box-shadow: 0 20px 60px rgba(10, 42, 108, 0.15);
-		}
-		.intro-decoration-triangle {
-			position: absolute;
-			bottom: -15px;
-			right: 60px;
-			width: 0;
-			height: 0;
-			border-left: 28px solid transparent;
-			border-right: 28px solid transparent;
-			border-top: 48px solid #3B82F6;
-			z-index: 2;
-		}
-		.intro-decoration-rect {
-			position: absolute;
-			top: 30%;
-			right: -15px;
-			width: 42px;
-			height: 42px;
-			background: #FF6B4A;
-			transform: rotate(45deg);
-			z-index: 2;
-		}
-	</style>
-
-	<div class="intro-container">
-		<div class="intro-left">
-			<p class="intro-label">GIỚI THIỆU</p>
-			<h2 class="intro-title">
-				<span>The Dewey Schools</span> là hệ thống trường học song ngữ tiên phong mang đến nền giáo dục đẳng cấp quốc tế
-			</h2>
-			<a href="#" class="intro-link">Về chúng tôi →</a>
-
-			<div class="intro-badges">
-				<div class="badge-row">
-					<span class="badge-label">THÀNH VIÊN CỦA CIS</span>
-					<div class="badge-logos">
-						<img src="/path/to/cis-logo.png" alt="CIS Member" class="badge-logo" />
-					</div>
-				</div>
-				<div class="badge-row">
-					<span class="badge-label">CHƯƠNG TRÌNH ÁP DỤNG</span>
-					<div class="badge-logos">
-						<img src="/path/to/ap-logo.png" alt="AP" class="badge-logo" />
-					</div>
-				</div>
-				<div class="badge-row">
-					<span class="badge-label">ỨNG VIÊN IB</span>
-					<div class="badge-logos">
-						<img src="/path/to/ib-logo.png" alt="IB Candidate School" class="badge-logo" />
-					</div>
-				</div>
-				<div class="badge-row">
-					<span class="badge-label">ĐỐI TÁC ĐÀO TẠO</span>
-					<div class="badge-logos">
-						<img src="/path/to/warwick-logo.png" alt="The University of Warwick" class="badge-logo" />
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="intro-right">
-			<div class="intro-image-wrapper">
-				<div class="intro-decoration-star">
-					<div class="bar r0"></div>
-					<div class="bar r45"></div>
-					<div class="bar r90"></div>
-					<div class="bar r135"></div>
-				</div>
-				<div class="intro-decoration-rect"></div>
-				<img src="/path/to/students-image.jpg" alt="The Dewey Schools Students" class="intro-image" />
-				<div class="intro-decoration-triangle"></div>
-			</div>
-		</div>
-	</div>
-</section>
+<body>
+  <Navbar />
+  <HeroSlider />
+  <IntroSection />
+  <GioiThieuSection />
+  <InfographicSection />
+  <ThanhTichGridSection />
+  <ThanhTichAltSection />
+  <ProgramCardsSection />
+  <LifeEduSection />
+  <CampusListSection />
+  <EnglishProgramSection />
+  <ExtracurricularSection />
+  <Footer />
+</body>
+</html>

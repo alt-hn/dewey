@@ -1,0 +1,218 @@
+<style>
+  .thanh-tich-grid-section {
+    width: 100%;
+    background: #fff;
+    padding: 80px 0;
+    position: relative;
+  }
+  .thanh-tich-grid-section__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+  }
+  .thanh-tich-grid-section__decoration {
+    width: 32px;
+    height: 32px;
+    background: #FFD600;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(15deg);
+    border-radius: 6px;
+    z-index: 2;
+  }
+  .thanh-tich-grid-section__title {
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #1A1A5C;
+    margin-bottom: 48px;
+    margin-top: 32px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+  .thanh-tich-grid-section__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .thanh-tich-grid-section__card {
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    background: #1A1A5C;
+    color: #FFD600;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+  .thanh-tich-grid-section__card--purple {
+    background: #1A1A5C;
+    color: #FFD600;
+  }
+  .thanh-tich-grid-section__card--img {
+    background: #000;
+    color: #fff;
+  }
+  .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-bgimg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #888 0%, #555 100%);
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 20px;
+  }
+  .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-bgimg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 2;
+  }
+  .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-content {
+    position: relative;
+    z-index: 3;
+  }
+  .thanh-tich-grid-section__card--decor {
+    position: relative;
+  }
+  .thanh-tich-grid-section__card-decor {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 52px;
+    height: 6px;
+    background: #3B82F6;
+    border-radius: 4px;
+    z-index: 2;
+  }
+  .thanh-tich-grid-section__card-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+  .thanh-tich-grid-section__card-desc {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-number {
+    color: #FFD600;
+  }
+  .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-desc {
+    color: #fff;
+  }
+  @media (max-width: 1024px) {
+    .thanh-tich-grid-section {
+      padding: 32px 0;
+    }
+    .thanh-tich-grid-section__container {
+      padding: 0 8px;
+    }
+    .thanh-tich-grid-section__title {
+      font-size: 1.8rem;
+      margin-bottom: 32px;
+    }
+    .thanh-tich-grid-section__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 12px;
+    }
+    .thanh-tich-grid-section__card {
+      min-height: 140px;
+      padding: 16px;
+    }
+    .thanh-tich-grid-section__card-number {
+      font-size: 1.8rem;
+    }
+    .thanh-tich-grid-section__card-desc {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<section class="thanh-tich-grid-section">
+  <div class="thanh-tich-grid-section__container">
+    <div class="thanh-tich-grid-section__decoration"></div>
+    <h2 class="thanh-tich-grid-section__title">
+      Thành tích học sinh nổi bật con số trường ấn tượng
+    </h2>
+    <div class="thanh-tich-grid-section__grid">
+      <!-- Row 1 -->
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple">
+        <div class="thanh-tich-grid-section__card-number">Top 1%</div>
+        <div class="thanh-tich-grid-section__card-desc">Học sinh lọt Top 1% điểm thi SAT cao nhất thế giới</div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">1798</div>
+          <div class="thanh-tich-grid-section__card-desc">Giải thưởng các cuộc thi trong nước và quốc tế</div>
+        </div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple">
+        <div class="thanh-tich-grid-section__card-number">100%</div>
+        <div class="thanh-tich-grid-section__card-desc">100% học sinh đỗ Đại học trong nước, Đại học quốc tế tại Việt Nam và Đại học tại nước ngoài</div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">153 tỷ</div>
+          <div class="thanh-tich-grid-section__card-desc">Học sinh đạt 153 tỷ VNĐ học bổng và hỗ trợ tài chính</div>
+        </div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple thanh-tich-grid-section__card--decor">
+        <div class="thanh-tich-grid-section__card-decor"></div>
+        <div class="thanh-tich-grid-section__card-number">100%</div>
+        <div class="thanh-tich-grid-section__card-desc">Bài thi AP đạt điểm 4/5 - Xuất sắc & 5/5 - Rất xuất sắc</div>
+      </div>
+      
+      <!-- Row 2 -->
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">96%</div>
+          <div class="thanh-tich-grid-section__card-desc">Học sinh đạt học bổng trường quốc tế</div>
+        </div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple">
+        <div class="thanh-tich-grid-section__card-number">45+</div>
+        <div class="thanh-tich-grid-section__card-desc">Chuyên gia giáo dục</div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">30+</div>
+          <div class="thanh-tich-grid-section__card-desc">Quốc tịch</div>
+        </div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--purple">
+        <div class="thanh-tich-grid-section__card-number">4500+</div>
+        <div class="thanh-tich-grid-section__card-desc">Học sinh</div>
+      </div>
+      
+      <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img">
+        <div class="thanh-tich-grid-section__card-bgimg"></div>
+        <div class="thanh-tich-grid-section__card-content">
+          <div class="thanh-tich-grid-section__card-number">145</div>
+          <div class="thanh-tich-grid-section__card-desc">Học sinh đỗ 145 trường đại học trong nước và quốc tế</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
