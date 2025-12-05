@@ -1,889 +1,168 @@
 ---
+const previews = [
+  {
+    id: 'header',
+    title: 'HeaderSection',
+    description: 'Navigation, language switcher, and sticky CTA bar.',
+    src: '/previews/header',
+    height: 520,
+  },
+  {
+    id: 'main',
+    title: 'MainSection',
+    description: 'Full hero and content blocks rendered standalone.',
+    src: '/previews/main',
+    height: 1800,
+  },
+  {
+    id: 'footer',
+    title: 'FooterSection',
+    description: 'Footer, newsletter, and popup markup.',
+    src: '/previews/footer',
+    height: 900,
+  },
+  {
+    id: 'dewey-homepage',
+    title: 'Dewey Homepage',
+    description: 'Complete assembled page (all sections + assets).',
+    src: '/dewey-homepage',
+    height: 1400,
+    featured: true,
+  },
+];
 ---
 
-<html lang="vi">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>The Dewey Schools | Học bổng 2024 - 2025</title>
-		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap");
-			:root {
-				--primary: #0e1d73;
-				--secondary: #0f58c8;
-				--deep: #04114f;
-				--accent: #ffcc29;
-				--pink: #ff5f8f;
-				--aqua: #21d6e2;
-				--mint: #00d2ff;
-				--muted: #5c6b90;
-				--light: #f2f7ff;
-				--bg: #f9fbff;
-				--card: #f5fbff;
-				--radius: 18px;
-			}
-			*,
-			*::before,
-			*::after {
-				box-sizing: border-box;
-			}
-			body {
-				margin: 0;
-				font-family: "Be Vietnam Pro", "Poppins", system-ui, -apple-system, sans-serif;
-				color: #0b183b;
-				background: #fff;
-				line-height: 1.6;
-			}
-			a {
-				color: inherit;
-				text-decoration: none;
-			}
-			img {
-				max-width: 100%;
-				display: block;
-			}
-			.top-bar {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 8px 28px;
-				font-size: 12px;
-				color: #e9efff;
-				background: #081345;
-			}
-			.top-links {
-				display: flex;
-				gap: 14px;
-				align-items: center;
-				flex-wrap: wrap;
-			}
-			.pill {
-				padding: 6px 10px;
-				background: rgba(255, 255, 255, 0.08);
-				border-radius: 12px;
-				border: 1px solid rgba(255, 255, 255, 0.15);
-			}
-			header {
-				position: relative;
-				background: linear-gradient(120deg, #0c1b6d 0%, #0f58c8 45%, #0c1a63 100%);
-				color: #fff;
-				overflow: hidden;
-			}
-			.navbar {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				gap: 20px;
-				max-width: 1240px;
-				margin: 0 auto;
-				padding: 18px 28px;
-			}
-			.brand {
-				display: flex;
-				align-items: center;
-				gap: 12px;
-				font-weight: 800;
-				letter-spacing: 0.3px;
-				font-size: 18px;
-			}
-			.brand-mark {
-				width: 42px;
-				height: 42px;
-				border-radius: 12px;
-				background: var(--accent);
-				display: grid;
-				place-items: center;
-				color: #0b1d6a;
-				font-weight: 800;
-				box-shadow: 0 12px 24px rgba(255, 204, 41, 0.25);
-			}
-			.nav-links {
-				display: flex;
-				align-items: center;
-				gap: 18px;
-				font-weight: 600;
-				font-size: 14px;
-			}
-			.nav-links a {
-				padding: 8px 0;
-				position: relative;
-			}
-			.nav-links a::after {
-				content: "";
-				position: absolute;
-				bottom: -4px;
-				left: 0;
-				right: 0;
-				height: 2px;
-				background: var(--accent);
-				opacity: 0;
-				transform: scaleX(0.6);
-				transition: opacity 150ms ease, transform 150ms ease;
-			}
-			.nav-links a:hover::after {
-				opacity: 1;
-				transform: scaleX(1);
-			}
-			.nav-cta {
-				display: flex;
-				gap: 12px;
-				align-items: center;
-			}
-			.btn {
-				border: 0;
-				border-radius: 14px;
-				font-weight: 700;
-				padding: 11px 16px;
-				cursor: pointer;
-				font-size: 14px;
-				transition: transform 160ms ease, box-shadow 160ms ease;
-			}
-			.btn.primary {
-				background: var(--accent);
-				color: #0c1a63;
-				box-shadow: 0 12px 32px rgba(255, 204, 41, 0.35);
-			}
-			.btn.secondary {
-				background: rgba(255, 255, 255, 0.08);
-				color: #fff;
-				border: 1px solid rgba(255, 255, 255, 0.25);
-			}
-			.btn:hover {
-				transform: translateY(-1px);
-			}
-			.hero {
-				position: relative;
-				max-width: 1240px;
-				margin: 0 auto;
-				padding: 32px 24px 72px;
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				gap: 32px;
-				align-items: center;
-			}
-			.hero::after {
-				content: "";
-				position: absolute;
-				width: 420px;
-				height: 420px;
-				background: radial-gradient(circle, rgba(255, 204, 41, 0.4), transparent 62%);
-				top: -120px;
-				right: -40px;
-				filter: blur(6px);
-				opacity: 0.7;
-			}
-			.hero-text h1 {
-				margin: 10px 0 8px;
-				font-size: clamp(32px, 4vw, 46px);
-				letter-spacing: 0.2px;
-			}
-			.hero-tag {
-				display: inline-flex;
-				align-items: center;
-				gap: 8px;
-				padding: 8px 12px;
-				border-radius: 14px;
-				background: rgba(255, 255, 255, 0.12);
-				border: 1px solid rgba(255, 255, 255, 0.25);
-				font-size: 12px;
-				text-transform: uppercase;
-			}
-			.hero-sub {
-				color: #e6edff;
-				margin: 6px 0 16px;
-				max-width: 560px;
-			}
-			.hero-highlight {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-				gap: 12px;
-				margin: 18px 0 24px;
-			}
-			.hero-card {
-				background: rgba(255, 255, 255, 0.08);
-				border: 1px solid rgba(255, 255, 255, 0.15);
-				border-radius: 14px;
-				padding: 12px 14px;
-				box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
-			}
-			.hero-card strong {
-				display: block;
-				font-size: 20px;
-			}
-			.hero-media {
-				position: relative;
-				padding: 20px;
-				border-radius: 28px;
-				background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-				box-shadow: 0 20px 60px rgba(4, 17, 79, 0.35);
-				overflow: hidden;
-			}
-			.hero-media::before {
-				content: "";
-				position: absolute;
-				width: 180px;
-				height: 180px;
-				background: radial-gradient(circle, rgba(33, 214, 226, 0.3), transparent 60%);
-				top: -40px;
-				left: -30px;
-			}
-			.hero-media::after {
-				content: "";
-				position: absolute;
-				width: 160px;
-				height: 160px;
-				background: radial-gradient(circle, rgba(255, 95, 143, 0.25), transparent 60%);
-				bottom: -30px;
-				right: -20px;
-			}
-			.hero-media img {
-				border-radius: 18px;
-				object-fit: cover;
-				aspect-ratio: 4 / 5;
-			}
-			main {
-				background: #fff;
-			}
-			.section {
-				padding: 70px 20px;
-			}
-			.container {
-				max-width: 1180px;
-				margin: 0 auto;
-			}
-			.section-title {
-				text-align: center;
-				margin-bottom: 26px;
-			}
-			.section-title h2 {
-				margin: 0;
-				font-size: clamp(26px, 3vw, 34px);
-			}
-			.section-title p {
-				color: var(--muted);
-				margin: 6px auto 0;
-				max-width: 760px;
-			}
-			.info-wrap {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-				gap: 18px;
-				align-items: center;
-				position: relative;
-			}
-			.info-card,
-			.photo-card {
-				background: #fff;
-				border-radius: 18px;
-				padding: 20px;
-				border: 1px solid #e9f0ff;
-				box-shadow: 0 20px 60px rgba(13, 33, 110, 0.08);
-			}
-			.photo-card img {
-				border-radius: 14px;
-				aspect-ratio: 4 / 3;
-				object-fit: cover;
-			}
-			.icon-list {
-				display: grid;
-				grid-template-columns: repeat(2, minmax(0, 1fr));
-				gap: 10px;
-				margin: 14px 0;
-				color: var(--muted);
-				font-weight: 600;
-				font-size: 14px;
-			}
-			.stats-bar {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-				gap: 12px;
-				margin-top: 16px;
-			}
-			.stat {
-				border-radius: 14px;
-				border: 1px solid #e4ebff;
-				background: #fff;
-				padding: 12px;
-				text-align: center;
-				box-shadow: 0 12px 30px rgba(13, 33, 110, 0.06);
-			}
-			.stat strong {
-				display: block;
-				font-size: 22px;
-			}
-			.reason-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-				gap: 14px;
-			}
-			.reason-card {
-				background: var(--card);
-				border-radius: 16px;
-				padding: 16px;
-				border: 1px solid #e1eaff;
-				box-shadow: 0 16px 36px rgba(13, 33, 110, 0.05);
-			}
-			.reason-card strong {
-				display: block;
-				font-size: 16px;
-			}
-			.reason-card p {
-				margin: 6px 0 0;
-				color: var(--muted);
-			}
-			.programs {
-				margin-top: 32px;
-				background: linear-gradient(160deg, var(--deep) 0%, var(--primary) 60%, #0a2177 100%);
-				border-radius: 26px;
-				padding: 28px 24px;
-				color: #fff;
-				position: relative;
-				overflow: hidden;
-				box-shadow: 0 30px 80px rgba(4, 17, 79, 0.35);
-			}
-			.programs::after {
-				content: "";
-				position: absolute;
-				width: 420px;
-				height: 420px;
-				background: radial-gradient(circle, rgba(255, 204, 41, 0.32), transparent 65%);
-				top: -140px;
-				right: -80px;
-			}
-			.program-grid {
-				position: relative;
-				z-index: 1;
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-				gap: 14px;
-			}
-			.program-card {
-				background: rgba(255, 255, 255, 0.08);
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				border-radius: 16px;
-				padding: 16px;
-			}
-			.program-card h3 {
-				margin: 0 0 6px;
-				font-size: 18px;
-			}
-			.gallery-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-				gap: 14px;
-				margin-top: 20px;
-			}
-			.gallery-grid img {
-				border-radius: 14px;
-				height: 140px;
-				object-fit: cover;
-				box-shadow: 0 14px 32px rgba(10, 26, 120, 0.14);
-			}
-			.quote-block {
-				margin-top: 32px;
-				background: var(--bg);
-				border-radius: 20px;
-				padding: 18px;
-				border: 1px solid #e5edff;
-				box-shadow: 0 16px 44px rgba(13, 33, 110, 0.06);
-			}
-			.quote-block strong {
-				display: block;
-				font-size: 18px;
-			}
-			.feature-mosaic {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-				gap: 16px;
-				margin-top: 18px;
-			}
-			.feature-card {
-				background: #fff;
-				border-radius: 18px;
-				border: 1px solid #e5ecff;
-				box-shadow: 0 16px 44px rgba(13, 33, 110, 0.07);
-				padding: 16px;
-				display: grid;
-				gap: 10px;
-			}
-			.feature-card img {
-				border-radius: 14px;
-				height: 150px;
-				object-fit: cover;
-			}
-			.news-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-				gap: 14px;
-			}
-			.news-card {
-				background: #fff;
-				border-radius: 16px;
-				border: 1px solid #e6edff;
-				padding: 16px;
-				box-shadow: 0 12px 36px rgba(13, 33, 110, 0.06);
-			}
-			.news-card h3 {
-				margin: 10px 0 6px;
-				font-size: 16px;
-			}
-			.cta-section {
-				background: linear-gradient(140deg, #04114f 0%, #0f58c8 100%);
-				color: #fff;
-				padding: 38px 26px;
-				border-radius: 24px;
-				box-shadow: 0 32px 90px rgba(4, 17, 79, 0.42);
-			}
-			.cta-fields {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-				gap: 12px;
-				margin-top: 14px;
-			}
-			.cta-fields input,
-			.cta-fields select {
-				padding: 12px;
-				border-radius: 12px;
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				background: rgba(255, 255, 255, 0.1);
-				color: #fff;
-				font-size: 14px;
-			}
-			.cta-fields input::placeholder {
-				color: rgba(255, 255, 255, 0.75);
-			}
-			.cta-textarea {
-				margin-top: 12px;
-				width: 100%;
-				min-height: 120px;
-				border-radius: 14px;
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				background: rgba(255, 255, 255, 0.1);
-				color: #fff;
-				padding: 12px;
-				font-family: inherit;
-				font-size: 14px;
-			}
-			.partners {
-				margin-top: 28px;
-				display: flex;
-				flex-wrap: wrap;
-				gap: 10px;
-				align-items: center;
-			}
-			.partner {
-				padding: 10px 12px;
-				border-radius: 12px;
-				background: var(--light);
-				border: 1px solid #e1eaff;
-				font-weight: 700;
-				color: #0a1e70;
-			}
-			.footer {
-				background: #051139;
-				color: #d6e0ff;
-				padding: 50px 20px 28px;
-				margin-top: 68px;
-			}
-			.footer-grid {
-				max-width: 1180px;
-				margin: 0 auto;
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-				gap: 18px;
-			}
-			.footer h4 {
-				margin: 0 0 8px;
-				color: #fff;
-			}
-			.bottom {
-				text-align: center;
-				margin-top: 18px;
-				font-size: 13px;
-				color: #9fb1e4;
-			}
-			.badge {
-				display: inline-flex;
-				align-items: center;
-				gap: 8px;
-				padding: 8px 12px;
-				border-radius: 12px;
-				background: var(--light);
-				color: var(--secondary);
-				font-weight: 600;
-				font-size: 13px;
-			}
-			.shape {
-				position: absolute;
-				border-radius: 50%;
-				opacity: 0.18;
-				pointer-events: none;
-			}
-			@media (max-width: 1024px) {
-				.nav-links {
-					display: none;
-				}
-				.navbar {
-					padding: 16px 18px;
-				}
-				.hero {
-					padding: 26px 18px 60px;
-				}
-			}
-			@media (max-width: 640px) {
-				.top-bar {
-					display: none;
-				}
-				.section {
-					padding: 58px 16px;
-				}
-				.hero {
-					padding-bottom: 48px;
-				}
-				.btn {
-					width: 100%;
-					text-align: center;
-				}
-				.nav-cta {
-					display: none;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<header>
-			<div class="top-bar">
-				<div class="top-links">
-					<span>Hanoi</span>
-					<span class="pill">Admissions: 079 22 88 788</span>
-					<span>Alumni</span>
-					<span>Career</span>
-					<span>360 School Tour</span>
-					<span>IB MYP</span>
-				</div>
-				<div class="top-links">
-					<span>EN</span>
-					<span>|</span>
-					<span>VN</span>
-					<span class="pill">Hotline: 1800 8000</span>
-				</div>
-			</div>
-			<nav class="navbar">
-				<div class="brand">
-					<div class="brand-mark">D</div>
-					The Dewey Schools
-				</div>
-				<div class="nav-links">
-					<a href="#gioi-thieu">Giới thiệu</a>
-					<a href="#ly-do">Lý do</a>
-					<a href="#chuong-trinh">Chương trình</a>
-					<a href="#hoc-sinh">Học sinh</a>
-					<a href="#tin-tuc">Tin tức</a>
-					<a href="#lien-he">Liên hệ</a>
-				</div>
-				<div class="nav-cta">
-					<button class="btn secondary">School Tour</button>
-					<button class="btn primary">Tuyển sinh</button>
-				</div>
-			</nav>
-			<section class="hero">
-				<div class="hero-text">
-					<div class="hero-tag">Học bổng DEWEY 2024 - 2025</div>
-					<h1>Học bổng Mỹ DEWEY 50% học phí</h1>
-					<div class="hero-sub">
-						Dành cho học sinh lớp 9, lớp 10. Học bổng bán phần giá trị lên tới 675 triệu đồng. Đăng ký từ nay tới 17/03/2025.
-					</div>
-					<div class="hero-highlight">
-						<div class="hero-card">
-							<strong>50%</strong>
-							Học phí ưu đãi
-						</div>
-						<div class="hero-card">
-							<strong>IELTS 7.5+</strong>
-							Lộ trình tiếng Anh
-						</div>
-						<div class="hero-card">
-							<strong>IB DP</strong>
-							Chuẩn quốc tế
-						</div>
-					</div>
-					<div style="display:flex;gap:12px;flex-wrap:wrap;">
-						<button class="btn primary">Đăng ký ngay</button>
-						<button class="btn secondary">Tải brochure</button>
-					</div>
-					<div style="margin-top:14px;font-size:13px;color:#dce6ff;">*Ưu đãi dành cho học sinh nhập học kỳ tháng 8/2024</div>
-				</div>
-				<div class="hero-media">
-					<img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=80" alt="Student in graduation gown" />
-				</div>
-			</section>
-		</header>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dewey Components Storybook</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: #f7f8fa;
+      color: #0b1b2a;
+    }
+    a { color: inherit; text-decoration: none; }
+    .layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 24px 56px;
+      display: grid;
+      gap: 24px;
+    }
+    .hero {
+      background: #0b1b2a;
+      color: #f4f6fb;
+      border-radius: 16px;
+      padding: 24px 24px 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      box-shadow: 0 12px 30px rgba(11, 27, 42, 0.18);
+    }
+    .hero h1 { margin: 4px 0 6px; font-size: 24px; letter-spacing: -0.02em; }
+    .hero p { margin: 0; opacity: 0.9; }
+    .hero .eyebrow { text-transform: uppercase; letter-spacing: 0.2em; font-size: 11px; margin: 0; opacity: 0.8; }
+    .hero .primary {
+      background: #00a3ff;
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 10px 24px rgba(0, 163, 255, 0.35);
+      white-space: nowrap;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .panel {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .panel__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid #edf0f4;
+      background: linear-gradient(180deg, #fbfcfe 0%, #f6f8fb 100%);
+    }
+    .panel__head h2 { margin: 0 0 4px; font-size: 18px; }
+    .panel__head p { margin: 0; color: #4b5563; font-size: 14px; }
+    .panel__frame {
+      width: 100%;
+      border: 0;
+      background: #111;
+    }
+    .pill {
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #e7efff;
+      color: #0b1b2a;
+      font-weight: 600;
+      border: 1px solid #d0dcff;
+      font-size: 14px;
+    }
+    .panel__action {
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid #d8dee6;
+      background: #fff;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .featured {
+      grid-column: 1 / -1;
+    }
+    @media (max-width: 720px) {
+      .hero { flex-direction: column; align-items: flex-start; }
+      .hero .primary { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <main class="layout">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Dewey Storybook</p>
+        <h1>Component previews</h1>
+        <p>Browse key sections, open them in isolation, or view the assembled page.</p>
+      </div>
+      <a class="primary" href="/dewey-homepage" target="_blank" rel="noreferrer">Open full page</a>
+    </header>
 
-		<section class="link-list" style="background: var(--bg); padding: 20px;">
-  <div class="container">
-    <h2 style="margin-bottom: 16px; color: var(--primary);">Quick Links</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-      <div style="border-left: 4px solid var(--primary); padding: 12px; background: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <h3 style="color: var(--primary); margin: 0;">About</h3>
-        <a href="/pages/about/" style="color: var(--secondary); text-decoration: none;">Learn more about us</a>
-      </div>
-      <div style="border-left: 4px solid var(--primary); padding: 12px; background: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <h3 style="color: var(--primary); margin: 0;">Giới thiệu</h3>
-        <a href="/pages/gioi-thieu/" style="color: var(--secondary); text-decoration: none;">Explore our introduction</a>
-      </div>
+    <div class="grid">
+      {previews.map(({ id, title, description, src, height, featured }) => (
+        <section id={id} class={`panel${featured ? ' featured' : ''}`}>
+          <div class="panel__head">
+            <div>
+              <h2>{title}</h2>
+              <p>{description}</p>
+            </div>
+            <a class={featured ? 'pill' : 'panel__action'} href={src} target="_blank" rel="noreferrer">
+              Open
+            </a>
+          </div>
+          <iframe class="panel__frame" src={src} title={`${title} preview`} loading="lazy" height={height}></iframe>
+        </section>
+      ))}
     </div>
-  </div>
-</section>
-
-		<main>
-			<section class="section" id="gioi-thieu">
-				<div class="container">
-					<div class="info-wrap">
-						<div class="info-card">
-							<div class="badge">The Dewey Schools là hệ thống trường song ngữ liên cấp</div>
-							<h3 style="margin:14px 0 6px;">Phát triển hạnh phúc, tự tin và hội nhập</h3>
-							<p style="margin:0;color:var(--muted);">Triết lý Humanistic Education, lộ trình học tập cá nhân hóa, chú trọng trải nghiệm và khả năng lãnh đạo.</p>
-							<div class="icon-list">
-								<span>Chương trình CIS</span>
-								<span>Chương trình MOET</span>
-								<span>IB MYP &amp; IB DP</span>
-								<span>Song ngữ Explore</span>
-							</div>
-							<div class="stats-bar">
-								<div class="stat">
-									<strong>2.500+</strong>
-									Học sinh
-								</div>
-								<div class="stat">
-									<strong>130+</strong>
-									Giáo viên quốc tế
-								</div>
-								<div class="stat">
-									<strong>07</strong>
-									Câu lạc bộ STEAM
-								</div>
-								<div class="stat">
-									<strong>90%</strong>
-									Học sinh hạnh phúc
-								</div>
-							</div>
-						</div>
-						<div class="photo-card">
-							<img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1000&q=80" alt="Students collaborating" />
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="section" id="ly-do" style="background:var(--bg);">
-				<div class="container">
-					<div class="section-title">
-						<h2>Tại sao chọn The Dewey Schools?</h2>
-						<p>Hệ thống giáo dục hướng đến hạnh phúc và phát triển toàn diện cho học sinh cùng chuẩn quốc tế CIS.</p>
-					</div>
-					<div class="reason-grid">
-						<div class="reason-card">
-							<strong>Triết lý giáo dục hạnh phúc</strong>
-							<p>Nuôi dưỡng nhân cách, tạo môi trường tôn trọng và thấu cảm.</p>
-						</div>
-						<div class="reason-card">
-							<strong>Chương trình tích hợp</strong>
-							<p>Song ngữ, IB MYP, IB DP cùng hoạt động trải nghiệm phong phú.</p>
-						</div>
-						<div class="reason-card">
-							<strong>Đội ngũ quốc tế</strong>
-							<p>Giáo viên bản ngữ, chuyên gia cố vấn từ Canada &amp; Mỹ.</p>
-						</div>
-						<div class="reason-card">
-							<strong>Cơ sở vật chất hiện đại</strong>
-							<p>Phòng lab, thư viện, studio nghệ thuật, sân thể thao chuẩn quốc tế.</p>
-						</div>
-						<div class="reason-card">
-							<strong>Hoạt động trải nghiệm</strong>
-							<p>CLB khoa học, thể thao, nghệ thuật, dự án cộng đồng.</p>
-						</div>
-						<div class="reason-card">
-							<strong>Hồ sơ du học ấn tượng</strong>
-							<p>Định hướng nghề nghiệp, portfolio, mentoring cá nhân.</p>
-						</div>
-					</div>
-
-					<div class="programs" id="chuong-trinh">
-						<div class="section-title" style="color:#fff;margin-bottom:12px;">
-							<h2>Chương trình học tại Dewey</h2>
-							<p style="color:rgba(255,255,255,0.82);">Hai lộ trình song hành giúp học sinh khám phá và chinh phục mục tiêu học thuật.</p>
-						</div>
-						<div class="program-grid">
-							<div class="program-card">
-								<h3>Trải nghiệm Explore</h3>
-								<p style="margin:4px 0 10px;color:rgba(255,255,255,0.86);">Chương trình song ngữ với nền tảng quốc gia và trải nghiệm sáng tạo.</p>
-								<ul style="margin:0;padding-left:18px;color:rgba(255,255,255,0.8);">
-									<li>8 môn MOET + 6 môn quốc tế</li>
-									<li>Dự án liên môn mỗi kỳ</li>
-									<li>Kỹ năng mềm &amp; tư duy phản biện</li>
-								</ul>
-							</div>
-							<div class="program-card">
-								<h3>Tích hợp Discover</h3>
-								<p style="margin:4px 0 10px;color:rgba(255,255,255,0.86);">Lộ trình học thuật nâng cao, chuẩn bị cho IB DP và đại học quốc tế.</p>
-								<ul style="margin:0;padding-left:18px;color:rgba(255,255,255,0.8);">
-									<li>IB MYP với tiếng Anh chuyên sâu</li>
-									<li>Hồ sơ du học toàn diện</li>
-									<li>CLB nghiên cứu, khoa học, nghệ thuật</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<div class="gallery-grid">
-						<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Classroom" />
-						<img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80" alt="Campus" />
-						<img src="https://images.unsplash.com/photo-1542736667-069246bdbc94?auto=format&fit=crop&w=800&q=80" alt="Library" />
-						<img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80" alt="Playground" />
-					</div>
-				</div>
-			</section>
-
-			<section class="section" id="hoc-sinh">
-				<div class="container">
-					<div class="section-title">
-						<h2>Giáo dục không chỉ là sự chuẩn bị cho cuộc sống, giáo dục chính là cuộc sống!</h2>
-						<p>Các lớp học sáng tạo, hoạt động trải nghiệm, dự án xã hội giúp học sinh Dewey phát triển toàn diện.</p>
-					</div>
-					<div class="feature-mosaic">
-						<div class="feature-card">
-							<img src="https://images.unsplash.com/photo-1509099836639-18ba02e2e6d0?auto=format&fit=crop&w=800&q=80" alt="Lớp học sáng tạo" />
-							<strong>Lớp học sáng tạo</strong>
-							<p style="margin:0;color:var(--muted);">Không gian mở, học qua dự án, giáo viên đồng hành cá nhân hóa.</p>
-						</div>
-						<div class="feature-card">
-							<img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=800&q=80" alt="Nghệ thuật STEAM" />
-							<strong>Nghệ thuật &amp; STEAM</strong>
-							<p style="margin:0;color:var(--muted);">Xưởng nghệ thuật, âm nhạc, robotics và thí nghiệm khoa học.</p>
-						</div>
-						<div class="feature-card">
-							<img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=800&q=80" alt="Hoạt động ngoài trời" />
-							<strong>Hoạt động ngoài trời</strong>
-							<p style="margin:0;color:var(--muted);">Thể thao, thiện nguyện cộng đồng, dự án môi trường xanh.</p>
-						</div>
-					</div>
-					<div class="feature-mosaic" style="margin-top:16px;">
-						<div class="feature-card">
-							<img src="https://images.unsplash.com/photo-1542736667-069246bdbc94?auto=format&fit=crop&w=800&q=80" alt="Dự án cộng đồng" />
-							<strong>Dự án cộng đồng</strong>
-							<p style="margin:0;color:var(--muted);">Học sinh xây dựng dự án phục vụ xã hội, nuôi dưỡng trách nhiệm.</p>
-						</div>
-						<div class="feature-card">
-							<img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80" alt="Đọc và nghiên cứu" />
-							<strong>Thư viện mở</strong>
-							<p style="margin:0;color:var(--muted);">Không gian đọc và nghiên cứu, hỗ trợ học tập suốt đời.</p>
-						</div>
-						<div class="feature-card">
-							<img src="https://images.unsplash.com/photo-1558021211-6d1403321394?auto=format&fit=crop&w=800&q=80" alt="Workshop kỹ năng" />
-							<strong>Workshop kỹ năng</strong>
-							<p style="margin:0;color:var(--muted);">Phát triển năng lực lãnh đạo, kỹ năng thuyết trình và giải quyết vấn đề.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="section" id="tin-tuc" style="background:var(--bg);">
-				<div class="container">
-					<div class="section-title">
-						<h2>Tin tức &amp; hoạt động</h2>
-						<p>Cập nhật mới nhất về sự kiện, học bổng, và câu chuyện thành công từ học sinh Dewey.</p>
-					</div>
-					<div class="news-grid">
-						<div class="news-card">
-							<div class="badge" style="background:rgba(15,88,200,0.12);">Học bổng</div>
-							<h3>Học bổng Dewey Tây Hà 25.000 điểm IELTS</h3>
-							<p style="margin:0;color:var(--muted);">Cơ hội nhận ưu đãi học phí cùng lộ trình IELTS chuyên biệt.</p>
-						</div>
-						<div class="news-card">
-							<div class="badge" style="background:rgba(255,95,143,0.14);color:#d61b59;">Câu chuyện</div>
-							<h3>Học sinh Dewey vào Top đại học Mỹ</h3>
-							<p style="margin:0;color:var(--muted);">Hồ sơ ấn tượng với IB DP, dự án xã hội và giải thưởng STEAM.</p>
-						</div>
-						<div class="news-card">
-							<div class="badge" style="background:rgba(33,214,226,0.14);color:#0a9aa6;">Sự kiện</div>
-							<h3>Ngày hội trải nghiệm Discover Day</h3>
-							<p style="margin:0;color:var(--muted);">Tham quan campus, gặp gỡ giáo viên quốc tế, thử lớp học STEAM.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="section" id="lien-he" style="padding-top:30px;">
-				<div class="container">
-					<div class="cta-section">
-						<div class="section-title" style="text-align:left;margin-bottom:10px;">
-							<h2 style="margin:0;">Bố mẹ cần The Dewey Schools tư vấn thêm?</h2>
-							<p style="margin:6px 0 0;color:rgba(255,255,255,0.82);">Đăng ký thông tin, chúng tôi sẽ liên hệ trong vòng 24h.</p>
-						</div>
-						<div class="cta-fields">
-							<input placeholder="Họ tên phụ huynh" />
-							<input placeholder="Email" />
-							<input placeholder="Số điện thoại" />
-							<select>
-								<option>Độ tuổi của con</option>
-								<option>Mầm non</option>
-								<option>Tiểu học</option>
-								<option>Trung học</option>
-							</select>
-							<select>
-								<option>Cơ sở quan tâm</option>
-								<option>Tây Hồ</option>
-								<option>Cầu Giấy</option>
-								<option>Hà Đông</option>
-							</select>
-						</div>
-						<textarea class="cta-textarea" placeholder="Ghi chú thêm"></textarea>
-						<div style="display:flex;justify-content:flex-end;margin-top:10px;">
-							<button class="btn primary">Gửi đăng ký</button>
-						</div>
-					</div>
-
-					<div class="partners">
-						<span class="partner">CIS</span>
-						<span class="partner">IB</span>
-						<span class="partner">MOET</span>
-						<span class="partner">MAP</span>
-						<span class="partner">BBT</span>
-						<span class="partner">IPP</span>
-					</div>
-				</div>
-			</section>
-		</main>
-
-		<footer class="footer">
-			<div class="footer-grid">
-				<div>
-					<div class="brand" style="margin-bottom:10px;">
-						<div class="brand-mark">D</div>
-						The Dewey Schools
-					</div>
-					<p style="margin:0;color:rgba(214,224,255,0.85);">Hệ thống trường song ngữ với triết lý giáo dục hạnh phúc. Kết nối cộng đồng, phát triển bền vững.</p>
-				</div>
-				<div>
-					<h4>Liên hệ</h4>
-					<p style="margin:0;color:rgba(214,224,255,0.85);">Hotline: 079 22 88 788<br />Email: admissions@dewey.edu.vn<br />Địa chỉ: Tây Hồ, Hà Nội</p>
-				</div>
-				<div>
-					<h4>Đối tác giáo dục</h4>
-					<div class="partners" style="margin-top:8px;">
-						<span class="partner" style="background:rgba(255,255,255,0.08);color:#fff;border:0;">CIS</span>
-						<span class="partner" style="background:rgba(255,255,255,0.08);color:#fff;border:0;">IB</span>
-						<span class="partner" style="background:rgba(255,255,255,0.08);color:#fff;border:0;">MOET</span>
-					</div>
-				</div>
-				<div>
-					<h4>Kết nối</h4>
-					<p style="margin:0;color:rgba(214,224,255,0.85);">Facebook · YouTube · Instagram<br />© 2024 The Dewey Schools</p>
-				</div>
-			</div>
-			<div class="bottom">Bản quyền thuộc The Dewey Schools</div>
-		</footer>
-	</body>
+  </main>
+</body>
 </html>
