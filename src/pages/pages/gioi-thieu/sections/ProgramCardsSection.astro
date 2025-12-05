@@ -1,0 +1,378 @@
+<style>
+  .program-cards-section__arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    width: 48px;
+    height: 48px;
+    background: #FFD600;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  .program-cards-section__arrow-btn--left {
+    left: 5px;
+  }
+  .program-cards-section__arrow-btn--right {
+    right: 5px;
+  }
+
+  .program-cards-section {
+    width: 100%;
+    position: relative;
+    padding: 80px 0 100px;
+    overflow: hidden;
+    background: transparent;
+  }
+  .program-cards-section__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse 120% 80% at 0% 100%, #1976D2 0%, #1A1A5C 70%);
+    z-index: 1;
+  }
+
+    .program-cards-section__circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.35;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .program-cards-section__circle--blue {
+      background: #1976D2;
+    }
+    .program-cards-section__circle--yellow {
+      background: #FFD600;
+      opacity: 0.22;
+    }
+    .program-cards-section__circle--purple {
+      background: #7B1FA2;
+      opacity: 0.18;
+    }
+  .program-cards-section__container {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    padding: 0 0px 0 200px;
+  }
+  .program-cards-section__label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .program-cards-section__slider-wrapper {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .program-cards-section__gradient-overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 40px;
+    width: 180px;
+    background: linear-gradient(to left, rgba(26, 26, 92, 0.85) 0%, rgba(26, 26, 92, 0.4) 60%, transparent 100%);
+    z-index: 10;
+    pointer-events: none;
+  }
+  .program-cards-section__slider {
+    display: flex;
+    gap: 24px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 32px 40px 0;
+    cursor: grab;
+  }
+  .program-cards-section__slider:active {
+    cursor: grabbing;
+  }
+  .program-cards-section__slider::-webkit-scrollbar {
+    display: none;
+  }
+  .program-cards-section__card {
+    background: #fff;
+    border-radius: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 48px;
+    height: 566px;
+    width: 954px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+  }
+  .program-cards-section__card--gradient {
+    background: linear-gradient(90deg, #f3f4fa 0%, #e3e6f5 60%, #d1d5e7 100%);
+  }
+  .program-cards-section__dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .program-cards-section__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .program-cards-section__dot.active {
+    background: #fff;
+    width: 32px;
+    border-radius: 5px;
+  }
+  .program-cards-section__card-content {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    z-index: 2;
+  }
+  .program-cards-section__card-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1A1A5C;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .program-cards-section__card-table {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .program-cards-section__table-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+  .program-cards-section__table-label {
+    color: #666;
+    font-weight: 500;
+  }
+  .program-cards-section__table-value {
+    font-weight: 700;
+    color: #1A1A5C;
+    text-align: right;
+  }
+  .program-cards-section__card-arrow {
+    margin-top: 32px;
+  }
+  .program-cards-section__arrow-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #FFD600;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .program-cards-section__card-imgwrap {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin-left: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .program-cards-section__img-bg {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #1976D2;
+    border-radius: 50%;
+    left: 20px;
+    top: 20px;
+    z-index: 1;
+  }
+  .program-cards-section__img-placeholder {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+    z-index: 2;
+    object-fit: cover;
+    box-shadow: 0 8px 32px rgba(10,42,108,0.10);
+  }
+  @media (max-width: 1024px) {
+    .program-cards-section {
+      padding: 32px 0 80px;
+    }
+    .program-cards-section__container {
+      padding: 0 16px;
+    }
+    .program-cards-section__slider-wrapper {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+    .program-cards-section__gradient-overlay {
+      width: 100px;
+    }
+    .program-cards-section__slider {
+      gap: 16px;
+      padding: 0 16px 40px 16px;
+    }
+    .program-cards-section__card {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 32px;
+      height: auto;
+      min-height: 420px;
+      width: 85vw;
+    }
+    .program-cards-section__card-imgwrap {
+      margin-left: 0;
+      margin-top: 24px;
+      width: 160px;
+      height: 160px;
+    }
+    .program-cards-section__img-bg,
+    .program-cards-section__img-placeholder {
+      width: 140px;
+      height: 140px;
+    }
+    .program-cards-section__card-title {
+      font-size: 1.6rem;
+    }
+    .program-cards-section__table-row {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.program-cards-section__slider') as HTMLElement;
+    const dots = document.querySelectorAll('.program-cards-section__dot');
+    
+    if (!slider || !dots.length) return;
+
+    // Update active dot on scroll
+    slider.addEventListener('scroll', () => {
+      const scrollLeft = slider.scrollLeft;
+      const card = slider.querySelector('.program-cards-section__card') as HTMLElement;
+      const cardWidth = card?.offsetWidth || 0;
+      const gap = 24;
+      const activeIndex = Math.round(scrollLeft / (cardWidth + gap));
+      
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIndex);
+      });
+    });
+
+    // Click dots to scroll
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        const card = slider.querySelector('.program-cards-section__card') as HTMLElement;
+        const cardWidth = card?.offsetWidth || 0;
+        const gap = 24;
+        slider.scrollTo({
+          left: index * (cardWidth + gap),
+          behavior: 'smooth'
+        });
+      });
+    });
+  });
+</script>
+
+<section class="program-cards-section">
+  <div class="program-cards-section__bg"></div>
+  <div class="program-cards-section__circle program-cards-section__circle--blue" style="width:220px;height:220px;left:60px;top:120px;"></div>
+  <div class="program-cards-section__circle program-cards-section__circle--yellow" style="width:120px;height:120px;right:120px;top:80px;"></div>
+  <div class="program-cards-section__circle program-cards-section__circle--purple" style="width:180px;height:180px;left:50%;top:340px;"></div>
+  <div class="program-cards-section__container">
+    <div class="program-cards-section__label">CHƯƠNG TRÌNH HỌC</div>
+    <div class="program-cards-section__slider-wrapper">
+      <div class="program-cards-section__gradient-overlay"></div>
+      <div class="program-cards-section__slider">
+        <!-- Card 1: Explore -->
+        <div class="program-cards-section__card program-cards-section__card--white">
+          <div class="program-cards-section__card-content">
+            <h3 class="program-cards-section__card-title">Chương trình<br>Tích hợp Explore</h3>
+            <div class="program-cards-section__card-table">
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Cấp học</span>
+                <span class="program-cards-section__table-value">Lớp 1 - 12</span>
+              </div>
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Tỷ lệ ngôn ngữ giảng dạy</span>
+                <span class="program-cards-section__table-value">35% tiếng Anh - 65% tiếng Việt</span>
+              </div>
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Mục tiêu đào tạo</span>
+                <span class="program-cards-section__table-value">Bằng tốt nghiệp THPT Việt Nam</span>
+              </div>
+            </div>
+            <div class="program-cards-section__card-arrow">
+              <span class="program-cards-section__arrow-icon">←</span>
+            </div>
+          </div>
+          <div class="program-cards-section__card-imgwrap">
+            <div class="program-cards-section__img-bg"></div>
+            <div class="program-cards-section__img-placeholder"></div>
+          </div>
+        </div>
+        
+        <!-- Card 2: Discover -->
+        <div class="program-cards-section__card program-cards-section__card--gradient">
+          <div class="program-cards-section__card-content">
+            <h3 class="program-cards-section__card-title">Chương trình<br>Tích hợp Discover</h3>
+            <div class="program-cards-section__card-table">
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Cấp học</span>
+                <span class="program-cards-section__table-value">Lớp 1 - 12</span>
+              </div>
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Tỷ lệ ngôn ngữ giảng dạy</span>
+                <span class="program-cards-section__table-value">45% tiếng Anh - 55% tiếng Việt</span>
+              </div>
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Mục tiêu đào tạo</span>
+                <span class="program-cards-section__table-value">Bằng tốt nghiệp THPT Việt Nam</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="program-cards-section__dots">
+        <div class="program-cards-section__dot active"></div>
+        <div class="program-cards-section__dot"></div>
+      </div>
+    </div>
+  </div>
+</section>

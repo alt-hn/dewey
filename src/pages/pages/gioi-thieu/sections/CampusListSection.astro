@@ -1,0 +1,131 @@
+<style>
+  .campus-list-section {
+    width: 100%;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+  }
+  .campus-list-section__container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .campus-list-section__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    justify-items: stretch;
+    align-items: stretch;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .campus-list-section__card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 260px;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    text-decoration: none;
+    transition: box-shadow 0.2s;
+    background: #ddd;
+  }
+  .campus-list-section__card:hover {
+    box-shadow: 0 8px 32px rgba(10,42,108,0.15);
+  }
+  .campus-list-section__card-bgimg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+    object-fit: cover;
+    z-index: 1;
+    opacity: 1;
+  }
+  .campus-list-section__card-content {
+    position: relative;
+    z-index: 2;
+    padding: 32px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(26,26,92,0.45) 80%, rgba(26,26,92,0.0) 100%);
+    border-radius: 0 0 32px 32px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .campus-list-section__card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .campus-list-section__card-arrow {
+    font-size: 1.2em;
+    color: #fff;
+    margin-left: 8px;
+    font-weight: 700;
+    transition: margin-left 0.2s;
+  }
+  .campus-list-section__card:hover .campus-list-section__card-arrow {
+    margin-left: 16px;
+  }
+  @media (max-width: 1024px) {
+    .campus-list-section__container {
+      padding: 0 8px;
+    }
+    .campus-list-section__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .campus-list-section__card {
+      min-height: 160px;
+      border-radius: 20px;
+    }
+    .campus-list-section__card-content {
+      padding: 16px;
+      border-radius: 0 0 20px 20px;
+    }
+    .campus-list-section__card-title {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<section class="campus-list-section">
+  <div class="campus-list-section__container">
+    <div class="campus-list-section__grid">
+      <!-- Card 1 -->
+      <a href="#" class="campus-list-section__card">
+        <div class="campus-list-section__card-bgimg"></div>
+        <div class="campus-list-section__card-content">
+          <span class="campus-list-section__card-title">Cơ sở Cầu Giấy <span class="campus-list-section__card-arrow">&gt;</span></span>
+        </div>
+      </a>
+      <!-- Card 2 -->
+      <a href="#" class="campus-list-section__card">
+        <div class="campus-list-section__card-bgimg"></div>
+        <div class="campus-list-section__card-content">
+          <span class="campus-list-section__card-title">Cơ sở Hải Phòng <span class="campus-list-section__card-arrow">&gt;</span></span>
+        </div>
+      </a>
+      <!-- Card 3 -->
+      <a href="#" class="campus-list-section__card">
+        <div class="campus-list-section__card-bgimg"></div>
+        <div class="campus-list-section__card-content">
+          <span class="campus-list-section__card-title">Cơ sở Tây Hồ Tây <span class="campus-list-section__card-arrow">&gt;</span></span>
+        </div>
+      </a>
+      <!-- Card 4 -->
+      <a href="#" class="campus-list-section__card">
+        <div class="campus-list-section__card-bgimg"></div>
+        <div class="campus-list-section__card-content">
+          <span class="campus-list-section__card-title">Cơ sở Ocean Park <span class="campus-list-section__card-arrow">&gt;</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

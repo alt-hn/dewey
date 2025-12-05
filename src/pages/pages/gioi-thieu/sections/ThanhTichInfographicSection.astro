@@ -1,0 +1,372 @@
+---
+import frame565 from '../images/Frame 1261155565.png';
+import frame568 from '../images/Frame 1261155568.png';
+import frame573 from '../images/Frame 1261155573.png';
+import frame575 from '../images/Frame 1261155575.png';
+import frame583 from '../images/Frame 1261155583.png';
+import frame596 from '../images/Frame 1261155596.png';
+import frame622 from '../images/Frame 1261155622.png';
+import frameCopy from '../images/FrameCopy.png';
+
+const stats = [
+  { title: '145', desc: 'Học sinh đỗ 145 trường đại học trong nước & quốc tế', image: null, icon: null },
+  
+  { title: '', desc: '', image: frameCopy, icon: null },
+  { title: '30+', desc: 'Quốc tịch từ khắp nơi trên khắp thế giới', image: null, icon: null },
+  { title: '153 tỷ', desc: 'Tổng học bổng & hỗ trợ tài chính học sinh đạt được', image: null, icon: null },
+  { title: 'Top 1%', desc: 'Học sinh lọt Top 1% điểm SAT cao nhất thế giới', image: null, icon: null },
+  { title: '96%', desc: 'Học sinh đạt học bổng trường quốc tế', image: null, icon: null },
+  { title: '45+', desc: 'Chuyên gia giáo dục', image: null, icon: null },
+  { title: '', desc: '', image: frame568, icon: null },{ title: '1798', desc: 'Giải thưởng các cuộc thi trong nước và quốc tế', image: null, icon: null },
+  { title: '100%', desc: 'Bài thi AP đánh giá kiến thức kỹ năng đạt điểm 4/5 - Xuất sắc & 5/5 - Rất xuất sắc', image: null, icon: null },
+  { title: '100%', desc: '100% học sinh đỗ Đại học trong nước, Đại học quốc tế tại Việt Nam và Đại học tại nước ngoài', image: null, icon: null },
+  { title: '4500+', desc: 'Học sinh', image: null, icon: null },
+  
+];
+---
+
+<section class="thanh-tich-infographic">
+  <div class="thanh-tich-infographic__container">
+     <div class="thanh-tich-infographic__header">
+      <h2 class="thanh-tich-infographic__title">Những con số ấn tượng</h2>
+    </div>
+
+    <div class="thanh-tich-infographic__panel">
+      <div class="thanh-tich-infographic__panel-grid">
+        <div
+          class="thanh-tich-infographic__box box--a"
+          style={stats[0].image ? `background-image: url("${encodeURI(((stats[0].image as any)?.src || stats[0].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[0].icon && <img src={(stats[0].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[0].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[0].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--b"
+          style={stats[1].image ? `background-image: url("${encodeURI(((stats[1].image as any)?.src || stats[1].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[1].icon && <img src={(stats[1].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[1].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[1].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--c"
+          style={stats[2].image ? `background-image: url("${encodeURI(((stats[2].image as any)?.src || stats[2].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[2].icon && <img src={(stats[2].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[2].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[2].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--d"
+          style={stats[3].image ? `background-image: url("${encodeURI(((stats[3].image as any)?.src || stats[3].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[3].icon && <img src={(stats[3].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[3].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[3].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--e"
+          style={stats[4].image ? `background-image: url("${encodeURI(((stats[4].image as any)?.src || stats[4].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[4].icon && <img src={(stats[4].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[4].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[4].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--f"
+          style={stats[5].image ? `background-image: url("${encodeURI(((stats[5].image as any)?.src || stats[5].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[5].icon && <img src={(stats[5].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[5].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[5].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--g"
+          style={stats[6].image ? `background-image: url("${encodeURI(((stats[6].image as any)?.src || stats[6].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[6].icon && <img src={(stats[6].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[6].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[6].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--h"
+          style={stats[7].image ? `background-image: url("${encodeURI(((stats[7].image as any)?.src || stats[7].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[7].icon && <img src={(stats[7].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[7].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[7].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--i"
+          style={stats[8].image ? `background-image: url("${encodeURI(((stats[8].image as any)?.src || stats[8].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[8].icon && <img src={(stats[8].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[8].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[8].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--k"
+          style={stats[9].image ? `background-image: url("${encodeURI(((stats[9].image as any)?.src || stats[9].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[9].icon && <img src={(stats[9].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[9].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[9].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--l"
+          style={stats[10].image ? `background-image: url("${encodeURI(((stats[10].image as any)?.src || stats[10].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[10].icon && <img src={(stats[10].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[10].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[10].desc}</div>
+          </div>
+        </div>
+
+        <div
+          class="thanh-tich-infographic__box box--m"
+          style={stats[11].image ? `background-image: url("${encodeURI(((stats[11].image as any)?.src || stats[11].image))}"); background-size: cover; background-position: center;` : ''}
+        >
+          {stats[11].icon && <img src={(stats[11].icon as any)?.src} alt="" class="thanh-tich-infographic__box-img" />}
+          <div class="thanh-tich-infographic__box-content">
+            <div class="thanh-tich-infographic__small-stat">{stats[11].title}</div>
+            <div class="thanh-tich-infographic__small-desc">{stats[11].desc}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.thanh-tich-infographic {
+  padding: 80px 20px;
+  background: rgba(26, 26, 77, 1);
+  position: relative;
+}
+
+
+/* Card hover and subtle motion to make layout more lively */
+.thanh-tich-infographic__box { transition: transform 220ms ease, box-shadow 220ms ease; }
+.thanh-tich-infographic__box:hover { transform: translateY(-8px); box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
+
+.thanh-tich-infographic__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.thanh-tich-infographic__header {
+  margin: 0 0 18px 0;
+  padding: 18px 0 0 0;
+  z-index: 5;
+  border-bottom: 2px solid rgba(255,255,255,00.5);
+}
+
+.thanh-tich-infographic__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Panel + Grid */
+.thanh-tich-infographic__panel {
+  /*background: linear-gradient(180deg, rgba(24,26,63,1) 0%, rgba(20,22,54,1) 100%);*/
+  /*border-radius: 14px;*/
+  /*border: 1px solid rgba(255,214,0,0.06);*/
+  /*box-shadow: 0 10px 40px rgba(8,10,30,0.6) inset;*/
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  /* Make panel height equal to 9/16 of its own width */
+  padding-top: calc(100% * 9 / 16);
+  overflow: hidden;
+}
+
+.thanh-tich-infographic__panel-grid {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 0px;
+  align-items: stretch;
+}
+
+.thanh-tich-infographic__box {
+  border-radius: 1px;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 18px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 140px;
+}
+
+.thanh-tich-infographic__box-img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display:block; }
+.thanh-tich-infographic__hero-img { width: 100%; height: 240px; object-fit: cover; border-radius: 6px; display:block; }
+
+.thanh-tich-infographic__box-content { position: relative; z-index: 3; }
+.thanh-tich-infographic__small-stat { font-weight: 800; color: rgb(255,214,0); font-size: 36px; }
+.thanh-tich-infographic__small-desc { font-size: 13px; opacity: 0.95; margin-top: 6px; }
+.thanh-tich-infographic__badge { background: rgba(255,214,0,0.06); color: rgb(255,214,0); padding: 10px 14px; display:inline-block; border-radius: 999px; font-weight:800; }
+
+.thanh-tich-infographic__big-title { font-size: 48px; font-weight:900; color: rgb(255,214,0); text-align:center; line-height:1; }
+
+/* Grid placements (used by markup) - force all boxes to last cell (24/12) */
+.box--a { grid-column: 1 / 12; grid-row: 1 / 4; }
+.box--b { grid-column: 12 / 20; grid-row: 1 / 6; }
+.box--c { grid-column: 20 / 25; grid-row: 1 / 6; }
+.box--d { grid-column: 1 / 5; grid-row: 4 / 10; }
+.box--e { grid-column: 5 / 12; grid-row: 4 / 6; }
+.box--f { grid-column: 20 / 25; grid-row: 6 / 10; }
+.box--g { grid-column: 1 / 8; grid-row: 10 / 12; }
+.box--h { grid-column: 8 / 15; grid-row: 10 / 13; }
+.box--i { grid-column: 15 / 25; grid-row: 10 / 13; }
+.box--k { grid-column: 5 / 12; grid-row: 6 / 10; }
+.box--l { grid-column: 12 / 20; grid-row: 6 / 10; }
+.box--m { grid-column: 1 / 8; grid-row: 12 / 13; }
+
+
+/* Khu vực sửa vị trí stat, desc */
+.box--a .thanh-tich-infographic__box-content
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.box--a .thanh-tich-infographic__small-desc,
+.box--g .thanh-tich-infographic__small-desc,
+.box--m .thanh-tich-infographic__small-desc
+{ order: 1; text-align: right; }
+.box--a .thanh-tich-infographic__small-stat,
+.box--m .thanh-tich-infographic__small-stat,
+.box--g .thanh-tich-infographic__small-stat
+{ order: 2; text-align: right; }
+
+.box--k .thanh-tich-infographic__box-content,
+.box--g .thanh-tich-infographic__box-content,
+.box--m .thanh-tich-infographic__box-content
+{
+  align-items: center;
+  width: 100%;
+}
+.box--k .thanh-tich-infographic__small-desc
+{ order: 1; text-align: right; }
+.box--k .thanh-tich-infographic__small-stat
+{ order: 2; text-align: right; }
+
+/* Khu vực xóa viền*/
+.box--a{
+  border-top: 0px;
+  border-left: 0px;
+}
+.box--g,
+.box--m{
+  border-bottom: 0px;
+  border-left: 0px;
+}
+.box--d
+{
+  border-top: 0px;
+  border-left: 0px;
+}
+.box--c
+{
+  border-top: 0px;
+  border-right: 0px;
+}
+.box--f,
+.box--i
+{
+  border-right: 0px;
+}
+.box--i
+{
+  border-bottom: 0px;
+}
+/* Khu vực sửa font */
+.box--a .thanh-tich-infographic__small-stat{
+    font-size: 60px;
+}
+.box--a .thanh-tich-infographic__small-desc{
+    font-size: 18px;
+}
+.box--k .thanh-tich-infographic__small-stat{
+    font-size: 60px;
+}
+.box--k .thanh-tich-infographic__small-desc{
+    font-size: 18px;
+}
+.box--l .thanh-tich-infographic__small-stat{
+    font-size: 60px;
+}
+.box--l .thanh-tich-infographic__small-desc{
+    font-size: 18px;
+}
+
+
+/* Responsive: combine adjustments into a single block */
+@media (max-width: 1024px) {
+  .thanh-tich-infographic { padding: 60px 16px; }
+  .thanh-tich-infographic__container { height: auto; }
+  .thanh-tich-infographic__panel { padding-top: 0; padding: 28px; position: relative; }
+  .thanh-tich-infographic__panel-grid { position: static; gap: 18px; grid-template-columns: 1fr; grid-template-rows: auto; }
+  .box--e { grid-column: 1; }
+  .thanh-tich-infographic__big-title { font-size: 36px; }
+  .thanh-tich-infographic__small-stat { font-size: 28px; }
+  .thanh-tich-infographic__hero-img { height: 200px; }
+  .thanh-tich-infographic__box { min-height: auto; padding: 14px; }
+  .thanh-tich-infographic__side { position: static; transform: none; margin: 12px 0 0 0; align-items: center; text-align: center; padding: 12px 14px; }
+  .thanh-tich-infographic__side .side__title, .thanh-tich-infographic__side .side__subtitle { text-align: center; }
+  /* On small screens stack desc above stat to keep readability */
+  .box--a .thanh-tich-infographic__box-content{ flex-direction: column; align-items: flex-start; gap:6px; }
+  .box--a .thanh-tich-infographic__small-stat{ text-align: left; }
+}
+</style>

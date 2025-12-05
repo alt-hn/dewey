@@ -1,0 +1,231 @@
+<style>
+  .extracurricular-section {
+    width: 100%;
+    background: #fff;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .extracurricular-section__container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .extracurricular-section__decoration {
+    width: 0;
+    height: 0;
+    border-left: 32px solid transparent;
+    border-right: 32px solid transparent;
+    border-bottom: 32px solid #FF6B4A;
+    margin: 0 auto 16px auto;
+    display: block;
+  }
+  .extracurricular-section__title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #1A1A5C;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .extracurricular-section__subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+    margin-bottom: 48px;
+    line-height: 1.6;
+    max-width: 900px;
+  }
+  .extracurricular-section__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .extracurricular-section__card {
+    position: relative;
+    background: #ddd;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    min-height: 220px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    transition: box-shadow 0.2s;
+  }
+  .extracurricular-section__card:hover {
+    box-shadow: 0 8px 32px rgba(10,42,108,0.15);
+  }
+  .extracurricular-section__card-bgimg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+    object-fit: cover;
+    z-index: 1;
+    opacity: 1;
+  }
+  .extracurricular-section__card-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 32px;
+    background: linear-gradient(0deg, rgba(26,26,92,0.45) 80%, rgba(26,26,92,0.0) 100%);
+    border-radius: 0 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  .extracurricular-section__card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  .extracurricular-section__card-desc {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+    opacity: 0.85;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  .extracurricular-section__card-btn {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFD600;
+    text-decoration: none;
+    margin-top: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+  }
+  .extracurricular-section__card-btn:hover {
+    color: #ffb800;
+  }
+  .extracurricular-section__card-arrow {
+    font-size: 1.1em;
+    margin-left: 2px;
+    font-weight: 700;
+    transition: margin-left 0.2s;
+  }
+  .extracurricular-section__card-btn:hover .extracurricular-section__card-arrow {
+    margin-left: 8px;
+  }
+  @media (max-width: 1024px) {
+    .extracurricular-section {
+      padding: 48px 0;
+    }
+    .extracurricular-section__container {
+      padding: 0 8px;
+    }
+    .extracurricular-section__title {
+      font-size: 1.5rem;
+    }
+    .extracurricular-section__subtitle {
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+    .extracurricular-section__grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(7, 1fr);
+      gap: 16px;
+    }
+    .extracurricular-section__card {
+      min-height: 140px;
+      border-radius: 16px;
+    }
+    .extracurricular-section__card-content {
+      padding: 16px;
+      border-radius: 0 0 16px 16px;
+    }
+    .extracurricular-section__card-title {
+      font-size: 1rem;
+    }
+    .extracurricular-section__card-desc {
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+<section class="extracurricular-section">
+  <div class="extracurricular-section__container">
+    <div class="extracurricular-section__decoration"></div>
+    <h2 class="extracurricular-section__title">
+      Chương trình ngoại khoá
+    </h2>
+    <div class="extracurricular-section__subtitle">
+      Chương trình Ngoại khoá tại <b>Dewey</b> giúp học sinh phát triển bản lĩnh, nuôi dưỡng đam mê, mở rộng tư duy và trưởng thành qua trải nghiệm. Mỗi hoạt động đều được thiết kế có chủ đích, dẫn dắt học sinh trở thành công dân toàn cầu giàu cảm hứng, sáng tạo và trách nhiệm.
+    </div>
+    <div class="extracurricular-section__grid">
+      <!-- Card 1 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">40+ Câu lạc bộ trải rộng các lĩnh vực</div>
+          <div class="extracurricular-section__card-desc">Toán – Khoa học & Công nghệ • Nghệ thuật • Kỹ năng • Ngôn ngữ • Thể thao</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">100+ sự kiện – cuộc thi – giải đấu mỗi năm</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">Kênh truyền hình thực hành kỹ năng</div>
+          <div class="extracurricular-section__card-desc">Kỹ năng MC, biên tập viên phát sóng trên FPT Play và TV360</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">Trại hè trong nước & quốc tế</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">20+ Dự án & CLB do học sinh làm chủ</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">Giao lưu quốc tế với học sinh Mỹ, Nhật Bản...</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <!-- Card 7 -->
+      <div class="extracurricular-section__card">
+        <div class="extracurricular-section__card-bgimg"></div>
+        <div class="extracurricular-section__card-content">
+          <div class="extracurricular-section__card-title">Hoạt động cộng đồng ý nghĩa</div>
+          <a href="#" class="extracurricular-section__card-btn">Xem chi tiết <span class="extracurricular-section__card-arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

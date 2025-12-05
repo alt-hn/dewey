@@ -1,0 +1,253 @@
+<style>
+  .dewey-footer-section {
+    width: 100%;
+    background: radial-gradient(ellipse 120% 80% at 0% 100%, #1976D2 0%, #1A1A5C 70%);
+    padding: 64px 0 0 0;
+    color: #fff;
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
+  }
+  .dewey-footer-section__container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .dewey-footer-section__logo-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .dewey-footer-section__logo {
+    width: 180px;
+    height: auto;
+    display: block;
+  }
+  .dewey-footer-section__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .dewey-footer-section__col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 180px;
+  }
+  .dewey-footer-section__col-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #BFD7FF;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  .dewey-footer-section__col-item {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+  }
+  .dewey-footer-section__socials {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .dewey-footer-section__social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .dewey-footer-section__social:hover {
+    background: #FFD600;
+  }
+  .dewey-footer-section__doc-card {
+    width: 120px;
+    height: 160px;
+    background: #1A1A5C;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 12px;
+    position: relative;
+  }
+  .dewey-footer-section__doc-img {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+  }
+  .dewey-footer-section__doc-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 68px;
+    width: 100%;
+  }
+  .dewey-footer-section__doc-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .dewey-footer-section__doc-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff;
+    color: #1A1A5C;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-decoration: none;
+  }
+  .dewey-footer-section__doc-download:hover {
+    background: #FFD600;
+  }
+  .dewey-footer-section__bar {
+    width: 100%;
+    border-top: 1px solid #2A3A7C;
+    padding: 24px 0 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #BFD7FF;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .dewey-footer-section__bar-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .dewey-footer-section__bar-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+  }
+  .dewey-footer-section__bar-desc {
+    font-size: 0.95rem;
+    color: #BFD7FF;
+    max-width: 500px;
+  }
+  .dewey-footer-section__bar-right {
+    font-size: 0.95rem;
+    color: #BFD7FF;
+  }
+  @media (max-width: 1024px) {
+    .dewey-footer-section {
+      padding: 32px 0 0 0;
+    }
+    .dewey-footer-section__container {
+      padding: 0 8px;
+    }
+    .dewey-footer-section__logo {
+      width: 120px;
+      margin-bottom: 16px;
+    }
+    .dewey-footer-section__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .dewey-footer-section__col {
+      min-width: 120px;
+    }
+    .dewey-footer-section__bar {
+      padding: 16px 0 8px 0;
+      font-size: 0.9rem;
+      gap: 8px;
+    }
+    .dewey-footer-section__bar-logo {
+      width: 80px;
+    }
+    .dewey-footer-section__bar-desc {
+      font-size: 0.9rem;
+      max-width: 100%;
+    }
+  }
+</style>
+
+<footer class="dewey-footer-section">
+  <div class="dewey-footer-section__container">
+    <div class="dewey-footer-section__logo-wrap">
+      <img src="/src/pages/pages/gioi-thieu/images/vp_vp-logo-dewey-02-1.svg" alt="The Dewey Schools" class="dewey-footer-section__logo" />
+    </div>
+    <div class="dewey-footer-section__grid">
+      <!-- Hỗ trợ -->
+      <div class="dewey-footer-section__col">
+        <div class="dewey-footer-section__col-title">HỖ TRỢ</div>
+        <div class="dewey-footer-section__col-item">info.tht@thedeweyschools.edu.vn</div>
+        <div class="dewey-footer-section__col-item">19003293</div>
+        <div class="dewey-footer-section__col-item">Mã bưu chính: 100000</div>
+      </div>
+      <!-- Cơ sở -->
+      <div class="dewey-footer-section__col">
+        <div class="dewey-footer-section__col-title">CƠ SỞ</div>
+        <div class="dewey-footer-section__col-item">Dewey Cầu Giấy</div>
+        <div class="dewey-footer-section__col-item">Dewey Tây Hồ Tây</div>
+        <div class="dewey-footer-section__col-item">Dewey Hải Phòng</div>
+        <div class="dewey-footer-section__col-item">Dewey Ocean Park</div>
+      </div>
+      <!-- Chương trình đào tạo -->
+      <div class="dewey-footer-section__col">
+        <div class="dewey-footer-section__col-title">CHƯƠNG TRÌNH ĐÀO TẠO</div>
+        <div class="dewey-footer-section__col-item">Tổng quan</div>
+        <div class="dewey-footer-section__col-item">Chương trình Journey</div>
+        <div class="dewey-footer-section__col-item">Chương trình Adventure</div>
+        <div class="dewey-footer-section__col-item">Chương trình Discover</div>
+        <div class="dewey-footer-section__col-item">Chương trình Explore</div>
+      </div>
+      <!-- Kết nối + Tài liệu -->
+      <div class="dewey-footer-section__col">
+        <div class="dewey-footer-section__col-title">KẾT NỐI VỚI CHÚNG TÔI</div>
+        <div class="dewey-footer-section__socials">
+          <a href="#" class="dewey-footer-section__social"><svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><path d="M16 8h-2a2 2 0 00-2 2v2H8v2h2v6h2v-6h2l1-2h-3v-2a1 1 0 011-1h2V8z" fill="#1A1A5C"/></svg></a>
+          <a href="#" class="dewey-footer-section__social"><svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><rect x="8" y="8" width="8" height="8" rx="2" fill="#1A1A5C"/></svg></a>
+          <a href="#" class="dewey-footer-section__social"><svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="12" fill="#fff"/><circle cx="12" cy="12" r="5" stroke="#1A1A5C" stroke-width="2"/></svg></a>
+        </div>
+        <div class="dewey-footer-section__col-title" style="margin-top:32px;">TÀI LIỆU</div>
+        <div class="dewey-footer-section__doc-card">
+          <div class="dewey-footer-section__doc-img"></div>
+          <div class="dewey-footer-section__doc-content">
+            <div class="dewey-footer-section__doc-title">Tài liệu tuyển sinh</div>
+            <a href="#" class="dewey-footer-section__doc-download">
+              <svg width="20" height="20" fill="none"><circle cx="10" cy="10" r="10" fill="#fff"/><path d="M10 6v6m0 0l-3-3m3 3l3-3" stroke="#1A1A5C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dewey-footer-section__bar">
+      <div class="dewey-footer-section__bar-left">
+        <img src="/path/to/cis-logo.png" alt="CIS Member" class="dewey-footer-section__bar-logo" />
+        <img src="/path/to/ib-logo.png" alt="IB Candidate School" class="dewey-footer-section__bar-logo" />
+        <span class="dewey-footer-section__bar-desc">
+          The Dewey Schools là thành viên của CIS (Council of International Schools – Hội đồng các trường quốc tế) và là trường ứng viên IB (International Baccalaureate – Tổ chức Tú tài Quốc tế)
+        </span>
+      </div>
+      <div class="dewey-footer-section__bar-right">
+        &copy; 2023 The Dewey Schools.
+      </div>
+    </div>
+  </div>
+</footer>
