@@ -39,18 +39,69 @@ import Footer from './sections/Footer.astro';
 </head>
 <body>
   <Navbar />
-  <HeroSlider />
-  <IntroSection />
-  <ThanhTichInfographicSection />
-  <GioiThieuSection />
-  <InfographicSection />
-  <ThanhTichGridSection />
-  <ThanhTichAltSection />
-  <ProgramCardsSection />
-  <LifeEduSection />
-  <CampusListSection />
-  <EnglishProgramSection />
-  <ExtracurricularSection />
+
+  <!-- Reveal wrappers: fade-in-up when scrolled into view -->
+  <div class="reveal-on-scroll"><HeroSlider /></div>
+  <div class="reveal-on-scroll"><IntroSection /></div>
+  <div class="reveal-on-scroll"><ThanhTichInfographicSection /></div>
+  <div class="reveal-on-scroll"><GioiThieuSection /></div>
+  <div class="reveal-on-scroll"><InfographicSection /></div>
+  <div class="reveal-on-scroll"><ThanhTichGridSection /></div>
+  <div class="reveal-on-scroll"><ThanhTichAltSection /></div>
+  <div class="reveal-on-scroll"><ProgramCardsSection /></div>
+  <div class="reveal-on-scroll"><LifeEduSection /></div>
+  <div class="reveal-on-scroll"><CampusListSection /></div>
+  <div class="reveal-on-scroll"><EnglishProgramSection /></div>
+  <div class="reveal-on-scroll"><ExtracurricularSection /></div>
+
   <Footer />
+
+  <style>
+    /* Fade-in up reveal */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1000ms cubic-bezier(.2,.9,.3,1), transform 1000ms cubic-bezier(.2,.9,.3,1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Optional small stagger when multiple adjacent reveals exist */
+    .reveal-on-scroll[data-reveal-delay] {
+      transition-delay: var(--reveal-delay, 500ms);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-on-scroll { transition: none; transform: none; opacity: 1; }
+    }
+  </style>
+
+  <script type="module">
+    // IntersectionObserver to add .is-revealed when element enters viewport
+    const REVEAL_SELECTOR = '.reveal-on-scroll';
+    function initRevealOnScroll() {
+      const nodes = Array.from(document.querySelectorAll(REVEAL_SELECTOR));
+      if (!nodes.length) return;
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            el.classList.add('is-revealed');
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      nodes.forEach(n => observer.observe(n));
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initRevealOnScroll);
+    } else {
+      initRevealOnScroll();
+    }
+  </script>
 </body>
 </html>
