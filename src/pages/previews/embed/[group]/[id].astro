@@ -1,0 +1,153 @@
+---
+import HeaderSection from '../../../../components/HeaderSection.astro';
+import MainSection from '../../../../components/MainSection.astro';
+import FooterSection from '../../../../components/FooterSection.astro';
+import FooterAssets from '../../../../components/FooterAssets.astro';
+// PageHead previously injected a <base> and analytics scripts which break local embeds.
+// Instead we include only the necessary stylesheet links for header rendering (no <base>, no analytics).
+
+import Navbar from '../../../../pages/pages/gioi-thieu/sections/Navbar.astro';
+import HeroSlider from '../../../../pages/pages/gioi-thieu/sections/HeroSlider.astro';
+import IntroSection from '../../../../pages/pages/gioi-thieu/sections/IntroSection.astro';
+import ProgramCardsSection from '../../../../pages/pages/gioi-thieu/sections/ProgramCardsSection.astro';
+import InfographicSection from '../../../../pages/pages/gioi-thieu/sections/InfographicSection.astro';
+import LifeEduSection from '../../../../pages/pages/gioi-thieu/sections/LifeEduSection.astro';
+import ExtracurricularSection from '../../../../pages/pages/gioi-thieu/sections/ExtracurricularSection.astro';
+import CampusListSection from '../../../../pages/pages/gioi-thieu/sections/CampusListSection.astro';
+import ThanhTichAltSection from '../../../../pages/pages/gioi-thieu/sections/ThanhTichAltSection.astro';
+import ThanhTichGridSection from '../../../../pages/pages/gioi-thieu/sections/ThanhTichGridSection.astro';
+import ThanhTichInfographicSection from '../../../../pages/pages/gioi-thieu/sections/ThanhTichInfographicSection.astro';
+
+const { group, id } = Astro.params;
+const url = new URL(Astro.request.url);
+const compact = url.searchParams.get('compact') === '1';
+// Log on the server when an embed is requested to help diagnose rendering issues
+console.log(`[embed] requested ${group}/${id} compact=${compact}`);
+
+// Components that load heavy frontend assets (jQuery, Elementor scripts, etc.).
+// For compact thumbnails we avoid rendering these to prevent CORS/COEP and
+// 'jQuery is not defined' runtime errors inside tiny previews.
+const heavyComponents = new Set([
+  'FooterAssets','FooterSection','Footer','HeroSlider','MainSection','IntroSection',
+  'ProgramCardsSection','InfographicSection','LifeEduSection','ExtracurricularSection',
+  'CampusListSection','ThanhTichAltSection','ThanhTichGridSection','ThanhTichInfographicSection'
+]);
+
+const mapping: Record<string, Record<string, any>> = {
+  header: {
+    HeaderSection,
+    Navbar,
+  },
+  main: {
+    MainSection,
+    HeroSlider,
+    IntroSection,
+    ProgramCardsSection,
+    InfographicSection,
+    LifeEduSection,
+    ExtracurricularSection,
+    CampusListSection,
+    ThanhTichAltSection,
+    ThanhTichGridSection,
+    ThanhTichInfographicSection,
+  },
+  footer: {
+    FooterSection,
+    FooterAssets,
+    Footer: FooterSection,
+  },
+};
+
+const Group = (mapping as any)[group as string] ?? {};
+const Component = Group && (Group as any)[id as string] ? (Group as any)[id as string] : null;
+
+export function getStaticPaths() {
+  // Explicit lists to avoid runtime referencing issues
+  const headerKeys = ['HeaderSection', 'Navbar'];
+  const mainKeys = ['MainSection','HeroSlider','IntroSection','ProgramCardsSection','InfographicSection','LifeEduSection','ExtracurricularSection','CampusListSection','ThanhTichAltSection','ThanhTichGridSection','ThanhTichInfographicSection'];
+  const footerKeys = ['FooterSection','FooterAssets','Footer'];
+
+  const paths: Array<{ params: { group: string; id: string } }> = [];
+  headerKeys.forEach(k => paths.push({ params: { group: 'header', id: k } }));
+  mainKeys.forEach(k => paths.push({ params: { group: 'main', id: k } }));
+  footerKeys.forEach(k => paths.push({ params: { group: 'footer', id: k } }));
+  return paths;
+}
+---
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Embed Preview: {id}</title>
+    <style>
+      :root { color-scheme: light; }
+      body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      /* debug badge removed per request */
+    </style>
+    {compact ? (
+      <>
+        <style>
+          /* Minimal inline styles for compact thumbnails to avoid loading
+             dev-module CSS from Vite which triggers CORS/COEP issues. */
+          html,body { font-family: Arial, sans-serif; margin:0; padding:0; }
+          :root { color-scheme: light; }
+          .thumb-wrap { padding:10px; box-sizing:border-box; }
+        </style>
+        <script>
+          // If the embed is sandboxed without allow-same-origin, accesses to
+          // window.localStorage will throw SecurityError. Provide an in-memory
+          // polyfill for compact thumbnails to avoid runtime exceptions.
+          try {
+            // Attempt a harmless access; this will throw in sandboxed contexts.
+            void window.localStorage;
+          } catch (e) {
+            (function(){
+              const store = Object.create(null);
+              const poly = {
+                getItem(key){ return Object.prototype.hasOwnProperty.call(store, key) ? store[key] : null; },
+                setItem(key, value){ store[key] = String(value); },
+                removeItem(key){ delete store[key]; },
+                clear(){ for (const k in store) delete store[k]; }
+              };
+              try { window.localStorage = poly; } catch (ignore) {}
+              try { window.sessionStorage = poly; } catch (ignore) {}
+              // optional debug flag: console.debug('[embed] using localStorage polyfill');
+            })();
+          }
+        </script>
+        <!-- Block any subsequent scripts from executing in compact thumbnails -->
+        <meta http-equiv="Content-Security-Policy" content="script-src 'none'; object-src 'none';">
+      </>
+    ) : group === 'header' ? (
+      <>
+        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/style.css' />
+        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/theme.min.css' />
+        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/plugins/elementor/assets/css/frontend.min.css' />
+        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/uploads/elementor/css/custom-frontend.min.css' />
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
+        </style>
+      </>
+    ) : (
+      <>
+        <link rel="stylesheet" href="/src/styles/tailwind.css" />
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
+        </style>
+      </>
+    )}
+  </head>
+  <body>
+    {compact && heavyComponents.has(id) ? (
+      <div style="padding:20px; font-family: sans-serif; color:#0b1b2a">Preview for <strong>{id}</strong> (compact mode) — interactive assets are disabled for thumbnails.</div>
+    ) : Component ? (
+      <Component />
+    ) : (
+      <div style="padding:24px">Component not found: {group}/{id}</div>
+    )}
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "header": [
+    "Navbar"
+  ],
+  "main": [
+    "MainSection",
+    "HeroSlider"
+  ],
+  "footer": [
+    "FooterSection",
+    "FooterAssets"
+  ],
+  "order": [
+    "MainSection",
+    "FooterSection",
+    "Navbar",
+    "HeroSlider",
+    "FooterAssets"
+  ]
+}

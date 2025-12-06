@@ -1,0 +1,93 @@
+---
+import PageHead from '../../components/PageHead.astro';
+import HeaderSection from '../../components/HeaderSection.astro';
+import MainSection from '../../components/MainSection.astro';
+import FooterSection from '../../components/FooterSection.astro';
+import FooterAssets from '../../components/FooterAssets.astro';
+
+import Navbar from '../pages/gioi-thieu/sections/Navbar.astro';
+import HeroSlider from '../pages/gioi-thieu/sections/HeroSlider.astro';
+import IntroSection from '../pages/gioi-thieu/sections/IntroSection.astro';
+import ProgramCardsSection from '../pages/gioi-thieu/sections/ProgramCardsSection.astro';
+import InfographicSection from '../pages/gioi-thieu/sections/InfographicSection.astro';
+import LifeEduSection from '../pages/gioi-thieu/sections/LifeEduSection.astro';
+import ExtracurricularSection from '../pages/gioi-thieu/sections/ExtracurricularSection.astro';
+import CampusListSection from '../pages/gioi-thieu/sections/CampusListSection.astro';
+import ThanhTichAltSection from '../pages/gioi-thieu/sections/ThanhTichAltSection.astro';
+import ThanhTichGridSection from '../pages/gioi-thieu/sections/ThanhTichGridSection.astro';
+import ThanhTichInfographicSection from '../pages/gioi-thieu/sections/ThanhTichInfographicSection.astro';
+
+const url = new URL(Astro.request.url);
+const header = url.searchParams.get('header')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
+const main = url.searchParams.get('main')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
+const footer = url.searchParams.get('footer')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
+const order = url.searchParams.get('order')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
+const _embedParam = url.searchParams.get('embed');
+// Default to embedded/lightweight mode for previews to avoid injecting
+// the site's <base> url and loading production resources. Only disable
+// embed when explicitly requested with embed=0 or embed=false.
+const embed = _embedParam === null ? true : !(_embedParam === '0' || _embedParam === 'false');
+
+---
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assembled Preview</title>
+    {embed && (
+      <style>
+        :root { color-scheme: light; }
+        body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      </style>
+    )}
+    {!embed && <PageHead />}
+  </head>
+  <body>
+    {order.length ? (
+      order.map(id => (
+        (id === 'HeaderSection' && <HeaderSection />) ||
+        (id === 'Navbar' && <Navbar />) ||
+        (id === 'MainSection' && <MainSection />) ||
+        (id === 'HeroSlider' && <HeroSlider />) ||
+        (id === 'IntroSection' && <IntroSection />) ||
+        (id === 'ProgramCardsSection' && <ProgramCardsSection />) ||
+        (id === 'InfographicSection' && <InfographicSection />) ||
+        (id === 'LifeEduSection' && <LifeEduSection />) ||
+        (id === 'ExtracurricularSection' && <ExtracurricularSection />) ||
+        (id === 'CampusListSection' && <CampusListSection />) ||
+        (id === 'ThanhTichAltSection' && <ThanhTichAltSection />) ||
+        (id === 'ThanhTichGridSection' && <ThanhTichGridSection />) ||
+        (id === 'ThanhTichInfographicSection' && <ThanhTichInfographicSection />) ||
+        (id === 'FooterSection' && <FooterSection />) ||
+        (id === 'Footer' && <FooterSection />) ||
+        (id === 'FooterAssets' && <FooterAssets />) || null
+      ))
+    ) : (
+      <!-- Header group -->
+      <>
+        {header.includes('HeaderSection') && <HeaderSection />}
+        {header.includes('Navbar') && <Navbar />}
+
+        <!-- Main group -->
+        {main.includes('MainSection') && <MainSection />}
+        {main.includes('HeroSlider') && <HeroSlider />}
+        {main.includes('IntroSection') && <IntroSection />}
+        {main.includes('ProgramCardsSection') && <ProgramCardsSection />}
+        {main.includes('InfographicSection') && <InfographicSection />}
+        {main.includes('LifeEduSection') && <LifeEduSection />}
+        {main.includes('ExtracurricularSection') && <ExtracurricularSection />}
+        {main.includes('CampusListSection') && <CampusListSection />}
+        {main.includes('ThanhTichAltSection') && <ThanhTichAltSection />}
+        {main.includes('ThanhTichGridSection') && <ThanhTichGridSection />}
+        {main.includes('ThanhTichInfographicSection') && <ThanhTichInfographicSection />}
+
+        <!-- Footer group -->
+        {footer.includes('FooterSection') && <FooterSection />}
+        {footer.includes('Footer') && <FooterSection />}
+        {footer.includes('FooterAssets') && <FooterAssets />}
+      </>
+    )}
+  </body>
+</html>
