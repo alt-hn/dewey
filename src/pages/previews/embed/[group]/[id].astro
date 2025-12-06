@@ -1,0 +1,120 @@
+---
+import HeaderSection from '../../../../components/HeaderSection.astro';
+import MainSection from '../../../../components/MainSection.astro';
+import FooterSection from '../../../../components/FooterSection.astro';
+import FooterAssets from '../../../../components/FooterAssets.astro';
+// PageHead previously injected a <base> and analytics scripts which break local embeds.
+// Instead we include only the necessary stylesheet links for header rendering (no <base>, no analytics).
+
+import Navbar from '../../../../pages/pages/gioi-thieu/sections/Navbar.astro';
+import HeroSlider from '../../../../pages/pages/gioi-thieu/sections/HeroSlider.astro';
+import IntroSection from '../../../../pages/pages/gioi-thieu/sections/IntroSection.astro';
+import ProgramCardsSection from '../../../../pages/pages/gioi-thieu/sections/ProgramCardsSection.astro';
+import InfographicSection from '../../../../pages/pages/gioi-thieu/sections/InfographicSection.astro';
+import LifeEduSection from '../../../../pages/pages/gioi-thieu/sections/LifeEduSection.astro';
+import ExtracurricularSection from '../../../../pages/pages/gioi-thieu/sections/ExtracurricularSection.astro';
+import CampusListSection from '../../../../pages/pages/gioi-thieu/sections/CampusListSection.astro';
+import ThanhTichAltSection from '../../../../pages/pages/gioi-thieu/sections/ThanhTichAltSection.astro';
+import ThanhTichGridSection from '../../../../pages/pages/gioi-thieu/sections/ThanhTichGridSection.astro';
+import ThanhTichInfographicSection from '../../../../pages/pages/gioi-thieu/sections/ThanhTichInfographicSection.astro';
+
+const { group, id } = Astro.params;
+const url = new URL(Astro.request.url);
+// Log on the server when an embed is requested to help diagnose rendering issues
+console.log(`[embed] requested ${group}/${id}`);
+
+// Components that require external dependencies (jQuery, Elementor, etc.)
+// and cannot render properly in sandboxed iframes. Show placeholder instead.
+const scriptOnlyComponents = new Set([
+  'FooterAssets', // Contains jQuery/WordPress scripts that fail in sandbox
+]);
+
+const mapping: Record<string, Record<string, any>> = {
+  header: {
+    HeaderSection,
+    Navbar,
+  },
+  main: {
+    MainSection,
+    HeroSlider,
+    IntroSection,
+    ProgramCardsSection,
+    InfographicSection,
+    LifeEduSection,
+    ExtracurricularSection,
+    CampusListSection,
+    ThanhTichAltSection,
+    ThanhTichGridSection,
+    ThanhTichInfographicSection,
+  },
+  footer: {
+    FooterSection,
+    FooterAssets,
+    Footer: FooterSection,
+  },
+};
+
+const Group = (mapping as any)[group as string] ?? {};
+const Component = Group && (Group as any)[id as string] ? (Group as any)[id as string] : null;
+
+export function getStaticPaths() {
+  // Explicit lists to avoid runtime referencing issues
+  const headerKeys = ['HeaderSection', 'Navbar'];
+  const mainKeys = ['MainSection','HeroSlider','IntroSection','ProgramCardsSection','InfographicSection','LifeEduSection','ExtracurricularSection','CampusListSection','ThanhTichAltSection','ThanhTichGridSection','ThanhTichInfographicSection'];
+  const footerKeys = ['FooterSection','FooterAssets','Footer'];
+
+  const paths: Array<{ params: { group: string; id: string } }> = [];
+  headerKeys.forEach(k => paths.push({ params: { group: 'header', id: k } }));
+  mainKeys.forEach(k => paths.push({ params: { group: 'main', id: k } }));
+  footerKeys.forEach(k => paths.push({ params: { group: 'footer', id: k } }));
+  return paths;
+}
+---
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Embed Preview: {id}</title>
+    <style>
+      :root { color-scheme: light; }
+      body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      /* debug badge removed per request */
+    </style>
+    {group === 'header' ? (
+      <>
+        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/style.css' />
+        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/theme.min.css' />
+        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/plugins/elementor/assets/css/frontend.min.css' />
+        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/uploads/elementor/css/custom-frontend.min.css' />
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
+        </style>
+      </>
+    ) : (
+      <>
+        <link rel="stylesheet" href="/src/styles/tailwind.css" />
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
+        </style>
+      </>
+    )}
+  </head>
+  <body>
+    {scriptOnlyComponents.has(id as string) ? (
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100px; padding: 24px; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%); color: #64748b; text-align: center;">
+        <div style="font-size: 28px; margin-bottom: 8px;">📦</div>
+        <div style="font-weight: 600; font-size: 14px;">{id}</div>
+        <div style="font-size: 12px; opacity: 0.8;">Script/Asset Bundle</div>
+        <div style="font-size: 11px; margin-top: 8px; opacity: 0.6;">External dependencies required</div>
+      </div>
+    ) : Component ? (
+      <Component />
+    ) : (
+      <div style="padding:24px">Component not found: {group}/{id}</div>
+    )}
+  </body>
+</html>

@@ -352,21 +352,161 @@ const stats = [
 }
 
 
-/* Responsive: combine adjustments into a single block */
-@media (max-width: 1024px) {
-  .thanh-tich-infographic { padding: 60px 16px; }
-  .thanh-tich-infographic__container { height: auto; }
-  .thanh-tich-infographic__panel { padding-top: 0; padding: 28px; position: relative; }
-  .thanh-tich-infographic__panel-grid { position: static; gap: 18px; grid-template-columns: 1fr; grid-template-rows: auto; }
-  .box--e { grid-column: 1; }
-  .thanh-tich-infographic__big-title { font-size: 36px; }
-  .thanh-tich-infographic__small-stat { font-size: 28px; }
-  .thanh-tich-infographic__hero-img { height: 200px; }
-  .thanh-tich-infographic__box { min-height: auto; padding: 14px; }
-  .thanh-tich-infographic__side { position: static; transform: none; margin: 12px 0 0 0; align-items: center; text-align: center; padding: 12px 14px; }
-  .thanh-tich-infographic__side .side__title, .thanh-tich-infographic__side .side__subtitle { text-align: center; }
-  /* On small screens stack desc above stat to keep readability */
-  .box--a .thanh-tich-infographic__box-content{ flex-direction: column; align-items: flex-start; gap:6px; }
-  .box--a .thanh-tich-infographic__small-stat{ text-align: left; }
+/* Responsive: Tablet (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .thanh-tich-infographic { 
+    padding: 60px 20px; 
+  }
+  
+  .thanh-tich-infographic__container { 
+    max-width: 100%; 
+  }
+  
+  .thanh-tich-infographic__title {
+    font-size: 28px;
+  }
+  
+  .thanh-tich-infographic__panel { 
+    padding-top: calc(100% * 10 / 16);
+  }
+  
+  .thanh-tich-infographic__panel-grid { 
+    gap: 8px;
+  }
+  
+  .thanh-tich-infographic__box { 
+    min-height: 120px;
+    padding: 14px;
+  }
+  
+  .thanh-tich-infographic__small-stat { 
+    font-size: 28px;
+  }
+  
+  .thanh-tich-infographic__small-desc { 
+    font-size: 12px;
+  }
+  
+  .box--a .thanh-tich-infographic__small-stat,
+  .box--k .thanh-tich-infographic__small-stat,
+  .box--l .thanh-tich-infographic__small-stat {
+    font-size: 48px;
+  }
+  
+  .box--a .thanh-tich-infographic__small-desc,
+  .box--k .thanh-tich-infographic__small-desc,
+  .box--l .thanh-tich-infographic__small-desc {
+    font-size: 16px;
+  }
+}
+
+/* Responsive: Mobile (below 768px) - Single column layout */
+@media (max-width: 768px) {
+  .thanh-tich-infographic { 
+    padding: 40px 16px; 
+  }
+  
+  .thanh-tich-infographic__container { 
+    height: auto; 
+  }
+  
+  .thanh-tich-infographic__title {
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+  
+  .thanh-tich-infographic__panel { 
+    padding-top: 0;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .thanh-tich-infographic__panel-grid { 
+    position: static;
+    gap: 12px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  /* All boxes reset to single column */
+  .box--a,
+  .box--b,
+  .box--c,
+  .box--d,
+  .box--e,
+  .box--f,
+  .box--g,
+  .box--h,
+  .box--i,
+  .box--k,
+  .box--l,
+  .box--m { 
+    grid-column: 1;
+    grid-row: auto;
+  }
+  
+  .thanh-tich-infographic__box { 
+    min-height: 120px;
+    padding: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+  }
+  
+  .thanh-tich-infographic__small-stat { 
+    font-size: 32px;
+  }
+  
+  .thanh-tich-infographic__small-desc { 
+    font-size: 13px;
+  }
+  
+  .thanh-tich-infographic__big-title { 
+    font-size: 32px;
+  }
+  
+  .thanh-tich-infographic__hero-img { 
+    height: 180px;
+  }
+  
+  /* Reset border removal for mobile */
+  .box--a,
+  .box--c,
+  .box--d,
+  .box--f,
+  .box--g,
+  .box--i,
+  .box--m {
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  /* Stack desc above stat on mobile for readability */
+  .box--a .thanh-tich-infographic__box-content { 
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .box--a .thanh-tich-infographic__small-desc,
+  .box--g .thanh-tich-infographic__small-desc,
+  .box--k .thanh-tich-infographic__small-desc,
+  .box--m .thanh-tich-infographic__small-desc { 
+    text-align: left;
+    order: 1;
+  }
+  
+  .box--a .thanh-tich-infographic__small-stat,
+  .box--g .thanh-tich-infographic__small-stat,
+  .box--k .thanh-tich-infographic__small-stat,
+  .box--m .thanh-tich-infographic__small-stat { 
+    text-align: left;
+    order: 2;
+    font-size: 36px;
+  }
+  
+  .box--k .thanh-tich-infographic__box-content,
+  .box--g .thanh-tich-infographic__box-content,
+  .box--m .thanh-tich-infographic__box-content {
+    align-items: flex-start;
+  }
 }
 </style>

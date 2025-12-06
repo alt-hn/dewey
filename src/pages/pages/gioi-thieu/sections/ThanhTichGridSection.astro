@@ -144,32 +144,93 @@
   .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-desc {
     color: #fff;
   }
-  @media (max-width: 1024px) {
+  
+  /* Tablet responsive (768px - 1024px) */
+  @media (max-width: 1024px) and (min-width: 769px) {
     .thanh-tich-grid-section {
-      padding: 32px 0;
+      padding: 60px 0;
     }
+    
     .thanh-tich-grid-section__container {
-      padding: 0 8px;
+      padding: 0 16px;
     }
+    
+    .thanh-tich-grid-section__decoration {
+      width: 28px;
+      height: 28px;
+    }
+    
     .thanh-tich-grid-section__title {
-      font-size: 1.6rem;
-      margin-bottom: 32px;
+      font-size: 2rem;
+      margin-bottom: 36px;
+      margin-top: 28px;
     }
+    
     .thanh-tich-grid-section__grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 14px;
+    }
+    
+    .thanh-tich-grid-section__card {
+      padding: 16px;
+    }
+    
+    .thanh-tich-grid-section__card-number {
+      font-size: 1.8rem;
+    }
+    
+    .thanh-tich-grid-section__card-desc {
+      font-size: 0.88rem;
+    }
+  }
+  
+  /* Mobile responsive (below 768px) */
+  @media (max-width: 768px) {
+    .thanh-tich-grid-section {
+      padding: 40px 0;
+    }
+    
+    .thanh-tich-grid-section__container {
+      padding: 0 12px;
+    }
+    
+    .thanh-tich-grid-section__decoration {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .thanh-tich-grid-section__title {
+      font-size: 1.5rem;
+      margin-bottom: 28px;
+      margin-top: 24px;
+    }
+    
+    .thanh-tich-grid-section__grid {
+      grid-template-columns: 1fr;
       grid-template-rows: auto;
       gap: 12px;
     }
+    
     .thanh-tich-grid-section__card {
-      /* allow aspect-ratio to control height on smaller screens too */
-      min-height: 0;
-      padding: 12px;
+      aspect-ratio: auto;
+      min-height: 140px;
+      padding: 16px;
     }
+    
+    .thanh-tich-grid-section__card-decor {
+      width: 40px;
+      height: 5px;
+      top: 12px;
+      right: 12px;
+    }
+    
     .thanh-tich-grid-section__card-number {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
     }
+    
     .thanh-tich-grid-section__card-desc {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
     }
   }
 </style>

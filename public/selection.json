@@ -1,0 +1,24 @@
+{
+  "header": [
+    "Navbar"
+  ],
+  "main": [
+    "HeroSlider",
+    "ProgramCardsSection",
+    "InfographicSection",
+    "ThanhTichGridSection"
+  ],
+  "footer": [
+    "FooterSection",
+    "FooterAssets"
+  ],
+  "order": [
+    "Navbar",
+    "HeroSlider",
+    "FooterAssets",
+    "ProgramCardsSection",
+    "InfographicSection",
+    "ThanhTichGridSection",
+    "FooterSection"
+  ]
+}
