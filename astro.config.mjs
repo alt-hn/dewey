@@ -23,6 +23,7 @@ function viteCorsDevPlugin() {
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
+  output: 'static',
   vite: {
     plugins: [viteCorsDevPlugin()],
   },
