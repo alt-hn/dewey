@@ -18,29 +18,29 @@
             </div>
         </div>
         
-                <div class="gioi-thieu-grid__item gioi-thieu-grid__item--small gioi-thieu-grid__item--bg1">
-                        <div class="gioi-thieu-grid__content">
-                                <h3 class="gioi-thieu-grid__subtitle" style="margin-bottom:32px;">Chương trình<br> GIÁO DỤC TOÀN DIỆN<br> chuẩn Quốc Tế</h3>
-                                <div class="gioi-thieu-svg-fullwidth">
-                                    <img src="/src/pages/pages/gioi-thieu/images/Vector 649.svg" alt="Vector 649" />
-                                </div>
-                                <style>
-                                .gioi-thieu-svg-fullwidth {
-                                    width:calc(100% + 48px);
-                                    margin-left: -16px;
-                                    margin-right: -16px;
-                                    margin-bottom: 32px;
-                                }
-                                .gioi-thieu-svg-fullwidth img {
-                                    display: block;
-                                    width: 100%;
-                                    height: auto;
-                                }
-                                </style>
-                                <p class="gioi-thieu-grid__desc">Tích hợp chương trình Mỹ với Chương trình của Bộ GD&ĐT Việt Nam</p>
-                        </div>
+        <div class="gioi-thieu-grid__item gioi-thieu-grid__item--small gioi-thieu-grid__item--bg1">
+            <div class="gioi-thieu-grid__content">
+                <h3 class="gioi-thieu-grid__subtitle" style="margin-bottom:32px;">Chương trình<br> GIÁO DỤC TOÀN DIỆN<br> chuẩn Quốc Tế</h3>
+                <div class="gioi-thieu-svg-fullwidth">
+                    <img src="/src/pages/pages/gioi-thieu/images/Vector 649.svg" alt="Vector 649" />
                 </div>
-        
+                <style>
+                .gioi-thieu-svg-fullwidth {
+                    width:calc(100% + 48px);
+                    margin-left: -16px;
+                    margin-right: -16px;
+                    margin-bottom: 32px;
+                }
+                .gioi-thieu-svg-fullwidth img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+                </style>
+                <p class="gioi-thieu-grid__desc">Tích hợp chương trình Mỹ với Chương trình của Bộ GD&ĐT Việt Nam</p>
+            </div>
+        </div>
+    
 
         <!-- Row 2 -->
         <div class="gioi-thieu-grid__item gioi-thieu-grid__item--small gioi-thieu-grid__item--icon">
@@ -484,38 +484,118 @@
     z-index: 1;
 }
 
-/* Tablet responsive */
-@media (max-width: 1024px) {
+/* Tablet responsive (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
     .gioi-thieu-grid {
-        padding: 30px 12px;
+        padding: 32px 16px;
     }
 
     .gioi-thieu-grid__container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 8px;
+        border-radius: 16px;
     }
 
     .gioi-thieu-grid__item {
-        min-height: 220px;
-        padding: 12px;
+        padding: 14px;
+        min-height: 180px;
     }
 
-    .gioi-thieu-grid__item--large,
-    .gioi-thieu-grid__item--medium,
-    .gioi-thieu-grid__item--small {
-        grid-column: span 1;
+    /* Tablet layout - 4 columns grid */
+    .gioi-thieu-grid__item:nth-child(1) {
+        grid-column: 3 / 5;
+        grid-row: 1;
+        aspect-ratio: 2 / 1;
     }
 
-    .gioi-thieu-grid__item:nth-child(1),
-    .gioi-thieu-grid__item:nth-child(2),
-    .gioi-thieu-grid__item:nth-child(6),
-    .gioi-thieu-grid__item:nth-child(7),
+    .gioi-thieu-grid__item:nth-child(2) {
+        display: none;
+        grid-column: 3 / 5;
+        grid-row: 1;
+        aspect-ratio: 2 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 2;
+        aspect-ratio: 1 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(4) {
+        grid-column: 2 / 3;
+        grid-row: 2;
+        aspect-ratio: 1 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(5) {
+        grid-column: 3 / 4;
+        grid-row: 2;
+        aspect-ratio: 1 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(6) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        aspect-ratio: 2 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(7) {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        aspect-ratio: 2 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(8) {
+        grid-column: 3 / 5;
+        grid-row: 3;
+        aspect-ratio: 2 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(9) {
+        grid-column: 4 / 5;
+        grid-row: 5;
+        aspect-ratio: 1 / 1;
+    }
+
     .gioi-thieu-grid__item:nth-child(10) {
-        grid-column: span 3;
+        grid-column: 1 / 2;
+        grid-row: 4;
+        aspect-ratio: 1 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(11) {
+        grid-column: 2 / 4;
+        grid-row: 4;
+        aspect-ratio: 2 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(12) {
+        grid-column: 4 / 5;
+        grid-row: 2;
+        aspect-ratio: 1 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(13) {
+        grid-column: 4 / 5;
+        grid-row: 4;
+        aspect-ratio: 1 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(14) {
+        grid-column: 1 / 3;
+        grid-row: 5;
+        aspect-ratio: 2 / 1;
+    }
+
+    .gioi-thieu-grid__item:nth-child(15) {
+        grid-column: 3 / 4;
+        grid-row: 5;
+        aspect-ratio: 1 / 1;
     }
 
     .gioi-thieu-grid__hero-title {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .gioi-thieu-grid__title {
@@ -523,34 +603,182 @@
     }
 
     .gioi-thieu-grid__subtitle {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .gioi-thieu-grid__hero-subtitle,
     .gioi-thieu-grid__text {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .gioi-thieu-grid__desc {
         font-size: 10px;
     }
+
+    .gioi-thieu-grid__icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .gioi-thieu-grid__icon svg {
+        width: 32px;
+        height: 32px;
+    }
 }
 
+/* Mobile responsive (below 768px) - Single column layout */
 @media (max-width: 768px) {
+    .gioi-thieu-grid {
+        padding: 24px 12px;
+    }
+
     .gioi-thieu-grid__container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 8px;
+        border-radius: 12px;
     }
 
     .gioi-thieu-grid__item {
-        min-height: 200px;
+        padding: 12px;
+        min-height: auto;
+        aspect-ratio: auto;
     }
 
-    .gioi-thieu-grid__item:nth-child(n) {
-        grid-column: span 1;
+    /* Mobile layout - 2 columns grid */
+    /* Card 6: Tại sao chọn The Dewey Schools - First card, full width */
+    .gioi-thieu-grid__item:nth-child(6) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        aspect-ratio: 2 / 1;
     }
 
+    /* Card 1: Môi trường Giáo dục */
+    .gioi-thieu-grid__item:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 2;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 2: Hidden */
+    .gioi-thieu-grid__item:nth-child(2) {
+        display: none;
+    }
+
+    /* Card 3: Tiên phong */
+    .gioi-thieu-grid__item:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 4: Chương trình giáo dục toàn diện */
+    .gioi-thieu-grid__item:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 5: Liên kết đào tạo */
+    .gioi-thieu-grid__item:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 3;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 7: Trường học Hạnh Phúc */
+    .gioi-thieu-grid__item:nth-child(7) {
+        grid-column: 1 / 2;
+        grid-row: 4;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 8: Hội đồng Khoa học */
+    .gioi-thieu-grid__item:nth-child(8) {
+        grid-column: 2 / 3;
+        grid-row: 4;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 9: Chương trình Toán */
+    .gioi-thieu-grid__item:nth-child(9) {
+        grid-column: 1 / 2;
+        grid-row: 5;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 10: Cơ sở vật chất */
+    .gioi-thieu-grid__item:nth-child(10) {
+        grid-column: 2 / 3;
+        grid-row: 5;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 11: Đội ngũ Giáo viên */
+    .gioi-thieu-grid__item:nth-child(11) {
+        grid-column: 1 / 3;
+        grid-row: 6;
+        aspect-ratio: 2 / 1;
+    }
+
+    /* Card 12: Hướng nghiệp */
+    .gioi-thieu-grid__item:nth-child(12) {
+        grid-column: 1 / 2;
+        grid-row: 7;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 13: Toshin Development */
+    .gioi-thieu-grid__item:nth-child(13) {
+        grid-column: 2 / 3;
+        grid-row: 7;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 14: Tiếng Anh chuẩn Common Core */
+    .gioi-thieu-grid__item:nth-child(14) {
+        grid-column: 1 / 2;
+        grid-row: 8;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* Card 15: Chương trình Văn - Tiếng Việt */
+    .gioi-thieu-grid__item:nth-child(15) {
+        grid-column: 2 / 3;
+        grid-row: 8;
+        aspect-ratio: 1 / 1;
+    }
+    
     .gioi-thieu-grid__hero-title {
         font-size: 20px;
     }
+
+    .gioi-thieu-grid__title {
+        font-size: 16px;
+    }
+
+    .gioi-thieu-grid__subtitle {
+        font-size: 14px;
+    }
+
+    .gioi-thieu-grid__hero-subtitle,
+    .gioi-thieu-grid__text {
+        font-size: 13px;
+    }
+
+    .gioi-thieu-grid__desc {
+        font-size: 11px;
+    }
+
+    .gioi-thieu-grid__icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .gioi-thieu-grid__icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
 }
 </style>

@@ -26,9 +26,22 @@ console.log('header param raw:', url.searchParams.get('header'));
 console.log('main param raw:', url.searchParams.get('main'));
 console.log('footer param raw:', url.searchParams.get('footer'));
 
-const header = url.searchParams.get('header')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
-const main = url.searchParams.get('main')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
-const footer = url.searchParams.get('footer')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
+// Parse and clean component lists - handle trailing spaces and commas
+const parseComponents = (param: string | null): string[] => {
+  if (!param) return [];
+  return param
+    .split(',')
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+};
+
+const header = parseComponents(url.searchParams.get('header'));
+const main = parseComponents(url.searchParams.get('main'));
+const footer = parseComponents(url.searchParams.get('footer'));
+
+console.log('Parsed header:', header);
+console.log('Parsed main:', main);
+console.log('Parsed footer:', footer);
 
 const _embedParam = url.searchParams.get('embed');
 // Default to embedded/lightweight mode for previews to avoid injecting
@@ -40,7 +53,7 @@ const embed = _embedParam === null ? true : !(_embedParam === '0' || _embedParam
 const hasContent = header.length > 0 || main.length > 0 || footer.length > 0;
 
 // Debug logging
-console.log('Parsed arrays:', { header, main, footer, hasContent });
+console.log('Has content?', hasContent);
 
 ---
 

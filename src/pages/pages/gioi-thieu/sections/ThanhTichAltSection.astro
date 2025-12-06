@@ -194,20 +194,35 @@
     left: -250px;
   }
   
-  @media (max-width: 1024px) {
+  /* Tablet responsive (768px - 1024px) */
+  @media (max-width: 1024px) and (min-width: 769px) {
     .thanh-tich-alt-section {
-      padding: 48px 0;
+      padding: 60px 0;
     }
+    
     .thanh-tich-alt-section__container {
-      padding: 0 16px;
+      padding: 0 24px;
     }
+    
+    .thanh-tich-alt-section__header {
+      margin-bottom: 40px;
+    }
+    
+    .thanh-tich-alt-section__label {
+      font-size: 0.7rem;
+    }
+    
     .thanh-tich-alt-section__title {
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
+    
     .thanh-tich-alt-section__layout {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto;
+      gap: 16px;
     }
+    
+    /* Reset all cards to auto positioning for 3-column grid */
     .thanh-tich-alt-section__card:nth-child(1),
     .thanh-tich-alt-section__card:nth-child(2),
     .thanh-tich-alt-section__card:nth-child(3),
@@ -220,18 +235,110 @@
       grid-column: auto;
       grid-row: auto;
     }
+    
     .thanh-tich-alt-section__card {
-      padding: 24px 20px;
-      min-height: 160px !important;
+      padding: 28px 24px;
+      min-height: 180px !important;
     }
+    
+    .thanh-tich-alt-section__card-image {
+      height: 120px;
+    }
+    
+    .thanh-tich-alt-section__card-content {
+      padding: 24px;
+    }
+    
+    .thanh-tich-alt-section__badge {
+      font-size: 0.65rem;
+      padding: 5px 12px;
+    }
+    
+    .thanh-tich-alt-section__number {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+    
+    .thanh-tich-alt-section__text {
+      font-size: 0.88rem;
+    }
+  }
+  
+  /* Mobile responsive (below 768px) */
+  @media (max-width: 768px) {
+    .thanh-tich-alt-section {
+      padding: 40px 0;
+    }
+    
+    .thanh-tich-alt-section__container {
+      padding: 0 16px;
+    }
+    
+    .thanh-tich-alt-section__header {
+      margin-bottom: 32px;
+    }
+    
+    .thanh-tich-alt-section__label {
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+    }
+    
+    .thanh-tich-alt-section__title {
+      font-size: 1.5rem;
+    }
+    
+    .thanh-tich-alt-section__layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 12px;
+    }
+    
+    /* Reset all cards to single column */
+    .thanh-tich-alt-section__card:nth-child(1),
+    .thanh-tich-alt-section__card:nth-child(2),
+    .thanh-tich-alt-section__card:nth-child(3),
+    .thanh-tich-alt-section__card:nth-child(4),
+    .thanh-tich-alt-section__card:nth-child(5),
+    .thanh-tich-alt-section__card:nth-child(6),
+    .thanh-tich-alt-section__card:nth-child(7),
+    .thanh-tich-alt-section__card:nth-child(8),
+    .thanh-tich-alt-section__card:nth-child(9) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    
+    .thanh-tich-alt-section__card {
+      padding: 20px 18px;
+      min-height: 140px !important;
+      border-radius: 16px;
+    }
+    
     .thanh-tich-alt-section__card-image {
       height: 100px;
     }
+    
+    .thanh-tich-alt-section__card-content {
+      padding: 20px;
+    }
+    
+    .thanh-tich-alt-section__badge {
+      font-size: 0.6rem;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+    }
+    
     .thanh-tich-alt-section__number {
       font-size: 2.5rem;
+      margin-bottom: 10px;
     }
+    
     .thanh-tich-alt-section__text {
       font-size: 0.85rem;
+    }
+    
+    .thanh-tich-alt-section__decoration {
+      width: 350px;
+      height: 350px;
     }
   }
 </style>
