@@ -20,9 +20,8 @@ import ThanhTichInfographicSection from '../../../../pages/pages/gioi-thieu/sect
 
 const { group, id } = Astro.params;
 const url = new URL(Astro.request.url);
-const compact = url.searchParams.get('compact') === '1';
 // Log on the server when an embed is requested to help diagnose rendering issues
-console.log(`[embed] requested ${group}/${id} compact=${compact}`);
+console.log(`[embed] requested ${group}/${id}`);
 
 // Components that load heavy frontend assets (jQuery, Elementor scripts, etc.).
 // For compact thumbnails we avoid rendering these to prevent CORS/COEP and
@@ -86,41 +85,7 @@ export function getStaticPaths() {
       body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
       /* debug badge removed per request */
     </style>
-    {compact ? (
-      <>
-        <style>
-          /* Minimal inline styles for compact thumbnails to avoid loading
-             dev-module CSS from Vite which triggers CORS/COEP issues. */
-          html,body { font-family: Arial, sans-serif; margin:0; padding:0; }
-          :root { color-scheme: light; }
-          .thumb-wrap { padding:10px; box-sizing:border-box; }
-        </style>
-        <script>
-          // If the embed is sandboxed without allow-same-origin, accesses to
-          // window.localStorage will throw SecurityError. Provide an in-memory
-          // polyfill for compact thumbnails to avoid runtime exceptions.
-          try {
-            // Attempt a harmless access; this will throw in sandboxed contexts.
-            void window.localStorage;
-          } catch (e) {
-            (function(){
-              const store = Object.create(null);
-              const poly = {
-                getItem(key){ return Object.prototype.hasOwnProperty.call(store, key) ? store[key] : null; },
-                setItem(key, value){ store[key] = String(value); },
-                removeItem(key){ delete store[key]; },
-                clear(){ for (const k in store) delete store[k]; }
-              };
-              try { window.localStorage = poly; } catch (ignore) {}
-              try { window.sessionStorage = poly; } catch (ignore) {}
-              // optional debug flag: console.debug('[embed] using localStorage polyfill');
-            })();
-          }
-        </script>
-        <!-- Block any subsequent scripts from executing in compact thumbnails -->
-        <meta http-equiv="Content-Security-Policy" content="script-src 'none'; object-src 'none';">
-      </>
-    ) : group === 'header' ? (
+    {group === 'header' ? (
       <>
         <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/style.css' />
         <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/theme.min.css' />
@@ -142,9 +107,7 @@ export function getStaticPaths() {
     )}
   </head>
   <body>
-    {compact && heavyComponents.has(id) ? (
-      <div style="padding:20px; font-family: sans-serif; color:#0b1b2a">Preview for <strong>{id}</strong> (compact mode) — interactive assets are disabled for thumbnails.</div>
-    ) : Component ? (
+    {Component ? (
       <Component />
     ) : (
       <div style="padding:24px">Component not found: {group}/{id}</div>

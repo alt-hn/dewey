@@ -3,18 +3,22 @@
     "Navbar"
   ],
   "main": [
-    "MainSection",
-    "HeroSlider"
+    "HeroSlider",
+    "ProgramCardsSection",
+    "InfographicSection",
+    "ThanhTichGridSection"
   ],
   "footer": [
     "FooterSection",
     "FooterAssets"
   ],
   "order": [
-    "MainSection",
-    "FooterSection",
     "Navbar",
     "HeroSlider",
-    "FooterAssets"
+    "FooterAssets",
+    "ProgramCardsSection",
+    "InfographicSection",
+    "ThanhTichGridSection",
+    "FooterSection"
   ]
 }

@@ -18,15 +18,29 @@ import ThanhTichGridSection from '../pages/gioi-thieu/sections/ThanhTichGridSect
 import ThanhTichInfographicSection from '../pages/gioi-thieu/sections/ThanhTichInfographicSection.astro';
 
 const url = new URL(Astro.request.url);
+
+// Debug: log full URL and params
+console.log('Full URL:', Astro.request.url);
+console.log('Search params:', url.searchParams.toString());
+console.log('header param raw:', url.searchParams.get('header'));
+console.log('main param raw:', url.searchParams.get('main'));
+console.log('footer param raw:', url.searchParams.get('footer'));
+
 const header = url.searchParams.get('header')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
 const main = url.searchParams.get('main')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
 const footer = url.searchParams.get('footer')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
-const order = url.searchParams.get('order')?.split(',').map(s => s.trim()).filter(Boolean) ?? [];
+
 const _embedParam = url.searchParams.get('embed');
 // Default to embedded/lightweight mode for previews to avoid injecting
 // the site's <base> url and loading production resources. Only disable
 // embed when explicitly requested with embed=0 or embed=false.
 const embed = _embedParam === null ? true : !(_embedParam === '0' || _embedParam === 'false');
+
+// Determine if we have any components to render
+const hasContent = header.length > 0 || main.length > 0 || footer.length > 0;
+
+// Debug logging
+console.log('Parsed arrays:', { header, main, footer, hasContent });
 
 ---
 
@@ -45,49 +59,44 @@ const embed = _embedParam === null ? true : !(_embedParam === '0' || _embedParam
     {!embed && <PageHead />}
   </head>
   <body>
-    {order.length ? (
-      order.map(id => (
-        (id === 'HeaderSection' && <HeaderSection />) ||
-        (id === 'Navbar' && <Navbar />) ||
-        (id === 'MainSection' && <MainSection />) ||
-        (id === 'HeroSlider' && <HeroSlider />) ||
-        (id === 'IntroSection' && <IntroSection />) ||
-        (id === 'ProgramCardsSection' && <ProgramCardsSection />) ||
-        (id === 'InfographicSection' && <InfographicSection />) ||
-        (id === 'LifeEduSection' && <LifeEduSection />) ||
-        (id === 'ExtracurricularSection' && <ExtracurricularSection />) ||
-        (id === 'CampusListSection' && <CampusListSection />) ||
-        (id === 'ThanhTichAltSection' && <ThanhTichAltSection />) ||
-        (id === 'ThanhTichGridSection' && <ThanhTichGridSection />) ||
-        (id === 'ThanhTichInfographicSection' && <ThanhTichInfographicSection />) ||
-        (id === 'FooterSection' && <FooterSection />) ||
-        (id === 'Footer' && <FooterSection />) ||
-        (id === 'FooterAssets' && <FooterAssets />) || null
-      ))
-    ) : (
-      <!-- Header group -->
+    {hasContent ? (
       <>
-        {header.includes('HeaderSection') && <HeaderSection />}
-        {header.includes('Navbar') && <Navbar />}
+        <!-- Header group -->
+        {header.map(id => (
+          (id === 'HeaderSection' && <HeaderSection />) ||
+          (id === 'Navbar' && <Navbar />) ||
+          null
+        ))}
 
         <!-- Main group -->
-        {main.includes('MainSection') && <MainSection />}
-        {main.includes('HeroSlider') && <HeroSlider />}
-        {main.includes('IntroSection') && <IntroSection />}
-        {main.includes('ProgramCardsSection') && <ProgramCardsSection />}
-        {main.includes('InfographicSection') && <InfographicSection />}
-        {main.includes('LifeEduSection') && <LifeEduSection />}
-        {main.includes('ExtracurricularSection') && <ExtracurricularSection />}
-        {main.includes('CampusListSection') && <CampusListSection />}
-        {main.includes('ThanhTichAltSection') && <ThanhTichAltSection />}
-        {main.includes('ThanhTichGridSection') && <ThanhTichGridSection />}
-        {main.includes('ThanhTichInfographicSection') && <ThanhTichInfographicSection />}
+        {main.map(id => (
+          (id === 'MainSection' && <MainSection />) ||
+          (id === 'HeroSlider' && <HeroSlider />) ||
+          (id === 'IntroSection' && <IntroSection />) ||
+          (id === 'ProgramCardsSection' && <ProgramCardsSection />) ||
+          (id === 'InfographicSection' && <InfographicSection />) ||
+          (id === 'LifeEduSection' && <LifeEduSection />) ||
+          (id === 'ExtracurricularSection' && <ExtracurricularSection />) ||
+          (id === 'CampusListSection' && <CampusListSection />) ||
+          (id === 'ThanhTichAltSection' && <ThanhTichAltSection />) ||
+          (id === 'ThanhTichGridSection' && <ThanhTichGridSection />) ||
+          (id === 'ThanhTichInfographicSection' && <ThanhTichInfographicSection />) ||
+          null
+        ))}
 
         <!-- Footer group -->
-        {footer.includes('FooterSection') && <FooterSection />}
-        {footer.includes('Footer') && <FooterSection />}
-        {footer.includes('FooterAssets') && <FooterAssets />}
+        {footer.map(id => (
+          (id === 'FooterSection' && <FooterSection />) ||
+          (id === 'Footer' && <FooterSection />) ||
+          (id === 'FooterAssets' && <FooterAssets />) ||
+          null
+        ))}
       </>
+    ) : (
+      <div style="padding: 40px; text-align: center; color: #666;">
+        <p>No components selected. Use the storybook to select components.</p>
+        <p style="font-size: 12px; color: #999;">Debug: header={header.length}, main={main.length}, footer={footer.length}</p>
+      </div>
     )}
   </body>
 </html>

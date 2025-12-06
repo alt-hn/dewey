@@ -374,10 +374,6 @@ const footerOptions = [
         transition: all 0.2s ease;
       }
       
-      .selected-item iframe {
-        max-height: none !important;
-      }
-      
       #selectedViewport:empty::before {
         content: 'Chọn components từ thư viện bên trên...';
         display: flex;
@@ -396,6 +392,13 @@ const footerOptions = [
       
       .selected-item {
         transition: all 0.2s ease;
+        line-height: 0;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .selected-item iframe {
+        vertical-align: bottom;
       }
       
       .selected-item:not(:last-child) {
@@ -411,6 +414,7 @@ const footerOptions = [
         overflow: hidden;
         box-shadow: var(--shadow-xl);
         border: 2px solid var(--border);
+        display: none;
       }
       
       .toast {
@@ -462,6 +466,9 @@ const footerOptions = [
         .controls { width: 100%; }
         .btn { flex: 1; justify-content: center; }
       }
+    </style>
+    <style>
+      #dev-toolbar-root { display: none !important; }
     </style>
   </head>
   <body>
@@ -519,7 +526,7 @@ const footerOptions = [
           {headerOptions.map(opt => (
             <div class="card">
               <div class="card-visual" data-component-id={opt.id}>
-                <iframe src={`/previews/embed/header/${opt.id}?compact=1`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
+                <iframe src={`/previews/embed/header/${opt.id}`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
                 <div class="overlay"><input type="checkbox" name="header" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
               <div class="card-meta">
@@ -542,7 +549,7 @@ const footerOptions = [
           {mainOptions.map(opt => (
             <div class="card">
               <div class="card-visual" data-component-id={opt.id}>
-                <iframe src={`/previews/embed/main/${opt.id}?compact=1`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
+                <iframe src={`/previews/embed/main/${opt.id}`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
                 <div class="overlay"><input type="checkbox" name="main" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
               <div class="card-meta">
@@ -565,7 +572,7 @@ const footerOptions = [
           {footerOptions.map(opt => (
             <div class="card">
               <div class="card-visual" data-component-id={opt.id}>
-                <iframe src={`/previews/embed/footer/${opt.id}?compact=1`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
+                <iframe src={`/previews/embed/footer/${opt.id}`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
                 <div class="overlay"><input type="checkbox" name="footer" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
               <div class="card-meta">
@@ -592,17 +599,6 @@ const footerOptions = [
           </div>
         </div>
         <div id="selectedViewport"></div>
-      </section>
-
-      <section class="section">
-        <div class="section-header">
-          <h3 class="section-title">🎬 Live Preview</h3>
-          <div class="section-actions">
-            <button id="refreshPreview" class="btn small">🔄 Refresh</button>
-            <button id="openInNew" class="btn small">↗ Open in New Tab</button>
-          </div>
-        </div>
-        <iframe id="assembledPreview" class="assembled-preview" src="/previews/assembled" title="Assembled preview" loading="lazy"></iframe>
       </section>
     </main>
 
@@ -710,27 +706,54 @@ const footerOptions = [
           const wrapper = document.createElement('div');
           wrapper.className = 'selected-item';
           wrapper.dataset.id = id;
-
-          const iframeWrap = document.createElement('div');
-          iframeWrap.style.width = '100%';
-          iframeWrap.style.overflow = 'hidden';
+          wrapper.style.lineHeight = '0';
 
           const iframe = document.createElement('iframe');
-          iframe.src = `/previews/embed/${groupForId(id)}/${id}?compact=1`;
-          iframe.loading = 'lazy';
+          iframe.src = `/previews/embed/${groupForId(id)}/${id}`;
+          iframe.loading = 'eager';
           iframe.style.width = '100%';
-          iframe.style.height = '100%';
           iframe.style.border = '0';
           iframe.style.display = 'block';
-          iframe.setAttribute('sandbox', 'allow-scripts');
+          iframe.style.margin = '0';
+          iframe.style.padding = '0';
+          iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
           iframe.style.pointerEvents = 'none';
+          iframe.style.overflow = 'hidden';
+          iframe.scrolling = 'no';
+          
+          // Set initial height to prevent layout shift
+          iframe.style.height = '100px';
+          
+          // Listen for iframe load to adjust height
+          iframe.addEventListener('load', () => {
+            try {
+              const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+              if (iframeDoc) {
+                // Force recalculation
+                const body = iframeDoc.body;
+                const html = iframeDoc.documentElement;
+                
+                const height = Math.max(
+                  body?.scrollHeight || 0,
+                  body?.offsetHeight || 0,
+                  html?.clientHeight || 0,
+                  html?.scrollHeight || 0,
+                  html?.offsetHeight || 0
+                );
+                
+                iframe.style.height = height + 'px';
+                wrapper.style.height = height + 'px';
+              }
+            } catch (e) {
+              // CORS restriction, use ResizeObserver fallback or default
+              iframe.style.height = '600px';
+              wrapper.style.height = '600px';
+            }
+          });
 
-          iframeWrap.appendChild(iframe);
-          wrapper.appendChild(iframeWrap);
-
+          wrapper.appendChild(iframe);
           container.appendChild(wrapper);
         });
-        ensureDesktopIframes();
       }
 
       function groupForId(id: string): string {
@@ -756,7 +779,7 @@ const footerOptions = [
         if (headerItems.length) params.set('header', headerItems.join(','));
         if (mainItems.length) params.set('main', mainItems.join(','));
         if (footerItems.length) params.set('footer', footerItems.join(','));
-        if (selectionOrder.length) params.set('order', selectionOrder.join(','));
+        // Remove order param as it's now implicit in the group ordering
         return '/previews/assembled' + (params.toString() ? ('?' + params.toString()) : '');
       }
 
@@ -767,15 +790,17 @@ const footerOptions = [
 
         function scaleIframe(iframeEl: HTMLIFrameElement | null): void {
           if (!iframeEl) return;
-          iframeEl.style.width = DESKTOP_W + 'px';
-          iframeEl.style.height = DESKTOP_H + 'px';
-          iframeEl.style.transformOrigin = 'top left';
-
+          
           const container = iframeEl.parentElement instanceof HTMLElement ? iframeEl.parentElement : iframeEl.parentNode as HTMLElement | null;
-          const containerWidth = (container && container.clientWidth) ? container.clientWidth : window.innerWidth;
-          const scale = Math.max(0.2, Math.min(1, containerWidth / DESKTOP_W));
-
+          
+          // Only scale thumbnails, not selected items
           if (container && container instanceof HTMLElement && container.classList.contains('card-visual')) {
+            const containerWidth = (container && container.clientWidth) ? container.clientWidth : window.innerWidth;
+            const scale = Math.max(0.2, Math.min(1, containerWidth / DESKTOP_W));
+            
+            iframeEl.style.width = DESKTOP_W + 'px';
+            iframeEl.style.height = DESKTOP_H + 'px';
+            iframeEl.style.transformOrigin = 'top left';
             container.style.position = 'relative';
             container.style.overflow = 'hidden';
             iframeEl.style.position = 'absolute';
@@ -783,34 +808,10 @@ const footerOptions = [
             iframeEl.style.top = '0';
             iframeEl.style.transform = `translateX(-50%) scale(${scale})`;
             iframeEl.style.transformOrigin = 'top center';
-          } else if (container && container.parentElement && container.parentElement.classList.contains('selected-item')) {
-            // For selected items, no container height limit, just scale
-            iframeEl.style.position = '';
-            iframeEl.style.left = '';
-            iframeEl.style.top = '';
-            iframeEl.style.transform = `scale(${scale})`;
-            iframeEl.style.transformOrigin = 'top left';
-            if (container && container instanceof HTMLElement) {
-              container.style.height = Math.round(DESKTOP_H * scale) + 'px';
-              container.style.overflow = 'hidden';
-            }
-          } else {
-            iframeEl.style.position = '';
-            iframeEl.style.left = '';
-            iframeEl.style.top = '';
-            iframeEl.style.transform = `scale(${scale})`;
-            iframeEl.style.transformOrigin = 'top left';
-            if (container && container instanceof HTMLElement) {
-              container.style.height = Math.round(DESKTOP_H * scale) + 'px';
-              container.style.overflow = 'hidden';
-            }
           }
         }
 
         document.querySelectorAll('.card-visual iframe').forEach((f) => scaleIframe(f as HTMLIFrameElement));
-        document.querySelectorAll('#selectedViewport iframe').forEach((f) => scaleIframe(f as HTMLIFrameElement));
-        const assembled = document.getElementById('assembledPreview') as HTMLIFrameElement | null;
-        if (assembled) scaleIframe(assembled);
       }
 
       window.addEventListener('resize', () => {
@@ -824,8 +825,9 @@ const footerOptions = [
         const group = btn.dataset.group;
         const id = btn.dataset.id;
         if (!group || !id) return;
-        const url = `/previews/assembled?${encodeURIComponent(group)}=${encodeURIComponent(id)}`;
-        window.open(url, '_blank', 'noopener');
+        const url = `/previews/assembled?${group}=${id}`;
+        console.log('Opening preview URL:', url);
+        window.open(url, '_blank');
       });
 
       // track checkbox selection order
@@ -843,18 +845,12 @@ const footerOptions = [
       const clearSelectedBtn = document.getElementById('clearSelected') as HTMLButtonElement | null;
       const openSelectedInNewBtn = document.getElementById('openSelectedInNew') as HTMLButtonElement | null;
       const saveBtn = document.getElementById('saveBtn') as HTMLButtonElement | null;
-      const refreshBtn = document.getElementById('refreshPreview') as HTMLButtonElement | null;
-      const openInNewBtn = document.getElementById('openInNew') as HTMLButtonElement | null;
-      const assembledFrame = document.getElementById('assembledPreview') as HTMLIFrameElement | null;
 
       if (previewSelectedBtn) previewSelectedBtn.addEventListener('click', () => {
         const url = buildAssembledUrl();
-        if (assembledFrame) {
-          assembledFrame.src = url;
-          showToast('Preview updated!');
-        } else {
-          window.open(url, '_blank', 'noopener');
-        }
+        console.log('Opening preview URL:', url);
+        window.open(url, '_blank');
+        showToast('Opening preview in new tab...');
       });
 
       if (selectAllBtn) selectAllBtn.addEventListener('click', () => {
@@ -897,20 +893,8 @@ const footerOptions = [
 
       if (openSelectedInNewBtn) openSelectedInNewBtn.addEventListener('click', () => {
         const url = buildAssembledUrl();
-        window.open(url, '_blank', 'noopener');
-      });
-
-      if (refreshBtn) refreshBtn.addEventListener('click', () => {
-        if (assembledFrame) {
-          const url = buildAssembledUrl();
-          assembledFrame.src = url;
-          showToast('Preview refreshed!');
-        }
-      });
-
-      if (openInNewBtn) openInNewBtn.addEventListener('click', () => {
-        const url = buildAssembledUrl();
-        window.open(url, '_blank', 'noopener');
+        console.log('Opening URL:', url);
+        window.open(url, '_blank');
       });
 
       if (saveBtn) saveBtn.addEventListener('click', async () => {
@@ -995,7 +979,6 @@ const footerOptions = [
           renderSelectedList();
           updateStats();
           updateCardVisuals();
-          if (assembledFrame) assembledFrame.src = buildAssembledUrl();
         } catch (e) { /* ignore */ }
       }
 
