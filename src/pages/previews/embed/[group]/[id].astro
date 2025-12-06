@@ -23,13 +23,10 @@ const url = new URL(Astro.request.url);
 // Log on the server when an embed is requested to help diagnose rendering issues
 console.log(`[embed] requested ${group}/${id}`);
 
-// Components that load heavy frontend assets (jQuery, Elementor scripts, etc.).
-// For compact thumbnails we avoid rendering these to prevent CORS/COEP and
-// 'jQuery is not defined' runtime errors inside tiny previews.
-const heavyComponents = new Set([
-  'FooterAssets','FooterSection','Footer','HeroSlider','MainSection','IntroSection',
-  'ProgramCardsSection','InfographicSection','LifeEduSection','ExtracurricularSection',
-  'CampusListSection','ThanhTichAltSection','ThanhTichGridSection','ThanhTichInfographicSection'
+// Components that require external dependencies (jQuery, Elementor, etc.)
+// and cannot render properly in sandboxed iframes. Show placeholder instead.
+const scriptOnlyComponents = new Set([
+  'FooterAssets', // Contains jQuery/WordPress scripts that fail in sandbox
 ]);
 
 const mapping: Record<string, Record<string, any>> = {
@@ -107,7 +104,14 @@ export function getStaticPaths() {
     )}
   </head>
   <body>
-    {Component ? (
+    {scriptOnlyComponents.has(id as string) ? (
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100px; padding: 24px; background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%); color: #64748b; text-align: center;">
+        <div style="font-size: 28px; margin-bottom: 8px;">📦</div>
+        <div style="font-weight: 600; font-size: 14px;">{id}</div>
+        <div style="font-size: 12px; opacity: 0.8;">Script/Asset Bundle</div>
+        <div style="font-size: 11px; margin-top: 8px; opacity: 0.6;">External dependencies required</div>
+      </div>
+    ) : Component ? (
       <Component />
     ) : (
       <div style="padding:24px">Component not found: {group}/{id}</div>

@@ -1,4 +1,30 @@
 ---
+// Section metadata with estimated heights at 1400px viewport width
+// aspectRatio = height / width (1400px). Values > 1 mean section is taller than wide.
+// Sections with aspectRatio > 1 will be capped and show a fade overlay
+const sectionMeta: Record<string, { aspectRatio: number; note?: string }> = {
+  // Header sections - typically short navigation bars
+  'HeaderSection': { aspectRatio: 0.12, note: 'Header with menus' },
+  'Navbar': { aspectRatio: 0.08, note: 'Compact navigation bar' },
+  
+  // Main sections - varying heights
+  'MainSection': { aspectRatio: 3.5, note: 'Full main page content - very tall' },
+  'HeroSlider': { aspectRatio: 0.45, note: 'Hero carousel' },
+  'IntroSection': { aspectRatio: 0.5, note: 'Introduction block' },
+  'ProgramCardsSection': { aspectRatio: 0.55, note: 'Program cards grid' },
+  'InfographicSection': { aspectRatio: 0.7, note: 'Stats infographic' },
+  'LifeEduSection': { aspectRatio: 0.25, note: 'Education quote section' },
+  'ExtracurricularSection': { aspectRatio: 0.65, note: 'Extracurricular activities' },
+  'CampusListSection': { aspectRatio: 0.35, note: 'Campus list' },
+  'ThanhTichAltSection': { aspectRatio: 0.6, note: 'Achievements - alternative layout' },
+  'ThanhTichGridSection': { aspectRatio: 0.55, note: 'Achievements grid' },
+  'ThanhTichInfographicSection': { aspectRatio: 0.65, note: 'Achievements infographic' },
+  
+  // Footer sections
+  'FooterSection': { aspectRatio: 2.5, note: 'Full footer with popups - very tall' },
+  'FooterAssets': { aspectRatio: 0.1, note: 'Footer scripts/assets - minimal visual' },
+};
+
 const headerOptions = [
   { id: 'HeaderSection', label: 'HeaderSection' },
   { id: 'Navbar', label: 'Navbar' },
@@ -22,6 +48,9 @@ const footerOptions = [
   { id: 'FooterSection', label: 'Footer' },
   { id: 'FooterAssets', label: 'FooterAssets' },
 ];
+
+// Export section metadata for client-side script
+const sectionMetaJson = JSON.stringify(sectionMeta);
 ---
 
 <!doctype html>
@@ -250,14 +279,45 @@ const footerOptions = [
       
       .card-visual { 
         position: relative; 
-        height: 280px;
-        max-height: 280px;
+        /* Height is set dynamically based on section aspect ratio */
+        min-height: 60px;
         overflow: hidden; 
         border-radius: 10px; 
         border: 2px solid var(--border); 
         background: #fff;
-        transition: border-color 0.2s ease;
+        transition: border-color 0.2s ease, height 0.3s ease;
         flex-shrink: 0;
+      }
+      
+      /* Fade overlay for sections that overflow (taller than 1:1) */
+      .card-visual.has-overflow::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: linear-gradient(to bottom, 
+          rgba(255,255,255,0) 0%, 
+          rgba(255,255,255,0.7) 40%,
+          rgba(255,255,255,0.95) 80%, 
+          rgba(255,255,255,1) 100%
+        );
+        pointer-events: none;
+        z-index: 10;
+      }
+      
+      /* "More content below" indicator */
+      .card-visual.has-overflow::before {
+        content: '⋯';
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        color: var(--text-secondary);
+        z-index: 11;
+        letter-spacing: 4px;
       }
       
       .card-visual:hover {
@@ -525,7 +585,7 @@ const footerOptions = [
           <div class="group-content">
           {headerOptions.map(opt => (
             <div class="card">
-              <div class="card-visual" data-component-id={opt.id}>
+              <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 0.5}>
                 <iframe src={`/previews/embed/header/${opt.id}`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
                 <div class="overlay"><input type="checkbox" name="header" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
@@ -548,7 +608,7 @@ const footerOptions = [
           <div class="group-content">
           {mainOptions.map(opt => (
             <div class="card">
-              <div class="card-visual" data-component-id={opt.id}>
+              <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 0.5}>
                 <iframe src={`/previews/embed/main/${opt.id}`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
                 <div class="overlay"><input type="checkbox" name="main" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
@@ -571,7 +631,7 @@ const footerOptions = [
           <div class="group-content">
           {footerOptions.map(opt => (
             <div class="card">
-              <div class="card-visual" data-component-id={opt.id}>
+              <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 0.5}>
                 <iframe src={`/previews/embed/footer/${opt.id}`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
                 <div class="overlay"><input type="checkbox" name="footer" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
@@ -784,30 +844,55 @@ const footerOptions = [
       }
 
       // scale iframe elements so their internal viewport behaves like a 1400px desktop
+      // and adjust container height based on predefined aspect ratios
       function ensureDesktopIframes(): void {
         const DESKTOP_W = 1400;
-        const DESKTOP_H = 800;
+        const MAX_ASPECT_RATIO = 1; // Maximum aspect ratio before showing overflow indicator
+        const MAX_CONTAINER_HEIGHT = 280; // Maximum container height for overflow sections
+        const MIN_CONTAINER_HEIGHT = 60; // Minimum container height
 
         function scaleIframe(iframeEl: HTMLIFrameElement | null): void {
           if (!iframeEl) return;
           
           const container = iframeEl.parentElement instanceof HTMLElement ? iframeEl.parentElement : iframeEl.parentNode as HTMLElement | null;
           
-          // Only scale thumbnails, not selected items
+          // Only scale thumbnails in card-visual, not selected items
           if (container && container instanceof HTMLElement && container.classList.contains('card-visual')) {
-            const containerWidth = (container && container.clientWidth) ? container.clientWidth : window.innerWidth;
+            const containerWidth = (container && container.clientWidth) ? container.clientWidth : 300;
             const scale = Math.max(0.2, Math.min(1, containerWidth / DESKTOP_W));
             
+            // Get aspect ratio from data attribute (predefined value)
+            const aspectRatio = parseFloat(container.dataset.aspectRatio || '0.5');
+            
+            // Calculate the content height based on aspect ratio
+            const contentHeight = DESKTOP_W * aspectRatio;
+            
+            // Calculate the scaled height that would be visible in the container
+            const scaledHeight = contentHeight * scale;
+            
+            // Determine container height based on whether aspect ratio exceeds 1:1
+            let targetContainerHeight: number;
+            if (aspectRatio <= MAX_ASPECT_RATIO) {
+              // Section fits within 1:1 ratio, use proportional height
+              targetContainerHeight = Math.max(MIN_CONTAINER_HEIGHT, scaledHeight);
+              container.classList.remove('has-overflow');
+            } else {
+              // Section exceeds 1:1 ratio, cap at max height and show overflow indicator
+              targetContainerHeight = MAX_CONTAINER_HEIGHT;
+              container.classList.add('has-overflow');
+            }
+            
+            // Apply styles
             iframeEl.style.width = DESKTOP_W + 'px';
-            iframeEl.style.height = DESKTOP_H + 'px';
-            iframeEl.style.transformOrigin = 'top left';
+            iframeEl.style.height = contentHeight + 'px';
+            iframeEl.style.transformOrigin = 'top center';
             container.style.position = 'relative';
             container.style.overflow = 'hidden';
+            container.style.height = targetContainerHeight + 'px';
             iframeEl.style.position = 'absolute';
             iframeEl.style.left = '50%';
             iframeEl.style.top = '0';
             iframeEl.style.transform = `translateX(-50%) scale(${scale})`;
-            iframeEl.style.transformOrigin = 'top center';
           }
         }
 
@@ -986,6 +1071,31 @@ const footerOptions = [
         document.addEventListener('DOMContentLoaded', loadSaved);
       } else {
         loadSaved();
+      }
+
+      // Initialize iframe scaling after load and attach load listeners for dynamic height
+      function initIframeScaling(): void {
+        document.querySelectorAll('.card-visual iframe').forEach((iframe) => {
+          if (!(iframe instanceof HTMLIFrameElement)) return;
+          
+          // Initial scaling
+          setTimeout(() => ensureDesktopIframes(), 100);
+          
+          // Re-scale when iframe content loads
+          iframe.addEventListener('load', () => {
+            setTimeout(() => ensureDesktopIframes(), 50);
+          });
+        });
+        
+        // Also run after a delay to catch lazy-loaded content
+        setTimeout(() => ensureDesktopIframes(), 500);
+        setTimeout(() => ensureDesktopIframes(), 1500);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initIframeScaling);
+      } else {
+        initIframeScaling();
       }
     </script>
   </body>
