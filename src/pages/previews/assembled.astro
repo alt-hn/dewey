@@ -1,60 +1,5 @@
 ---
 import PageHead from '../../components/PageHead.astro';
-import HeaderSection from '../../components/HeaderSection.astro';
-import MainSection from '../../components/MainSection.astro';
-import FooterSection from '../../components/FooterSection.astro';
-import FooterAssets from '../../components/FooterAssets.astro';
-
-import Navbar from '../pages/gioi-thieu/sections/Navbar.astro';
-import HeroSlider from '../pages/gioi-thieu/sections/HeroSlider.astro';
-import IntroSection from '../pages/gioi-thieu/sections/IntroSection.astro';
-import ProgramCardsSection from '../pages/gioi-thieu/sections/ProgramCardsSection.astro';
-import InfographicSection from '../pages/gioi-thieu/sections/InfographicSection.astro';
-import LifeEduSection from '../pages/gioi-thieu/sections/LifeEduSection.astro';
-import ExtracurricularSection from '../pages/gioi-thieu/sections/ExtracurricularSection.astro';
-import CampusListSection from '../pages/gioi-thieu/sections/CampusListSection.astro';
-import ThanhTichAltSection from '../pages/gioi-thieu/sections/ThanhTichAltSection.astro';
-import ThanhTichGridSection from '../pages/gioi-thieu/sections/ThanhTichGridSection.astro';
-import ThanhTichInfographicSection from '../pages/gioi-thieu/sections/ThanhTichInfographicSection.astro';
-
-const url = new URL(Astro.request.url);
-
-// Debug: log full URL and params
-console.log('Full URL:', Astro.request.url);
-console.log('Search params:', url.searchParams.toString());
-console.log('header param raw:', url.searchParams.get('header'));
-console.log('main param raw:', url.searchParams.get('main'));
-console.log('footer param raw:', url.searchParams.get('footer'));
-
-// Parse and clean component lists - handle trailing spaces and commas
-const parseComponents = (param: string | null): string[] => {
-  if (!param) return [];
-  return param
-    .split(',')
-    .map(s => s.trim())
-    .filter(s => s.length > 0);
-};
-
-const header = parseComponents(url.searchParams.get('header'));
-const main = parseComponents(url.searchParams.get('main'));
-const footer = parseComponents(url.searchParams.get('footer'));
-
-console.log('Parsed header:', header);
-console.log('Parsed main:', main);
-console.log('Parsed footer:', footer);
-
-const _embedParam = url.searchParams.get('embed');
-// Default to embedded/lightweight mode for previews to avoid injecting
-// the site's <base> url and loading production resources. Only disable
-// embed when explicitly requested with embed=0 or embed=false.
-const embed = _embedParam === null ? true : !(_embedParam === '0' || _embedParam === 'false');
-
-// Determine if we have any components to render
-const hasContent = header.length > 0 || main.length > 0 || footer.length > 0;
-
-// Debug logging
-console.log('Has content?', hasContent);
-
 ---
 
 <!doctype html>
@@ -63,53 +8,128 @@ console.log('Has content?', hasContent);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Assembled Preview</title>
-    {embed && (
-      <style>
-        :root { color-scheme: light; }
-        body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-      </style>
-    )}
-    {!embed && <PageHead />}
+    <style>
+      :root { color-scheme: light; }
+      body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      #loading {
+        padding: 40px;
+        text-align: center;
+        color: #666;
+      }
+    </style>
   </head>
   <body>
-    {hasContent ? (
-      <>
-        <!-- Header group -->
-        {header.map(id => (
-          (id === 'HeaderSection' && <HeaderSection />) ||
-          (id === 'Navbar' && <Navbar />) ||
-          null
-        ))}
+    <div id="loading">
+      <p>Loading components...</p>
+    </div>
+    <div id="content"></div>
 
-        <!-- Main group -->
-        {main.map(id => (
-          (id === 'MainSection' && <MainSection />) ||
-          (id === 'HeroSlider' && <HeroSlider />) ||
-          (id === 'IntroSection' && <IntroSection />) ||
-          (id === 'ProgramCardsSection' && <ProgramCardsSection />) ||
-          (id === 'InfographicSection' && <InfographicSection />) ||
-          (id === 'LifeEduSection' && <LifeEduSection />) ||
-          (id === 'ExtracurricularSection' && <ExtracurricularSection />) ||
-          (id === 'CampusListSection' && <CampusListSection />) ||
-          (id === 'ThanhTichAltSection' && <ThanhTichAltSection />) ||
-          (id === 'ThanhTichGridSection' && <ThanhTichGridSection />) ||
-          (id === 'ThanhTichInfographicSection' && <ThanhTichInfographicSection />) ||
-          null
-        ))}
+    <script>
+      // Parse URL parameters
+      const url = new URL(window.location.href);
+      const parseComponents = (param) => {
+        if (!param) return [];
+        return decodeURIComponent(param)
+          .split(',')
+          .map(s => s.trim())
+          .filter(s => s.length > 0);
+      };
 
-        <!-- Footer group -->
-        {footer.map(id => (
-          (id === 'FooterSection' && <FooterSection />) ||
-          (id === 'Footer' && <FooterSection />) ||
-          (id === 'FooterAssets' && <FooterAssets />) ||
-          null
-        ))}
-      </>
-    ) : (
-      <div style="padding: 40px; text-align: center; color: #666;">
-        <p>No components selected. Use the storybook to select components.</p>
-        <p style="font-size: 12px; color: #999;">Debug: header={header.length}, main={main.length}, footer={footer.length}</p>
-      </div>
-    )}
+      const header = parseComponents(url.searchParams.get('header'));
+      const main = parseComponents(url.searchParams.get('main'));
+      const footer = parseComponents(url.searchParams.get('footer'));
+      
+      const embedParam = url.searchParams.get('embed');
+      const embed = embedParam === null ? true : !(embedParam === '0' || embedParam === 'false');
+
+      console.log('Client-side parsing:');
+      console.log('header:', header);
+      console.log('main:', main);
+      console.log('footer:', footer);
+
+      const hasContent = header.length > 0 || main.length > 0 || footer.length > 0;
+
+      const loadingDiv = document.getElementById('loading');
+      const contentDiv = document.getElementById('content');
+
+      if (!hasContent) {
+        loadingDiv.innerHTML = `
+          <div style="padding: 40px; text-align: center; color: #666;">
+            <p>No components selected. Use the storybook to select components.</p>
+            <p style="font-size: 12px; color: #999;">Debug: header=${header.length}, main=${main.length}, footer=${footer.length}</p>
+          </div>
+        `;
+      } else {
+        // Async function to load all components
+        async function loadComponents() {
+          const allComponents = [
+            ...header.map(id => ({ group: 'header', id })),
+            ...main.map(id => ({ group: 'main', id })),
+            ...footer.map(id => ({ group: 'footer', id }))
+          ];
+
+          const loadedStylesheets = new Set();
+
+          for (const { group, id } of allComponents) {
+            try {
+              const response = await fetch(`/previews/embed/${group}/${id}?embed=${embed ? '1' : '0'}`);
+              const html = await response.text();
+              
+              // Extract content from the fetched HTML
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, 'text/html');
+              
+              // Load stylesheets from head (avoid duplicates)
+              doc.head.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && !loadedStylesheets.has(href)) {
+                  loadedStylesheets.add(href);
+                  const newLink = document.createElement('link');
+                  newLink.rel = 'stylesheet';
+                  newLink.href = href;
+                  document.head.appendChild(newLink);
+                }
+              });
+              
+              // Load inline styles from head
+              doc.head.querySelectorAll('style').forEach(style => {
+                const newStyle = document.createElement('style');
+                newStyle.textContent = style.textContent;
+                document.head.appendChild(newStyle);
+              });
+              
+              // Insert body content
+              const wrapper = document.createElement('div');
+              wrapper.innerHTML = doc.body.innerHTML;
+              contentDiv.appendChild(wrapper);
+              
+              // Execute any scripts in the loaded content
+              const scripts = wrapper.querySelectorAll('script');
+              scripts.forEach(oldScript => {
+                const newScript = document.createElement('script');
+                Array.from(oldScript.attributes).forEach(attr => {
+                  newScript.setAttribute(attr.name, attr.value);
+                });
+                newScript.textContent = oldScript.textContent;
+                if (oldScript.parentNode) {
+                  oldScript.parentNode.replaceChild(newScript, oldScript);
+                }
+              });
+              
+            } catch (error) {
+              console.error(`Failed to load ${group}/${id}:`, error);
+              const errorDiv = document.createElement('div');
+              errorDiv.style.cssText = 'padding: 20px; background: #fee; border: 1px solid #fcc; margin: 10px 0;';
+              errorDiv.textContent = `Error loading ${group}/${id}`;
+              contentDiv.appendChild(errorDiv);
+            }
+          }
+          
+          loadingDiv.remove();
+        }
+
+        loadComponents();
+      }
+    </script>
   </body>
 </html>
