@@ -1,11 +1,19 @@
 ---
-import HeaderSection from '../../../../components/HeaderSection.astro';
-import MainSection from '../../../../components/MainSection.astro';
-import FooterSection from '../../../../components/FooterSection.astro';
 import FooterAssets from '../../../../components/FooterAssets.astro';
 // PageHead previously injected a <base> and analytics scripts which break local embeds.
 // Instead we include only the necessary stylesheet links for header rendering (no <base>, no analytics).
 
+// New home sections with local assets
+import HomeNavbar from '../../../../components/sections/home/HomeNavbar.astro';
+import HomeHeroSlider from '../../../../components/sections/home/HomeHeroSlider.astro';
+import HomeCertificationBadges from '../../../../components/sections/home/HomeCertificationBadges.astro';
+import HomeAboutSection from '../../../../components/sections/home/HomeAboutSection.astro';
+import HomeFeaturesGrid from '../../../../components/sections/home/HomeFeaturesGrid.astro';
+import HomeStatisticsInfographic from '../../../../components/sections/home/HomeStatisticsInfographic.astro';
+import HomeCampusSlider from '../../../../components/sections/home/HomeCampusSlider.astro';
+import HomeProgramCards from '../../../../components/sections/home/HomeProgramCards.astro';
+
+// Gioi thieu sections
 import Navbar from '../../../../pages/pages/gioi-thieu/sections/Navbar.astro';
 import HeroSlider from '../../../../pages/pages/gioi-thieu/sections/HeroSlider.astro';
 import IntroSection from '../../../../pages/pages/gioi-thieu/sections/IntroSection.astro';
@@ -23,6 +31,9 @@ const url = new URL(Astro.request.url);
 // Log on the server when an embed is requested to help diagnose rendering issues
 console.log(`[embed] requested ${group}/${id}`);
 
+// Check if this is a new Home section (uses local assets)
+const isHomeSection = id?.startsWith('Home');
+
 // Components that require external dependencies (jQuery, Elementor, etc.)
 // and cannot render properly in sandboxed iframes. Show placeholder instead.
 const scriptOnlyComponents = new Set([
@@ -31,11 +42,17 @@ const scriptOnlyComponents = new Set([
 
 const mapping: Record<string, Record<string, any>> = {
   header: {
-    HeaderSection,
+    HomeNavbar,
     Navbar,
   },
   main: {
-    MainSection,
+    HomeHeroSlider,
+    HomeCertificationBadges,
+    HomeAboutSection,
+    HomeFeaturesGrid,
+    HomeStatisticsInfographic,
+    HomeCampusSlider,
+    HomeProgramCards,
     HeroSlider,
     IntroSection,
     ProgramCardsSection,
@@ -48,9 +65,7 @@ const mapping: Record<string, Record<string, any>> = {
     ThanhTichInfographicSection,
   },
   footer: {
-    FooterSection,
     FooterAssets,
-    Footer: FooterSection,
   },
 };
 
@@ -59,9 +74,9 @@ const Component = Group && (Group as any)[id as string] ? (Group as any)[id as s
 
 export function getStaticPaths() {
   // Explicit lists to avoid runtime referencing issues
-  const headerKeys = ['HeaderSection', 'Navbar'];
-  const mainKeys = ['MainSection','HeroSlider','IntroSection','ProgramCardsSection','InfographicSection','LifeEduSection','ExtracurricularSection','CampusListSection','ThanhTichAltSection','ThanhTichGridSection','ThanhTichInfographicSection'];
-  const footerKeys = ['FooterSection','FooterAssets','Footer'];
+  const headerKeys = ['HomeNavbar', 'Navbar'];
+  const mainKeys = ['HomeHeroSlider','HomeCertificationBadges','HomeAboutSection','HomeFeaturesGrid','HomeStatisticsInfographic','HomeCampusSlider','HomeProgramCards','HeroSlider','IntroSection','ProgramCardsSection','InfographicSection','LifeEduSection','ExtracurricularSection','CampusListSection','ThanhTichAltSection','ThanhTichGridSection','ThanhTichInfographicSection'];
+  const footerKeys = ['FooterAssets'];
 
   const paths: Array<{ params: { group: string; id: string } }> = [];
   headerKeys.forEach(k => paths.push({ params: { group: 'header', id: k } }));
@@ -82,7 +97,63 @@ export function getStaticPaths() {
       body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
       /* debug badge removed per request */
     </style>
-    {group === 'header' ? (
+    {isHomeSection ? (
+      <>
+        <!-- Local CSS for Home sections -->
+        <link rel='stylesheet' href='/home/css/dewey-theme.css' />
+        <link rel='stylesheet' href='/home/css/elementor-frontend.min.css' />
+        <link rel='stylesheet' href='/home/css/widget-nav-menu.min.css' />
+        <link rel='stylesheet' href='/home/css/widget-heading.min.css' />
+        <link rel='stylesheet' href='/home/css/widget-text-editor.min.css' />
+        <link rel='stylesheet' href='/home/css/widget-image.min.css' />
+        <link rel='stylesheet' href='/home/css/widget-button.min.css' />
+        <link rel='stylesheet' href='/home/css/widget-divider.min.css' />
+        <link rel='stylesheet' href='/home/css/swiper.min.css' />
+        <link rel='stylesheet' href='/home/css/font-awesome.min.css' />
+        <link rel='stylesheet' href='/home/css/language-switcher.min.css' />
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
+        </style>
+        <!-- Local JavaScript for Home sections -->
+          <script src="/home/scripts/swiper.min.js" is:inline></script>
+          <script src="/home/scripts/html5lightbox.js" is:inline></script>
+        <script>
+          // Initialize Swiper for sliders
+          document.addEventListener('DOMContentLoaded', function() {
+            // Hero Slider
+            if (document.querySelector('.swiper.animeslide')) {
+              new Swiper('.swiper.animeslide', {
+                loop: true,
+                autoplay: { delay: 5000, disableOnInteraction: false },
+                pagination: { el: '.swiper-pagination', clickable: true },
+                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+              });
+            }
+            // Campus Slider
+            if (document.querySelector('.js-images-slider')) {
+              new Swiper('.js-images-slider', {
+                slidesPerView: 2,
+                spaceBetween: 16,
+                loop: true,
+                breakpoints: {
+                  768: { slidesPerView: 4 }
+                }
+              });
+            }
+            // Program Cards Slider
+            if (document.querySelector('.js-banner-slider')) {
+              new Swiper('.js-banner-slider', {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                loop: true,
+                pagination: { el: '.pagingInfo', type: 'fraction' }
+              });
+            }
+          });
+        </script>
+      </>
+    ) : group === 'header' ? (
       <>
         <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/style.css' />
         <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/theme.min.css' />

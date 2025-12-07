@@ -4,11 +4,17 @@
 // Sections with aspectRatio > 1 will be capped and show a fade overlay
 const sectionMeta: Record<string, { aspectRatio: number; note?: string }> = {
   // Header sections - typically short navigation bars
-  'HeaderSection': { aspectRatio: 0.12, note: 'Header with menus' },
   'Navbar': { aspectRatio: 0.08, note: 'Compact navigation bar' },
+  'HomeNavbar': { aspectRatio: 0.08, note: 'Home page navigation' },
   
   // Main sections - varying heights
-  'MainSection': { aspectRatio: 3.5, note: 'Full main page content - very tall' },
+  'HomeHeroSlider': { aspectRatio: 0.45, note: 'Hero carousel - 7 slides' },
+  'HomeCertificationBadges': { aspectRatio: 0.3, note: 'CIS, AP, IB, Mount Vernon badges' },
+  'HomeAboutSection': { aspectRatio: 0.4, note: 'Introduction image (desktop)' },
+  'HomeFeaturesGrid': { aspectRatio: 0.9, note: 'Statistics + 12 feature cards' },
+  'HomeStatisticsInfographic': { aspectRatio: 0.8, note: 'Mobile infographic (mobile only)' },
+  'HomeCampusSlider': { aspectRatio: 0.35, note: '4 campus locations slider' },
+  'HomeProgramCards': { aspectRatio: 0.55, note: '4 education program cards' },
   'HeroSlider': { aspectRatio: 0.45, note: 'Hero carousel' },
   'IntroSection': { aspectRatio: 0.5, note: 'Introduction block' },
   'ProgramCardsSection': { aspectRatio: 0.55, note: 'Program cards grid' },
@@ -21,31 +27,35 @@ const sectionMeta: Record<string, { aspectRatio: number; note?: string }> = {
   'ThanhTichInfographicSection': { aspectRatio: 0.65, note: 'Achievements infographic' },
   
   // Footer sections
-  'FooterSection': { aspectRatio: 2.5, note: 'Full footer with popups - very tall' },
   'FooterAssets': { aspectRatio: 0.1, note: 'Footer scripts/assets - minimal visual' },
 };
 
 const headerOptions = [
-  { id: 'HeaderSection', label: 'HeaderSection' },
-  { id: 'Navbar', label: 'Navbar' },
+  { id: 'HomeNavbar', label: 'HomeNavbar (New)' },
+  { id: 'Navbar', label: 'Navbar (Gioi Thieu)' },
 ];
 
 const mainOptions = [
-  { id: 'MainSection', label: 'MainSection' },
-  { id: 'HeroSlider', label: 'HeroSlider' },
-  { id: 'IntroSection', label: 'IntroSection' },
-  { id: 'ProgramCardsSection', label: 'ProgramCardsSection' },
-  { id: 'InfographicSection', label: 'InfographicSection' },
-  { id: 'LifeEduSection', label: 'LifeEduSection' },
-  { id: 'ExtracurricularSection', label: 'ExtracurricularSection' },
-  { id: 'CampusListSection', label: 'CampusListSection' },
-  { id: 'ThanhTichAltSection', label: 'ThanhTichAltSection' },
-  { id: 'ThanhTichGridSection', label: 'ThanhTichGridSection' },
-  { id: 'ThanhTichInfographicSection', label: 'ThanhTichInfographicSection' },
+  { id: 'HomeHeroSlider', label: 'HomeHeroSlider (New - 7 slides)' },
+  { id: 'HomeCertificationBadges', label: 'HomeCertificationBadges (New)' },
+  { id: 'HomeAboutSection', label: 'HomeAboutSection (New)' },
+  { id: 'HomeFeaturesGrid', label: 'HomeFeaturesGrid (New - 12 cards)' },
+  { id: 'HomeStatisticsInfographic', label: 'HomeStatisticsInfographic (New - Mobile)' },
+  { id: 'HomeCampusSlider', label: 'HomeCampusSlider (New - 4 campuses)' },
+  { id: 'HomeProgramCards', label: 'HomeProgramCards (New - 4 programs)' },
+  { id: 'HeroSlider', label: 'HeroSlider (Gioi Thieu)' },
+  { id: 'IntroSection', label: 'IntroSection (Gioi Thieu)' },
+  { id: 'ProgramCardsSection', label: 'ProgramCardsSection (Gioi Thieu)' },
+  { id: 'InfographicSection', label: 'InfographicSection (Gioi Thieu)' },
+  { id: 'LifeEduSection', label: 'LifeEduSection (Gioi Thieu)' },
+  { id: 'ExtracurricularSection', label: 'ExtracurricularSection (Gioi Thieu)' },
+  { id: 'CampusListSection', label: 'CampusListSection (Gioi Thieu)' },
+  { id: 'ThanhTichAltSection', label: 'ThanhTichAltSection (Gioi Thieu)' },
+  { id: 'ThanhTichGridSection', label: 'ThanhTichGridSection (Gioi Thieu)' },
+  { id: 'ThanhTichInfographicSection', label: 'ThanhTichInfographicSection (Gioi Thieu)' },
 ];
 
 const footerOptions = [
-  { id: 'FooterSection', label: 'Footer' },
   { id: 'FooterAssets', label: 'FooterAssets' },
 ];
 
@@ -775,7 +785,7 @@ const footerOptions = [
           iframe.style.display = 'block';
           iframe.style.margin = '0';
           iframe.style.padding = '0';
-          iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+          // No sandbox for Selected Components - allow full asset loading
           iframe.style.pointerEvents = 'none';
           iframe.style.overflow = 'hidden';
           iframe.scrolling = 'no';
