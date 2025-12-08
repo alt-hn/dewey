@@ -170,10 +170,13 @@
     aspect-ratio: 1 / 1;
      position: relative;
   }
-    .thanh-tich-grid-section__card_mobile.thanh-tich-grid-section__card--id-1mb {
-      height: 120px;
+  .thanh-tich-grid-section__card_mobile.thanh-tich-grid-section__card--id-1mb {
+    height: 120px;
+    padding: 0;
     box-shadow: none !important;
     border-radius: 0 !important;
+     text-align: justify;
+    justify-content: center;
   }
 
   .thanh-tich-grid-section__card--id-1m::after {
@@ -252,6 +255,35 @@
   
   /* Mobile responsive (below 768px) */
   @media (max-width: 768px) {
+    
+  .thanh-tich-grid-section__card {
+    border-radius: 20px;
+    box-shadow: none;
+    border-top: 1px solid #E0E0E0;
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+    background: #1A1A5C;
+    color: #FFD600;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Keep cards square */
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+  }  
+  .thanh-tich-grid-section__card:last-child {
+      border: 1px solid #E0E0E0; /* Added border only for the last card */
+  }
+    .thanh-tich-grid-section__card:nth-child(odd) {
+      background: #FFFFFF; /* White background for odd cards */
+    }
+
+    .thanh-tich-grid-section__card:nth-child(even) {
+      background: #F9F9F9; /* Light gray background for even cards */
+    }
     .thanh-tich-grid-section__card_mobile {
       display: flex;
     }
@@ -261,7 +293,7 @@
       z-index: 3;
     }
 
-    .thanh-tich-grid-section__card.thanh-tich-grid-section__card--id-1 {
+    .thanh-tich-grid-section__card.thanh-tich-grid-section__card--id-1, .thanh-tich-grid-section__card-decor {
       display: none;
     } 
     .thanh-tich-grid-section__card-number {
@@ -363,6 +395,9 @@
       font-size: 0.88rem;
     }
   }
+
+ 
+
 </style>
 
 <section class="thanh-tich-grid-section">
