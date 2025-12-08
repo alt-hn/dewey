@@ -1,0 +1,1245 @@
+---
+/**
+ * AchievementsPremiumSection - Multi-layer Premium Education Achievement Section
+ * 
+ * A sophisticated, high-end section showcasing educational achievements
+ * with floating cards, glassmorphism effects, and premium animations.
+ * 
+ * Design Philosophy:
+ * - Multi-layer depth with overlapping elements
+ * - Floating island card layout (not grid!)
+ * - Glassmorphism + neon glow effects
+ * - Premium education branding
+ */
+
+// Data organized into logical groups
+const systemScale = {
+  title: "Quy Mô Hệ Thống",
+  stats: [
+    { value: "14", label: "Cơ sở", sublabel: "04 liên cấp, 10 mầm non" },
+    { value: "7500+", label: "Học sinh", sublabel: "mầm non và liên cấp" },
+  ]
+};
+
+const faculty = {
+  title: "Đội Ngũ Giáo Dục",
+  stats: [
+    { value: "45+", label: "Chuyên gia giáo dục", sublabel: "quốc tế & trong nước" },
+    { value: "123", label: "Thạc sĩ trở lên", sublabel: "Cán bộ/Giáo viên" },
+  ]
+};
+
+const universityResults = {
+  title: "Kết Quả Đại Học",
+  stats: [
+    { value: "100%", label: "Đỗ ĐH VN & Quốc tế", highlight: true },
+    { value: "100%", label: "Top 1% ĐH thế giới", sublabel: "theo nguyện vọng" },
+    { value: "93.8%", label: "Top 10% ĐH Việt Nam", sublabel: "theo nguyện vọng" },
+    { value: "96%", label: "Nhận học bổng du học", sublabel: "hoặc hỗ trợ tài chính" },
+    { value: "153", label: "Tỷ VNĐ học bổng", sublabel: "đạt được" },
+  ]
+};
+
+const academicAchievements = {
+  title: "Thành Tích Học Thuật",
+  stats: [
+    { value: "100%", label: "AP đạt 4/5 → 5/5" },
+    { value: "6", label: "Top 2% SAT", sublabel: "toàn cầu" },
+    { value: "64%", label: "SAT 1400+" },
+    { value: "1798", label: "Giải thưởng", sublabel: "quốc tế & trong nước" },
+  ]
+};
+
+const studyAbroad = {
+  title: "Du Học Quốc Tế",
+  count: "11",
+  countries: ["Mỹ", "Canada", "Úc", "Hà Lan", "Thụy Sĩ", "Anh", "Trung Quốc", "Đài Loan", "Nhật Bản", "Singapore", "Hàn Quốc"]
+};
+---
+
+<section class="achievements-premium" id="achievements-premium-section">
+  <!-- Background Layer - Abstract Elements -->
+  <div class="bg-layer">
+    <!-- Gradient Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    
+    <!-- Neon Lines -->
+    <svg class="neon-lines" viewBox="0 0 1400 900" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="neonGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#3EDCFF" stop-opacity="0.6"/>
+          <stop offset="50%" stop-color="#FFD600" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#3EDCFF" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="neonGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#FFD600" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#1A0F5E" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,200 Q350,100 700,250 T1400,180" stroke="url(#neonGrad1)" stroke-width="1.5" fill="none" class="path-animate"/>
+      <path d="M0,600 Q400,500 800,650 T1400,550" stroke="url(#neonGrad2)" stroke-width="1" fill="none" class="path-animate-reverse"/>
+      <circle cx="200" cy="150" r="80" fill="none" stroke="#3EDCFF" stroke-width="0.5" stroke-dasharray="4 8" class="rotate-slow"/>
+      <circle cx="1200" cy="700" r="120" fill="none" stroke="#FFD600" stroke-width="0.5" stroke-dasharray="6 12" class="rotate-slow-reverse"/>
+    </svg>
+    
+    <!-- Dotted Pattern -->
+    <div class="dotted-pattern"></div>
+  </div>
+
+  <!-- Hero Top Layer -->
+  <div class="hero-layer">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-icon">🏆</span>
+        <span class="badge-text">Excellence in Education</span>
+      </div>
+      
+      <h2 class="hero-title">
+        <span class="title-line-1">Thành Tựu</span>
+        <span class="title-line-2">Giáo Dục <em>Quốc Tế</em></span>
+      </h2>
+      
+      <p class="hero-subtitle">
+        Hệ thống giáo dục đẳng cấp với những con số ấn tượng, 
+        khẳng định vị thế hàng đầu trong đào tạo nhân tài toàn cầu.
+      </p>
+      
+      <!-- Hero Highlight Stats -->
+      <div class="hero-highlights">
+        <div class="highlight-stat">
+          <span class="highlight-value">100%</span>
+          <span class="highlight-label">Đỗ Đại học</span>
+        </div>
+        <div class="highlight-divider"></div>
+        <div class="highlight-stat">
+          <span class="highlight-value">7500+</span>
+          <span class="highlight-label">Học sinh</span>
+        </div>
+        <div class="highlight-divider"></div>
+        <div class="highlight-stat">
+          <span class="highlight-value">153 Tỷ</span>
+          <span class="highlight-label">Học bổng VNĐ</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Hero Image with Mask -->
+    <div class="hero-image-container">
+      <div class="hero-image-frame">
+        <div class="hero-image">
+          <!-- Premium campus/student image placeholder with gradient overlay -->
+          <div class="image-placeholder">
+            <svg viewBox="0 0 600 400" class="placeholder-svg">
+              <defs>
+                <linearGradient id="imgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1A0F5E"/>
+                  <stop offset="50%" stop-color="#16213E"/>
+                  <stop offset="100%" stop-color="#0A0535"/>
+                </linearGradient>
+                <pattern id="campusPattern" patternUnits="userSpaceOnUse" width="40" height="40">
+                  <circle cx="20" cy="20" r="1" fill="#3EDCFF" opacity="0.3"/>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#imgGrad)"/>
+              <rect width="100%" height="100%" fill="url(#campusPattern)"/>
+              <!-- Abstract building silhouette -->
+              <path d="M50,350 L50,200 L100,150 L150,200 L150,350 Z" fill="#0B0B3A" opacity="0.5"/>
+              <path d="M180,350 L180,180 L250,120 L320,180 L320,350 Z" fill="#100249" opacity="0.6"/>
+              <path d="M350,350 L350,220 L420,160 L490,220 L490,350 Z" fill="#0B0B3A" opacity="0.5"/>
+              <rect x="420" y="250" width="40" height="60" fill="#FFD600" opacity="0.3"/>
+              <rect x="220" y="220" width="50" height="70" fill="#3EDCFF" opacity="0.2"/>
+              <!-- Graduation cap icon -->
+              <g transform="translate(280, 80)">
+                <polygon points="0,20 40,0 80,20 40,40" fill="#FFD600" opacity="0.8"/>
+                <rect x="35" y="25" width="10" height="25" fill="#FFD600" opacity="0.6"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="image-overlay"></div>
+        <div class="image-glow"></div>
+      </div>
+      
+      <!-- Floating accent elements -->
+      <div class="floating-accent accent-1">
+        <span class="accent-number">14</span>
+        <span class="accent-label">Cơ sở</span>
+      </div>
+      <div class="floating-accent accent-2">
+        <span class="accent-number">45+</span>
+        <span class="accent-label">Chuyên gia</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle Stats Cluster - Floating Islands -->
+  <div class="stats-cluster">
+    <!-- Group 1: System Scale - Top Left, tilted -->
+    <div class="stat-island island-1" data-group="system">
+      <div class="island-header">
+        <div class="island-icon">🏫</div>
+        <h3 class="island-title">{systemScale.title}</h3>
+      </div>
+      <div class="island-stats">
+        {systemScale.stats.map((stat) => (
+          <div class="stat-item">
+            <span class="stat-value">{stat.value}</span>
+            <div class="stat-info">
+              <span class="stat-label">{stat.label}</span>
+              {stat.sublabel && <span class="stat-sublabel">{stat.sublabel}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Group 2: Faculty - Top Right, slight rotation -->
+    <div class="stat-island island-2" data-group="faculty">
+      <div class="island-header">
+        <div class="island-icon">👨‍🏫</div>
+        <h3 class="island-title">{faculty.title}</h3>
+      </div>
+      <div class="island-stats">
+        {faculty.stats.map((stat) => (
+          <div class="stat-item">
+            <span class="stat-value">{stat.value}</span>
+            <div class="stat-info">
+              <span class="stat-label">{stat.label}</span>
+              {stat.sublabel && <span class="stat-sublabel">{stat.sublabel}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Group 3: University Results - Center, Large, prominent -->
+    <div class="stat-island island-3 island-large" data-group="university">
+      <div class="island-header">
+        <div class="island-icon">🎓</div>
+        <h3 class="island-title">{universityResults.title}</h3>
+      </div>
+      <div class="island-stats island-stats-grid">
+        {universityResults.stats.map((stat, idx) => (
+          <div class={`stat-item ${stat.highlight ? 'stat-highlight' : ''}`}>
+            <span class="stat-value">{stat.value}</span>
+            <div class="stat-info">
+              <span class="stat-label">{stat.label}</span>
+              {stat.sublabel && <span class="stat-sublabel">{stat.sublabel}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Group 4: Academic Achievements - Bottom Left -->
+    <div class="stat-island island-4" data-group="academic">
+      <div class="island-header">
+        <div class="island-icon">📊</div>
+        <h3 class="island-title">{academicAchievements.title}</h3>
+      </div>
+      <div class="island-stats island-stats-compact">
+        {academicAchievements.stats.map((stat) => (
+          <div class="stat-item">
+            <span class="stat-value">{stat.value}</span>
+            <div class="stat-info">
+              <span class="stat-label">{stat.label}</span>
+              {stat.sublabel && <span class="stat-sublabel">{stat.sublabel}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Group 5: Study Abroad - Bottom Right, special design -->
+    <div class="stat-island island-5" data-group="abroad">
+      <div class="island-header">
+        <div class="island-icon">🌍</div>
+        <h3 class="island-title">{studyAbroad.title}</h3>
+      </div>
+      <div class="island-content-special">
+        <div class="abroad-highlight">
+          <span class="abroad-number">{studyAbroad.count}</span>
+          <span class="abroad-label">Quốc gia</span>
+        </div>
+        <div class="abroad-countries">
+          {studyAbroad.countries.map((country) => (
+            <span class="country-tag">{country}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative connecting lines -->
+    <svg class="cluster-connections" viewBox="0 0 1200 800">
+      <defs>
+        <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#3EDCFF" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#FFD600" stop-opacity="0.3"/>
+        </linearGradient>
+      </defs>
+      <path d="M200,150 Q600,100 400,400" stroke="url(#lineGrad)" stroke-width="1" fill="none" stroke-dasharray="5 10"/>
+      <path d="M1000,200 Q700,300 800,500" stroke="url(#lineGrad)" stroke-width="1" fill="none" stroke-dasharray="5 10"/>
+    </svg>
+  </div>
+
+  <!-- Bottom CTA Layer -->
+  <div class="cta-layer">
+    <div class="cta-content">
+      <div class="cta-text">
+        <span class="cta-label">Khám phá thêm về hành trình giáo dục xuất sắc</span>
+      </div>
+      <button class="cta-button">
+        <span>Tìm Hiểu Thêm</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ========================================
+     CSS Variables - Premium Color Palette
+     ======================================== */
+  .achievements-premium {
+    --white: #FFFFFF;
+    --dark-gradient-1: #1A1A2E;
+    --dark-gradient-2: #16213E;
+    --navy-purple: #1A0F5E;
+    --deep-blue: #0A0535;
+    --indigo-dark: #0B0B3A;
+    --highlight-yellow: #FFD600;
+    --cyan-border: #3EDCFF;
+    --deep-blue-alt: #100249;
+    --grey-dotted: #CCCCCC;
+    
+    /* Computed gradients */
+    --gradient-main: linear-gradient(140deg, #1A1A2E, #16213E, #0A0535, #1A0F5E);
+    --gradient-card: linear-gradient(135deg, rgba(26, 15, 94, 0.8), rgba(11, 11, 58, 0.9));
+    --gradient-glow: radial-gradient(ellipse at center, rgba(255, 214, 0, 0.15), transparent 70%);
+    
+    /* Glassmorphism */
+    --glass-bg: rgba(16, 2, 73, 0.6);
+    --glass-border: rgba(62, 220, 255, 0.3);
+    --glass-blur: blur(20px);
+    
+    /* Shadows */
+    --shadow-premium: 0 25px 50px -12px rgba(10, 5, 53, 0.5);
+    --shadow-glow-cyan: 0 0 30px rgba(62, 220, 255, 0.3);
+    --shadow-glow-yellow: 0 0 30px rgba(255, 214, 0, 0.3);
+  }
+
+  /* ========================================
+     Base Section Styles
+     ======================================== */
+  .achievements-premium {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--gradient-main);
+    overflow: hidden;
+    padding: 80px 0;
+  }
+
+  /* ========================================
+     Background Layer - Abstract Elements
+     ======================================== */
+  .bg-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  /* Gradient Orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+  }
+
+  .orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--navy-purple), transparent 70%);
+    top: -200px;
+    left: -100px;
+    animation: float-orb 20s ease-in-out infinite;
+  }
+
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--deep-blue-alt), transparent 70%);
+    bottom: -150px;
+    right: -100px;
+    animation: float-orb 25s ease-in-out infinite reverse;
+  }
+
+  .orb-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 214, 0, 0.2), transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse-orb 10s ease-in-out infinite;
+  }
+
+  @keyframes float-orb {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+  }
+
+  @keyframes pulse-orb {
+    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.2); }
+  }
+
+  /* Neon Lines SVG */
+  .neon-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .path-animate {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw-path 8s ease-in-out infinite;
+  }
+
+  .path-animate-reverse {
+    stroke-dasharray: 800;
+    stroke-dashoffset: -800;
+    animation: draw-path-reverse 10s ease-in-out infinite;
+  }
+
+  @keyframes draw-path {
+    0% { stroke-dashoffset: 1000; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -1000; }
+  }
+
+  @keyframes draw-path-reverse {
+    0% { stroke-dashoffset: -800; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 800; }
+  }
+
+  .rotate-slow {
+    transform-origin: center;
+    animation: rotate-slow 60s linear infinite;
+  }
+
+  .rotate-slow-reverse {
+    transform-origin: center;
+    animation: rotate-slow 80s linear infinite reverse;
+  }
+
+  @keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Dotted Pattern */
+  .dotted-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--grey-dotted) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.1;
+  }
+
+  /* ========================================
+     Hero Top Layer
+     ======================================== */
+  .hero-layer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+    gap: 60px;
+    z-index: 10;
+  }
+
+  .hero-content {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    background: rgba(62, 220, 255, 0.1);
+    border: 1px solid var(--cyan-border);
+    border-radius: 50px;
+    margin-bottom: 24px;
+    animation: badge-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes badge-glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(62, 220, 255, 0.2); }
+    50% { box-shadow: 0 0 25px rgba(62, 220, 255, 0.4); }
+  }
+
+  .badge-icon {
+    font-size: 18px;
+  }
+
+  .badge-text {
+    color: var(--cyan-border);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 24px 0;
+  }
+
+  .title-line-1 {
+    display: block;
+    color: var(--white);
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+  }
+
+  .title-line-2 {
+    display: block;
+    background: linear-gradient(90deg, var(--highlight-yellow), var(--cyan-border));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .title-line-2 em {
+    font-style: normal;
+    position: relative;
+  }
+
+  .title-line-2 em::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--highlight-yellow);
+    border-radius: 2px;
+    opacity: 0.5;
+  }
+
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0 0 40px 0;
+  }
+
+  /* Hero Highlights */
+  .hero-highlights {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 24px 32px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-premium);
+  }
+
+  .highlight-stat {
+    text-align: center;
+  }
+
+  .highlight-value {
+    display: block;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--highlight-yellow);
+    text-shadow: 0 0 20px rgba(255, 214, 0, 0.3);
+  }
+
+  .highlight-label {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .highlight-divider {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, var(--cyan-border), transparent);
+  }
+
+  /* Hero Image Container */
+  .hero-image-container {
+    position: relative;
+    flex: 1;
+    max-width: 550px;
+  }
+
+  .hero-image-frame {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+    transition: transform 0.5s ease;
+  }
+
+  .hero-image-frame:hover {
+    transform: perspective(1000px) rotateY(-2deg) rotateX(1deg) scale(1.02);
+  }
+
+  .hero-image {
+    width: 100%;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  .placeholder-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26, 15, 94, 0.4), rgba(10, 5, 53, 0.6));
+    pointer-events: none;
+  }
+
+  .image-glow {
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--cyan-border), var(--highlight-yellow), var(--cyan-border));
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(8px);
+    animation: glow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  /* Floating Accents on Image */
+  .floating-accent {
+    position: absolute;
+    padding: 16px 24px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--cyan-border);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-glow-cyan);
+    animation: float-accent 6s ease-in-out infinite;
+  }
+
+  .accent-1 {
+    bottom: -30px;
+    left: -40px;
+    animation-delay: 0s;
+  }
+
+  .accent-2 {
+    top: -20px;
+    right: -30px;
+    animation-delay: 3s;
+  }
+
+  @keyframes float-accent {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .accent-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--highlight-yellow);
+  }
+
+  .accent-label {
+    display: block;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ========================================
+     Stats Cluster - Floating Islands
+     ======================================== */
+  .stats-cluster {
+    position: relative;
+    max-width: 1400px;
+    margin: 100px auto 0;
+    padding: 0 40px;
+    min-height: 700px;
+    z-index: 10;
+  }
+
+  .cluster-connections {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* Stat Island Base Styles */
+  .stat-island {
+    position: absolute;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow-premium);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .stat-island::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--cyan-border), transparent, var(--highlight-yellow));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .stat-island:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--highlight-yellow);
+    box-shadow: var(--shadow-glow-yellow);
+  }
+
+  .stat-island:hover::before {
+    opacity: 0.5;
+  }
+
+  /* Island Positions - Floating Layout */
+  .island-1 {
+    top: 0;
+    left: 5%;
+    transform: rotate(-2deg);
+    width: 320px;
+    animation: float-island 8s ease-in-out infinite;
+  }
+
+  .island-2 {
+    top: 20px;
+    right: 8%;
+    transform: rotate(3deg);
+    width: 300px;
+    animation: float-island 9s ease-in-out infinite 1s;
+  }
+
+  .island-3 {
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    z-index: 5;
+    animation: float-island 7s ease-in-out infinite 0.5s;
+  }
+
+  .island-4 {
+    bottom: 80px;
+    left: 3%;
+    transform: rotate(2deg);
+    width: 340px;
+    animation: float-island 10s ease-in-out infinite 2s;
+  }
+
+  .island-5 {
+    bottom: 50px;
+    right: 5%;
+    transform: rotate(-1deg);
+    width: 380px;
+    animation: float-island 8.5s ease-in-out infinite 1.5s;
+  }
+
+  @keyframes float-island {
+    0%, 100% { transform: translateY(0) rotate(var(--rotation, 0deg)); }
+    50% { transform: translateY(-15px) rotate(var(--rotation, 0deg)); }
+  }
+
+  .island-1 { --rotation: -2deg; }
+  .island-2 { --rotation: 3deg; }
+  .island-3 { --rotation: 0deg; transform: translateX(-50%) translateY(0); }
+  .island-4 { --rotation: 2deg; }
+  .island-5 { --rotation: -1deg; }
+
+  @keyframes float-island {
+    0%, 100% { 
+      transform: translateY(0); 
+    }
+    50% { 
+      transform: translateY(-15px); 
+    }
+  }
+
+  .island-3 {
+    animation: float-island-center 7s ease-in-out infinite 0.5s;
+  }
+
+  @keyframes float-island-center {
+    0%, 100% { 
+      transform: translateX(-50%) translateY(0); 
+    }
+    50% { 
+      transform: translateX(-50%) translateY(-15px); 
+    }
+  }
+
+  /* Large Island Specific */
+  .island-large {
+    background: linear-gradient(145deg, rgba(16, 2, 73, 0.8), rgba(26, 15, 94, 0.7));
+    border-color: var(--cyan-border);
+  }
+
+  /* Island Header */
+  .island-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(62, 220, 255, 0.2);
+  }
+
+  .island-icon {
+    font-size: 24px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 214, 0, 0.1);
+    border-radius: 12px;
+  }
+
+  .island-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  /* Island Stats */
+  .island-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .island-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .island-stats-compact {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .stat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--cyan-border);
+    line-height: 1;
+    min-width: 70px;
+    transition: color 0.3s ease;
+  }
+
+  .stat-island:hover .stat-value {
+    color: var(--highlight-yellow);
+  }
+
+  .stat-highlight .stat-value {
+    color: var(--highlight-yellow);
+    text-shadow: 0 0 20px rgba(255, 214, 0, 0.4);
+  }
+
+  .stat-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.3;
+  }
+
+  .stat-sublabel {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 2px;
+  }
+
+  /* Study Abroad Special Layout */
+  .island-content-special {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .abroad-highlight {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .abroad-number {
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--highlight-yellow);
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(255, 214, 0, 0.3);
+  }
+
+  .abroad-label {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .abroad-countries {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .country-tag {
+    padding: 6px 14px;
+    background: rgba(62, 220, 255, 0.1);
+    border: 1px solid rgba(62, 220, 255, 0.3);
+    border-radius: 20px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+  }
+
+  .country-tag:hover {
+    background: rgba(255, 214, 0, 0.15);
+    border-color: var(--highlight-yellow);
+    color: var(--highlight-yellow);
+  }
+
+  /* ========================================
+     CTA Layer
+     ======================================== */
+  .cta-layer {
+    position: relative;
+    max-width: 1400px;
+    margin: 80px auto 0;
+    padding: 0 40px;
+    z-index: 10;
+  }
+
+  .cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 60px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--shadow-premium);
+  }
+
+  .cta-label {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, var(--highlight-yellow), #FFC400);
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--deep-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 214, 0, 0.3);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 214, 0, 0.5);
+  }
+
+  .cta-button svg {
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button:hover svg {
+    transform: translateX(5px);
+  }
+
+  /* ========================================
+     Responsive Design
+     ======================================== */
+  @media (max-width: 1200px) {
+    .hero-layer {
+      flex-direction: column;
+      text-align: center;
+      padding: 0 40px;
+    }
+
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero-highlights {
+      justify-content: center;
+    }
+
+    .hero-image-container {
+      max-width: 100%;
+    }
+
+    .hero-image-frame {
+      transform: none;
+    }
+
+    .stats-cluster {
+      min-height: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .stat-island {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      transform: none !important;
+      width: 100% !important;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .cluster-connections {
+      display: none;
+    }
+
+    .floating-accent {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .achievements-premium {
+      padding: 60px 0;
+    }
+
+    .hero-layer {
+      padding: 0 20px;
+    }
+
+    .hero-title {
+      font-size: 32px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+    }
+
+    .hero-highlights {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .highlight-divider {
+      width: 60px;
+      height: 1px;
+    }
+
+    .island-stats-grid,
+    .island-stats-compact {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-content {
+      flex-direction: column;
+      gap: 20px;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .abroad-number {
+      font-size: 42px;
+    }
+  }
+
+  /* ========================================
+     Animation on Scroll (optional JS enhancement)
+     ======================================== */
+  .stat-island {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: reveal-island 0.8s ease forwards;
+  }
+
+  .island-1 { animation-delay: 0.1s; }
+  .island-2 { animation-delay: 0.2s; }
+  .island-3 { animation-delay: 0.3s; }
+  .island-4 { animation-delay: 0.4s; }
+  .island-5 { animation-delay: 0.5s; }
+
+  @keyframes reveal-island {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Preserve rotation after reveal */
+  .island-1 { animation: reveal-island-1 0.8s ease forwards; animation-delay: 0.1s; }
+  .island-2 { animation: reveal-island-2 0.8s ease forwards; animation-delay: 0.2s; }
+  .island-4 { animation: reveal-island-4 0.8s ease forwards; animation-delay: 0.4s; }
+  .island-5 { animation: reveal-island-5 0.8s ease forwards; animation-delay: 0.5s; }
+
+  @keyframes reveal-island-1 {
+    to { opacity: 1; transform: translateY(0) rotate(-2deg); }
+  }
+  @keyframes reveal-island-2 {
+    to { opacity: 1; transform: translateY(0) rotate(3deg); }
+  }
+  @keyframes reveal-island-4 {
+    to { opacity: 1; transform: translateY(0) rotate(2deg); }
+  }
+  @keyframes reveal-island-5 {
+    to { opacity: 1; transform: translateY(0) rotate(-1deg); }
+  }
+
+  /* Center island special reveal */
+  .island-3 {
+    animation: reveal-island-3 0.8s ease forwards;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes reveal-island-3 {
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+</style>
+
+<script>
+  // Counter animation for numbers
+  document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          
+          // Animate numbers
+          const numbers = entry.target.querySelectorAll('.stat-value, .highlight-value, .accent-number, .abroad-number');
+          numbers.forEach(num => {
+            animateNumber(num);
+          });
+        }
+      });
+    }, observerOptions);
+
+    const section = document.querySelector('.achievements-premium');
+    if (section) {
+      observer.observe(section);
+    }
+
+    function animateNumber(element: Element) {
+      const text = element.textContent || '';
+      const match = text.match(/^([\d,.]+)/);
+      if (!match) return;
+
+      const finalValue = parseFloat(match[1].replace(/,/g, ''));
+      const suffix = text.replace(match[1], '');
+      const duration = 2000;
+      const startTime = performance.now();
+
+      function update(currentTime: number) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        
+        let currentValue = Math.floor(finalValue * easeOut);
+        
+        if (finalValue >= 1000) {
+          element.textContent = currentValue.toLocaleString() + suffix;
+        } else if (finalValue % 1 !== 0) {
+          element.textContent = (finalValue * easeOut).toFixed(1) + suffix;
+        } else {
+          element.textContent = currentValue + suffix;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          element.textContent = text; // Restore original text
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+  });
+</script>
