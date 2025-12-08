@@ -7,6 +7,11 @@
  */
 ---
 
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='/home/css/elementor-frontend.min.css' />
+<link rel='stylesheet' href='/home/css/dewey-theme.css' />
+<link rel='stylesheet' href='/home/css/swiper.min.css' />
+
 <div class="elementor-element elementor-element-d8fe02a e-con-full e-flex e-con e-parent" data-id="d8fe02a" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 	<div class="elementor-element elementor-element-e4e190b e-con-full e-flex e-con e-child" data-id="e4e190b" data-element_type="container">
 	</div>
@@ -140,3 +145,15 @@
 		</div>
 	</div>
 </div>
+
+<script src="/home/scripts/swiper.min.js"></script>
+<script is:inline>
+  if (typeof Swiper !== 'undefined' && document.querySelector('.js-banner-slider')) {
+    new Swiper('.js-banner-slider', {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      loop: true,
+      pagination: { el: '.pagingInfo', type: 'fraction' }
+    });
+  }
+</script>

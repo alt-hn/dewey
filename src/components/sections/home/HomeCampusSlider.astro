@@ -7,6 +7,11 @@
  */
 ---
 
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='/home/css/elementor-frontend.min.css' />
+<link rel='stylesheet' href='/home/css/dewey-theme.css' />
+<link rel='stylesheet' href='/home/css/swiper.min.css' />
+
 <div class="elementor-element elementor-element-04e6b77 e-flex e-con-boxed e-con e-parent" data-id="04e6b77" data-element_type="container">
 	<div class="e-con-inner">
 		<div class="elementor-element elementor-element-86363b8 elementor-widget elementor-widget-dewey-images-slider" data-id="86363b8" data-element_type="widget" data-widget_type="dewey-images-slider.default">
@@ -81,3 +86,17 @@
 		</div>
 	</div>
 </div>
+
+<script src="/home/scripts/swiper.min.js"></script>
+<script is:inline>
+  if (typeof Swiper !== 'undefined' && document.querySelector('.js-images-slider')) {
+    new Swiper('.js-images-slider', {
+      slidesPerView: 2,
+      spaceBetween: 16,
+      loop: true,
+      breakpoints: {
+        768: { slidesPerView: 4 }
+      }
+    });
+  }
+</script>
