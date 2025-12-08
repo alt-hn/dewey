@@ -15,6 +15,7 @@ import HomeProgramCards from '../../../../components/sections/home/HomeProgramCa
 
 // Gioi thieu sections
 import Navbar from '../../../../components/sections/about/Navbar.astro';
+import GioiThieuSection from '../../../../components/sections/about/GioiThieuSection.astro';
 import HeroSlider from '../../../../components/sections/about/HeroSlider.astro';
 import IntroSection from '../../../../components/sections/about/IntroSection.astro';
 import ProgramCardsSection from '../../../../components/sections/about/ProgramCardsSection.astro';
@@ -61,6 +62,7 @@ const mapping: Record<string, Record<string, any>> = {
     LifeEduSection,
     ExtracurricularSection,
     CampusListSection,
+    GioiThieuSection, // Added GioiThieuSection to the mapping
     ThanhTichAltSection,
     ThanhTichGridSection,
     ThanhTichInfographicSection,
@@ -77,7 +79,27 @@ const Component = Group && (Group as any)[id as string] ? (Group as any)[id as s
 export function getStaticPaths() {
   // Explicit lists to avoid runtime referencing issues
   const headerKeys = ['HomeNavbar', 'Navbar'];
-  const mainKeys = ['HomeHeroSlider','HomeCertificationBadges','HomeAboutSection','HomeFeaturesGrid','HomeStatisticsInfographic','HomeCampusSlider','HomeProgramCards','HeroSlider','IntroSection','ProgramCardsSection','InfographicSection','LifeEduSection','ExtracurricularSection','CampusListSection','ThanhTichAltSection','ThanhTichGridSection','ThanhTichInfographicSection','AchievementsPremiumSection'];
+  const mainKeys = [
+    'HomeHeroSlider',
+    'HomeCertificationBadges',
+    'HomeAboutSection',
+    'HomeFeaturesGrid',
+    'HomeStatisticsInfographic',
+    'HomeCampusSlider',
+    'HomeProgramCards',
+    'HeroSlider',
+    'IntroSection',
+    'ProgramCardsSection',
+    'InfographicSection',
+    'LifeEduSection',
+    'ExtracurricularSection',
+    'CampusListSection',
+    'ThanhTichAltSection',
+    'ThanhTichGridSection',
+    'ThanhTichInfographicSection',
+    'AchievementsPremiumSection',
+    'GioiThieuSection', // Added GioiThieuSection
+  ];
   const footerKeys = ['FooterAssets'];
 
   const paths: Array<{ params: { group: string; id: string } }> = [];
