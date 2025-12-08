@@ -124,7 +124,7 @@
     width: 52px;
     height: 6px;
     background: #3B82F6;
-    border-radius: 4px;
+       background: linear-gradient(to top, rgba(4,0,21,1) 100%, rgba(4,0,21,0) 0%);
     z-index: 2;
   }
   .thanh-tich-grid-section__card-number {
@@ -144,7 +144,71 @@
   .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-desc {
     color: #fff;
   }
+  .thanh-tich-grid-section__card_mobile   {
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    background: #1A1A5C;
+    color: #FFD600;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Keep cards square */
+    aspect-ratio: 1 / 1;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+    display: none;
+  }
   
+  .thanh-tich-grid-section__card--id-1m {
+    width: 100% ;
+   /* filter: grayscale(1);*/
+    background: url('/images/gioi-thieu/imgblack.png');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1 / 1;
+     position: relative;
+  }
+    .thanh-tich-grid-section__card_mobile.thanh-tich-grid-section__card--id-1mb {
+      height: 120px;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .thanh-tich-grid-section__card--id-1m::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+     /*background:
+      linear-gradient(to top, rgba(4,0,21,0.4) 100%, rgba(4,0,21,0) 0%), 
+      linear-gradient(to top, rgba(221,226,255,0.3) 100%, rgba(221,226,255,0) 0%);*/
+    background: linear-gradient(to top, rgba(0, 24, 163, 0.2) 100%, rgba(15, 51, 255, 0.2) 0%), 
+      linear-gradient(to top, rgba(4,0,21,1) 0%, rgba(4,0,21,0) 50%);
+    /* mix-blend-mode: multiply;*/
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .thanh-tich-grid-section__card_mobile .thanh-tich-grid-section__card-number{
+    color: #FFD600;
+  }
+  .thanh-tich-grid-section__card_mobile .thanh-tich-grid-section__card-desc {
+    color:#fff;
+  }
+  
+  .thanh-tich-grid-section__card--id-1mb {
+    width: 100% ;
+    background: #fff;
+    color: #100249;
+    aspect-ratio: auto;
+  }
+  .thanh-tich-grid-section__card--id-1mb .thanh-tich-grid-section__card-desc {
+    color: #100249;
+  }
+
+
   /* Tablet responsive (768px - 1024px) */
   @media (max-width: 1024px) and (min-width: 769px) {
     .thanh-tich-grid-section {
@@ -188,6 +252,70 @@
   
   /* Mobile responsive (below 768px) */
   @media (max-width: 768px) {
+    .thanh-tich-grid-section__card_mobile {
+      display: flex;
+    }
+
+    .thanh-tich-grid-section__card_mobile > * {
+      position: relative;
+      z-index: 3;
+    }
+
+    .thanh-tich-grid-section__card.thanh-tich-grid-section__card--id-1 {
+      display: none;
+    } 
+    .thanh-tich-grid-section__card-number {
+    color: #100249;
+  }
+  .thanh-tich-grid-section__card-desc {
+    color: #5F636F;
+  }
+  .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-number {
+    color: #100249;
+  }
+  .thanh-tich-grid-section__card--img .thanh-tich-grid-section__card-desc {
+    color: #5F636F;
+  }
+  .thanh-tich-grid-section__card--id-2,
+  .thanh-tich-grid-section__card--id-3,
+  .thanh-tich-grid-section__card--id-4,
+  .thanh-tich-grid-section__card--id-5,
+  .thanh-tich-grid-section__card--id-6,
+  .thanh-tich-grid-section__card--id-7,
+  .thanh-tich-grid-section__card--id-8,
+  .thanh-tich-grid-section__card--id-9,
+  .thanh-tich-grid-section__card--id-10 {
+    background: transparent;  
+    border-radius: 0;
+  }
+  .thanh-tich-grid-section__card--id-2{
+    border-radius: 20px 20px 0px 0px;
+  }
+  .thanh-tich-grid-section__card--id-10 {
+    border-radius: 0px 00px 20px 20px;
+  }
+  .thanh-tich-grid-section__card--id-2 .thanh-tich-grid-section__card-bgimg,
+  .thanh-tich-grid-section__card--id-3 .thanh-tich-grid-section__card-bgimg,
+  .thanh-tich-grid-section__card--id-4 .thanh-tich-grid-section__card-bgimg,
+  .thanh-tich-grid-section__card--id-5 .thanh-tich-grid-section__card-bgimg,
+  .thanh-tich-grid-section__card--id-6 .thanh-tich-grid-section__card-bgimg,
+  .thanh-tich-grid-section__card--id-7 .thanh-tich-grid-section__card-bgimg,
+  .thanh-tich-grid-section__card--id-8 .thanh-tich-grid-section__card-bgimg,
+  .thanh-tich-grid-section__card--id-9 .thanh-tich-grid-section__card-bgimg,
+  .thanh-tich-grid-section__card--id-10 .thanh-tich-grid-section__card-bgimg {
+    background: transparent;  
+  }
+  .thanh-tich-grid-section__card--id-2 .thanh-tich-grid-section__card-bgimg::after,
+  .thanh-tich-grid-section__card--id-3 .thanh-tich-grid-section__card-bgimg::after,
+  .thanh-tich-grid-section__card--id-4 .thanh-tich-grid-section__card-bgimg::after,
+  .thanh-tich-grid-section__card--id-5 .thanh-tich-grid-section__card-bgimg::after,
+  .thanh-tich-grid-section__card--id-6 .thanh-tich-grid-section__card-bgimg::after,
+  .thanh-tich-grid-section__card--id-7 .thanh-tich-grid-section__card-bgimg::after,
+  .thanh-tich-grid-section__card--id-8 .thanh-tich-grid-section__card-bgimg::after,
+  .thanh-tich-grid-section__card--id-9 .thanh-tich-grid-section__card-bgimg::after,
+  .thanh-tich-grid-section__card--id-10 .thanh-tich-grid-section__card-bgimg::after {
+    background:  transparent;  
+  }
     .thanh-tich-grid-section {
       padding: 40px 0;
     }
@@ -211,7 +339,7 @@
     .thanh-tich-grid-section__grid {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
-      gap: 12px;
+      gap: 0px;
     }
     
     .thanh-tich-grid-section__card {
@@ -249,7 +377,14 @@
         <div class="thanh-tich-grid-section__card-number">Top 1%</div>
         <div class="thanh-tich-grid-section__card-desc">Học sinh lọt Top 1% điểm thi SAT cao nhất thế giới</div>
       </div>
-      
+      <div class="thanh-tich-grid-section__card_mobile thanh-tich-grid-section__card--id-1m">
+        <div class="thanh-tich-grid-section__card-number">Top 1%</div>
+        <div class="thanh-tich-grid-section__card-desc">Điểm thi SAT cao nhất thế giới (từ 1530 trở lên)</div>
+      </div>
+
+      <div class="thanh-tich-grid-section__card_mobile thanh-tich-grid-section__card--id-1mb">
+        <div class="thanh-tich-grid-section__card-desc">The <strong>Deweys School</strong>  truyền cảm hứng cho các em học sinh khám phá bản thân và những cơ hội tiềm ẩn trong thế giới xung quanh.</div>
+      </div>
       <div class="thanh-tich-grid-section__card thanh-tich-grid-section__card--img thanh-tich-grid-section__card--id-2">
         <div class="thanh-tich-grid-section__card-bgimg"></div>
         <div class="thanh-tich-grid-section__card-content">
