@@ -25,6 +25,7 @@ import CampusListSection from '../../../../pages/pages/gioi-thieu/sections/Campu
 import ThanhTichAltSection from '../../../../pages/pages/gioi-thieu/sections/ThanhTichAltSection.astro';
 import ThanhTichGridSection from '../../../../pages/pages/gioi-thieu/sections/ThanhTichGridSection.astro';
 import ThanhTichInfographicSection from '../../../../pages/pages/gioi-thieu/sections/ThanhTichInfographicSection.astro';
+import AchievementsPremiumSection from '../../../../components/sections/about/AchievementsPremiumSection.astro';
 
 const { group, id } = Astro.params;
 const url = new URL(Astro.request.url);
@@ -63,6 +64,7 @@ const mapping: Record<string, Record<string, any>> = {
     ThanhTichAltSection,
     ThanhTichGridSection,
     ThanhTichInfographicSection,
+    AchievementsPremiumSection,
   },
   footer: {
     FooterAssets,
@@ -75,7 +77,7 @@ const Component = Group && (Group as any)[id as string] ? (Group as any)[id as s
 export function getStaticPaths() {
   // Explicit lists to avoid runtime referencing issues
   const headerKeys = ['HomeNavbar', 'Navbar'];
-  const mainKeys = ['HomeHeroSlider','HomeCertificationBadges','HomeAboutSection','HomeFeaturesGrid','HomeStatisticsInfographic','HomeCampusSlider','HomeProgramCards','HeroSlider','IntroSection','ProgramCardsSection','InfographicSection','LifeEduSection','ExtracurricularSection','CampusListSection','ThanhTichAltSection','ThanhTichGridSection','ThanhTichInfographicSection'];
+  const mainKeys = ['HomeHeroSlider','HomeCertificationBadges','HomeAboutSection','HomeFeaturesGrid','HomeStatisticsInfographic','HomeCampusSlider','HomeProgramCards','HeroSlider','IntroSection','ProgramCardsSection','InfographicSection','LifeEduSection','ExtracurricularSection','CampusListSection','ThanhTichAltSection','ThanhTichGridSection','ThanhTichInfographicSection','AchievementsPremiumSection'];
   const footerKeys = ['FooterAssets'];
 
   const paths: Array<{ params: { group: string; id: string } }> = [];
