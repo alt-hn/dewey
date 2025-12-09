@@ -1,16 +1,10 @@
 ---
 // Home page navigation header with logo, menu, and language switcher
+import FooterAssets from "../../FooterAssets.astro"	
+import PageHead from "../../PageHead.astro"
 ---
 
-<!-- Google Tag Manager (noscript) -->
-<noscript
-	><iframe
-		src="https://www.googletagmanager.com/ns.html?id=GTM-P5KKSCK"
-		height="0"
-		width="0"
-		style="display:none;visibility:hidden"></iframe></noscript
->
-<!-- End Google Tag Manager (noscript) -->
+<PageHead />
 
 <div
 	data-elementor-type="header"
@@ -365,3 +359,5 @@
 </div>
 
 <a class="skip-link screen-reader-text" href="#content"> Skip to content</a>
+
+<FooterAssets />
