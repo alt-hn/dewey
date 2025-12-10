@@ -59,79 +59,24 @@ const scriptOnlyComponents = new Set([
   'FooterAssets', // Contains jQuery/WordPress scripts that fail in sandbox
 ]);
 
-const mapping: Record<string, Record<string, any>> = {
-  header: {
-    HomeNavbar,
-    Navbar,
-  },
-  main: {
-    HomeHeroSlider,
-    HomeCertificationBadges,
-    HomeAboutSection,
-    HomeFeaturesGrid,
-    HomeStatisticsInfographic,
-    HomeCampusSlider,
-    HomeProgramCards,
-    HeroSlider,
-    IntroSection,
-    ProgramCardsSection,
-    InfographicSection,
-    LifeEduSection,
-    ExtracurricularSection,
-    CampusListSection,
-    GioiThieuSection, // Added GioiThieuSection to the mapping
-    ThanhTichAltSection,
-    ThanhTichGridSection,
-    ThanhTichInfographicSection,
-    AchievementsPremiumSection,
-    SliderSection,
-    ChuongTrinhSection,
-    ProgramsElement,
-    EducationLifeElement,
-  },
-  footer: {
-    FooterAssets,
-    FooterSection,
-  },
-};
+  // mapping object auto-generated from src/data/components.json
+  import componentsData from '../../../../data/components.json';
+  const components = { HomeNavbar, Navbar, HomeHeroSlider, HomeCertificationBadges, HomeAboutSection, HomeFeaturesGrid, HomeStatisticsInfographic, HomeCampusSlider, HomeProgramCards, HeroSlider, IntroSection, ProgramCardsSection, InfographicSection, LifeEduSection, ExtracurricularSection, CampusListSection, ThanhTichAltSection, ThanhTichGridSection, ThanhTichInfographicSection, AchievementsPremiumSection, GioiThieuSection, SliderSection, ChuongTrinhSection, ProgramsElement, EducationLifeElement, FooterAssets, FooterSection };
+  const mapping: Record<string, Record<string, any>> = {};
+  for (const comp of componentsData.components) {
+    if (!mapping[comp.group]) mapping[comp.group] = {};
+    mapping[comp.group][comp.id] = components[comp.id];
+  }
 
 const Group = (mapping as any)[group as string] ?? {};
 const Component = Group && (Group as any)[id as string] ? (Group as any)[id as string] : null;
 
 export function getStaticPaths() {
-  // Explicit lists to avoid runtime referencing issues
-  const headerKeys = ['HomeNavbar', 'Navbar'];
-  const mainKeys = [
-    'HomeHeroSlider',
-    'HomeCertificationBadges',
-    'HomeAboutSection',
-    'HomeFeaturesGrid',
-    'HomeStatisticsInfographic',
-    'HomeCampusSlider',
-    'HomeProgramCards',
-    'HeroSlider',
-    'IntroSection',
-    'ProgramCardsSection',
-    'InfographicSection',
-    'LifeEduSection',
-    'ExtracurricularSection',
-    'CampusListSection',
-    'ThanhTichAltSection',
-    'ThanhTichGridSection',
-    'ThanhTichInfographicSection',
-    'AchievementsPremiumSection',
-    'GioiThieuSection', // Added GioiThieuSection
-    'SliderSection',
-    'ChuongTrinhSection',
-    'ProgramsElement',
-    'EducationLifeElement',
-  ];
-  const footerKeys = ['FooterAssets', 'FooterSection'];
-
+  // getStaticPaths auto-generated from src/data/components.json
   const paths: Array<{ params: { group: string; id: string } }> = [];
-  headerKeys.forEach(k => paths.push({ params: { group: 'header', id: k } }));
-  mainKeys.forEach(k => paths.push({ params: { group: 'main', id: k } }));
-  footerKeys.forEach(k => paths.push({ params: { group: 'footer', id: k } }));
+  for (const comp of componentsData.components) {
+    paths.push({ params: { group: comp.group, id: comp.id } });
+  }
   return paths;
 }
 ---

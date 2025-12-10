@@ -1,75 +1,30 @@
 ---
-// Section metadata with estimated heights at 1400px viewport width
-// aspectRatio = height / width (1400px). Values > 1 mean section is taller than wide.
-// Sections with aspectRatio > 1 will be capped and show a fade overlay
-const sectionMeta: Record<string, { aspectRatio: number; note?: string }> = {
-  // Header sections - typically short navigation bars
-  'Navbar': { aspectRatio: 0.08, note: 'Compact navigation bar' },
-  'HomeNavbar': { aspectRatio: 0.08, note: 'Home page navigation' },
-  
-  // Main sections - varying heights
-  'HomeHeroSlider': { aspectRatio: 0.45, note: 'Hero carousel - 7 slides' },
-  'HomeCertificationBadges': { aspectRatio: 0.3, note: 'CIS, AP, IB, Mount Vernon badges' },
-  'HomeAboutSection': { aspectRatio: 0.4, note: 'Introduction image (desktop)' },
-  'HomeFeaturesGrid': { aspectRatio: 0.9, note: 'Statistics + 12 feature cards' },
-  'HomeStatisticsInfographic': { aspectRatio: 0.8, note: 'Mobile infographic (mobile only)' },
-  'HomeCampusSlider': { aspectRatio: 0.35, note: '4 campus locations slider' },
-  'HomeProgramCards': { aspectRatio: 0.55, note: '4 education program cards' },
-  'HeroSlider': { aspectRatio: 0.45, note: 'Hero carousel' },
-  'IntroSection': { aspectRatio: 0.5, note: 'Introduction block' },
-  'ProgramCardsSection': { aspectRatio: 0.55, note: 'Program cards grid' },
-  'InfographicSection': { aspectRatio: 0.7, note: 'Stats infographic' },
-  'LifeEduSection': { aspectRatio: 0.25, note: 'Education quote section' },
-  'ExtracurricularSection': { aspectRatio: 0.65, note: 'Extracurricular activities' },
-  'CampusListSection': { aspectRatio: 0.35, note: 'Campus list' },
-  'ThanhTichAltSection': { aspectRatio: 0.6, note: 'Achievements - alternative layout' },
-  'ThanhTichGridSection': { aspectRatio: 0.55, note: 'Achievements grid' },
-  'ThanhTichInfographicSection': { aspectRatio: 0.65, note: 'Achievements infographic' },
-  'AchievementsPremiumSection': { aspectRatio: 0.85, note: 'Premium multi-layer achievements' },
-  'GioiThieuSection': { aspectRatio: 0.6, note: 'Introduction section for Gioi Thieu' },
-    'SliderSection': { aspectRatio: 0.45, note: 'Cloned homepage slider - 7 slides' },
-    'FooterSection': { aspectRatio: 0.6, note: 'Cloned footer with links and info' },
-    'ChuongTrinhSection': { aspectRatio: 1.5, note: 'Cloned curriculum/program section - tall content' },
-    'ProgramsElement': { aspectRatio: 0.65, note: 'Programs grid element (d8fe02a) - 5 program cards' },
-    'EducationLifeElement': { aspectRatio: 0.5, note: 'Education philosophy element (45e27ab) - Triết lý giáo dục' },  // Footer sections
-  'FooterAssets': { aspectRatio: 0.1, note: 'Footer scripts/assets - minimal visual' },
-};
+// Import component data from JSON
+import componentsData from '../data/components.json';
 
-const headerOptions = [
-  { id: 'HomeNavbar', label: 'HomeNavbar (New)' },
-  { id: 'Navbar', label: 'Navbar (Gioi Thieu)' },
-];
+// Transform component data into section metadata
+const sectionMeta: Record<string, { aspectRatio: number; note?: string }> = {};
+componentsData.components.forEach(comp => {
+  if (comp.aspectRatio !== undefined) {
+    sectionMeta[comp.id] = {
+      aspectRatio: comp.aspectRatio,
+      note: comp.notes
+    };
+  }
+});
 
-const mainOptions = [
-  { id: 'HomeHeroSlider', label: 'HomeHeroSlider (New - 7 slides)' },
-  { id: 'HomeCertificationBadges', label: 'HomeCertificationBadges (New)' },
-  { id: 'HomeAboutSection', label: 'HomeAboutSection (New)' },
-  { id: 'HomeFeaturesGrid', label: 'HomeFeaturesGrid (New - 12 cards)' },
-  { id: 'HomeStatisticsInfographic', label: 'HomeStatisticsInfographic (New - Mobile)' },
-  { id: 'HomeCampusSlider', label: 'HomeCampusSlider (New - 4 campuses)' },
-  { id: 'HomeProgramCards', label: 'HomeProgramCards (New - 4 programs)' },
-  { id: 'HeroSlider', label: 'HeroSlider (Gioi Thieu)' },
-  { id: 'IntroSection', label: 'IntroSection (Gioi Thieu)' },
-  { id: 'ProgramCardsSection', label: 'ProgramCardsSection (Gioi Thieu)' },
-  { id: 'InfographicSection', label: 'InfographicSection (Gioi Thieu)' },
-  { id: 'LifeEduSection', label: 'LifeEduSection (Gioi Thieu)' },
-  { id: 'ExtracurricularSection', label: 'ExtracurricularSection (Gioi Thieu)' },
-  { id: 'CampusListSection', label: 'CampusListSection (Gioi Thieu)' },
-  { id: 'ThanhTichAltSection', label: 'ThanhTichAltSection (Gioi Thieu)' },
-  { id: 'ThanhTichGridSection', label: 'ThanhTichGridSection (Gioi Thieu)' },
-  { id: 'ThanhTichInfographicSection', label: 'ThanhTichInfographicSection (Gioi Thieu)' },
-  { id: 'AchievementsPremiumSection', label: 'AchievementsPremiumSection (Premium)' },
-  { id: 'GioiThieuSection', label: 'GioiThieuSection (Gioi Thieu)' },
-  { id: 'SliderSection', label: 'SliderSection (Clone)' },
-  { id: 'ChuongTrinhSection', label: 'ChuongTrinhSection (Clone - Curriculum)' },
-  { id: 'ProgramsElement', label: 'ProgramsElement (Clone - d8fe02a)' },
-  { id: 'EducationLifeElement', label: 'EducationLifeElement (Clone - 45e27ab)' },
-];
+// Transform component data into grouped options
+const headerOptions = componentsData.components
+  .filter(comp => comp.group === 'header')
+  .map(comp => ({ id: comp.id, label: comp.label }));
 
-const footerOptions = [
-  { id: 'FooterAssets', label: 'FooterAssets' },
-  { id: 'FooterSection', label: 'FooterSection (Clone)' },
-];
+const mainOptions = componentsData.components
+  .filter(comp => comp.group === 'main')
+  .map(comp => ({ id: comp.id, label: comp.label }));
+
+const footerOptions = componentsData.components
+  .filter(comp => comp.group === 'footer')
+  .map(comp => ({ id: comp.id, label: comp.label }));
 
 ---
 
