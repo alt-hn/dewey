@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" />
+<link rel="shortlink" href="http://beau.vn/vi" />
+<meta property="og:site_name" content="Home | Beau Agency Vietnam" />
+<link rel="canonical" href="http://beau.vn/vi" />
+<meta name="description" content="Khởi phát để lan tỏa - Kết tinh dòng xu hướng - Cháy sắc màu đam mê. Beau luôn là một creative agency tiên phong tại Việt Nam, luôn khao khát tạo ra những sản phẩm đột phá, sáng tạo." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://beau.vn/vi/home" />
+<meta property="og:title" content="Beau Vietnam | Creative Agency Vietnam, Branding, Website Design &amp; Development, Application design, Editorial Layout" />
+<meta property="og:image:url" content="https://beau.vn/sites/default/files/2021-01/OG%20Home.jpg" />
+<meta property="og:image:url" content="https://beau.vn/sites/default/files/2021-01/OG%20Sa%CC%89n%20pha%CC%82%CC%89m%20so%CC%82%CC%81.jpg" />
+<meta property="og:image:alt" content="Beau Agency" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/themes/md_beau/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="vi" href="http://beau.vn/vi" />
+
+    <title>Beau Vietnam | Creative Agency Vietnam, UX/UI Design, Website Design &amp; Development, Application design, Branding, Brand Experience</title>
+    <link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/ajax-progress.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/align.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/fieldgroup.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/container-inline.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/clearfix.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/details.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/hidden.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/item-list.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/js.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/nowrap.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/position-container.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/progress.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/reset-appearance.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/resize.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/sticky-header.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-counter.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-counters.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/system-status-report-general-info.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tabledrag.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tablesort.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/system/components/tree-child.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/views/views.module.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/core/assets/vendor/normalize-css/normalize.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/stable/css/core/normalize-fixes.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/action-links.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/breadcrumb.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/button.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/collapse-processed.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/container-inline.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/details.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/exposed-filters.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/field.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/form.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/icons.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/inline-form.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/item-list.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/link.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/links.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/menu.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/more-link.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/pager.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tabledrag.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tableselect.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tablesort.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/tabs.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/textarea.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/ui-dialog.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/core/themes/classy/css/components/messages.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/themes/md_beau/fonts/fontawesome/font-awesome.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/themes/md_beau/fonts/agency/style.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/themes/md_beau/lib/owl-carousel/owl.carousel.min.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/themes/md_beau/lib/magnific-popup/magnific-popup.min.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/themes/md_beau/css/front/main.css?t6tofg" />
+<link rel="stylesheet" media="all" href="/themes/md_beau/css/front/custom.css?t6tofg" />
+
+    
+    <link href='' rel='stylesheet' type='text/css' />
+    <style type="text/css">
+              body { background: transparent; }
+
+                </style>
+
+    <meta name="facebook-domain-verification" content="vpzyrca18cjsy7hg67p0q5p4hn0jiw" />
+
+          <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-54BLWMF');</script>
+<!-- End Google Tag Manager -->
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '396322421227105');
+  fbq('track', 'PageView');
+</script>
+<script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+window['_fs_org'] = 'JCEZA';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+    g.anonymize=function(){g.identify(!!0)};
+    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+    g.log = function(a,b){g("log",[a,b])};
+    g.consent=function(a){g("consent",!arguments.length||a)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(){};
+    g.setVars=function(n, p){g('setVars',[n,p]);};
+    g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+    if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+    g._v="1.3.0";
+})(window,document,window['_fs_namespace'],'script','user');
+</script>
+    
+    <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+  </head>
+    <body class="path-frontend" data-theme="themes/md_beau">
+    <a href="#main-content" class="visually-hidden focusable">
+      Nhảy đến nội dung
+    </a>
+    <div class="front-page">
+      
+        <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div class="page-wrapper" id="home-page">
+	    	
+        <!-- Header -->
+<header class="header">
+    <div class="header__fixheight"></div>
+
+    <div class="header__content">
+        <div class="container-custom">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <a href="/vi">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 757 149" class="logo-pc"><g class="path11"><path d="M431.328,2,378.213,95.834H365.678l24.307-42.1L360,2h12.673l23.683,40.442L418.863,2Z" transform="translate(321 31.623)" fill="#323232"/></g><g class="path10"><path d="M300.223,59.9c0-19.528,13.781-34.278,34.14-34.278,9.765,0,18.561,3.6,24.447,10.387L351.538,43.7c-4.848-4.709-10.457-7.41-17.451-7.41-12.673,0-22.3,9.833-22.3,23.614s9.626,23.683,22.3,23.683a25.551,25.551,0,0,0,17.728-7.548l6.994,7.826c-5.956,6.718-14.682,10.319-24.447,10.319C314,94.181,300.223,79.43,300.223,59.9Z" transform="translate(317 9)" fill="#323232"/></g><g class="path9"><path d="M278.784,92.8V55.608c0-12.119-6.648-19.252-18.074-19.252-10.595,0-19.459,7.271-19.459,19.528V92.8H229.963V27.008h11.219V35.6c5.4-7.41,13.919-9.972,21.536-9.972,16.2,0,27.423,10.526,27.423,26.315V92.8Z" transform="translate(317 9)" fill="#323232"/></g><g class="path8"><path d="M155.548,49.9c0-20.221,13.781-34.278,32.686-34.278,17.936,0,30.816,13.919,30.955,34.07,0,1.454-.139,2.978-.208,4.225h-51.73c1.593,13.642,11.081,20.36,22.369,20.36a30.9,30.9,0,0,0,20.29-7.826l6.026,7.756c-8.172,7.618-17.313,9.972-27.008,9.972C169.4,84.181,155.548,70.4,155.548,49.9Zm11.841-5.125h40.234c-1.385-11.633-8.932-19.112-19.6-19.112C176.392,25.664,169.121,33.558,167.389,44.777Z" transform="translate(317 19)" fill="#323232"/></g><g class="path7"><path d="M82.24,108.086l4.917-9.141a38.952,38.952,0,0,0,22.645,7.341c14.127,0,23.614-7.964,23.614-22.576V77.892c-4.986,6.3-12.465,10.249-22.644,10.249-18.491,0-32.548-13.712-32.548-33.794,0-20.013,14.057-33.725,32.548-33.725,10.179,0,17.658,4.017,22.644,10.319V22.008h11.357V83.225c0,21.26-14.2,33.378-34.971,33.378C99.553,116.6,88.958,113.487,82.24,108.086Zm7.548-53.738c0,12.812,8.795,23.13,22.3,23.13,13.089,0,22.3-9.972,22.3-23.13,0-13.088-9.211-23.06-22.3-23.06C98.583,31.288,89.789,41.674,89.789,54.347Z" transform="translate(317 14)" fill="#323232"/></g><g class="path6"><path d="M-376-311.721C-376-331.6-361.6-346-343.106-346c10.319,0,18,4.016,23.2,10.248v-8.864h11.357v65.788h-11.357v-8.795c-5.194,6.163-12.88,10.18-23.2,10.18C-361.6-277.442-376-291.847-376-311.721Zm11.565,0c0,13.089,9.141,23.684,22.645,23.684,13.3,0,22.576-10.18,22.576-23.684,0-13.434-9.28-23.614-22.576-23.614C-355.5-335.336-364.435-324.809-364.435-311.721Z" transform="translate(693 380.623)" fill="#323232"/></g><g class="path5"><path d="M307.006,15.785A9.508,9.508,0,1,0,297.5,25.33a9.526,9.526,0,0,0,9.507-9.545" transform="translate(1 8.623)" fill="#e54352"/></g><g class="path4"><path d="M265.2,32.937c0,10.344.041,20.835.006,31.181a34.2,34.2,0,0,1-.427,5.481c-.917,5.487-3.619,9.673-9.067,11.566a20.282,20.282,0,0,1-11.86.375,12.893,12.893,0,0,1-9.234-7.976,21.5,21.5,0,0,1-1.508-8.222q-.02-17.959-.01-35.92v-1.3l-14.45,4.818c-.01,11.06-.018,22.286.062,33.346a38.8,38.8,0,0,0,.872,7.916c1.917,8.816,7,15.233,15.309,18.723a35.807,35.807,0,0,0,28.343.067,25.058,25.058,0,0,0,13.593-13.022,34.222,34.222,0,0,0,2.807-14.6c.035-12.011.011-24.019.011-36.031V28.119Z" transform="translate(1 8.623)" fill="#323232"/></g><g class="path3"><path data-name="a" d="M157.3,61.788c.1-6.859,1.854-12.275,6.238-16.614A17.991,17.991,0,0,1,174.319,40.1c.181-.023.357-.054.54-.073.562-.052,1.122-.09,1.675-.107a19.361,19.361,0,0,1,11.027,2.815,18.673,18.673,0,0,1,6.69,7.015,21.58,21.58,0,0,1,2.06,5.547,23.774,23.774,0,0,1-1.4,15.617A18.229,18.229,0,0,1,180.2,81.958a23.11,23.11,0,0,1-2.849.229l-.189.006a21.647,21.647,0,0,1-2.84-.152,18.709,18.709,0,0,1-7.474-2.564c-5.079-3.058-7.872-7.729-9.026-13.446C157.487,64.382,157.4,62.682,157.3,61.788ZM210.329,28.13l-13.377,4.564-.895,3.227a22.818,22.818,0,0,0-4.089-4.239,25.136,25.136,0,0,0-9.676-4.555c-.321-.079-.648-.14-.973-.206-.026,0-.048-.009-.073-.015a31.567,31.567,0,0,0-10.8-.163A30.967,30.967,0,0,0,152.055,36.2c-6.624,6.949-9.459,15.482-9.492,24.967a36.437,36.437,0,0,0,3.584,16.174A32.146,32.146,0,0,0,178.589,95.6a26.107,26.107,0,0,0,6.461-1.411,28.973,28.973,0,0,0,11.078-6.008v5.843h14.2Z" transform="translate(1 8.623)" fill="#323232"/></g><g class="path2"><path data-name="e" d="M88.526,55.324c1.105-8.7,6.518-16.159,17.247-16.187,9.81-.024,15.391,6.868,16.648,16.187Zm48.36,1.057a34.543,34.543,0,0,0-6.192-17.671,27.86,27.86,0,0,0-15.537-11.092,33.878,33.878,0,0,0-21.429.934,29.161,29.161,0,0,0-15.445,13.1,37.011,37.011,0,0,0-4.81,17.36A39.278,39.278,0,0,0,76.565,76.9,30.133,30.133,0,0,0,96.773,94.4a39.486,39.486,0,0,0,22.189-.491,38.384,38.384,0,0,0,15.359-8.893l-7.642-9.819h0c-7.152,5.928-14.547,8.321-21.273,7.836a17.533,17.533,0,0,1-12.7-6.411,20.622,20.622,0,0,1-4.339-10.3h48.562C136.928,62.922,137.13,59.636,136.886,56.382Z" transform="translate(1 8.623)" fill="#323232"/></g><g class="path1"><path d="M47.02,76.819a18.2,18.2,0,0,1-11.909,5.314c-.39.03-.777.041-1.163.054a22.829,22.829,0,0,1-2.736-.081L31.1,82.1a20.249,20.249,0,0,1-2.623-.42c-.086-.019-.17-.043-.256-.064a18.625,18.625,0,0,1-2.451-.776c-.075-.03-.149-.068-.226-.1a17.867,17.867,0,0,1-2.422-1.209c-5.3-3.185-8.221-8.025-9.259-14.008a23.313,23.313,0,0,1,2.392-15.793,18.181,18.181,0,0,1,14.017-9.571,24,24,0,0,1,3.677-.229,18.923,18.923,0,0,1,9.675,2.731c5.034,3.046,7.816,7.684,8.979,13.358.338,1.648.42,3.346.523,4.2-.08,6.853-1.789,12.25-6.106,16.6M64.476,45.188A31.872,31.872,0,0,0,49.589,29.751a32.3,32.3,0,0,0-17.62-3.245,27.138,27.138,0,0,0-4.957.915,29.264,29.264,0,0,0-12.587,6.321V.377L0,5.194.025,94.071H14.456V88.3a32.928,32.928,0,0,0,4.207,3.052,30.016,30.016,0,0,0,10.361,3.835,31.489,31.489,0,0,0,10.947.193,30.961,30.961,0,0,0,18.392-9.446c6.662-6.979,9.481-15.548,9.507-25.068a36.111,36.111,0,0,0-3.395-15.677" transform="translate(1 8.623)" fill="#323232"/></g></svg>
+                    </a>
+                </div>
+                <div class="header__flexgrow"></div>
+                <div class="header__nav">
+                    
+
+							<ul class="menu-list">
+																	<li>
+				<a href="/vi/gioi-thieu" data-drupal-link-system-path="node/1">Giới thiệu</a>
+							</li>
+															<li>
+				<a href="/vi/du-an" data-drupal-link-system-path="our-projects">Dự án</a>
+							</li>
+															<li>
+				<a href="/vi/dich-vu" data-drupal-link-system-path="node/2">Dịch vụ</a>
+							</li>
+															<li>
+				<a href="/vi/goc-nhin" data-drupal-link-system-path="goc-nhin">Góc nhìn</a>
+							</li>
+															<li>
+				<a href="/vi/lien-he" data-drupal-link-system-path="node/77">Liên hệ</a>
+							</li>
+				</ul>
+	
+
+
+                </div>
+                <!-- <div class="header__meta">
+                    <div class="menu-social"><a href="#">Facebook</a><a href="#">Twitter</a><a href="#">Instagram</a><a href="#">Behance</a><a href="#">Dribbble</a><a href="#">Linkedin</a></div>
+                    <div class="menu-language">
+                        <a href="home.html" class="is-active">Vietnamese</a>
+                        <a href="home-en.html">English</a>
+                    </div>
+                </div> -->
+                <div class="header__iconmenu">
+                    <div>
+                        <span class="t1"></span>
+                        <span class="t2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header__menu">
+        <div class="item-scroll">
+            <div class="container-custom">
+                <div class="item-content">
+                    <div class="row">
+                        <div class="col-md-4 col-xl-4">
+                            <div class="item-left">
+                                <span class="item__subtitle">Thông tin</span>
+                                <nav class="item__nav">
+                                    <ul>
+                                        <li>
+                                            <a href="/gioi-thieu">Giới thiệu 
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+                                                        <g>
+                                                            <path d="M1,.528,35.719.9" transform="translate(2 15.39)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+                                                            <path data-name="Path 2" d="M0,0,14.666,14.274,0,28.549" transform="translate(24.839 1.898)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/du-an">Dự án
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+                                                        <g>
+                                                            <path d="M1,.528,35.719.9" transform="translate(2 15.39)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+                                                            <path data-name="Path 2" d="M0,0,14.666,14.274,0,28.549" transform="translate(24.839 1.898)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/dich-vu">Dịch vụ
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+                                                        <g>
+                                                            <path d="M1,.528,35.719.9" transform="translate(2 15.39)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+                                                            <path data-name="Path 2" d="M0,0,14.666,14.274,0,28.549" transform="translate(24.839 1.898)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/goc-nhin">Góc nhìn
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+                                                        <g>
+                                                            <path d="M1,.528,35.719.9" transform="translate(2 15.39)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+                                                            <path data-name="Path 2" d="M0,0,14.666,14.274,0,28.549" transform="translate(24.839 1.898)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/lien-he">Liên hệ 
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+                                                        <g>
+                                                            <path d="M1,.528,35.719.9" transform="translate(2 15.39)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+                                                            <path data-name="Path 2" d="M0,0,14.666,14.274,0,28.549" transform="translate(24.839 1.898)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>      
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                                <div class="item__contact d-none d-md-block">
+                                    <ul>
+                                        <li>
+                                            <b>Số điện thoại</b>
+                                            <p><a href="tel:+84975319889">(+84) 97 531 9889</a></p>
+                                            <p><a href="tel:+84869291771">(+84) 86 929 1771</a></p>
+                                        </li>
+                                        <li>
+                                            <b>Email</b>
+                                            <p><a href="mailto:infor@beau.vn">infor@beau.vn</a></p>
+                                        </li>
+                                        <li>
+                                            <b>Văn phòng đại diện</b>
+                                            <p>Tầng 5, 33 Giang Văn Minh, Kim Mã, Ba Đình, Hà Nội</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-xl-8">
+                            <div class="item-right">
+                                <span class="item__subtitle">Dịch vụ</span>
+                                <div class="item__service">
+                                    <ul>
+                                        <li><a href="/node/130">
+                                            Xây dựng chiến lược số
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+                                                    <g>
+                                                        <path d="M1,.528,35.719.9" transform="translate(2 15.39)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+                                                        <path data-name="Path 2" d="M0,0,14.666,14.274,0,28.549" transform="translate(24.839 1.898)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </a></li>
+                                        <li><a href="/node/131">
+                                            Thiết kế trải nghiệm số
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+                                                    <g>
+                                                        <path d="M1,.528,35.719.9" transform="translate(2 15.39)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+                                                        <path data-name="Path 2" d="M0,0,14.666,14.274,0,28.549" transform="translate(24.839 1.898)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </a></li>
+                                        <li><a href="/node/132">
+                                            Phát triển sản phẩm số
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+                                                    <g>
+                                                        <path d="M1,.528,35.719.9" transform="translate(2 15.39)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+                                                        <path data-name="Path 2" d="M0,0,14.666,14.274,0,28.549" transform="translate(24.839 1.898)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </a></li>
+                                        <li><a href="https://beautique.vn/" target="_blank">
+                                            Trải nghiệm thương hiệu
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+                                                    <g>
+                                                        <path d="M1,.528,35.719.9" transform="translate(2 15.39)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="4"/>
+                                                        <path data-name="Path 2" d="M0,0,14.666,14.274,0,28.549" transform="translate(24.839 1.898)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="4"/>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                                <div class="item__contact d-md-none">
+                                    <ul>
+                                        <li>
+                                            <b>Số điện thoại</b>
+                                            <p>(+84) 97 531 9889</p>
+                                            <p>(+84) 86 929 1771</p>
+                                        </li>
+                                        <li>
+                                            <b>Email</b>
+                                            <p>infor@beau.vn</p>
+                                        </li>
+                                        <li>
+                                            <b>Văn phòng đại diện</b>
+                                            <p>Tầng 5, 33 Giang Văn Minh, Kim Mã, Ba Đình, Hà Nội</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-footer">
+                    <div class="row align-items-center">
+                        <div class="col-md-8 col-xl-8 order-md-2">
+                            <div class="item__social">
+                                <a href="https://www.facebook.com/beauagency">Facebook</a>
+                                <a href="https://www.behance.net/BeauCreative">Behance</a>
+                                <a href="https://dribbble.com/beauagency">Dribbble</a>
+                                <a href="https://www.linkedin.com/company/beauagency">Linkein</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xl-4 order-md-1">
+                            <div class="item__language">
+                                
+  			<span hreflang="en" data-drupal-link-system-path="&lt;front&gt;" class="en"><a href="/en" class="language-link" hreflang="en" data-drupal-link-system-path="&lt;front&gt;">English</a></span>
+					<span hreflang="vi" data-drupal-link-system-path="&lt;front&gt;" class="vi is-active"><a href="/vi" class="language-link is-active" hreflang="vi" data-drupal-link-system-path="&lt;front&gt;">Vietnamese</a></span>
+		
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End/Header -->
+
+
+
+
+<!-- Header -->
+<!-- End/Header -->
+<!-- Smooth scroll -->
+<div class="scroll-container-wrap" style="overflow: hidden;">
+    <div id="scroll-container" class="scroll-container">
+        <!-- Content -->
+        <div class="page-content">
+            <section class="section sec-hero">
+                <div class="container-custom scrollmagicfadeUp">
+                    <div class="sec-hero_content effect">
+                        <div class="row">
+                            <div class="col-lg-8 col-xl-8">
+                                <h1 class="sec-hero__title" data-text-words="g">Thấu hiểu, đồng hành và thiết kế trải nghiệm digital không giới hạn</h1>
+                            </div>
+                        </div>
+
+                        <div class="sec-hero__footer">
+                            <ul class="sec-hero__list">
+                                <li><a href="/du-an">Dự án <br>của chúng tôi</a></li>
+                                <li><a href="/gioi-thieu">Tìm hiểu <br>về chúng tôi</a></li>
+                                <li><a href="/dich-vu">Dịch vụ <br>tại Beau Agency</a></li>
+                            </ul>
+
+                            <a href="#" class="sec-hero__scrollDown" data-scroll-down><img src="/themes/md_beau/img/base/home-scroll-down.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sec-hero__circle">
+                    <div class="scrollmagicfadeUp" data-delay=".2s">
+                        <div class="effect-right">
+                            <img src="/themes/md_beau/img/base/hero-circle.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="box-blue-wrap">
+                <section class="sec-slogan">
+                    <div class="container-custom">
+                        <div class="row">
+                            <div class="col-md-8 col-lg-7 col-xl-5 col-xxl-7">
+                                <div class="title-box scrollmagicfadeUp">
+                                    <h2 class="title-box__title effect" data-text-words="g">Chúng tôi xây dựng cho mình Tư duy thiết kế, Triết lý sáng tạo và gửi gắm Giá trị cho mỗi thương hiệu, mỗi doanh nghiệp cũng như cả cộng đồng.</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sec-slogan__svg">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1033" height="802" viewBox="0 0 1033 802">
+                              <g>
+                                  <circle class="layer-1 layer-item" data-text="hover-1" cx="534" cy="297" r="166" fill="#d8d8d8"/>
+                                  <g class="hover-item" transform="translate(422 269)" style="pointer-events: none;">
+                                      <text class="text1 text-item" fill="#242424" font-size="20" font-family="BT Beau Sans" font-weight="500">
+                                          <tspan x="30" y="0">Mong</tspan>
+                                          <tspan x="30" y="25">muốn</tspan>
+                                      </text>
+                                      <text class="text-item-hover" fill="#242424" font-size="14" font-family="BT Beau Sans" font-weight="500">
+                                          <tspan x="-10" y="-20">Thấu hiểu mong muốn</tspan>
+                                          <tspan x="-25" y="0">yếu tố tác động & Hành vi</tspan>
+                                          <tspan x="10" y="20">của khách hàng</tspan>
+                                      </text>
+                                  </g>
+                              </g>
+
+                              <g>
+                                  <circle class="layer-2 layer-item" data-text="hover-2" cx="743" cy="297" r="166" fill="#a5a5a5"></circle>
+                                  <g class="hover-item" transform="translate(754 269)" style="pointer-events: none;">
+                                      <text class="text2 text-item" fill="#242424" font-size="19" font-family="BT Beau Sans" font-weight="500">
+                                          <tspan x="-20" y="0">Tiềm năng</tspan>
+                                          <tspan x="0" y="25">duy trì</tspan>
+                                      </text>
+                                      <text class="text-item-hover" fill="#242424" font-size="14" font-family="BT Beau Sans" font-weight="500">
+                                          <tspan x="-20" y="-5">Dự tính về lợi nhuận và</tspan>
+                                          <tspan x="-5" y="15">mô hình kinh doanh</tspan>
+                                      </text>
+                                  </g>
+                              </g>
+
+                              <g>
+                                  <circle class="layer-3 layer-item" data-text="hover-3" cx="534" cy="512" r="166" fill="#c2c2c2"></circle>
+                                  <g class="hover-item" transform="translate(443 548)" style="pointer-events: none;">
+                                      <text class="text3 text-item" fill="#242424" font-size="20" font-family="BT Beau Sans" font-weight="500">
+                                          <tspan x="5" y="0">Tính</tspan>
+                                          <tspan x="-20" y="25">nhận diện</tspan>
+                                      </text>
+                                      <text class="text-item-hover" fill="#242424" font-size="14" font-family="BT Beau Sans" font-weight="500">
+                                          <tspan x="10" y="0">Định vị và </tspan>
+                                          <tspan x="-30" y="20">nhận diện thương hiệu</tspan>
+                                      </text>
+                                  </g>
+                              </g>
+
+                              <g>
+                                  <circle class="layer-4 layer-item" data-text="hover-4" cx="743" cy="512" r="166" fill="#cfcfcf"></circle>
+                                  <g class="hover-item" transform="translate(740 548)" style="pointer-events: none;">
+                                      <text class="text4 text-item" fill="#242424" font-size="20" font-family="BT Beau Sans" font-weight="500">
+                                          <tspan x="7" y="0">Tính</tspan>
+                                          <tspan x="0" y="25">khả thi</tspan>
+                                      </text>
+                                      <text class="text-item-hover" fill="#242424" font-size="14" font-family="BT Beau Sans" font-weight="500">
+                                          <tspan x="-10" y="-3">Nền tảng công nghệ,</tspan>
+                                          <tspan x="0" y="20">đối tác/mạng lưới</tspan>
+                                          <tspan x="20" y="43">và cấu trúc</tspan>
+                                      </text>
+                                  </g>
+                              </g>
+
+                              <path class="overlay-1-2" fill="#fff"></path>
+                              <path class="overlay-1-3" fill="#fff"></path>
+                              <path class="overlay-3-4" fill="#fff"></path>
+                              <path class="overlay-4-2" fill="#fff"></path>
+
+                              <g class="layer-5" transform="translate(-324 -1667)">
+                                  <g class="text-5">
+                                      <text transform="translate(927.183 1694)" fill="#242424" font-size="20" font-family="BT Beau Sans" font-weight="500"><tspan x="-10" y="0">Tổng quan </tspan></text>
+                                      <text transform="translate(913.607 1721)" fill="#242424" font-size="20" font-family="BT Beau Sans" font-weight="500"><tspan x="0" y="0">Trải nghiệm</tspan></text>
+                                  </g>
+                                  <path d="M.5,285.179V.419" transform="translate(962 1752)" fill="none" stroke="#979797" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1"/>
+                              </g>
+                              <g class="layer-6" transform="translate(-324 -1667)">
+                                  <path d="M1007.5,1H0" transform="translate(328 2072)" fill="none" stroke="#979797" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1" stroke-dasharray="6"/>
+                                  <g class="text-6">
+                                      <text transform="translate(391.963 2042)" fill="#242424" font-size="20" font-family="BT Beau Sans" font-weight="500"><tspan x="0" y="0">Ngoại cảnh</tspan></text>
+                                      <text transform="translate(390.174 2118)" fill="#242424" font-size="20" font-family="BT Beau Sans" font-weight="500"><tspan x="0" y="0">Nội tại</tspan></text>
+                                  </g>
+                              </g>
+                              <circle class="layer-7" cx="638" cy="405" r="23" fill="#e54352"></circle>
+                          </svg>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section sec-serviceMin">
+                    <div class="container-custom scrollmagicfadeUp">
+                        <div class="effect">
+                            <ul class="sec-serviceMin__list effect">
+                                <li class="item">
+                                    <h2 class="sec-serviceMin__title">Dịch vụ tại <br>Beau Agency</h2>
+                                </li>
+                                <li class="item hover-current">
+                                    <h2 class="sec-serviceMin__text">
+                                        <a href="/node/130" class="f-title" data-text-words="g">Xây dựng <br>chiến lược số</a>
+                                        <a href="/node/130" class="sec-serviceMin__icon">
+                                            <span>
+                                                <img src="/themes/md_beau/img/base/icon-serviceMin.svg" class="mb" alt="">
+                                            </span>
+                                        </a>
+                                    </h2>
+                                    <ul>
+                                        <li><h2>Research</h2></li>
+                                        <li><h2>Experience Strategy</h2></li>
+                                        <li><h2>Persona Development</h2></li>
+                                        <li><h2>Product Strategy</h2></li>
+                                        <li><h2>Journey Mapping</h2></li>
+                                        <li><h2>Innovation Consulting</h2></li>
+                                        <li><h2>UI/UX Audit</h2></li>
+                                    </ul>
+                                </li>
+                                <li class="item hover-current">
+                                    <h2 class="sec-serviceMin__text">
+                                        <a href="/node/131" class="f-title" data-cursor="cursor-service" data-text-words="g">Thiết kế <br>trải nghiệm số</a>
+                                        <a href="/node/131" class="sec-serviceMin__icon">
+                                            <span>
+                                                <img src="/themes/md_beau/img/base/icon-serviceMin.svg" class="mb" alt="">
+                                            </span>
+                                        </a>
+                                    </h2>
+                                    <ul>
+                                        <li><h2>User Experience</h2></li>
+                                        <li><h2>Websites & Mobile Apps</h2></li>
+                                        <li><h2>Information Architecture</h2></li>
+                                        <li><h2>Visual Design</h2></li>
+                                        <li><h2>Prototyping & Testing</h2></li>
+                                        <li><h2>Interaction / Motion</h2></li>
+                                        <li><h2>User Interface</h2></li>
+                                    </ul>
+                                </li>
+                                <li class="item hover-current">
+                                    <h2 class="sec-serviceMin__text">
+                                        <a href="/node/132" class="f-title" data-cursor="cursor-service" data-text-words="g">Phát triển <br>sản phẩm số</a>
+                                        <a href="/node/132" class="sec-serviceMin__icon">
+                                            <span>
+                                                <img src="/themes/md_beau/img/base/icon-serviceMin.svg" class="mb" alt="">
+                                            </span>
+                                        </a>
+                                    </h2>
+                                    <ul>
+                                        <li><h2>Corporate website</h2></li>
+                                        <li><h2>Front-end Development</h2></li>
+                                        <li><h2>E-Commerce(B2B và B2C)</h2></li>
+                                        <li><h2>Back-end Development</h2></li>
+                                        <li><h2>Web Application</h2></li>
+                                        <li><h2>System Maintenance</h2></li>
+                                        <li><h2>Native App</h2></li>
+                                    </ul>
+                                </li>
+                                <li class="item hover-current">
+                                    <h2 class="sec-serviceMin__text">
+                                        <a href="https://beautique.vn/" class="f-title" data-cursor="cursor-service" data-text-words="g">Trải nghiệm <br>thương hiệu</a>
+                                        <a href="https://beautique.vn/" class="sec-serviceMin__icon">
+                                            <span>
+                                                <img src="/themes/md_beau/img/base/icon-serviceMin.svg" class="mb" alt="">
+                                            </span>
+                                        </a>
+                                    </h2>
+                                    <ul>
+                                        <li><h2>Research & Brand strategy</h2></li>
+                                        <li><h2>Brand positioning strategy</h2></li>
+                                        <li><h2>Brand Identity</h2></li>
+                                        <li><h2>Brand experience design</h2></li>
+                                        <li><h2>Brand Communication strategy</h2></li>
+                                        <li><h2>Communication touchpoint development</h2></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <span class="sec-serviceMin__divider"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section sec-project">
+                    <div class="container-custom">
+                        <div class="scrollmagicfadeUp">
+                            <div class="title-box effect">
+                                <h2 class="title-box__title" data-text-words="g">Dự án chứa đựng <br>Tâm huyết & Sáng tạo</h2>
+
+                                <a href="/du-an" class="title-btn btn-link pc">
+                                    Khám phá thêm
+                                                                        <i class="agency-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="view view-work view-id-work view-display-id-homepage_block js-view-dom-id-85869fc98f6edffe2feb1c01aa6417e09caf9bf06b3b392bb02bccd6ee0e6bb9">
+  
+    
+      
+      <div class="view-content">
+      	
+
+<div class="projects grid-wrap">
+	<div class="grid-size"></div>
+			<div class="grid-item">
+    <div class="grid-item__inner">
+        <div class="grid-item__content scrollmagicfadeUp">
+            <div class="project">
+                <div class="project__inner">
+                    <a href="/vi/du-an/tai-dinh-vi-thuong-hieu-petrolimex" class="project__img">
+                        <img src="/sites/default/files/styles/work_1/public/work/2025/thumbnail-beau.jpg?itok=x2jxuMKs" alt="">
+                    </a>
+                    <div class="project__body">
+                        <h2 class="project__title"><a href="/vi/du-an/tai-dinh-vi-thuong-hieu-petrolimex" data-number-line="2">Tái định vị thương hiệu Petrolimex</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+			<div class="grid-item">
+    <div class="grid-item__inner">
+        <div class="grid-item__content scrollmagicfadeUp">
+            <div class="project">
+                <div class="project__inner">
+                    <a href="/vi/du-an/truyen-tai-nhung-gia-tri-song-voi-sendesign" class="project__img">
+                        <img src="/sites/default/files/styles/work_1/public/work/2025/thumbnail-sendesign.jpeg?itok=dgssa0FX" alt="">
+                    </a>
+                    <div class="project__body">
+                        <h2 class="project__title"><a href="/vi/du-an/truyen-tai-nhung-gia-tri-song-voi-sendesign" data-number-line="2">Truyền tải những giá trị sống với Sendesign</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+			<div class="grid-item">
+    <div class="grid-item__inner">
+        <div class="grid-item__content scrollmagicfadeUp">
+            <div class="project">
+                <div class="project__inner">
+                    <a href="/vi/du-an/hanh-trinh-xay-dap-cau-noi-thien-nguyen-cung-mb-bank" class="project__img">
+                        <img src="/sites/default/files/styles/work_1/public/work/2025/thumbnail.jpg?itok=Xp59P8Ek" alt="">
+                    </a>
+                    <div class="project__body">
+                        <h2 class="project__title"><a href="/vi/du-an/hanh-trinh-xay-dap-cau-noi-thien-nguyen-cung-mb-bank" data-number-line="2">Hành trình xây đắp cầu nối thiện nguyện cùng MB Bank</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+			<div class="grid-item">
+    <div class="grid-item__inner">
+        <div class="grid-item__content scrollmagicfadeUp">
+            <div class="project">
+                <div class="project__inner">
+                    <a href="/vi/lpbank-digital-banking-app-ux-ui-redesign" class="project__img">
+                        <img src="/sites/default/files/styles/work_1/public/work/2024/lpbank_thumb.jpg?itok=gbgQVDbM" alt="">
+                    </a>
+                    <div class="project__body">
+                        <h2 class="project__title"><a href="/vi/lpbank-digital-banking-app-ux-ui-redesign" data-number-line="2">Tái định nghĩa trải nghiệm ngân hàng số cho ứng dụng LPBank</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+			<div class="grid-item">
+    <div class="grid-item__inner">
+        <div class="grid-item__content scrollmagicfadeUp">
+            <div class="project">
+                <div class="project__inner">
+                    <a href="/vi/du-an/website-bao-viet-group-60-nam-vinh-quang-va-tu-hao" class="project__img">
+                        <img src="/sites/default/files/styles/work_1/public/work/2024/thumbnail.png?itok=ZZNXFJg0" alt="">
+                    </a>
+                    <div class="project__body">
+                        <h2 class="project__title"><a href="/vi/du-an/website-bao-viet-group-60-nam-vinh-quang-va-tu-hao" data-number-line="2">Website Bảo Việt Group - 60 năm vinh quang và tự hào</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</div>
+    </div>
+  
+          </div>
+
+
+
+                        <div class="btn-mb">
+                            <a href="/du-an" class="title-btn btn-link">
+                                Khám phá thêm
+                                <i class="agency-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section sec-customersFeel">
+                    <div class="container-custom ">
+                        <div class="row">
+                            <div class="col-md-9 col-lg-7">
+                                <div class="scrollmagicfadeUp">
+                                    <div class="customersFeel effect">
+                                        <span class="customersFeel__icon"><img src="/themes/md_beau/img/base/customersFeel-icon.svg" alt=""></span>
+                                        <div id="random-testimonial">
+                                            <p class="customersFeel__quote title-box__title" data-text-words="g">Ý tưởng đột phá và sự trau chuốt đến từng chi tiết là cảm nhận của chúng tôi và chắc chắn đối tác nào khi nhìn vào sản phẩm của Beau đều thấy rõ.</p>
+                                            <div class="customersFeel__info">
+                                                Chị Ricky Phuong
+                                                <small>The Han Hotel</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <script type="text/javascript">
+                    var testimonial = [
+                      {
+                        'quote': 'Chúng tôi cảm thấy hài lòng khi cùng Beau cho ra mắt bộ sản phẩm internet Banking và mobile app với nhiều tính năng cải tiến vượt trội so với thị trường hiện tại.',
+                        'name': 'Anh Tuấn LA',
+                        position: 'Maritime Bank',
+                      },
+                      {
+                        'quote': 'Là đối tác lâu năm với Beau, ASV luôn tin tưởng để triển khai các dự án yêu cầu cao về trải nghiệm người dùng cho khách hàng và đối tác của mình.',
+                        'name': 'Anh Nam',
+                        'position': 'CEO HOSTVN',
+                      },
+                      {
+                        'quote': 'Ý tưởng đột phá và sự trau chuốt đến từng chi tiết là cảm nhận của chúng tôi về Beau và chắc chắn đối tác nào khi nhìn vào sản phẩm của beau đều thấy rõ.',
+                        'name': 'Chị Ricky Phuong',
+                        'position': 'The Han Hotel',
+                      },
+                      {
+                        'quote': 'Tôi nhớ thời điểm nước rút của dự án, cả team Beau đều rất nỗ lực để sản phẩm ra mắt đúng thời điểm. Và chúng tôi đánh giá cao điều đó.',
+                        'name': 'Chị Liên',
+                        'position': 'VNPAY',
+                      },
+                    ];
+                </script>
+
+                <section class="section sec-partner">
+                    <div class="container-custom">
+                        <div class="scrollmagicfadeUp">
+                            <div class="title-box effect">
+                                <h2 class="title-box__title">Đối tác tin cậy</h2>
+                            </div>
+                        </div>
+                        <div class="scrollmagicfadeUp">
+                            <div class="sec-partner__list effect">
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-1.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-2.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-3.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-4.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-5.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-6.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-7.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-8.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-9.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-10.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-11.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-12.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-13.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-14.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-15.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-16.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-17.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-18.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-19.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-20.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-21.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-22.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-23.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="client">
+                                        <div class="client__inner">
+                                            <img src="/themes/md_beau/img/base/partner-24.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="section sec-lastText">
+                <div class="container-custom">
+                    <a class="sec-lastText__inner" href="/lien-he">
+                        <h2 class="sec-lastText__title" data-text-words="g">Hiện thực hoá <br>ý tưởng của bạn</h2>
+                        <span class="sec-lastText__btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="104.728" height="79.511" viewBox="0 0 104.728 79.511">
+                                <g id="Group_4_Copy_2" data-name="Group 4 Copy 2" transform="translate(4.053 3.583)">
+                                  <path id="Line" d="M1,.528l87.979.946" transform="translate(0 35)" fill="none" stroke="#000" stroke-linecap="square" stroke-miterlimit="10" stroke-width="10"/>
+                                  <path id="Path_2" data-name="Path 2" d="M0,0,37.165,36.172,0,72.345" transform="translate(56.34)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="10"/>
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="icon-circle">
+                    <div class="scrollmagicfadeUp" data-delay=".4s">
+                        <div class="effect-right">
+                            <img src="/themes/md_beau/img/base/partner-circle.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- End/Content -->
+
+        <!-- Footer -->
+<footer class="footer">
+    <div class="footer__content">
+        <div class="container-custom">
+            <div class="row">
+                <div class="col-lg-8 col-xl-8 col-xxl-7">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="footer__item footer__info">
+                                <h3 class="item-title">Trụ sở</h3>
+                                <ul class="item-info">
+                                    <li>
+                                        <p>
+                                            <small>Văn phòng đại diện</small>
+                                            Tầng 5, 33 Giang Văn Minh, Kim Mã, Ba Đình, Hà Nội
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <small>Trung tâm công nghệ</small>
+                                            2/28/93 Hoàng Văn Thái, Thanh Xuân, Hà Nội
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer__item footer__address">
+                                <h3 class="item-title">Liên hệ</h3>
+                                <ul class="item-address">
+                                    <li>
+                                        <small>Phone</small>
+                                        <p><a href="#">(+84) 97 531 9889</a></p>
+                                        <p><a href="#">(+84) 86 929 1771</a></p>
+                                    </li>
+                                    <li>
+                                        <small>Email</small>
+                                        <p><a href="mailto:info@beau.vn">info@beau.vn</a></p>
+                                    </li>
+                                    <li>
+                                        <small>Website</small>
+                                        <p><a href="https://beau.vn/">beau.vn</a></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer__item footer__service">
+                                <h3 class="item-title">Dịch vụ</h3>
+                                <ul class="item-service">
+                                    <li>
+                                        <a href="/node/130">Xây dựng chiến lược số</a>
+                                    </li>
+                                    <li>
+                                        <a href="/node/131">Thiết kế trải nghiệm số</a>
+                                    </li>
+                                    <li>
+                                        <a href="/node/132">Phát triển sản phẩm số</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://beautique.vn/" target="_blank">Trải nghiệm thương hiệu</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xl-4 offset-xxl-1">
+                    <div class="footer__item footer__subscribe">
+                        <h3 class="item-title">Đăng Ký Nhận Thông Tin Từ Beau</h3>
+                        
+  <form action="/vi" method="post" id="simplenews-subscriptions-block-647512f6-034c-4088-a043-fb7a1ea59712" accept-charset="UTF-8">
+        <div class="js-form-item form-item js-form-type-email form-type-email js-form-item-mail-0-value form-item-mail-0-value">
+      <label for="edit-mail-0-value" class="js-form-required form-required">Email</label>
+        <input data-drupal-selector="edit-mail-0-value" aria-describedby="edit-mail-0-value--description" type="email" id="edit-mail-0-value" name="mail[0][value]" value="" size="60" maxlength="254" placeholder="" class="form-email required" required="required" aria-required="true" />
+
+            <div id="edit-mail-0-value--description" class="description">
+      The subscriber's email address.
+    </div>
+  </div>
+
+  
+
+<input autocomplete="off" data-drupal-selector="form-dbbmtz-2oit49m3h2nqlltkd6gdxdq2xvc7y-fyb4ka" type="hidden" name="form_build_id" value="form-DbBmTZ-2oiT49M3h2nQlLTKd6GDxDQ2XvC7Y_FyB4KA" />
+<input data-drupal-selector="edit-simplenews-subscriptions-block-647512f6-034c-4088-a043-fb7a1ea59712" type="hidden" name="form_id" value="simplenews_subscriptions_block_647512f6-034c-4088-a043-fb7a1ea59712" />
+<input data-drupal-selector="edit-subscribe" type="submit" id="edit-subscribe" name="op" value="Đăng ký" class="button js-form-submit form-submit" />
+
+
+</form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="backtotop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+                <g id="Group_2" data-name="Group 2" transform="translate(-1836 -80)">
+                    <circle id="Oval" cx="13" cy="13" r="13" transform="translate(1836 80)" fill="#e54352"/>
+                    <path id="Path" d="M0,4.571,5.292,0l5.292,4.571" transform="translate(1844 90)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.5"/>
+                </g>
+            </svg>
+        </a>
+    </div>
+
+    <div class="footer__last">
+        <div class="container-custom">
+            <p class="footer__copyright">Copyright © 2025 Beau Agency. <br>All Rights Reserved.</p>
+            <ul class="footer__social">
+                <li><a href="https://www.facebook.com/beauagency" >Facebook</a></li>
+                <li><a href="https://www.behance.net/BeauCreative">Behance</a></li>
+                <li><a href="https://dribbble.com/beauagency">Dribbble</a></li>
+                <li><a href="https://www.linkedin.com/company/beauagency">Linkedin</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- End/Footer -->
+    </div>
+</div>
+<!-- End/mooth scroll -->
+    </div>
+  </div>
+
+      
+    </div>
+    <script src="/themes/md_beau/lib/jquery/jquery-3.3.1.min.js?t6tofg"></script>
+<script src="/themes/md_beau/lib/jquery-validate/jquery.validate.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/lazyLoading/lazyloading.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/jquery-one-page/jquery.nav.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/headroom/headroom.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/owl-carousel/owl.carousel.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/acccordion-js/accordion.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/jquery.waypoints/jquery.waypoints.min.js?v=9.3.9"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.min.js"></script>
+<script src="/themes/md_beau/lib/imagesloaded/imagesloaded.pkgd.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/isotope-layout/isotope.pkgd.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/greensock/GSAP.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/scrollMagic/ScrollMagic.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/scrollMagic/plugin/animation.gsap.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/scrollMagic/plugin/debug.addIndicators.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/mdGridJs/mdGridJs.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/jquery.ellipsis/jquery.ellipsis.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/magnific-popup/jquery.magnific-popup.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/bodyScrollLock/bodyScrollLock.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/lib/theia-sticky-sidebar/theia-sticky-sidebar.min.js?v=9.3.9"></script>
+<script src="/themes/md_beau/js/front/functions.js?v=9.3.9"></script>
+<script src="/themes/md_beau/js/front/custom.js?v=1"></script>
+<script src="/themes/md_beau/js/front/home-page.js?v=1"></script>
+
+          
+      </body>
+</html>

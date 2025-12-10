@@ -27,8 +27,11 @@ const sectionMeta: Record<string, { aspectRatio: number; note?: string }> = {
   'ThanhTichInfographicSection': { aspectRatio: 0.65, note: 'Achievements infographic' },
   'AchievementsPremiumSection': { aspectRatio: 0.85, note: 'Premium multi-layer achievements' },
   'GioiThieuSection': { aspectRatio: 0.6, note: 'Introduction section for Gioi Thieu' },
-  
-  // Footer sections
+    'SliderSection': { aspectRatio: 0.45, note: 'Cloned homepage slider - 7 slides' },
+    'FooterSection': { aspectRatio: 0.6, note: 'Cloned footer with links and info' },
+    'ChuongTrinhSection': { aspectRatio: 1.5, note: 'Cloned curriculum/program section - tall content' },
+    'ProgramsElement': { aspectRatio: 0.65, note: 'Programs grid element (d8fe02a) - 5 program cards' },
+    'EducationLifeElement': { aspectRatio: 0.5, note: 'Education philosophy element (45e27ab) - Triết lý giáo dục' },  // Footer sections
   'FooterAssets': { aspectRatio: 0.1, note: 'Footer scripts/assets - minimal visual' },
 };
 
@@ -57,10 +60,15 @@ const mainOptions = [
   { id: 'ThanhTichInfographicSection', label: 'ThanhTichInfographicSection (Gioi Thieu)' },
   { id: 'AchievementsPremiumSection', label: 'AchievementsPremiumSection (Premium)' },
   { id: 'GioiThieuSection', label: 'GioiThieuSection (Gioi Thieu)' },
+  { id: 'SliderSection', label: 'SliderSection (Clone)' },
+  { id: 'ChuongTrinhSection', label: 'ChuongTrinhSection (Clone - Curriculum)' },
+  { id: 'ProgramsElement', label: 'ProgramsElement (Clone - d8fe02a)' },
+  { id: 'EducationLifeElement', label: 'EducationLifeElement (Clone - 45e27ab)' },
 ];
 
 const footerOptions = [
   { id: 'FooterAssets', label: 'FooterAssets' },
+  { id: 'FooterSection', label: 'FooterSection (Clone)' },
 ];
 
 ---
@@ -622,7 +630,7 @@ const footerOptions = [
           {mainOptions.map(opt => (
             <div class="card">
               <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 0.5}>
-                <iframe src={`/previews/embed/main/${opt.id}`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
+                <iframe src={`/previews/embed/main/${opt.id}`} loading="lazy" sandbox="allow-scripts allow-same-origin" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
                 <div class="overlay"><input type="checkbox" name="main" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
               <div class="card-meta">

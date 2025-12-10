@@ -1,14 +1,14 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
 * Theme Name: Dewey Schools
 * Version: 1.0.0
 * Description: Dewey Schools | Education WordPress Theme
 * Author: Beau Vietnam
-* Author URI: https://beau.vn/
-* Theme URI: https://thedeweyschools.edu.vn/
+* Author URI: ./public/clone/other/file_85836da3
+* Theme URI: ./public/clone/other/file_7677b323
 * Text Domain: dewey
 * License: GNU General Public License version 3.0
-* License URI: https://www.gnu.org/licenses/gpl-3.0.html
+* License URI: ./public/clone/other/gpl-3.0.html
 * Tags: custom-background, threaded-comments, custom-menu, featured-images, full-width-template, theme-options
 */
 .row {
@@ -605,9 +605,9 @@
 
 /* Bottom line waving */
 /*!
-* animate.css -https://daneden.me/animate
+* animate.css -/public/clone/other/animate
 * Version - 3.7.0
-* Licensed under the MIT license - https://opensource.org/licenses/MIT
+* Licensed under the MIT license - ./public/clone/other/MIT
 *
 * Copyright (c) 2018 Daniel Eden
 */
@@ -655,7 +655,7 @@
   animation-name: flash;
 }
 
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+/* originally authored by Nick Pettit - ./public/clone/other/glide */
 @keyframes pulse {
   from {
     transform: scale3d(1, 1, 1);
@@ -801,7 +801,7 @@
   animation-name: tada;
 }
 
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+/* originally authored by Nick Pettit - ./public/clone/other/glide */
 @keyframes wobble {
   from {
     transform: translate3d(0, 0, 0);
@@ -1770,7 +1770,7 @@
   animation-name: jackInTheBox;
 }
 
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+/* originally authored by Nick Pettit - ./public/clone/other/glide */
 @keyframes rollIn {
   from {
     opacity: 0;
@@ -1786,7 +1786,7 @@
   animation-name: rollIn;
 }
 
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+/* originally authored by Nick Pettit - ./public/clone/other/glide */
 @keyframes rollOut {
   from {
     opacity: 1;
@@ -7674,7 +7674,7 @@ h2.title-search a {
   display: block;
   width: 9px;
   height: 9px;
-  background-image: url("http://deway.local/wp-content/uploads/2023/02/arrow-down.svg");
+  background-image: url("/public/clone/images/arrow-down.svg");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -8125,7 +8125,7 @@ ul {
   height: 12px;
   left: 0;
   top: 0;
-  background-image: url("assets/images/ic-right.svg");
+  background-image: url("/clone/images/ic-right.svg");
   background-size: contain;
   background-repeat: no-repeat;
   margin-left: 7px;
@@ -14424,7 +14424,7 @@ Main Components
 
 .e-tabs-content-wrapper {
     padding: 18px 18px 72px;
-    background: #04205E url('https://stg.thedeweyschools.edu.vn/wp-content/uploads/2024/12/bg-tv.webp');
+    background: #04205E url('/public/clone/images/bg-tv.webp');
     background-size: 50%;
     background-position: bottom right;
     border-radius: 24px;

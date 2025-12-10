@@ -1,0 +1,66 @@
+---
+import SliderSection from '../components/sections/clone/SliderSection.astro';
+---
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Section Test</title>
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="/clone/css/swiper.min.css" />
+    
+    <!-- Dewey CSS -->
+    <link rel="stylesheet" href="/clone/css/dewey-theme.css" />
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        .slider-container {
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <SliderSection />
+    </div>
+    
+    <!-- Swiper JS -->
+    <script is:inline src="/clone/js/swiper-bundle.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.animeslide', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                speed: 800,
+            });
+        });
+    </script>
+</body>
+</html>
