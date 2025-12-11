@@ -34,34 +34,6 @@
       "notes": "About section with content and images"
     },
     {
-      "id": "HomeFeaturesGrid",
-      "group": "main",
-      "label": "HomeFeaturesGrid",
-      "aspectRatio": 1.0,
-      "notes": "Features grid layout"
-    },
-    {
-      "id": "HomeStatisticsInfographic",
-      "group": "main",
-      "label": "HomeStatisticsInfographic",
-      "aspectRatio": 0.8,
-      "notes": "Statistics infographic section"
-    },
-    {
-      "id": "HomeCampusSlider",
-      "group": "main",
-      "label": "HomeCampusSlider",
-      "aspectRatio": 1.2,
-      "notes": "Campus images slider"
-    },
-    {
-      "id": "HomeProgramCards",
-      "group": "main",
-      "label": "HomeProgramCards",
-      "aspectRatio": 1.0,
-      "notes": "Program cards grid"
-    },
-    {
       "id": "HeroSlider",
       "group": "main",
       "label": "HeroSlider (About)",
@@ -114,6 +86,13 @@
       "id": "ThanhTichAltSection",
       "group": "main",
       "label": "ThanhTichAltSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Alternative achievements section"
+    },
+    {
+      "id": "ThanhTichAltSectionEdit",
+      "group": "main",
+      "label": "ThanhTichAltSectionEdit (About)",
       "aspectRatio": 1.0,
       "notes": "Alternative achievements section"
     },
@@ -178,13 +157,6 @@
       "group": "footer",
       "label": "FooterAssets",
       "notes": "Footer assets bundle (jQuery, scripts)"
-    },
-    {
-      "id": "HomeFooterSection",
-      "group": "footer",
-      "label": "HomeFooterSection (New)",
-      "aspectRatio": 1.0,
-      "notes": "New footer section for home page"
     },
     {
       "id": "FooterSection",

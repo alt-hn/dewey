@@ -1,9 +1,8 @@
 ---
-import PageHead from '../../PageHead.astro';
-import FooterAssets from '../../FooterAssets.astro';
+---
 ---
 
-<PageHead />
+
 
 <div
 	class="elementor-element elementor-element-f07f450 e-con-full e-flex e-con e-parent"
@@ -157,4 +156,26 @@ import FooterAssets from '../../FooterAssets.astro';
 	</div>
 </div>
 
-<FooterAssets />
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		new Swiper('.swiper', {
+			loop: true,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			slidesPerView: 1,
+			effect: 'slide',
+		});
+	});
+</script>

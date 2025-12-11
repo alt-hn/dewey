@@ -23,6 +23,7 @@ import LifeEduSection from '../../../../components/sections/about/LifeEduSection
 import ExtracurricularSection from '../../../../components/sections/about/ExtracurricularSection.astro';
 import CampusListSection from '../../../../components/sections/about/CampusListSection.astro';
 import ThanhTichAltSection from '../../../../components/sections/about/ThanhTichAltSection.astro';
+import ThanhTichAltSectionEdit from '../../../../components/sections/about/ThanhTichAltSectionEdit.astro';
 import ThanhTichGridSection from '../../../../components/sections/about/ThanhTichGridSection.astro';
 import ThanhTichInfographicSection from '../../../../components/sections/about/ThanhTichInfographicSection.astro';
 import AchievementsPremiumSection from '../../../../components/sections/about/AchievementsPremiumSection.astro';
@@ -61,7 +62,7 @@ const scriptOnlyComponents = new Set([
 
   // mapping object auto-generated from src/data/components.json
   import componentsData from '../../../../data/components.json';
-  const components = { HomeNavbar, Navbar, HomeHeroSlider, HomeCertificationBadges, HomeAboutSection, HomeFeaturesGrid, HomeStatisticsInfographic, HomeCampusSlider, HomeProgramCards, HeroSlider, IntroSection, ProgramCardsSection, InfographicSection, LifeEduSection, ExtracurricularSection, CampusListSection, ThanhTichAltSection, ThanhTichGridSection, ThanhTichInfographicSection, AchievementsPremiumSection, GioiThieuSection, SliderSection, ChuongTrinhSection, ProgramsElement, EducationLifeElement, FooterAssets, FooterSection };
+  const components = { HomeNavbar, Navbar, HomeHeroSlider, HomeCertificationBadges, HomeAboutSection, HomeFeaturesGrid, HomeStatisticsInfographic, HomeCampusSlider, HomeProgramCards, HeroSlider, IntroSection, ProgramCardsSection, InfographicSection, LifeEduSection, ExtracurricularSection, CampusListSection, ThanhTichAltSection, ThanhTichAltSectionEdit, ThanhTichGridSection, ThanhTichInfographicSection, AchievementsPremiumSection, GioiThieuSection, SliderSection, ChuongTrinhSection, ProgramsElement, EducationLifeElement, FooterAssets, FooterSection };
   const mapping: Record<string, Record<string, any>> = {};
   for (const comp of componentsData.components) {
     if (!mapping[comp.group]) mapping[comp.group] = {};
