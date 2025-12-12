@@ -7,24 +7,11 @@
       "notes": "Home navigation bar with logo and menu"
     },
     {
-      "id": "Navbar",
-      "group": "header",
-      "label": "Navbar (About)",
-      "notes": "About page navigation bar"
-    },
-    {
       "id": "SliderSection",
       "group": "main",
       "label": "SliderSection",
       "aspectRatio": 1.5,
       "notes": "Homepage hero slider with 7 slides"
-    },
-    {
-      "id": "HeroSlider",
-      "group": "main",
-      "label": "HeroSlider (About)",
-      "aspectRatio": 1.5,
-      "notes": "About page hero slider"
     },
     {
       "id": "IntroSection",
@@ -90,13 +77,6 @@
       "notes": "Achievements grid section"
     },
     {
-      "id": "ThanhTichInfographicSection",
-      "group": "main",
-      "label": "ThanhTichInfographicSection (About)",
-      "aspectRatio": 0.8,
-      "notes": "Achievements infographic"
-    },
-    {
       "id": "AchievementsPremiumSection",
       "group": "main",
       "label": "AchievementsPremiumSection (About)",
@@ -104,18 +84,18 @@
       "notes": "Premium achievements section"
     },
     {
+      "id": "EnglishProgramSection",
+      "group": "main",
+      "label": "EnglishProgramSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Introduction section for about page"
+    },
+    {
       "id": "GioiThieuSection",
       "group": "main",
       "label": "GioiThieuSection (About)",
       "aspectRatio": 1.0,
       "notes": "Introduction section for about page"
-    },
-    {
-      "id": "ChuongTrinhSection",
-      "group": "main",
-      "label": "ChuongTrinhSection (Clone - Curriculum)",
-      "aspectRatio": 1.5,
-      "notes": "Cloned curriculum page content"
     },
     {
       "id": "FooterSection",

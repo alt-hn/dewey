@@ -5,7 +5,6 @@ import FooterAssets from '../../../../components/FooterAssets.astro';
 
 // New home sections with local assets
 import HomeNavbar from '../../../../components/sections/home/HomeNavbar.astro';
-import HomeHeroSlider from '../../../../components/sections/home/HomeHeroSlider.astro';
 import HomeCertificationBadges from '../../../../components/sections/home/HomeCertificationBadges.astro';
 import HomeAboutSection from '../../../../components/sections/home/HomeAboutSection.astro';
 import HomeFeaturesGrid from '../../../../components/sections/home/HomeFeaturesGrid.astro';
@@ -21,6 +20,7 @@ import ProgramCardsSection from '../../../../components/sections/about/ProgramCa
 import InfographicSection from '../../../../components/sections/about/InfographicSection.astro';
 import LifeEduSection from '../../../../components/sections/about/LifeEduSection.astro';
 import ExtracurricularSection from '../../../../components/sections/about/ExtracurricularSection.astro';
+import EnglishProgramSection from '../../../../components/sections/about/EnglishProgramSection.astro';
 import CampusListSection from '../../../../components/sections/about/CampusListSection.astro';
 import ThanhTichAltSection from '../../../../components/sections/about/ThanhTichAltSection.astro';
 import ThanhTichAltSectionEdit from '../../../../components/sections/about/ThanhTichAltSectionEdit.astro';
@@ -46,7 +46,7 @@ const scriptOnlyComponents = new Set([
 
   // mapping object auto-generated from src/data/components.json
   import componentsData from '../../../../data/components.json';
-  const components: Record<string, any> = { HomeNavbar, Navbar, HomeHeroSlider, HomeCertificationBadges, HomeAboutSection, HomeFeaturesGrid, HomeStatisticsInfographic, HomeCampusSlider, HomeProgramCards, HeroSlider, IntroSection, ProgramCardsSection, InfographicSection, LifeEduSection, ExtracurricularSection, CampusListSection, ThanhTichAltSection, ThanhTichAltSectionEdit, ThanhTichGridSection, ThanhTichInfographicSection, AchievementsPremiumSection, GioiThieuSection, SliderSection, ChuongTrinhSection, ProgramsElement, EducationLifeElement, FooterAssets, FooterSection };
+  const components: Record<string, any> = {EnglishProgramSection, HomeNavbar, Navbar, HomeCertificationBadges, HomeAboutSection, HomeFeaturesGrid, HomeStatisticsInfographic, HomeCampusSlider, HomeProgramCards, HeroSlider, IntroSection, ProgramCardsSection, InfographicSection, LifeEduSection, ExtracurricularSection, CampusListSection, ThanhTichAltSection, ThanhTichAltSectionEdit, ThanhTichGridSection, ThanhTichInfographicSection, AchievementsPremiumSection, GioiThieuSection, SliderSection, ChuongTrinhSection, ProgramsElement, EducationLifeElement, FooterAssets, FooterSection };
   const mapping: Record<string, Record<string, any>> = {};
   for (const comp of componentsData.components) {
     if (!mapping[comp.group]) mapping[comp.group] = {};

@@ -1,26 +1,40 @@
 {
   "header": [
-    "Navbar"
+    "HomeNavbar"
   ],
   "main": [
-    "HeroSlider",
-    "ProgramCardsSection",
-    "InfographicSection",
-    "ThanhTichGridSection",
-    "ThanhTichAltSection",
-    "ThanhTichAltSectionEdit"
-  ],
-  "footer": [
-    "FooterSection"
-  ],
-  "order": [
-    "Navbar",
-    "HeroSlider",
+    "SliderSection",
+    "IntroSection",
     "ProgramCardsSection",
     "InfographicSection",
     "ThanhTichGridSection",
     "ThanhTichAltSection",
     "ThanhTichAltSectionEdit",
+    "LifeEduSection",
+    "CampusListSection",
+    "EnglishProgramSection",
+    "ExtracurricularSection",
+    "AchievementsPremiumSection",
+    "GioiThieuSection"
+  ],
+  "footer": [
+    "FooterSection"
+  ],
+  "order": [
+    "HomeNavbar",
+    "SliderSection",
+    "IntroSection",
+    "ProgramCardsSection",
+    "InfographicSection",
+    "ThanhTichGridSection",
+    "ThanhTichAltSection",
+    "ThanhTichAltSectionEdit",
+    "LifeEduSection",
+    "CampusListSection",
+    "EnglishProgramSection",
+    "ExtracurricularSection",
+    "AchievementsPremiumSection",
+    "GioiThieuSection",
     "FooterSection"
   ]
 }
