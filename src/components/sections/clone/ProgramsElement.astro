@@ -3,6 +3,38 @@
 // Date: 2025-12-09
 ---
 
+<!-- Local Elementor CSS -->
+<link rel="stylesheet" href="/clone/css/style.css" />
+<link rel="stylesheet" href="/clone/css/dewey-theme.css" />
+<link rel="stylesheet" href="/clone/css/custom-frontend.min.css" />
+<link rel="stylesheet" href="/clone/css/frontend.min.css" />
+<link rel="stylesheet" href="/clone/css/widget-image.min.css" />
+<link rel="stylesheet" href="/clone/css/widget-heading.min.css" />
+<link rel="stylesheet" href="/clone/css/widget-text-editor.min.css" />
+
+<!-- Slick Slider CSS - inline minimal styles since files don't exist locally -->
+<style>
+  /* Minimal Slick slider styles */
+  .js-banner-slider { position: relative; display: block; box-sizing: border-box; }
+  .js-banner-slider .box { display: none; }
+  .js-banner-slider .box:first-child { display: block; }
+  .slick-slider { position: relative; display: block; box-sizing: border-box; user-select: none; touch-action: pan-y; }
+  .slick-list { position: relative; display: block; overflow: hidden; margin: 0; padding: 0; }
+  .slick-track { position: relative; top: 0; left: 0; display: block; margin-left: auto; margin-right: auto; }
+  .slick-slide { display: none; float: left; height: 100%; min-height: 1px; }
+  .slick-initialized .slick-slide { display: block; }
+  .slick-dots { position: absolute; bottom: -45px; display: block; width: 100%; padding: 0; margin: 0; list-style: none; text-align: center; }
+  .slick-dots li { position: relative; display: inline-block; width: 20px; height: 20px; margin: 0 5px; padding: 0; cursor: pointer; }
+  .slick-dots li button { font-size: 0; line-height: 0; display: block; width: 20px; height: 20px; padding: 5px; cursor: pointer; color: transparent; border: 0; outline: none; background: transparent; }
+  .slick-dots li button:before { content: '•'; font-size: 30px; line-height: 20px; position: absolute; top: 0; left: 0; width: 20px; height: 20px; text-align: center; opacity: .25; color: black; }
+  .slick-dots li.slick-active button:before { opacity: .75; color: black; }
+</style>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+  html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
+</style>
+
 <div class="elementor-element elementor-element-d8fe02a e-con-full e-flex e-con e-parent" data-id="d8fe02a" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 		<div class="elementor-element elementor-element-e4e190b e-con-full e-flex e-con e-child" data-id="e4e190b" data-element_type="container">
 				</div>
@@ -229,3 +261,43 @@ Báº±ng tá»‘t nghiá»‡p THPT cá»§a Mount Vernon School (Má»¹)				
 					</div>
 				</div>
 				</div>
+<!-- Local jQuery and Slick JS -->
+<script src="/clone/js/jquery.min.js" is:inline></script>
+<script src="/clone/js/slick.min.js" is:inline></script>
+<script is:inline>
+  function initProgramSlider() {
+    if (typeof jQuery === 'undefined' || typeof jQuery.fn.slick === 'undefined') {
+      setTimeout(initProgramSlider, 100);
+      return;
+    }
+
+    const $ = jQuery;
+    const $slider = $('.js-banner-slider');
+    const $pagingInfo = $('.pagingInfo');
+
+    if (!$slider.length) return;
+
+    // Initialize Slick slider
+    $slider.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+      if (slick.$dots) {
+        const current = (currentSlide || 0) + 1;
+        $pagingInfo.text(current + '/' + slick.$dots[0].children.length);
+      }
+    });
+
+    $slider.slick({
+      dots: true,
+      infinite: true,
+      variableWidth: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      swipe: true
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProgramSlider);
+  } else {
+    setTimeout(initProgramSlider, 100);
+  }
+</script>

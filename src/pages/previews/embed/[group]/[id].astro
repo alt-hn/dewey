@@ -35,34 +35,18 @@ import ProgramsElement from '../../../../components/sections/clone/ProgramsEleme
 import EducationLifeElement from '../../../../components/sections/clone/EducationLifeElement.astro';
 
 const { group, id } = Astro.params;
-const url = new URL(Astro.request.url);
+
 // Log on the server when an embed is requested to help diagnose rendering issues
 console.log(`[embed] requested ${group}/${id}`);
 
-// Check if this is a new Home section (uses local assets)
-const isHomeSection = id?.startsWith('Home');
-
-// Check if this is SliderSection (needs Swiper)
-const isSliderSection = id === 'SliderSection';
-
-// Check if this is FooterSection (needs Elementor CSS)
-const isFooterSection = id === 'FooterSection';
-
-// Check if this is a clone section that needs Elementor CSS
-const isCloneSection = ['ChuongTrinhSection', 'ProgramsElement', 'EducationLifeElement'].includes(id as string);
-
-// Check if this component needs Slick slider (jQuery-based)
-const needsSlick = ['ProgramsElement'].includes(id as string);
-
-// Components that require external dependencies (jQuery, Elementor, etc.)
-// and cannot render properly in sandboxed iframes. Show placeholder instead.
+// Components that require external dependencies and show placeholder instead of rendering
 const scriptOnlyComponents = new Set([
   'FooterAssets', // Contains jQuery/WordPress scripts that fail in sandbox
 ]);
 
   // mapping object auto-generated from src/data/components.json
   import componentsData from '../../../../data/components.json';
-  const components = { HomeNavbar, Navbar, HomeHeroSlider, HomeCertificationBadges, HomeAboutSection, HomeFeaturesGrid, HomeStatisticsInfographic, HomeCampusSlider, HomeProgramCards, HeroSlider, IntroSection, ProgramCardsSection, InfographicSection, LifeEduSection, ExtracurricularSection, CampusListSection, ThanhTichAltSection, ThanhTichAltSectionEdit, ThanhTichGridSection, ThanhTichInfographicSection, AchievementsPremiumSection, GioiThieuSection, SliderSection, ChuongTrinhSection, ProgramsElement, EducationLifeElement, FooterAssets, FooterSection };
+  const components: Record<string, any> = { HomeNavbar, Navbar, HomeHeroSlider, HomeCertificationBadges, HomeAboutSection, HomeFeaturesGrid, HomeStatisticsInfographic, HomeCampusSlider, HomeProgramCards, HeroSlider, IntroSection, ProgramCardsSection, InfographicSection, LifeEduSection, ExtracurricularSection, CampusListSection, ThanhTichAltSection, ThanhTichAltSectionEdit, ThanhTichGridSection, ThanhTichInfographicSection, AchievementsPremiumSection, GioiThieuSection, SliderSection, ChuongTrinhSection, ProgramsElement, EducationLifeElement, FooterAssets, FooterSection };
   const mapping: Record<string, Record<string, any>> = {};
   for (const comp of componentsData.components) {
     if (!mapping[comp.group]) mapping[comp.group] = {};
@@ -91,211 +75,7 @@ export function getStaticPaths() {
     <style>
       :root { color-scheme: light; }
       body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-      /* debug badge removed per request */
     </style>
-    {isHomeSection ? (
-      <>
-        <!-- Local CSS for Home sections -->
-        <link rel='stylesheet' href='/home/css/dewey-theme.css' />
-        <link rel='stylesheet' href='/home/css/elementor-frontend.min.css' />
-        <link rel='stylesheet' href='/home/css/widget-nav-menu.min.css' />
-        <link rel='stylesheet' href='/home/css/widget-heading.min.css' />
-        <link rel='stylesheet' href='/home/css/widget-text-editor.min.css' />
-        <link rel='stylesheet' href='/home/css/widget-image.min.css' />
-        <link rel='stylesheet' href='/home/css/widget-button.min.css' />
-        <link rel='stylesheet' href='/home/css/widget-divider.min.css' />
-        <link rel='stylesheet' href='/home/css/swiper.min.css' />
-        <link rel='stylesheet' href='/home/css/font-awesome.min.css' />
-        <link rel='stylesheet' href='/home/css/language-switcher.min.css' />
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
-        </style>
-        <!-- Local JavaScript for Home sections -->
-          <script src="/home/scripts/swiper.min.js" is:inline></script>
-          <script src="/home/scripts/html5lightbox.js" is:inline></script>
-        <script>
-          // Initialize Swiper for sliders
-          document.addEventListener('DOMContentLoaded', function() {
-            // Hero Slider
-            if (document.querySelector('.swiper.animeslide')) {
-              new Swiper('.swiper.animeslide', {
-                loop: true,
-                autoplay: { delay: 5000, disableOnInteraction: false },
-                pagination: { el: '.swiper-pagination', clickable: true },
-                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
-              });
-            }
-            // Campus Slider
-            if (document.querySelector('.js-images-slider')) {
-              new Swiper('.js-images-slider', {
-                slidesPerView: 2,
-                spaceBetween: 16,
-                loop: true,
-                breakpoints: {
-                  768: { slidesPerView: 4 }
-                }
-              });
-            }
-            // Note: .js-banner-slider is NOT initialized here for Home sections
-            // as it's used by clone sections (ProgramsElement) with Slick instead
-          });
-        </script>
-      </>
-    ) : group === 'header' ? (
-      <>
-        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/style.css' />
-        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/themes/dewey-5/theme.min.css' />
-        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/plugins/elementor/assets/css/frontend.min.css' />
-        <link rel='stylesheet' href='https://thedeweyschools.edu.vn/wp-content/uploads/elementor/css/custom-frontend.min.css' />
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
-        </style>
-      </>
-    ) : isSliderSection ? (
-      <>
-        <link rel='stylesheet' href='/clone/css/swiper.min.css' />
-        <link rel='stylesheet' href='/clone/css/dewey-theme.css' />
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
-        </style>
-        <script src="/clone/js/swiper-bundle.min.js" is:inline></script>
-        <script is:inline>
-          function initSlider() {
-            const slider = document.querySelector('.animeslide');
-            if (!slider) return;
-            
-            // Wait for Swiper to be available
-            if (typeof Swiper === 'undefined') {
-              setTimeout(initSlider, 50);
-              return;
-            }
-            
-            // Clone from original: https://thedeweyschools.edu.vn/
-            // Elementor uses default Swiper with autoplay
-            new Swiper('.animeslide', {
-              slidesPerView: 1,
-              loop: true,
-              speed: 500,
-              autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-              },
-              pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-              },
-              effect: 'slide', // Original uses slide, not fade
-            });
-          }
-          
-          // For assembled: retry until Swiper loads
-          setTimeout(initSlider, 100);
-        </script>
-      </>
-    ) : isFooterSection ? (
-      <>
-        <!-- Elementor Core CSS -->
-        <link rel='stylesheet' href='/clone/css/style.css' />
-        <link rel='stylesheet' href='/clone/css/dewey-theme.css' />
-        <link rel='stylesheet' href='/clone/css/custom-frontend.min.css' />
-        <link rel='stylesheet' href='/clone/css/frontend.min.css' />
-        
-        <!-- Elementor Widget CSS -->
-        <link rel='stylesheet' href='/clone/css/widget-image.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-divider.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-heading.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-text-editor.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-icon-list.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-social-icons.min.css' />
-        
-        <!-- Footer Specific CSS -->
-        <link rel='stylesheet' href='/clone/css/post-22407.css' />
-        
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
-        </style>
-      </>
-    ) : isCloneSection ? (
-      <>
-        <!-- Elementor CSS for clone sections -->
-        <link rel='stylesheet' href='/clone/css/style.css' />
-        <link rel='stylesheet' href='/clone/css/dewey-theme.css' />
-        <link rel='stylesheet' href='/clone/css/custom-frontend.min.css' />
-        <link rel='stylesheet' href='/clone/css/frontend.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-image.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-heading.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-text-editor.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-divider.min.css' />
-        <link rel='stylesheet' href='/clone/css/widget-icon-list.min.css' />
-        {needsSlick && (
-          <>
-            <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' />
-            <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css' />
-          </>
-        )}
-        
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
-        </style>
-        
-        {needsSlick && (
-          <>
-            <script src="/clone/js/jquery.min.js" is:inline></script>
-            <script src="/clone/js/slick.min.js" is:inline></script>
-            <script is:inline>
-              function initProgramSlider() {
-                if (typeof jQuery === 'undefined' || typeof jQuery.fn.slick === 'undefined') {
-                  setTimeout(initProgramSlider, 100);
-                  return;
-                }
-
-                const $ = jQuery;
-                const $slider = $('.js-banner-slider');
-                const $pagingInfo = $('.pagingInfo');
-
-                if (!$slider.length) return;
-
-                // Initialize Slick slider
-                $slider.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
-                  if (slick.$dots) {
-                    const current = (currentSlide || 0) + 1;
-                    $pagingInfo.text(current + '/' + slick.$dots[0].children.length);
-                  }
-                });
-
-                $slider.slick({
-                  dots: true,
-                  infinite: true,
-                  variableWidth: true,
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  swipe: true
-                });
-              }
-
-              if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initProgramSlider);
-              } else {
-                setTimeout(initProgramSlider, 100);
-              }
-            </script>
-          </>
-        )}
-      </>
-    ) : (
-      <>
-        <link rel="stylesheet" href="/src/styles/tailwind.css" />
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-          html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
-        </style>
-      </>
-    )}
   </head>
   <body>
     {scriptOnlyComponents.has(id as string) ? (

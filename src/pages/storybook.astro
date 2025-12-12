@@ -264,7 +264,7 @@ const footerOptions = componentsData.components
         flex-shrink: 0;
       }
       
-      /* Fade overlay for sections that overflow (taller than 1:1) */
+      /* Fade overlay for sections that overflow (taller than MAX_ASPECT_RATIO) */
       .card-visual.has-overflow::after {
         content: '';
         position: absolute;
@@ -282,19 +282,6 @@ const footerOptions = componentsData.components
         z-index: 10;
       }
       
-      /* "More content below" indicator */
-      .card-visual.has-overflow::before {
-        content: '⋯';
-        position: absolute;
-        bottom: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 20px;
-        color: var(--text-secondary);
-        z-index: 11;
-        letter-spacing: 4px;
-      }
-      
       .card-visual:hover {
         border-color: var(--accent);
       }
@@ -302,6 +289,54 @@ const footerOptions = componentsData.components
       .card-visual.selected {
         border-color: var(--accent);
         box-shadow: 0 0 0 3px var(--accent-light);
+      }
+      
+      /* Expanded state - no height limit */
+      .card-visual.expanded {
+        max-height: none !important;
+      }
+      
+      .card-visual.expanded::after {
+        display: none !important;
+      }
+      
+      /* Expand toggle button */
+      .expand-toggle {
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        z-index: 20;
+        transition: all 0.2s ease;
+        box-shadow: var(--shadow-md);
+        display: none;
+        align-items: center;
+        gap: 4px;
+      }
+      
+      .card-visual.has-overflow .expand-toggle {
+        display: flex;
+      }
+      
+      .expand-toggle:hover {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+        transform: translateX(-50%) scale(1.05);
+      }
+      
+      .card-visual.expanded .expand-toggle {
+        background: var(--accent);
+        color: white;
+        border-color: var(--accent);
+        transform: translateX(-50%);
       }
       
       .card-visual iframe { 
@@ -523,9 +558,11 @@ const footerOptions = componentsData.components
         <button id="clearSelection" class="btn">
           <span>✕</span> Clear
         </button>
+        <!---
         <button id="saveBtn" class="btn success">
           <span>💾</span> Save
-        </button>
+        </button> 
+        -->
       </div>
     </div>
 
@@ -561,8 +598,9 @@ const footerOptions = componentsData.components
           <div class="group-content">
           {headerOptions.map(opt => (
             <div class="card">
-              <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 0.5}>
-                <iframe src={`/previews/embed/header/${opt.id}`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
+              <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 1.0}>
+                <iframe src={`/previews/embed/header/${opt.id}`} loading="lazy" sandbox="allow-scripts allow-same-origin" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
+                <button class="expand-toggle" type="button" aria-label="Toggle full height">⇕ Expand</button>
                 <div class="overlay"><input type="checkbox" name="header" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
               <div class="card-meta">
@@ -584,8 +622,9 @@ const footerOptions = componentsData.components
           <div class="group-content">
           {mainOptions.map(opt => (
             <div class="card">
-              <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 0.5}>
+              <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 1.0}>
                 <iframe src={`/previews/embed/main/${opt.id}`} loading="lazy" sandbox="allow-scripts allow-same-origin" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
+                <button class="expand-toggle" type="button" aria-label="Toggle full height">⇕ Expand</button>
                 <div class="overlay"><input type="checkbox" name="main" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
               <div class="card-meta">
@@ -607,8 +646,9 @@ const footerOptions = componentsData.components
           <div class="group-content">
           {footerOptions.map(opt => (
             <div class="card">
-              <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 0.5}>
-                <iframe src={`/previews/embed/footer/${opt.id}`} loading="lazy" sandbox="allow-scripts" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
+              <div class="card-visual" data-component-id={opt.id} data-aspect-ratio={sectionMeta[opt.id]?.aspectRatio || 1.0}>
+                <iframe src={`/previews/embed/footer/${opt.id}`} loading="lazy" sandbox="allow-scripts allow-same-origin" title={`${opt.id} preview`} referrerpolicy="no-referrer"></iframe>
+                <button class="expand-toggle" type="button" aria-label="Toggle full height">⇕ Expand</button>
                 <div class="overlay"><input type="checkbox" name="footer" value={opt.id} aria-label={`select ${opt.label}`} /></div>
               </div>
               <div class="card-meta">
@@ -828,11 +868,10 @@ const footerOptions = componentsData.components
       }
 
       // scale iframe elements so their internal viewport behaves like a 1400px desktop
-      // and adjust container height based on predefined aspect ratios
+      // and adjust container height based on actual content height (with max cap)
       function ensureDesktopIframes(): void {
         const DESKTOP_W = 1400;
-        const MAX_ASPECT_RATIO = 1; // Maximum aspect ratio before showing overflow indicator
-        const MAX_CONTAINER_HEIGHT = 280; // Maximum container height for overflow sections
+        const MAX_ASPECT_RATIO = 0.8; // Maximum aspect ratio before capping height (2.0 = ~2800px height)
         const MIN_CONTAINER_HEIGHT = 60; // Minimum container height
 
         function scaleIframe(iframeEl: HTMLIFrameElement | null): void {
@@ -845,38 +884,73 @@ const footerOptions = componentsData.components
             const containerWidth = (container && container.clientWidth) ? container.clientWidth : 300;
             const scale = Math.max(0.2, Math.min(1, containerWidth / DESKTOP_W));
             
-            // Get aspect ratio from data attribute (predefined value)
-            const aspectRatio = parseFloat(container.dataset.aspectRatio || '0.5');
+            // Try to get actual content height from iframe
+            let contentHeight = DESKTOP_W * 1.0; // Default fallback for better preview
+            let actualAspectRatio = 1.0;
             
-            // Calculate the content height based on aspect ratio
-            const contentHeight = DESKTOP_W * aspectRatio;
+            try {
+              const iframeDoc = iframeEl.contentDocument || iframeEl.contentWindow?.document;
+              if (iframeDoc && iframeDoc.body) {
+                // Force reflow to get accurate measurements
+                void iframeDoc.body.offsetHeight;
+                
+                const body = iframeDoc.body;
+                const html = iframeDoc.documentElement;
+                
+                // Get bounding rect of body for most accurate height
+                const bodyRect = body.getBoundingClientRect();
+                
+                // Try multiple methods to get the most accurate height
+                const actualHeight = Math.max(
+                  bodyRect.height || 0,
+                  body.scrollHeight || 0,
+                  body.offsetHeight || 0,
+                  html.clientHeight || 0,
+                  html.scrollHeight || 0,
+                  html.offsetHeight || 0
+                );
+                
+                if (actualHeight > 0) {
+                  contentHeight = actualHeight;
+                  actualAspectRatio = actualHeight / DESKTOP_W;
+                }
+              }
+            } catch (e) {
+              // CORS restriction, use aspect ratio from data attribute
+              const fallbackRatio = parseFloat(container.dataset.aspectRatio || '1.0');
+              contentHeight = DESKTOP_W * fallbackRatio;
+              actualAspectRatio = fallbackRatio;
+            }
             
-            // Calculate the scaled height that would be visible in the container
+            // Calculate the scaled height
             const scaledHeight = contentHeight * scale;
             
-            // Determine container height based on whether aspect ratio exceeds 1:1
+            // Determine container height based on aspect ratio limit
             let targetContainerHeight: number;
-            if (aspectRatio <= MAX_ASPECT_RATIO) {
-              // Section fits within 1:1 ratio, use proportional height
+            if (actualAspectRatio <= MAX_ASPECT_RATIO) {
+              // Section fits within limit, use full height
               targetContainerHeight = Math.max(MIN_CONTAINER_HEIGHT, scaledHeight);
               container.classList.remove('has-overflow');
             } else {
-              // Section exceeds 1:1 ratio, cap at max height and show overflow indicator
-              targetContainerHeight = MAX_CONTAINER_HEIGHT;
+              // Section exceeds limit, cap at max height and show overflow indicator
+              const maxHeight = DESKTOP_W * MAX_ASPECT_RATIO * scale;
+              targetContainerHeight = Math.max(MIN_CONTAINER_HEIGHT, maxHeight);
               container.classList.add('has-overflow');
             }
             
-            // Apply styles
-            iframeEl.style.width = DESKTOP_W + 'px';
-            iframeEl.style.height = contentHeight + 'px';
-            iframeEl.style.transformOrigin = 'top center';
-            container.style.position = 'relative';
-            container.style.overflow = 'hidden';
-            container.style.height = targetContainerHeight + 'px';
-            iframeEl.style.position = 'absolute';
-            iframeEl.style.left = '50%';
-            iframeEl.style.top = '0';
-            iframeEl.style.transform = `translateX(-50%) scale(${scale})`;
+            // Apply styles - but skip if card is expanded
+            if (!container.classList.contains('expanded')) {
+              iframeEl.style.width = DESKTOP_W + 'px';
+              iframeEl.style.height = contentHeight + 'px';
+              iframeEl.style.transformOrigin = 'top center';
+              container.style.position = 'relative';
+              container.style.overflow = 'hidden';
+              container.style.height = targetContainerHeight + 'px';
+              iframeEl.style.position = 'absolute';
+              iframeEl.style.left = '50%';
+              iframeEl.style.top = '0';
+              iframeEl.style.transform = `translateX(-50%) scale(${scale})`;
+            }
           }
         }
 
@@ -887,6 +961,57 @@ const footerOptions = componentsData.components
         ensureDesktopIframes();
       });
 
+      // expand toggle button handler
+      document.addEventListener('click', (e) => {
+        const expandBtn = (e.target as HTMLElement).closest('.expand-toggle') as HTMLButtonElement | null;
+        if (expandBtn) {
+          e.stopPropagation();
+          const cardVisual = expandBtn.closest('.card-visual') as HTMLElement | null;
+          if (cardVisual) {
+            const isExpanded = cardVisual.classList.toggle('expanded');
+            expandBtn.textContent = isExpanded ? '⇡ Collapse' : '⇕ Expand';
+            
+            const iframe = cardVisual.querySelector('iframe') as HTMLIFrameElement | null;
+            if (!iframe) return;
+            
+            if (isExpanded) {
+              // EXPANDED: Remove height limit, show full content
+              setTimeout(() => {
+                try {
+                  const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+                  if (iframeDoc) {
+                    const body = iframeDoc.body;
+                    const html = iframeDoc.documentElement;
+                    const actualHeight = Math.max(
+                      body?.scrollHeight || 0,
+                      body?.offsetHeight || 0,
+                      html?.clientHeight || 0,
+                      html?.scrollHeight || 0,
+                      html?.offsetHeight || 0
+                    );
+                    
+                    const containerWidth = cardVisual.clientWidth;
+                    const scale = containerWidth / 1400;
+                    const scaledHeight = actualHeight * scale;
+                    
+                    // Set full height for expanded state
+                    cardVisual.style.height = scaledHeight + 'px';
+                  }
+                } catch (e) {
+                  // CORS error - set a large height for expanded view
+                  cardVisual.style.height = '3000px';
+                }
+              }, 50);
+            } else {
+              // COLLAPSED: Restore limited height (MAX_ASPECT_RATIO)
+              cardVisual.style.height = '';
+              ensureDesktopIframes();
+            }
+          }
+          return;
+        }
+      });
+      
       // per-card preview button
       document.addEventListener('click', (e) => {
         const btn = (e.target as HTMLElement).closest('button[data-group]') as HTMLButtonElement | null;
@@ -1062,18 +1187,47 @@ const footerOptions = componentsData.components
         document.querySelectorAll('.card-visual iframe').forEach((iframe) => {
           if (!(iframe instanceof HTMLIFrameElement)) return;
           
-          // Initial scaling
-          setTimeout(() => ensureDesktopIframes(), 100);
-          
           // Re-scale when iframe content loads
           iframe.addEventListener('load', () => {
-            setTimeout(() => ensureDesktopIframes(), 50);
+            const container = iframe.parentElement;
+            if (!container || !container.classList.contains('card-visual')) return;
+            
+            // Wait for content to fully render (images, scripts, etc.)
+            setTimeout(() => {
+              try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+                if (iframeDoc) {
+                  // Force reflow to ensure accurate measurements
+                  void iframeDoc.body.offsetHeight;
+                  
+                  // Wait for images and other resources
+                  const images = Array.from(iframeDoc.images);
+                  if (images.length > 0 && images.some(img => !img.complete)) {
+                    Promise.all(images.map(img => {
+                      if (img.complete) return Promise.resolve();
+                      return new Promise(resolve => {
+                        img.onload = img.onerror = resolve;
+                      });
+                    })).then(() => {
+                      setTimeout(() => ensureDesktopIframes(), 100);
+                    });
+                  } else {
+                    ensureDesktopIframes();
+                  }
+                }
+              } catch (e) {
+                // CORS error, just run scaling
+                ensureDesktopIframes();
+              }
+            }, 200);
           });
         });
         
-        // Also run after a delay to catch lazy-loaded content
-        setTimeout(() => ensureDesktopIframes(), 500);
-        setTimeout(() => ensureDesktopIframes(), 1500);
+        // Progressive scaling with increasing delays to catch different loading stages
+        setTimeout(() => ensureDesktopIframes(), 300);
+        setTimeout(() => ensureDesktopIframes(), 800);
+        setTimeout(() => ensureDesktopIframes(), 2000);
+        setTimeout(() => ensureDesktopIframes(), 4000);
       }
 
       if (document.readyState === 'loading') {

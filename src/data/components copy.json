@@ -13,11 +13,25 @@
       "notes": "About page navigation bar"
     },
     {
-      "id": "SliderSection",
+      "id": "HomeHeroSlider",
       "group": "main",
-      "label": "SliderSection",
+      "label": "HomeHeroSlider",
       "aspectRatio": 1.5,
-      "notes": "Homepage hero slider with 7 slides"
+      "notes": "Hero slider with autoplay and navigation"
+    },
+    {
+      "id": "HomeCertificationBadges",
+      "group": "main",
+      "label": "HomeCertificationBadges",
+      "aspectRatio": 0.3,
+      "notes": "Certification badges section"
+    },
+    {
+      "id": "HomeAboutSection",
+      "group": "main",
+      "label": "HomeAboutSection",
+      "aspectRatio": 1.2,
+      "notes": "About section with content and images"
     },
     {
       "id": "HeroSlider",
@@ -111,11 +125,32 @@
       "notes": "Introduction section for about page"
     },
     {
+      "id": "SliderSection",
+      "group": "main",
+      "label": "SliderSection (Clone)",
+      "aspectRatio": 1.5,
+      "notes": "Cloned homepage slider with 7 slides"
+    },
+    {
       "id": "ChuongTrinhSection",
       "group": "main",
       "label": "ChuongTrinhSection (Clone - Curriculum)",
       "aspectRatio": 1.5,
       "notes": "Cloned curriculum page content"
+    },
+    {
+      "id": "ProgramsElement",
+      "group": "main",
+      "label": "ProgramsElement (Clone - d8fe02a)",
+      "aspectRatio": 0.65,
+      "notes": "Programs grid element (d8fe02a) - 5 program cards"
+    },
+    {
+      "id": "EducationLifeElement",
+      "group": "main",
+      "label": "EducationLifeElement (Clone - 45e27ab)",
+      "aspectRatio": 0.5,
+      "notes": "Education philosophy element (45e27ab) - Triết lý giáo dục"
     },
     {
       "id": "FooterSection",

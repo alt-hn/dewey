@@ -6,19 +6,21 @@
     "HeroSlider",
     "ProgramCardsSection",
     "InfographicSection",
-    "ThanhTichGridSection"
+    "ThanhTichGridSection",
+    "ThanhTichAltSection",
+    "ThanhTichAltSectionEdit"
   ],
   "footer": [
-    "FooterSection",
-    "FooterAssets"
+    "FooterSection"
   ],
   "order": [
     "Navbar",
     "HeroSlider",
-    "FooterAssets",
     "ProgramCardsSection",
     "InfographicSection",
     "ThanhTichGridSection",
+    "ThanhTichAltSection",
+    "ThanhTichAltSectionEdit",
     "FooterSection"
   ]
 }
