@@ -1,15 +1,23 @@
 ---
-/**
- * HomeAboutSection - Introduction image section
- * Refactored from MainSection.astro (lines 178-185)
- * Desktop-only image display (hidden on tablet/mobile)
- */
+// HomeAboutSection - About section with infographic
 ---
 
+<!-- Local Home CSS -->
+<link rel="stylesheet" href="/home/css/dewey-theme.css" />
+<link rel="stylesheet" href="/home/css/elementor-frontend.min.css" />
+<link rel="stylesheet" href="/home/css/custom-frontend.min.css" />
+<link rel="stylesheet" href="/home/css/widget-image.min.css" />
+<link rel="stylesheet" href="/home/css/fadeInUp.min.css" />
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+  html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
+</style>
+		
 <div class="elementor-element elementor-element-ba6e278 e-con-full elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child" data-id="ba6e278" data-element_type="container">
 	<div class="elementor-element elementor-element-cd48413 elementor-invisible elementor-widget elementor-widget-image" data-id="cd48413" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="image.default">
 		<div class="elementor-widget-container">
-			<img loading="lazy" decoding="async" width="750" height="650" src="/home/images/infographics/gioi-thieu-tds.webp" class="attachment-full size-full wp-image-29391" alt="gioi-thieu-tds" srcset="/home/images/infographics/gioi-thieu-tds.webp 750w, /home/images/infographics/gioi-thieu-tds-300x260.webp 300w" sizes="(max-width: 750px) 100vw, 750px" />
+			<img loading="lazy" decoding="async" width="750" height="650" src="/home/images/infographics/gioi-thieu.webp" class="attachment-full size-full wp-image-29391" alt="gioi-thieu-tds" srcset="/home/images/infographics/gioi-thieu.webp 750w, /home/images/infographics/gioi-thieu.webp 300w" sizes="(max-width: 750px) 100vw, 750px" />
 		</div>
 	</div>
 </div>

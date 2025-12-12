@@ -1,0 +1,454 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>.position() | jQuery UI API Documentation</title>
+
+	<meta name="author" content="OpenJS Foundation - openjsf.org">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="shortcut icon" href="https://api.jqueryui.com/wp-content/themes/api.jqueryui.com/i/favicon.ico">
+	<link rel="stylesheet" href="https://api.jqueryui.com/wp-content/themes/jquery/lib/typesense-minibar/typesense-minibar.css?v=c5fa9b9a">
+	<link rel="stylesheet" href="https://api.jqueryui.com/wp-content/themes/jquery/css/base.css?v=b0f611c2">
+	<link rel="stylesheet" href="https://api.jqueryui.com/wp-content/themes/api.jqueryui.com/style.css?v=772fec89">
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://api.jqueryui.com/wp-content/themes/jquery/js/main.js?v=10baaffd"></script>
+	<script defer type="module" src="https://api.jqueryui.com/wp-content/themes/jquery/lib/typesense-minibar/typesense-minibar.js?v=830f1ee1"></script>
+<meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://api.jqueryui.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fapi.jqueryui.com%2Fposition%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://api.jqueryui.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fapi.jqueryui.com%2Fposition%2F&#038;format=xml" />
+<link rel="https://api.w.org/" href="https://api.jqueryui.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://api.jqueryui.com/wp-json/wp/v2/posts/96" /><meta name="generator" content="WordPress 6.9" />
+<link rel="canonical" href="https://api.jqueryui.com/position/" />
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+</head>
+<body class="api jquery-ui wp-singular post-template-default single single-post postid-96 single-format-standard wp-theme-jquery wp-child-theme-apijqueryuicom single-author singular">
+
+
+<header>
+	<section id="global-nav">
+		<nav>
+			<div class="constrain">
+				<ul class="projects">
+					<li class="project jquery"><a href="https://jquery.com/" title="jQuery">jQuery</a></li>
+					<li class="project jquery-ui"><a href="https://jqueryui.com/" title="jQuery UI">jQuery UI</a></li>
+					<li class="project jquery-mobile"><a href="https://jquerymobile.com/" title="jQuery Mobile">jQuery Mobile</a></li>
+					<li class="project sizzlejs"><a href="https://sizzlejs.com/" title="Sizzle">Sizzle</a></li>
+					<li class="project qunitjs"><a href="https://qunitjs.com/" title="QUnit">QUnit</a></li>
+				</ul>
+				<ul class="links">
+					<li><a href="https://plugins.jquery.com/">Plugins</a></li>
+					<li class="dropdown"><a href="https://contribute.jquery.org/">Contribute</a>
+						<ul>
+							<li><a href="https://cla.openjsf.org/">CLA</a></li>
+							<li><a href="https://contribute.jquery.org/style-guide/">Style Guides</a></li>
+							<li><a href="https://contribute.jquery.org/triage/">Bug Triage</a></li>
+							<li><a href="https://contribute.jquery.org/code/">Code</a></li>
+							<li><a href="https://contribute.jquery.org/documentation/">Documentation</a></li>
+							<li><a href="https://contribute.jquery.org/web-sites/">Web Sites</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="https://events.jquery.org/">Events</a>
+						<ul class="wide">
+						</ul>
+					</li>
+					<li class="dropdown"><a href="https://jquery.com/support/">Support</a>
+						<ul>
+							<li><a href="https://learn.jquery.com/">Learning Center</a></li>
+							<li><a href="https://jquery.com/support/">Chat</a></li>
+							<li><a href="https://stackoverflow.com/tags/jquery/info">Stack Overflow</a></li>
+							<li><a href="https://contribute.jquery.org/bug-reports/">Report a bug</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="https://openjsf.org/">OpenJS Foundation</a>
+						<ul>
+							<li><a href="https://openjsf.org/join">Join</a></li>
+							<li><a href="https://openjsf.org/members">Members</a></li>
+							<li><a href="https://jquery.com/team">jQuery Team</a></li>
+							<li><a href="https://openjsf.org/governance">Governance</a></li>
+							<li><a href="https://code-of-conduct.openjsf.org/">Conduct</a></li>
+							<li><a href="https://openjsf.org/projects">Projects</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+</header>
+
+<div id="container">
+	<div id="logo-events" class="constrain clearfix">
+		<h2 class="logo"><a href="https://jqueryui.com/" title="jQuery UI API Documentation">jQuery UI API Documentation</a></h2>
+
+		<aside id="broadcast"></aside>
+	</div>
+
+	<nav id="main" class="constrain clearfix">
+		<div class="menu-top-container">
+	<button hidden id="menu-trigger" class="button menu-trigger" aria-expanded="false" aria-haspopup="menu">Navigation</button>
+	<ul id="menu-top" class="menu" role="menu" aria-labelledby="menu-trigger">
+<li class="menu-item"><a href="https://jqueryui.com/demos/">Demos</a></li>
+<li class="menu-item"><a href="https://jqueryui.com/download/">Download</a></li>
+<li class="menu-item current"><a href="https://api.jqueryui.com/">API Documentation</a></li>
+<li class="menu-item"><a href="https://jqueryui.com/themeroller/">Themes</a></li>
+<li class="menu-item"><a href="https://jqueryui.com/development/">Development</a></li>
+<li class="menu-item"><a href="https://jqueryui.com/support/">Support</a></li>
+<li class="menu-item"><a href="https://blog.jqueryui.com/">Blog</a></li>
+<li class="menu-item"><a href="https://jqueryui.com/about/">About</a></li>
+	</ul>
+</div>
+
+		<typesense-minibar	data-origin="https://typesense.jquery.com"
+	data-collection="jqueryui_com"
+	data-key="Zh8mMgohXECel9wjPwqT7lekLSG3OCgz"
+	data-foot="true" data-group="true"
+>
+	<form role="search" class="searchform" action="https://api.jqueryui.com/" method="get">
+	<input type="search" name="s" aria-label="Search jQuery UI API Documentation" value="" placeholder="Search" autocomplete="off">
+	<button type="submit" class="visuallyhidden"></button>
+</form>
+</typesense-minibar>
+	</nav>
+
+	<div id="content-wrapper" class="clearfix row">
+
+<div class="content-right twelve columns">
+	<div id="content">
+					
+<article id="post-96" class="post-96 post type-post status-publish format-standard hentry category-overrides category-methods category-utilities">
+	<header class="entry-header">
+		<h1 class="entry-title">.position()</h1>
+		<hr>
+				<div class="entry-meta">
+			Categories: <span class="category"><a href="https://api.jqueryui.com/category/overrides/">Method Overrides</a></span><span class="category-divider"> | </span><span class="category"><a href="https://api.jqueryui.com/category/methods/">Methods</a></span><span class="category-divider"> | </span><span class="category"><a href="https://api.jqueryui.com/category/utilities/">Utilities</a></span>		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<article id="position1" class="entry method"><h2 class="section-title">
+<span class="name">.position( options )</span><span class="returns">Returns: <a href="http://api.jquery.com/Types/#jQuery">jQuery</a></span>
+</h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Position an element relative to another.</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name">
+<span class="version-details">version added: 1.8</span><a id="position-options" href="#position-options"><span class="icon-link"></span>.position( options )</a>
+</h4>
+<ul><li id="position-options-options">
+<div><strong>options</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types/#Object">Object</a>
+</div>
+<div></div>
+<ul>
+<li>
+<div>
+<strong>my</strong> (default: <code>"center"</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div>Defines which position <strong>on the element being positioned</strong> to align with the target element: "horizontal vertical" alignment. A single value such as <code>"right"</code> will be normalized to <code>"right center"</code>, <code>"top"</code> will be normalized to <code>"center top"</code> (following CSS convention). Acceptable horizontal values: <code>"left"</code>, <code>"center"</code>, <code>"right"</code>. Acceptable vertical values: <code>"top"</code>, <code>"center"</code>, <code>"bottom"</code>. Example: <code>"left top"</code> or <code>"center center"</code>. Each dimension can also contain offsets, in pixels or percent, e.g., <code>"right+10 top-25%"</code>. Percentage offsets are relative to the element being positioned.</div>
+</li>
+<li>
+<div>
+<strong>at</strong> (default: <code>"center"</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div>Defines which position <strong>on the target element</strong> to align the positioned element against: "horizontal vertical" alignment. See the <a href="#option-my"><code>my</code></a> option for full details on possible values. Percentage offsets are relative to the target element.</div>
+</li>
+<li>
+<div>
+<strong>of</strong> (default: <code>null</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#Selector">Selector</a> or <a href="http://api.jquery.com/Types/#Element">Element</a> or <a href="http://api.jquery.com/Types/#jQuery">jQuery</a> or <a href="http://api.jquery.com/Types/#Event">Event</a>
+</div>
+<div>Which element to position against. If you provide a selector or jQuery object, the first matching element will be used. If you provide an event object, the <code>pageX</code> and <code>pageY</code> properties will be used. Example: <code>"#top-menu"</code>
+</div>
+</li>
+<li>
+<div>
+<strong>collision</strong> (default: <code>"flip"</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#String">String</a>
+</div>
+<div>
+					<p>When the positioned element overflows the window in some direction, move it to an alternative position. Similar to <a href="#option-my"><code>my</code></a> and <a href="#option-at"><code>at</code></a>, this accepts a single value or a pair for horizontal/vertical, e.g., <code>"flip"</code>, <code>"fit"</code>, <code>"fit flip"</code>, <code>"fit none"</code>.</p>
+					<ul>
+						<li>
+<code>"flip"</code>: Flips the element to the opposite side of the target and the collision detection is run again to see if it will fit. Whichever side allows more of the element to be visible will be used.</li>
+						<li>
+<code>"fit"</code>: Shift the element away from the edge of the window.</li>
+						<li>
+<code>"flipfit"</code>: First applies the flip logic, placing the element on whichever side allows more of the element to be visible. Then the fit logic is applied to ensure as much of the element is visible as possible.</li>
+						<li>
+<code>"none"</code>: Does not apply any collision detection.</li>
+					</ul>
+				</div>
+</li>
+<li>
+<div>
+<strong>using</strong> (default: <code>null</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#Function">Function</a>()</div>
+<div>
+					When specified, the actual property setting is delegated to this callback. Receives two parameters: The first is a hash of <code>top</code> and <code>left</code> values for the position that should be set and can be forwarded to <code>.css()</code> or <code>.animate()</code>.
+					<p>The second provides feedback about the position and dimensions of both elements, as well as calculations to their relative position. Both <code>target</code> and <code>element</code> have these properties: <code>element</code>, <code>left</code>, <code>top</code>, <code>width</code>, <code>height</code>. In addition, there's <code>horizontal</code>, <code>vertical</code> and <code>important</code>, giving you twelve potential directions like <code>{ horizontal: "center", vertical: "left", important: "horizontal" }</code>.</p>
+				</div>
+</li>
+<li>
+<div>
+<strong>within</strong> (default: <code>window</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types/#Selector">Selector</a> or <a href="http://api.jquery.com/Types/#Element">Element</a> or <a href="http://api.jquery.com/Types/#jQuery">jQuery</a>
+</div>
+<div>Element to position within, affecting collision detection. If you provide a selector or jQuery object, the first matching element will be used.</div>
+</li>
+</ul>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		<p>The jQuery UI <code>.position()</code> method allows you to position an element relative to the window, document, another element, or the cursor/mouse, without worrying about offset parents.</p>
+		<p><em>Note: jQuery UI does not support positioning hidden elements.</em></p>
+		<p>This is a standalone jQuery plugin and has no dependencies on other jQuery UI components.</p>
+		<p>This plugin extends jQuery's built-in <a href="//api.jquery.com/position/"><code>.position()</code></a> method. If jQuery UI is not loaded, calling the <code>.position()</code> method may not fail directly, as the method still exists. However, the expected behavior will not occur.</p>
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2>Example:</h2></header><div class="entry-example" id="example-0">
+<p>A simple jQuery UI Position example.</p>
+<div class="syntaxhighlighter xml">
+	<table>
+		<tbody>
+			<tr>
+				
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+						<div class="line n32">32</div>
+					
+						<div class="line n33">33</div>
+					
+						<div class="line n34">34</div>
+					
+						<div class="line n35">35</div>
+					
+						<div class="line n36">36</div>
+					
+						<div class="line n37">37</div>
+					
+						<div class="line n38">38</div>
+					
+						<div class="line n39">39</div>
+					
+						<div class="line n40">40</div>
+					
+						<div class="line n41">41</div>
+					
+						<div class="line n42">42</div>
+					
+						<div class="line n43">43</div>
+					
+						<div class="line n44">44</div>
+					
+						<div class="line n45">45</div>
+					
+						<div class="line n46">46</div>
+					
+						<div class="line n47">47</div>
+					
+						<div class="line n48">48</div>
+					
+						<div class="line n49">49</div>
+					
+						<div class="line n50">50</div>
+					
+						<div class="line n51">51</div>
+					
+						<div class="line n52">52</div>
+					
+						<div class="line n53">53</div>
+					
+						<div class="line n54">54</div>
+					
+						<div class="line n55">55</div>
+					
+						<div class="line n56">56</div>
+					
+						<div class="line n57">57</div>
+					
+						<div class="line n58">58</div>
+					
+						<div class="line n59">59</div>
+					
+						<div class="line n60">60</div>
+					
+						<div class="line n61">61</div>
+					
+				</td>
+				
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="hljs-meta">&lt;!doctype <span class="hljs-meta-keyword">html</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>position demo<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-selector-id">#targetElement</span> {</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">50px</span>;</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attribute">background</span>: <span class="hljs-number">#9cf</span>;</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-selector-class">.positionDiv</span> {</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attribute">position</span>: absolute;</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attribute">width</span>: <span class="hljs-number">75px</span>;</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attribute">height</span>: <span class="hljs-number">75px</span>;</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attribute">background</span>: <span class="hljs-number">#080</span>;</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.jquery.com/jquery-3.7.1.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.jquery.com/ui/1.13.3/jquery-ui.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"targetElement"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"positionDiv"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"position1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"positionDiv"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"position2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"positionDiv"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"position3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"positionDiv"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"position4"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>$( <span class="hljs-string">"#position1"</span> ).position({</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-attr">my</span>: <span class="hljs-string">"center"</span>,</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-attr">at</span>: <span class="hljs-string">"center"</span>,</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-attr">of</span>: <span class="hljs-string">"#targetElement"</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$( <span class="hljs-string">"#position2"</span> ).position({</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-attr">my</span>: <span class="hljs-string">"left top"</span>,</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-attr">at</span>: <span class="hljs-string">"left top"</span>,</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-attr">of</span>: <span class="hljs-string">"#targetElement"</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$( <span class="hljs-string">"#position3"</span> ).position({</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-attr">my</span>: <span class="hljs-string">"right center"</span>,</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-attr">at</span>: <span class="hljs-string">"right bottom"</span>,</code></div></div><div class="container"><div class="line"><code>  <span class="hljs-attr">of</span>: <span class="hljs-string">"#targetElement"</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>$( <span class="hljs-built_in">document</span> ).mousemove(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> event </span>) </span>{</code></div></div><div class="container"><div class="line"><code>  $( <span class="hljs-string">"#position4"</span> ).position({</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attr">my</span>: <span class="hljs-string">"left+3 bottom-3"</span>,</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attr">of</span>: event,</code></div></div><div class="container"><div class="line"><code>    <span class="hljs-attr">collision</span>: <span class="hljs-string">"fit"</span></code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>});</code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h4>Demo:</h4>
+<div class="demo code-demo" data-height="310"></div>
+</div></section>
+</div></article>	</div><!-- .entry-content -->
+
+</article><!-- #post-96 -->
+			</div>
+
+	
+<div id="sidebar" class="widget-area" role="complementary">
+	<aside id="categories" class="widget">
+		<h3 class="widget-title">jQuery UI 1.14</h3>
+		<ul>
+				<li class="cat-item cat-item-2"><a href="https://api.jqueryui.com/category/effects/">Effects</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="https://api.jqueryui.com/category/effects-core/">Effects Core</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://api.jqueryui.com/category/interactions/">Interactions</a>
+</li>
+	<li class="cat-item cat-item-8 current-cat"><a aria-current="page" href="https://api.jqueryui.com/category/overrides/">Method Overrides</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://api.jqueryui.com/category/methods/">Methods</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="https://api.jqueryui.com/category/selectors/">Selectors</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="https://api.jqueryui.com/category/theming/">Theming</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="https://api.jqueryui.com/category/ui-core/">UI Core</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="https://api.jqueryui.com/category/utilities/">Utilities</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="https://api.jqueryui.com/category/widgets/">Widgets</a>
+</li>
+		</ul>
+	</aside>
+
+	<aside id="categories" class="widget">
+		<h3 class="widget-title">Other Versions</h3>
+		<ul>
+			<li><a href="/1.13/">jQuery UI 1.13</a></li><li><a href="/1.12/">jQuery UI 1.12</a></li><li><a href="/1.11/">jQuery UI 1.11</a></li><li><a href="/1.10/">jQuery UI 1.10</a></li><li><a href="/1.9/">jQuery UI 1.9</a></li><li><a href="/1.8/">jQuery UI 1.8</a></li>		</ul>
+	</aside>
+</div>
+</div>
+	</div>
+</div>
+
+<footer class="clearfix simple">
+	<div class="constrain">
+		<div class="row">
+			<div class="six columns centered">
+				<h3><span>Books</span></h3>
+				<ul class="books">
+					<li>
+						<a href="https://www.manning.com/books/jquery-ui-in-action">
+							<span><img src="https://api.jqueryui.com/wp-content/themes/jquery/content/books/jquery-ui-in-action.jpg" alt="jQuery UI in Action by TJ VanToll" width="92" height="114"></span>
+							<strong>jQuery UI in Action</strong><br>
+							<cite>TJ VanToll</cite>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.packtpub.com/web-development/jquery-ui-themes-beginners-guide">
+							<img src="https://api.jqueryui.com/wp-content/themes/jquery/content/books/jquery-ui-themes.jpg" alt="jQuery UI Themes by Adam Boduch" width="92" height="114">
+							<span class="book-title">jQuery UI Themes</span>
+							<cite>Adam Boduch</cite>
+						</a>
+					</li>
+					<li>
+						<a href="https://www.packtpub.com/web-development/jquery-ui-cookbook">
+							<img src="https://api.jqueryui.com/wp-content/themes/jquery/content/books/jquery-ui-cookbook.jpg" alt="jQuery UI Cookbook by Adam Boduch" width="92" height="114">
+							<span class="book-title">jQuery UI Cookbook</span>
+							<cite>Adam Boduch</cite>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+<div id="legal" class="legal">
+	<ul class="footer-site-links">
+			<li><a class="icon-pencil" href="https://learn.jquery.com/">Learning Center</a></li>
+			<li><a class="icon-comments" href="https://jquery.com/support/">Chat</a></li>
+			<li><a class="icon-twitter" href="https://twitter.com/jqueryui">Twitter</a></li>
+			<li><a class="icon-github" href="https://github.com/jquery">GitHub</a></li>
+	</ul>
+	<p class="copyright">
+		Copyright 2025 <a href="https://openjsf.org/">OpenJS Foundation</a> and jQuery contributors. All rights reserved. See <a href="https://jquery.com/license/">jQuery License</a> for more information. The <a href="https://openjsf.org/">OpenJS Foundation</a> has registered trademarks and uses trademarks. For a list of trademarks of the <a href="https://openjsf.org/">OpenJS Foundation</a>, please see our <a href="https://trademark-policy.openjsf.org/">Trademark Policy</a> and <a href="https://trademark-list.openjsf.org/">Trademark List</a>. Trademarks and logos not indicated on the <a href="https://trademark-list.openjsf.org/">list of OpenJS Foundation trademarks</a> are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them. OpenJS Foundation <a href="https://terms-of-use.openjsf.org/">Terms of Use</a>, <a href="https://privacy-policy.openjsf.org/">Privacy</a>, and <a href="https://www.linuxfoundation.org/cookies">Cookie</a> Policies also apply.
+	</p>
+	<p><a href="https://www.digitalocean.com" class="do-link">Web hosting by Digital Ocean</a> | <a href="https://www.fastly.com/">CDN by Fastly</a> | <a href="https://wordpress.org/" class="wp-link">Powered by WordPress</a></p>
+</div>
+
+	</div>
+</footer>
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/api.jqueryui.com/*","/wp-content/themes/jquery/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+</body>
+</html>

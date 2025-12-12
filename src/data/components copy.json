@@ -1,0 +1,163 @@
+{
+  "components": [
+    {
+      "id": "HomeNavbar",
+      "group": "header",
+      "label": "HomeNavbar",
+      "notes": "Home navigation bar with logo and menu"
+    },
+    {
+      "id": "Navbar",
+      "group": "header",
+      "label": "Navbar (About)",
+      "notes": "About page navigation bar"
+    },
+    {
+      "id": "HomeHeroSlider",
+      "group": "main",
+      "label": "HomeHeroSlider",
+      "aspectRatio": 1.5,
+      "notes": "Hero slider with autoplay and navigation"
+    },
+    {
+      "id": "HomeCertificationBadges",
+      "group": "main",
+      "label": "HomeCertificationBadges",
+      "aspectRatio": 0.3,
+      "notes": "Certification badges section"
+    },
+    {
+      "id": "HomeAboutSection",
+      "group": "main",
+      "label": "HomeAboutSection",
+      "aspectRatio": 1.2,
+      "notes": "About section with content and images"
+    },
+    {
+      "id": "HeroSlider",
+      "group": "main",
+      "label": "HeroSlider (About)",
+      "aspectRatio": 1.5,
+      "notes": "About page hero slider"
+    },
+    {
+      "id": "IntroSection",
+      "group": "main",
+      "label": "IntroSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Introduction section"
+    },
+    {
+      "id": "ProgramCardsSection",
+      "group": "main",
+      "label": "ProgramCardsSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Program cards for about page"
+    },
+    {
+      "id": "InfographicSection",
+      "group": "main",
+      "label": "InfographicSection (About)",
+      "aspectRatio": 0.8,
+      "notes": "Infographic content section"
+    },
+    {
+      "id": "LifeEduSection",
+      "group": "main",
+      "label": "LifeEduSection (About)",
+      "aspectRatio": 1.2,
+      "notes": "Life education section"
+    },
+    {
+      "id": "ExtracurricularSection",
+      "group": "main",
+      "label": "ExtracurricularSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Extracurricular activities section"
+    },
+    {
+      "id": "CampusListSection",
+      "group": "main",
+      "label": "CampusListSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Campus list section"
+    },
+    {
+      "id": "ThanhTichAltSection",
+      "group": "main",
+      "label": "ThanhTichAltSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Alternative achievements section"
+    },
+    {
+      "id": "ThanhTichAltSectionEdit",
+      "group": "main",
+      "label": "ThanhTichAltSectionEdit (About)",
+      "aspectRatio": 1.0,
+      "notes": "Alternative achievements section"
+    },
+    {
+      "id": "ThanhTichGridSection",
+      "group": "main",
+      "label": "ThanhTichGridSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Achievements grid section"
+    },
+    {
+      "id": "ThanhTichInfographicSection",
+      "group": "main",
+      "label": "ThanhTichInfographicSection (About)",
+      "aspectRatio": 0.8,
+      "notes": "Achievements infographic"
+    },
+    {
+      "id": "AchievementsPremiumSection",
+      "group": "main",
+      "label": "AchievementsPremiumSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Premium achievements section"
+    },
+    {
+      "id": "GioiThieuSection",
+      "group": "main",
+      "label": "GioiThieuSection (About)",
+      "aspectRatio": 1.0,
+      "notes": "Introduction section for about page"
+    },
+    {
+      "id": "SliderSection",
+      "group": "main",
+      "label": "SliderSection (Clone)",
+      "aspectRatio": 1.5,
+      "notes": "Cloned homepage slider with 7 slides"
+    },
+    {
+      "id": "ChuongTrinhSection",
+      "group": "main",
+      "label": "ChuongTrinhSection (Clone - Curriculum)",
+      "aspectRatio": 1.5,
+      "notes": "Cloned curriculum page content"
+    },
+    {
+      "id": "ProgramsElement",
+      "group": "main",
+      "label": "ProgramsElement (Clone - d8fe02a)",
+      "aspectRatio": 0.65,
+      "notes": "Programs grid element (d8fe02a) - 5 program cards"
+    },
+    {
+      "id": "EducationLifeElement",
+      "group": "main",
+      "label": "EducationLifeElement (Clone - 45e27ab)",
+      "aspectRatio": 0.5,
+      "notes": "Education philosophy element (45e27ab) - Triết lý giáo dục"
+    },
+    {
+      "id": "FooterSection",
+      "group": "footer",
+      "label": "FooterSection (Clone)",
+      "aspectRatio": 1.0,
+      "notes": "Cloned footer section from homepage"
+    }
+  ]
+}

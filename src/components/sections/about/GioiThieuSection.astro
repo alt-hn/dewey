@@ -1,3 +1,9 @@
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+	* { margin: 0; padding: 0; box-sizing: border-box; }
+	html, body { font-family: 'Be Vietnam Pro', Arial, sans-serif; }
+</style>
+
 <section class="gioi-thieu-grid">
     <div class="gioi-thieu-grid__container">
         <!-- Row 1 -->
@@ -624,6 +630,20 @@
         width: 32px;
         height: 32px;
     }
+
+    .gioi-thieu-grid__content {
+        display: flex;
+        flex-direction: column;
+    }
+    .gioi-thieu-grid__subtitle {
+        order: 2;
+    }
+    .gioi-thieu-svg-fullwidth {
+        order: 1;
+    }
+    .gioi-thieu-grid__content .gioi-thieu-grid__desc {
+        order: 3;
+    }
 }
 
 /* Mobile responsive (below 768px) - Single column layout */
@@ -782,5 +802,18 @@
         height: 28px;
     }
 
+    .gioi-thieu-grid__content {
+        display: flex;
+        flex-direction: column;
+    }
+    .gioi-thieu-grid__subtitle {
+        order: 2;
+    }
+    .gioi-thieu-svg-fullwidth {
+        order: 1;
+    }
+    .gioi-thieu-grid__content .gioi-thieu-grid__desc {
+        order: 3;
+    }
 }
 </style>

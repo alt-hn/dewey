@@ -1,0 +1,36 @@
+/* Slider Section Styles */
+
+/* Base slider styles */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.images-slider {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Pagination bullet styles - Larger version */
+.swiper-pagination {
+    bottom: 20px !important;
+    text-align: center !important;
+}
+.swiper-pagination-bullet {
+    height: 8px !important;
+    width: 18px !important;
+    border-radius: 4px !important;
+    margin: 0 5px !important;
+    background: #514f66 !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 60px !important;
+    background: #7a788a !important;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 5px !important;
+}
+

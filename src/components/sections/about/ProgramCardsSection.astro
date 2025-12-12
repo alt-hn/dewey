@@ -1,7 +1,11 @@
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { font-family: 'Be Vietnam Pro', Arial, sans-serif; }
+  
   .program-cards-section__arrow-btn {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     z-index: 20;
     width: 48px;
@@ -113,7 +117,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 48px;
+    padding: 64px;
     height: 566px;
     width: 954px;
     flex-shrink: 0;
@@ -183,51 +187,14 @@
     color: #1A1A5C;
     text-align: right;
   }
-  .program-cards-section__card-arrow {
-    margin-top: 32px;
-  }
-  .program-cards-section__arrow-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: #FFD600;
-    color: #fff;
-    font-size: 2rem;
-    border-radius: 50%;
-    font-weight: 700;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
   .program-cards-section__card-imgwrap {
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: 50%;
     margin-left: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-  }
-  .program-cards-section__img-bg {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    background: #1976D2;
-    border-radius: 50%;
-    left: 20px;
-    top: 20px;
-    z-index: 1;
-  }
-  .program-cards-section__img-placeholder {
-    position: relative;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
-    z-index: 2;
-    object-fit: cover;
-    box-shadow: 0 8px 32px rgba(10,42,108,0.10);
   }
   @media (max-width: 1024px) {
     .program-cards-section {
@@ -261,7 +228,6 @@
       width: 160px;
       height: 160px;
     }
-    .program-cards-section__img-bg,
     .program-cards-section__img-placeholder {
       width: 140px;
       height: 140px;
@@ -276,20 +242,87 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  function initSlider() {
     const slider = document.querySelector('.program-cards-section__slider') as HTMLElement;
     const dots = document.querySelectorAll('.program-cards-section__dot');
+    const leftBtn = document.querySelector('.program-cards-section__arrow-btn--left') as HTMLElement;
+    const rightBtn = document.querySelector('.program-cards-section__arrow-btn--right') as HTMLElement;
+
     
     if (!slider || !dots.length) return;
 
-    // Update active dot on scroll
-    slider.addEventListener('scroll', () => {
+    // Clone all cards for infinite scroll
+    const cards = slider.querySelectorAll('.program-cards-section__card');
+    cards.forEach(card => {
+      const clone = card.cloneNode(true) as HTMLElement;
+      slider.appendChild(clone);
+    });
+
+    const totalOriginalCards = cards.length;
+    const firstCard = cards[0] as HTMLElement;
+    const cardWidth = firstCard.offsetWidth || 0;
+    const gap = 24;
+    const cardWithGap = cardWidth + gap;
+
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const scrollToIndex = (index: number) => {
+      slider.scrollTo({
+        left: index * cardWithGap,
+        behavior: 'smooth'
+      });
+    };
+
+    const getCurrentIndex = () => {
       const scrollLeft = slider.scrollLeft;
-      const card = slider.querySelector('.program-cards-section__card') as HTMLElement;
-      const cardWidth = card?.offsetWidth || 0;
-      const gap = 24;
-      const activeIndex = Math.round(scrollLeft / (cardWidth + gap));
-      
+      return Math.round(scrollLeft / cardWithGap);
+    };
+
+    // Mouse drag support
+    slider.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+      slider.style.cursor = 'grabbing';
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDragging = false;
+      slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDragging = false;
+      slider.style.cursor = 'grab';
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Handle infinite scroll by resetting position
+    let isResetting = false;
+    slider.addEventListener('scroll', () => {
+      if (isResetting) return;
+
+      const currentScrollLeft = slider.scrollLeft;
+      const maxScroll = (totalOriginalCards * cardWithGap) - (slider.offsetWidth - 32);
+
+      // If scrolled past the cloned section, reset to beginning
+      if (currentScrollLeft > maxScroll + cardWithGap) {
+        isResetting = true;
+        slider.scrollLeft = 0;
+        setTimeout(() => { isResetting = false; }, 50);
+      }
+
+      // Update active dot based on actual position
+      const activeIndex = getCurrentIndex() % totalOriginalCards;
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === activeIndex);
       });
@@ -297,17 +330,35 @@
 
     // Click dots to scroll
     dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        const card = slider.querySelector('.program-cards-section__card') as HTMLElement;
-        const cardWidth = card?.offsetWidth || 0;
-        const gap = 24;
-        slider.scrollTo({
-          left: index * (cardWidth + gap),
-          behavior: 'smooth'
-        });
-      });
+      dot.addEventListener('click', () => scrollToIndex(index));
     });
-  });
+
+    // Arrow buttons navigation
+    if (leftBtn) {
+      leftBtn.addEventListener('click', () => {
+        const currentIndex = getCurrentIndex();
+        scrollToIndex(currentIndex - 1);
+      });
+    }
+
+    if (rightBtn) {
+      rightBtn.addEventListener('click', () => {
+        const currentIndex = getCurrentIndex();
+        scrollToIndex(currentIndex + 1);
+      });
+    }
+  }
+
+  // Try multiple ways to initialize to handle different timing
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSlider);
+  } else {
+    // DOM already loaded
+    initSlider();
+  }
+
+  // Also try to initialize on next frame
+  requestAnimationFrame(initSlider);
 </script>
 
 <section class="program-cards-section">
@@ -318,6 +369,8 @@
   <div class="program-cards-section__container">
     <div class="program-cards-section__label">CHƯƠNG TRÌNH HỌC</div>
     <div class="program-cards-section__slider-wrapper">
+      <button class="program-cards-section__arrow-btn program-cards-section__arrow-btn--left" aria-label="Previous slide">‹</button>
+      <button class="program-cards-section__arrow-btn program-cards-section__arrow-btn--right" aria-label="Next slide">›</button>
       <div class="program-cards-section__gradient-overlay"></div>
       <div class="program-cards-section__slider">
         <!-- Card 1: Explore -->
@@ -338,13 +391,14 @@
                 <span class="program-cards-section__table-value">Bằng tốt nghiệp THPT Việt Nam</span>
               </div>
             </div>
-            <div class="program-cards-section__card-arrow">
-              <span class="program-cards-section__arrow-icon">←</span>
-            </div>
           </div>
           <div class="program-cards-section__card-imgwrap">
-            <div class="program-cards-section__img-bg"></div>
-            <div class="program-cards-section__img-placeholder"></div>
+            <img 
+              src="../../../home/images/programs/explore.png" 
+              alt="Chương trình Tích hợp Explore" 
+              class="program-cards-section__img-placeholder"
+              loading="lazy"
+            />
           </div>
         </div>
         
@@ -367,10 +421,78 @@
               </div>
             </div>
           </div>
+          <div class="program-cards-section__card-imgwrap">
+            <img 
+              src="../../../home/images/programs/discover.png" 
+              alt="Chương trình Tích hợp Discover" 
+              class="program-cards-section__img-placeholder"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        
+        <!-- Card 3: Adventure -->
+        <div class="program-cards-section__card program-cards-section__card--white">
+          <div class="program-cards-section__card-content">
+            <h3 class="program-cards-section__card-title">Chương trình<br>Quốc tế Adventure</h3>
+            <div class="program-cards-section__card-table">
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Cấp học</span>
+                <span class="program-cards-section__table-value">Lớp 6 - Lớp 12</span>
+              </div>
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Tỷ lệ ngôn ngữ giảng dạy</span>
+                <span class="program-cards-section__table-value">78% Tiếng Anh - 22% Tiếng Việt & ngôn ngữ khác</span>
+              </div>
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Tốt nghiệp</span>
+                <span class="program-cards-section__table-value">Bằng tốt nghiệp THPT của Việt Nam<br>Bằng tốt nghiệp THPT của Mount Vernon School (Mỹ)</span>
+              </div>
+            </div>
+          </div>
+          <div class="program-cards-section__card-imgwrap">
+            <img 
+              src="../../../home/images/programs/adventure.png" 
+              alt="Chương trình Quốc tế Adventure" 
+              class="program-cards-section__img-placeholder"
+              loading="lazy"
+            />
+          </div>
+        </div>
+        
+        <!-- Card 4: Journey -->
+        <div class="program-cards-section__card program-cards-section__card--gradient">
+          <div class="program-cards-section__card-content">
+            <h3 class="program-cards-section__card-title">Chương trình<br>Quốc tế Journey</h3>
+            <div class="program-cards-section__card-table">
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Cấp học</span>
+                <span class="program-cards-section__table-value">Lớp 1 - 12</span>
+              </div>
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Tỷ lệ ngôn ngữ giảng dạy</span>
+                <span class="program-cards-section__table-value">85% Tiếng Anh - 15% Tiếng Việt & ngôn ngữ khác</span>
+              </div>
+              <div class="program-cards-section__table-row">
+                <span class="program-cards-section__table-label">Tốt nghiệp</span>
+                <span class="program-cards-section__table-value">Bằng tốt nghiệp THPT của Mount Vernon School (Mỹ)</span>
+              </div>
+            </div>
+          </div>
+          <div class="program-cards-section__card-imgwrap">
+            <img 
+              src="../../../home/images/programs/journey.png"
+              alt="Chương trình Quốc tế Journey" 
+              class="program-cards-section__img-placeholder"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
       <div class="program-cards-section__dots">
         <div class="program-cards-section__dot active"></div>
+        <div class="program-cards-section__dot"></div>
+        <div class="program-cards-section__dot"></div>
         <div class="program-cards-section__dot"></div>
       </div>
     </div>

@@ -1,14 +1,18 @@
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { font-family: 'Be Vietnam Pro', Arial, sans-serif; }
+  
   .english-program-section {
     width: 100%;
     background: #fff;
-    padding: 100px 0;
+    padding: 100PX 0 0px 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .english-program-section__container {
-    max-width: 1100px;
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
     padding: 0 24px;
@@ -17,7 +21,7 @@
     align-items: center;
   }
   .english-program-section__title {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     font-weight: 800;
     color: #1A1A5C;
     text-align: center;
@@ -27,19 +31,20 @@
   }
   .english-program-section__asterisk {
     color: #00B6FF;
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     font-weight: 800;
     margin-left: 8px;
     vertical-align: middle;
     display: inline-block;
   }
   .english-program-section__subtitle {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #666;
     text-align: center;
     margin-bottom: 48px;
     line-height: 1.6;
+    max-width: 800px;
   }
   .english-program-section__grid {
     width: 100%;
@@ -50,19 +55,37 @@
   }
   .english-program-section__card {
     background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    border-radius: 0px;
     padding: 48px 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    min-height: 220px;
     position: relative;
+    
   }
-  .english-program-section__card--gradient {
-    background: linear-gradient(180deg, #fff 60%, #f6f7fb 100%);
+  /* Desktop: 3 cột */
+  @media (min-width: 1025px) {
+    .english-program-section__card:nth-child(2) {
+      background: linear-gradient(180deg, #fff 0%, rgba(16,2,73,0.05) 100%);
+    }
+    .english-program-section__card:nth-child(4),
+    .english-program-section__card:nth-child(6) {
+      background: linear-gradient(180deg, rgba(16,2,73,0.05) 0%, #FFF 100%);
+    }
+  }
+  /* Tablet/Mobile: 2 cột */
+  @media (max-width: 1024px) {
+    .english-program-section__card:nth-child(2),
+    .english-program-section__card:nth-child(3),
+    .english-program-section__card:nth-child(6) {
+      background: rgba(16,2,73,0.05);
+    }
+    .english-program-section__card:nth-child(4),
+    .english-program-section__card:nth-child(5) {
+      background: #fff;
+    }
   }
   .english-program-section__icon {
     width: 48px;
@@ -75,13 +98,13 @@
     margin-bottom: 18px;
   }
   .english-program-section__card-title {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: #1A1A5C;
     margin-bottom: 8px;
   }
   .english-program-section__card-desc {
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: 400;
     color: #666;
     line-height: 1.5;
@@ -120,13 +143,55 @@
       font-size: 0.95rem;
     }
   }
+  
+  /* 8-pointed asterisk star */
+  .english-program-section__star {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    position: relative;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .english-program-section__star::before,
+  .english-program-section__star::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.18em;
+    height: 1.1em;
+    background: #00B6FF;
+    border-radius: 0;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  .english-program-section__star::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .english-program-section__star span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.18em;
+    height: 1.1em;
+    background: #00B6FF;
+    border-radius: 0em;
+    display: block;
+  }
+  .english-program-section__star .d1 {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .english-program-section__star .d2 {
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+
 </style>
 
 <section class="english-program-section">
   <div class="english-program-section__container">
     <h2 class="english-program-section__title">
       Chương trình Tiếng Anh
-      <span class="english-program-section__asterisk">*</span>
+      <span class="english-program-section__asterisk english-program-section__star"><span class="d1"></span><span class="d2"></span></span>
     </h2>
     <div class="english-program-section__subtitle">
       The Dewey School truyền cảm hứng cho các em học sinh khám phá bản thân<br>
@@ -136,8 +201,7 @@
       <!-- Card 1 -->
       <div class="english-program-section__card">
         <div class="english-program-section__icon">
-          <!-- Medal SVG -->
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M14 7l2.5 5h-5L14 7zm0 7a2 2 0 110 4 2 2 0 010-4z" fill="white"/></svg>
+          <img src="/about/images/icon-tieu-chuan.png" alt="Tiêu chuẩn Common Core" width="48" height="48" />
         </div>
         <div class="english-program-section__card-title">Tiêu chuẩn Common Core (Mỹ)</div>
         <div class="english-program-section__card-desc">Đảm bảo thống nhất về năng lực, phương pháp và học liệu</div>
@@ -145,8 +209,7 @@
       <!-- Card 2 -->
       <div class="english-program-section__card english-program-section__card--gradient">
         <div class="english-program-section__icon">
-          <!-- Handshake SVG -->
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M8 14h12M14 8v12" stroke="white" stroke-width="2"/></svg>
+          <img src="/about/images/icon-doi-tac.png" alt="Đối tác Mount Vernon" width="48" height="48" />
         </div>
         <div class="english-program-section__card-title">Đối tác Mount Vernon (Mỹ)</div>
         <div class="english-program-section__card-desc">Từ chương trình giảng dạy này, học sinh được tiếp cận hệ thống môn học tương tự học sinh bản ngữ</div>
@@ -154,17 +217,15 @@
       <!-- Card 3 -->
       <div class="english-program-section__card">
         <div class="english-program-section__icon">
-          <!-- Book SVG -->
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><rect x="9" y="9" width="10" height="10" rx="2" fill="white"/></svg>
+          <img src="/about/images/icon-van-hoc.png" alt="Chương trình Văn học Anh" width="48" height="48" />
         </div>
         <div class="english-program-section__card-title">Chương trình Văn học Anh</div>
         <div class="english-program-section__card-desc">Giúp học sinh đọc hiểu, phân tích và phê bình tác phẩm bằng tiếng Anh như người bản xứ</div>
       </div>
       <!-- Card 4 -->
-      <div class="english-program-section__card">
+      <div class="english-program-section__card english-program-section__card--gradientback">
         <div class="english-program-section__icon">
-          <!-- Glasses SVG -->
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M9 17a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4z" fill="white"/><rect x="7" y="13" width="14" height="2" fill="white"/></svg>
+          <img src="/about/images/icon-hoc-thuat.png" alt="Chương trình học thuật chuyên sâu" width="48" height="48" />
         </div>
         <div class="english-program-section__card-title">Chương trình học thuật chuyên sâu</div>
         <div class="english-program-section__card-desc">Hướng đến phát triển các kỹ năng ngôn ngữ nâng cao. Sự lưu loát, chính xác, khả năng hiểu và đánh giá các văn bản phức tạp</div>
@@ -172,17 +233,15 @@
       <!-- Card 5 -->
       <div class="english-program-section__card">
         <div class="english-program-section__icon">
-          <!-- Star SVG -->
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M14 8l2.5 7.5H9.5L14 8z" fill="white"/></svg>
+          <img src="/about/images/icon-chuyen-gia.png" alt="Giáo viên đào tạo bởi chuyên gia" width="48" height="48" />
         </div>
         <div class="english-program-section__card-title">Giáo viên đào tạo bởi chuyên gia</div>
         <div class="english-program-section__card-desc">Giáo viên đào tạo bởi chuyên gia từ các hệ thống giáo dục quốc tế (CIS, IB, Global Education, Mount Vernon School )</div>
       </div>
       <!-- Card 6 -->
-      <div class="english-program-section__card">
+      <div class="english-program-section__card english-program-section__card--gradientback">
         <div class="english-program-section__icon">
-          <!-- Globe SVG -->
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="white" opacity="0.2"/><path d="M14 8a6 6 0 100 12 6 6 0 000-12z" fill="white"/></svg>
+          <img src="/about/images/icon-quoc-te.png" alt="Chương trình Tiếng Anh Quốc Tế" width="48" height="48" />
         </div>
         <div class="english-program-section__card-title">Chương trình Tiếng Anh Quốc Tế</div>
         <div class="english-program-section__card-desc">Học sinh dễ dàng theo học trong các môi trường học tập quốc tế trong và ngoài nước</div>

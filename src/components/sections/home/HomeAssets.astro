@@ -1,0 +1,115 @@
+---
+/**
+ * HomeAssets.astro
+ * Bundle tất cả CSS/JS cần thiết cho Home sections
+ * Mỗi Home section sẽ import component này để hoạt động độc lập
+ */
+---
+
+<!-- Google Fonts - Be Vietnam Pro -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Core Elementor CSS (local) -->
+<link rel="stylesheet" href="/home/css/dewey-theme.css" />
+<link rel="stylesheet" href="/home/css/elementor-frontend.min.css" />
+<link rel="stylesheet" href="/home/css/custom-frontend.min.css" />
+
+<!-- Widget CSS (local) -->
+<link rel="stylesheet" href="/home/css/widget-nav-menu.min.css" />
+<link rel="stylesheet" href="/home/css/widget-heading.min.css" />
+<link rel="stylesheet" href="/home/css/widget-text-editor.min.css" />
+<link rel="stylesheet" href="/home/css/widget-image.min.css" />
+<link rel="stylesheet" href="/home/css/widget-divider.min.css" />
+<link rel="stylesheet" href="/home/css/widget-icon-list.min.css" />
+
+<!-- Animation CSS (local) -->
+<link rel="stylesheet" href="/home/css/e-animation-grow.min.css" />
+
+<!-- Slider CSS (local) -->
+<link rel="stylesheet" href="/home/css/swiper.min.css" />
+
+<!-- Font Awesome (local) -->
+<link rel="stylesheet" href="/home/css/font-awesome.min.css" />
+
+<!-- Language Switcher CSS (local) -->
+<link rel="stylesheet" href="/home/css/language-switcher.min.css" />
+
+<!-- Sticky CSS (local) -->
+<link rel="stylesheet" href="/home/css/sticky.min.css" />
+
+<style>
+  /* Global font and reset for Home sections */
+  html, body {
+    font-family: 'Be Vietnam Pro', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Fix for independent section rendering */
+  .elementor {
+    --e-global-color-primary: #0a2a6c;
+    --e-global-color-secondary: #00d2ff;
+    --e-global-color-accent: #ffd600;
+    --e-global-typography-primary-font-family: 'Be Vietnam Pro', sans-serif;
+  }
+</style>
+
+<!-- JavaScript Assets (local) -->
+<script src="/home/scripts/swiper.min.js" is:inline></script>
+<script src="/home/scripts/html5lightbox.js" is:inline></script>
+<script src="/home/scripts/hello-frontend.min.js" is:inline></script>
+
+<script is:inline>
+  // Initialize Swiper for Home sections sliders
+  document.addEventListener('DOMContentLoaded', function() {
+    // Hero Slider - .swiper.animeslide
+    const heroSlider = document.querySelector('.swiper.animeslide');
+    if (heroSlider && typeof Swiper !== 'undefined') {
+      new Swiper('.swiper.animeslide', {
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        slidesPerView: 1,
+        spaceBetween: 0,
+        effect: 'slide',
+        speed: 500
+      });
+    }
+    
+    // Campus Slider - .js-images-slider
+    const campusSlider = document.querySelector('.js-images-slider');
+    if (campusSlider && typeof Swiper !== 'undefined') {
+      new Swiper('.js-images-slider', {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        loop: true,
+        autoplay: { delay: 4000, disableOnInteraction: false },
+        breakpoints: {
+          768: { slidesPerView: 4, spaceBetween: 20 }
+        }
+      });
+    }
+  });
+  
+  // Lazy load background observer for Elementor containers
+  const lazyloadRunObserver = () => {
+    const lazyloadBackgrounds = document.querySelectorAll('.e-con.e-parent:not(.e-lazyloaded)');
+    if (!lazyloadBackgrounds.length) return;
+    
+    const lazyloadBackgroundObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('e-lazyloaded');
+          lazyloadBackgroundObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px 200px 0px' });
+    
+    lazyloadBackgrounds.forEach((bg) => lazyloadBackgroundObserver.observe(bg));
+  };
+  
+  document.addEventListener('DOMContentLoaded', lazyloadRunObserver);
+</script>

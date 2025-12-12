@@ -1,4 +1,8 @@
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { font-family: 'Be Vietnam Pro', Arial, sans-serif; }
+  
   .extracurricular-section {
     width: 100%;
     background: #fff;
@@ -8,7 +12,7 @@
     align-items: center;
   }
   .extracurricular-section__container {
-    max-width: 1100px;
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
     padding: 0 24px;
@@ -19,39 +23,52 @@
   .extracurricular-section__decoration {
     width: 0;
     height: 0;
-    border-left: 32px solid transparent;
-    border-right: 32px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
     border-bottom: 32px solid #FF6B4A;
     margin: 0 auto 16px auto;
     display: block;
+    transform: translate(-50%, -50%) rotate(40deg);
+    position: absolute;
+    left: 32%;
+    top: 85px;
   }
+  
   .extracurricular-section__title {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     font-weight: 800;
     color: #1A1A5C;
     text-align: center;
     margin-bottom: 16px;
   }
   .extracurricular-section__subtitle {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #666;
     text-align: center;
     margin-bottom: 48px;
     line-height: 1.6;
-    max-width: 900px;
+    max-width: 800px;
   }
   .extracurricular-section__grid {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 32px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:6;
+    gap: 16px;
   }
+  /* Card positions */
+  .extracurricular-section__card.card1 { grid-column: 1; grid-row: 1/4; }
+  .extracurricular-section__card.card2 { grid-column: 1; grid-row: 4/7; }
+  .extracurricular-section__card.card3 { grid-column: 2; grid-row: 1/3; }
+  .extracurricular-section__card.card4 { grid-column: 2; grid-row: 3/5; }
+  .extracurricular-section__card.card5 { grid-column: 2; grid-row: 5/7; }
+  .extracurricular-section__card.card6 { grid-column: 3; grid-row: 1/4; }
+  .extracurricular-section__card.card7 { grid-column: 3; grid-row: 4/7; }
   .extracurricular-section__card {
     position: relative;
     background: #ddd;
-    border-radius: 24px;
+    border-radius: 16px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     min-height: 220px;
     overflow: hidden;
@@ -67,44 +84,75 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #ddd 60%, #bbb 100%);
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: 1;
     opacity: 1;
+  }
+  .extracurricular-section__card.card1 .extracurricular-section__card-bgimg { background-image: url('/about/images/card1.png'); }
+  .extracurricular-section__card.card2 .extracurricular-section__card-bgimg { background-image: url('/about/images/card2.png'); }
+  .extracurricular-section__card.card3 .extracurricular-section__card-bgimg { background-image: url('/about/images/card3.png'); }
+  .extracurricular-section__card.card4 .extracurricular-section__card-bgimg { background-image: url('/about/images/card4.png'); }
+  .extracurricular-section__card.card5 .extracurricular-section__card-bgimg { background-image: url('/about/images/card5.png'); }
+  .extracurricular-section__card.card6 .extracurricular-section__card-bgimg { background-image: url('/about/images/card6.png'); }
+  .extracurricular-section__card.card7 .extracurricular-section__card-bgimg { background-image: url('/about/images/card7.png'); }
+  .extracurricular-section__card.card1 .extracurricular-section__card-bgimg {
+    background-image: url('/about/images/card1.png');
+  }
+  .extracurricular-section__card.card2 .extracurricular-section__card-bgimg {
+    background-image: url('/about/images/card2.png');
+  }
+  .extracurricular-section__card.card3 .extracurricular-section__card-bgimg {
+    background-image: url('/about/images/card3.png');
+  }
+  .extracurricular-section__card.card4 .extracurricular-section__card-bgimg {
+    background-image: url('/about/images/card4.png');
+  }
+  .extracurricular-section__card.card5 .extracurricular-section__card-bgimg {
+    background-image: url('/about/images/card5.png');
+  }
+  .extracurricular-section__card.card6 .extracurricular-section__card-bgimg {
+    background-image: url('/about/images/card6.png');
+  }
+  .extracurricular-section__card.card7 .extracurricular-section__card-bgimg {
+    background-image: url('/about/images/card7.png');
   }
   .extracurricular-section__card-content {
     position: relative;
     z-index: 2;
     width: 100%;
-    padding: 32px;
-    background: linear-gradient(0deg, rgba(26,26,92,0.45) 80%, rgba(26,26,92,0.0) 100%);
-    border-radius: 0 0 24px 24px;
+    padding: 16px 16px;
+    background: linear-gradient(0deg, rgba(4,0,21,0.8) 30%, rgba(26,26,92,0.0) 100%);
+    border-radius: 0 ;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
+    gap: 2px;
   }
   .extracurricular-section__card-title {
-    font-size: 1.15rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     text-align: left;
   }
   .extracurricular-section__card-desc {
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: 400;
     color: #fff;
     opacity: 0.85;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
     text-align: left;
   }
   .extracurricular-section__card-btn {
     font-size: 1rem;
+    font-size: 0.6rem;
     font-weight: 600;
     color: #FFD600;
     text-decoration: none;
-    margin-top: 16px;
+    margin-top: 10px;
     display: inline-flex;
     align-items: center;
     gap: 4px;
@@ -124,38 +172,146 @@
   }
   @media (max-width: 1024px) {
     .extracurricular-section {
-      padding: 48px 0;
+      padding: 32px 0 24px 0;
     }
     .extracurricular-section__container {
       padding: 0 8px;
     }
     .extracurricular-section__title {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
     .extracurricular-section__subtitle {
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .extracurricular-section__grid {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 160px;
+      gap: 14px;
+    }
+    .extracurricular-section__card {
+      min-height: 160px;
+      border-radius: 14px;
+      margin-bottom: 0;
+      grid-column: auto !important;
+      grid-row: auto !important;
+    }
+    .extracurricular-section__card.card7 {
+      grid-column: 1 / span 2 !important;
+    }
+    .extracurricular-section__card-content {
+      padding: 14px;
+      border-radius: 0 0 14px 14px;
+      gap: 1px;
+    }
+    .extracurricular-section__card-title {
+      font-size: 0.95rem;
+      margin-bottom: 1px;
+    }
+    .extracurricular-section__card-desc {
+      font-size: 0.85rem;
+      margin-bottom: 1px;
+    }
+    .extracurricular-section__card-btn {
+      font-size: 0.7rem;
+      margin-top: 6px;
+    }
+    .extracurricular-section__card-arrow {
+      font-size: 1em;
+      margin-left: 1px;
+    }
+    .extracurricular-section__decoration {
+      left: 20%;
+      top: 18px;
+      transform: translate(-50%, 0) rotate(40deg);
+    }
+    /* Remove grid placement for all cards on tablet */
+    .extracurricular-section__card.card1,
+    .extracurricular-section__card.card2,
+    .extracurricular-section__card.card3,
+    .extracurricular-section__card.card4,
+    .extracurricular-section__card.card5,
+    .extracurricular-section__card.card6 {
+      grid-column: auto !important;
+      grid-row: auto !important;
+    }
+    /* Make last card span 2 columns on tablet */
+    .extracurricular-section__grid > .extracurricular-section__card.card7 {
+      grid-column: 1 / span 2 !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .extracurricular-section {
+      padding: 10px 0 6px 0;
+    }
+    .extracurricular-section__container {
+      padding: 0 2px;
+    }
+    .extracurricular-section__title {
       font-size: 1rem;
-      margin-bottom: 24px;
+      margin-bottom: 6px;
+    }
+    .extracurricular-section__subtitle {
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+      line-height: 1.3;
     }
     .extracurricular-section__grid {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(7, 1fr);
-      gap: 16px;
+      grid-template-rows: none;
+      gap: 8px;
     }
     .extracurricular-section__card {
-      min-height: 140px;
-      border-radius: 16px;
+      min-height: 70px;
+      border-radius: 8px;
+      grid-column: auto !important;
+      grid-row: auto !important;
+    }
+    .extracurricular-section__grid > .extracurricular-section__card.card7 {
+      grid-column: auto !important;
     }
     .extracurricular-section__card-content {
-      padding: 16px;
-      border-radius: 0 0 16px 16px;
+      padding: 8px;
+      border-radius: 0 0 8px 8px;
+      gap: 0;
     }
     .extracurricular-section__card-title {
-      font-size: 1rem;
+      font-size: 0.8rem;
+      margin-bottom: 0;
     }
     .extracurricular-section__card-desc {
-      font-size: 0.95rem;
+      font-size: 0.7rem;
+      margin-bottom: 0;
+    }
+    .extracurricular-section__card-btn {
+      font-size: 0.6rem;
+      margin-top: 2px;
+    }
+    .extracurricular-section__card-arrow {
+      font-size: 0.95em;
+      margin-left: 0;
+    }
+    .extracurricular-section__decoration {
+      left: 20%;
+      top: 4px;
+      transform: translate(-50%, 0) rotate(40deg);
+    }
+    /* Remove grid placement for all cards on mobile */
+    .extracurricular-section__card.card1,
+    .extracurricular-section__card.card2,
+    .extracurricular-section__card.card3,
+    .extracurricular-section__card.card4,
+    .extracurricular-section__card.card5,
+    .extracurricular-section__card.card6,
+    .extracurricular-section__card.card7 {
+      grid-column: auto !important;
+      grid-row: auto !important;
     }
   }
+  
 </style>
 
 <section class="extracurricular-section">
@@ -169,7 +325,7 @@
     </div>
     <div class="extracurricular-section__grid">
       <!-- Card 1 -->
-      <div class="extracurricular-section__card">
+      <div class="extracurricular-section__card card1">
         <div class="extracurricular-section__card-bgimg"></div>
         <div class="extracurricular-section__card-content">
           <div class="extracurricular-section__card-title">40+ Câu lạc bộ trải rộng các lĩnh vực</div>
@@ -178,7 +334,7 @@
         </div>
       </div>
       <!-- Card 2 -->
-      <div class="extracurricular-section__card">
+      <div class="extracurricular-section__card card2">
         <div class="extracurricular-section__card-bgimg"></div>
         <div class="extracurricular-section__card-content">
           <div class="extracurricular-section__card-title">100+ sự kiện – cuộc thi – giải đấu mỗi năm</div>
@@ -186,7 +342,7 @@
         </div>
       </div>
       <!-- Card 3 -->
-      <div class="extracurricular-section__card">
+      <div class="extracurricular-section__card card3">
         <div class="extracurricular-section__card-bgimg"></div>
         <div class="extracurricular-section__card-content">
           <div class="extracurricular-section__card-title">Kênh truyền hình thực hành kỹ năng</div>
@@ -195,7 +351,7 @@
         </div>
       </div>
       <!-- Card 4 -->
-      <div class="extracurricular-section__card">
+      <div class="extracurricular-section__card card4">
         <div class="extracurricular-section__card-bgimg"></div>
         <div class="extracurricular-section__card-content">
           <div class="extracurricular-section__card-title">Trại hè trong nước & quốc tế</div>
@@ -203,7 +359,7 @@
         </div>
       </div>
       <!-- Card 5 -->
-      <div class="extracurricular-section__card">
+      <div class="extracurricular-section__card card5">
         <div class="extracurricular-section__card-bgimg"></div>
         <div class="extracurricular-section__card-content">
           <div class="extracurricular-section__card-title">20+ Dự án & CLB do học sinh làm chủ</div>
@@ -211,7 +367,7 @@
         </div>
       </div>
       <!-- Card 6 -->
-      <div class="extracurricular-section__card">
+      <div class="extracurricular-section__card card6">
         <div class="extracurricular-section__card-bgimg"></div>
         <div class="extracurricular-section__card-content">
           <div class="extracurricular-section__card-title">Giao lưu quốc tế với học sinh Mỹ, Nhật Bản...</div>
@@ -219,7 +375,7 @@
         </div>
       </div>
       <!-- Card 7 -->
-      <div class="extracurricular-section__card">
+      <div class="extracurricular-section__card card7">
         <div class="extracurricular-section__card-bgimg"></div>
         <div class="extracurricular-section__card-content">
           <div class="extracurricular-section__card-title">Hoạt động cộng đồng ý nghĩa</div>

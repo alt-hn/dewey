@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/general.dwt" codeOutsideHTMLIsLocked="true" -->
+<head>
+
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>jQuery Video Gallery Plugin, jQuery Image and Video Gallery Plugin, jQuery Video LightBox Plugin, jQuery Image and Video LightBox Plugin, HTML5 Photo Gallery, HTML5 Video Gallery, HTML5 LightBox, HTML5 Banner and HTML5 3D Slideshow</title>
+<meta name="title" content="jQuery Video Gallery Plugin, jQuery Image and Video Gallery Plugin, jQuery Video LightBox Plugin, jQuery Image and Video LightBox Plugin, Android, iPhone and iPad Compatible HTML5 Photo Gallery, HTML5 Video Gallery, HTML5 LightBox, HTML5 Banner and HTML5 3D Slideshow" />
+<meta name="description" content="jQuery Video Gallery Plugin, jQuery Image and Video Gallery Plugin, jQuery Video LightBox Plugin, jQuery Image and Video LightBox Plugin, Android, iPhone and iPad Compatible HTML5 Photo Gallery, HTML5 Video Gallery, HTML5 LightBox, HTML5 Banner and HTML5 3D Slideshow" />
+<meta name="keywords" content="jQuery Video Gallery Plugin, jQuery Image and Video Gallery Plugin, jQuery Video LightBox Plugin, jQuery Image and Video LightBox Plugin, HTML5 Banner, HTML5 Slideshow, HTML5 Video Gallery, HTML5 Photo Gallery, Video LightBox, Photo LightBox, jQuery Slideshow" />
+<!-- InstanceEndEditable -->
+<meta property="og:title" content="Android, iPhone and iPad compatible jQuery Photo and Video Gallery, LightBox and Slideshow" />
+<meta property="og:description" content="Android, iPhone and iPad compatible jQuery Photo Gallery, Video Gallery, Photo LightBox, Video LightBox, HTML5 Banner and 3D Slideshow" /> 
+<meta property="og:image" content="http://html5box.com/images/html5boxlogo_facebook.jpg" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<!-- InstanceBeginEditable name="head" -->
+
+<!-- InstanceEndEditable -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29319282-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<div class="main">
+  <div class="header">
+  
+    <div class="block_header">
+    
+    <div class="headertranslate">
+  <div id="google_translate_element"></div><script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    gaTrack: true,
+    gaId: 'UA-29319282-1',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </div>
+  
+         <div class="header_text"></div>
+    <div class="clr"></div>
+   <div class="block_header_form">
+      <div class="logo"><a href="index.php"><img src="images/html5boxlogo.png" border="0" /></a>
+      </div>
+      <div style="float:right;">
+	  <!-- InstanceBeginEditable name="menu" -->
+		<div class="menu">
+          <ul>
+            <li><a href="index.php" class="active"><span>Home</span></a></li>            <li><a href="products.php"><span>Products</span></a></li>           
+            <li><a href="order.php"><span>Pricing</span></a></li>
+            <li><a href="members/"><span>Members Area</span></a></li>
+            <li><a href="/blog/"><span>Recently Asked Questions</span></a></li>
+            <li><a href="contact.php"><span>Contact Us</span></a></li>            
+               <li></li>         
+          </ul>
+        </div>            
+	  <!-- InstanceEndEditable -->
+        </div>
+        <div class="clr"></div>
+      </div>
+	  <!-- InstanceBeginEditable name="slider" -->
+      <div class="slider">
+        <div class="slice">    
+                  <div class="title">
+          jQuery  Image and Video Gallery Plugin - For Desktop and Mobile Web</div>
+                  <div class="clr"></div>  
+<div class="img"> <a href="html5gallery/index.php"><img src="images/html5gallery_banner.png" style="border:none;" /></a>                            
+                  </div>
+<div class="txt">
+  <h2>HTML5 Gallery - jQuery Image and Video Gallery Plugin</h2>
+                  <p>An all-in-one solution for online media gallery. It supports  images, videos, YouTube and Vimeo, provides built-in LightBox effects, supports Google Analytics event tracking, works on Windows, Linux, Mac, Android, iPhone, iPad and all modern web browsers.                  </p>	 		<div style="margin:0 8px 0px 0px;float:left;">
+        <a class="btn btn-success btn-large" href="html5gallery/index.php">Take a Tour</a>
+        </div>
+        <div style="margin:0 0px 0px 0px;float:left;">
+        <a class="btn btn-success btn-large" href="html5gallery/index.php">Download Free Version</a>
+        </div>
+          </div>
+        </div>
+      </div>
+      
+	  <!-- InstanceEndEditable -->
+      <div class="clr"></div>      
+    </div>
+  </div> 
+  
+    <div class="body">
+    <div class="body_resize"> 
+ <div class="bodyheader">
+<!-- InstanceBeginEditable name="mainheader" -->   
+<!-- InstanceEndEditable -->
+    </div>   
+<!-- InstanceBeginEditable name="mainbody" -->    
+ 
+<div class="clr"></div>
+<div class="clr"></div>       
+             
+      
+        
+      
+      
+      <div class="port_resize"> 
+       	<h2><a href="html5lightbox/index.php">HTML5 LightBox - jQuery Image and Video LightBox Plugin</a></h2>
+        <a href="html5lightbox/index.php"><img src="images/html5lightbox_128.png" width="128" height="128" alt="img" /></a>
+        <div class="layout_right">
+        <p><strong>Adds stylish LightBox effects for images, Flash, YouTube, Vimeo, mp4, m4v, flv, ogg, ogv and webm videos</strong></p>
+        <div style="margin:8px 5px;">
+        <a class="btn btn-success" href="html5lightbox/index.php">Read More</a>
+        </div>
+        </div>
+        <div class="clr"></div>
+        <p>HTML5 Lightgox adds stylish lightbox effects for images, YouTube, Vimeo, mp4, m4v, flv, ogg, ogv and webm videos on your website. It's esy to install, easy branding and works   on Windows, Linux, Mac, Android, iPhone, iPad and all modern web   browsers.</p>        
+      </div>
+      
+      <div class="port_resize"> 
+       	<h2><a href="html5gallery/index.php">HTML5 Gallery - jQuery Image and Video Gallery Plugin</a></h2>
+        <a href="html5gallery/index.php"><img src="images/html5gallery_128.png" width="128" height="128" alt="img" /></a>
+        <div class="layout_right">
+        <p><strong>Supports images, Flash, YouTube, Vimeo, mp4, m4v, flv, ogg, ogv and webm videos</strong></p>
+        <div style="margin:8px 5px;">
+        <a class="btn btn-success" href="html5gallery/index.php">Read More</a>
+        </div>
+        </div>
+        <div class="clr"></div>
+        <p>An all-in-one solution for online media gallery. It supports  images, Flash, videos, YouTube and Vimeo, provides built-in LightBox effects, supports Google Analytics event tracking, works on Windows, Linux, Mac, Android, iPhone, iPad and all modern web browsers.</p>        
+      </div>
+      
+<div class="clr"></div>
+<div class="clr"></div>                                 
+    <div class="left"> 
+    
+    <p class="title">Connect With Us</p>
+    <div class="clr"></div>    
+	
+	<div style="clear:both;padding:24px 0px 4px 0px;">
+   <a href="https://twitter.com/html5box" class="twitter-follow-button" data-show-count="true" data-size="large">Follow</a>
+   </div>
+   
+    <div class="facebook" style="display:block; width:410px; height:257px; background-color:#ffffff; padding-top:24px;">
+		<div class="fb-like-box" data-href="https://www.facebook.com/html5box" data-width="410" data-height="257" data-border-color="#dcdcdc" data-show-faces="true" data-stream="false" data-header="false"></div>
+	</div>
+
+
+   
+      
+      
+
+      
+  
+       
+
+
+    </div>
+    <div class="right">
+    
+
+</div>
+    
+    <div class="clr"></div>
+
+<!-- InstanceEndEditable -->    
+	</div>
+    </div> 
+    <div class="footer">
+    <div class="footer_resize">
+      <p class="leftt">Copyright © 2010-2013 Magic Hills Pty Ltd. ABN: 73 140 123 511</p>
+      <p class="rightt"><a href="html5gallery/index.php">HTML5 Gallery</a>|<a href="html5lightbox/index.php">HTML5 LightBox</a><br />
+      <a href="privacy.php">Privacy Policy</a><strong></strong> | <a href="terms.php">Terms of Use</a> | <a href="contact.php">Contact Us</a></p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  
+</div>
+</body>
+<!-- InstanceEnd --></html>

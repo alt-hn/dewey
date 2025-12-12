@@ -1,19 +1,30 @@
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { font-family: 'Be Vietnam Pro', Arial, sans-serif; }
+  
   .campus-list-section {
     width: 100%;
     background: #fff;
-    padding: 0;
+    padding: 0px 0;
     margin: 0;
   }
   .campus-list-section__container {
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
+  }
+  .campus-list-section__title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1A1A5C;
+    margin-bottom: 48px;
+    text-align: left;
   }
   .campus-list-section__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    gap: 24px;
     justify-items: stretch;
     align-items: stretch;
     margin: 0 auto;
@@ -23,16 +34,18 @@
     position: relative;
     display: flex;
     align-items: flex-end;
-    min-height: 260px;
-    border-radius: 32px;
+    min-height: 200px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     text-decoration: none;
-    transition: box-shadow 0.2s;
+    transition: all 0.3s ease;
     background: #ddd;
+    cursor: pointer;
   }
   .campus-list-section__card:hover {
-    box-shadow: 0 8px 32px rgba(10,42,108,0.15);
+    box-shadow: 0 12px 40px rgba(10,42,108,0.2);
+    transform: translateY(-4px);
   }
   .campus-list-section__card-bgimg {
     position: absolute;
@@ -47,83 +60,171 @@
   .campus-list-section__card-content {
     position: relative;
     z-index: 2;
-    padding: 32px;
+    padding: 24px;
     width: 100%;
-    background: linear-gradient(0deg, rgba(26,26,92,0.45) 80%, rgba(26,26,92,0.0) 100%);
-    border-radius: 0 0 32px 32px;
+    background: linear-gradient(0deg, rgba(26,26,92,0.65) 0%, rgba(26,26,92,0.0) 100%);
+    border-radius: 0 0 20px 20px;
     display: flex;
     align-items: flex-end;
+    min-height: 100px;
   }
   .campus-list-section__card-title {
-    font-size: 1.35rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #fff;
     text-align: left;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: all 0.3s ease;
   }
   .campus-list-section__card-arrow {
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: #fff;
-    margin-left: 8px;
     font-weight: 700;
-    transition: margin-left 0.2s;
+    transition: margin-left 0.3s;
   }
   .campus-list-section__card:hover .campus-list-section__card-arrow {
-    margin-left: 16px;
+    margin-left: 8px;
   }
-  @media (max-width: 1024px) {
-    .campus-list-section__container {
-      padding: 0 8px;
-    }
+  .campus-list-section__card-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  @media (max-width: 1200px) {
     .campus-list-section__grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 24px;
+    }
+  }
+  @media (max-width: 768px) {
+    .campus-list-section {
+      padding: 48px 0;
+    }
+    .campus-list-section__container {
+      padding: 0 16px;
+    }
+    .campus-list-section__title {
+      font-size: 1.5rem;
+      margin-bottom: 32px;
+    }
+    .campus-list-section__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
     }
     .campus-list-section__card {
-      min-height: 160px;
+      min-height: 260px;
       border-radius: 20px;
     }
     .campus-list-section__card-content {
-      padding: 16px;
+      padding: 24px;
       border-radius: 0 0 20px 20px;
+      min-height: 100px;
     }
     .campus-list-section__card-title {
-      font-size: 1rem;
+      font-size: 1.2rem;
+      gap: 8px;
     }
   }
 </style>
 
+<script>
+  function initCampusCards() {
+    const cards = document.querySelectorAll('.campus-list-section__card');
+    cards.forEach(card => {
+      const link = card.getAttribute('href');
+      if (link) {
+        card.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.location.href = link;
+        });
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCampusCards);
+  } else {
+    initCampusCards();
+  }
+  
+  requestAnimationFrame(initCampusCards);
+</script>
+
 <section class="campus-list-section">
   <div class="campus-list-section__container">
     <div class="campus-list-section__grid">
-      <!-- Card 1 -->
-      <a href="#" class="campus-list-section__card">
-        <div class="campus-list-section__card-bgimg"></div>
+      <!-- Card 1: Cầu Giấy -->
+      <a href="https://thedeweyschools.edu.vn/co-so/dewey-cau-giay/" class="campus-list-section__card">
+        <img 
+          src="../../../home/images/campuses/cau-giay.webp" 
+          alt="Cơ sở Cầu Giấy" 
+          class="campus-list-section__card-bgimg"
+          loading="lazy"
+        />
         <div class="campus-list-section__card-content">
-          <span class="campus-list-section__card-title">Cơ sở Cầu Giấy <span class="campus-list-section__card-arrow">&gt;</span></span>
+          <div>
+            <div class="campus-list-section__card-title">
+              Cơ sở Cầu Giấy <span class="campus-list-section__card-arrow">›</span>
+            </div>
+            <div class="campus-list-section__card-subtitle">Số 89 phố Khúc Thừa Dụ, Cầu Giấy, Hà Nội</div>
+          </div>
         </div>
       </a>
-      <!-- Card 2 -->
-      <a href="#" class="campus-list-section__card">
-        <div class="campus-list-section__card-bgimg"></div>
+
+      <!-- Card 2: Hải Phòng -->
+      <a href="https://thedeweyschools.edu.vn/co-so/dewey-hai-phong/" class="campus-list-section__card">
+        <img 
+          src="../../../home/images/campuses/hai-phong.webp" 
+          alt="Cơ sở Hải Phòng" 
+          class="campus-list-section__card-bgimg"
+          loading="lazy"
+        />
         <div class="campus-list-section__card-content">
-          <span class="campus-list-section__card-title">Cơ sở Hải Phòng <span class="campus-list-section__card-arrow">&gt;</span></span>
+          <div>
+            <div class="campus-list-section__card-title">
+              Cơ sở Hải Phòng <span class="campus-list-section__card-arrow">›</span>
+            </div>
+            <div class="campus-list-section__card-subtitle">Khu đô thị Sao Đỏ, Hải Phòng</div>
+          </div>
         </div>
       </a>
-      <!-- Card 3 -->
-      <a href="#" class="campus-list-section__card">
-        <div class="campus-list-section__card-bgimg"></div>
+
+      <!-- Card 3: Tây Hồ Tây -->
+      <a href="https://thedeweyschools.edu.vn/co-so/dewey-tay-ho-tay/" class="campus-list-section__card">
+        <img 
+          src="../../../home/images/campuses/tay-ho-tay.webp" 
+          alt="Cơ sở Tây Hồ Tây" 
+          class="campus-list-section__card-bgimg"
+          loading="lazy"
+        />
         <div class="campus-list-section__card-content">
-          <span class="campus-list-section__card-title">Cơ sở Tây Hồ Tây <span class="campus-list-section__card-arrow">&gt;</span></span>
+          <div>
+            <div class="campus-list-section__card-title">
+              Cơ sở Tây Hồ Tây <span class="campus-list-section__card-arrow">›</span>
+            </div>
+            <div class="campus-list-section__card-subtitle">Khu đô thị Tây Hồ Tây, Hà Nội</div>
+          </div>
         </div>
       </a>
-      <!-- Card 4 -->
-      <a href="#" class="campus-list-section__card">
-        <div class="campus-list-section__card-bgimg"></div>
+
+      <!-- Card 4: Ocean Park -->
+      <a href="https://thedeweyschools.edu.vn/co-so/dewey-ocean-park/" class="campus-list-section__card">
+        <img 
+          src="../../../home/images/campuses/ocean-park.webp" 
+          alt="Cơ sở Ocean Park" 
+          class="campus-list-section__card-bgimg"
+          loading="lazy"
+        />
         <div class="campus-list-section__card-content">
-          <span class="campus-list-section__card-title">Cơ sở Ocean Park <span class="campus-list-section__card-arrow">&gt;</span></span>
+          <div>
+            <div class="campus-list-section__card-title">
+              Cơ sở Ocean Park <span class="campus-list-section__card-arrow">›</span>
+            </div>
+            <div class="campus-list-section__card-subtitle">Khu đô thị Ocean Park, Gia Lâm, Hà Nội</div>
+          </div>
         </div>
       </a>
     </div>

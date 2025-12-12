@@ -1,5 +1,7 @@
 ---
 import PageHead from '../../components/PageHead.astro';
+// Import component data for validation
+import componentsData from '../../data/components.json';
 ---
 
 <!doctype html>
@@ -24,7 +26,21 @@ import PageHead from '../../components/PageHead.astro';
     </div>
     <div id="content"></div>
 
-    <script>
+    <script define:vars={{ componentsData }}>
+      // Component data available from server
+      const availableComponents = componentsData.components;
+
+      // Helper function to validate components
+      const validateComponents = (components, group) => {
+        return components.filter(id => {
+          const exists = availableComponents.some(comp => comp.id === id && comp.group === group);
+          if (!exists) {
+            console.warn(`Component '${id}' in group '${group}' not found in components.json`);
+          }
+          return exists;
+        });
+      };
+
       // Parse URL parameters
       const url = new URL(window.location.href);
       const parseComponents = (param) => {
@@ -35,9 +51,9 @@ import PageHead from '../../components/PageHead.astro';
           .filter(s => s.length > 0);
       };
 
-      const header = parseComponents(url.searchParams.get('header'));
-      const main = parseComponents(url.searchParams.get('main'));
-      const footer = parseComponents(url.searchParams.get('footer'));
+      const header = validateComponents(parseComponents(url.searchParams.get('header')), 'header');
+      const main = validateComponents(parseComponents(url.searchParams.get('main')), 'main');
+      const footer = validateComponents(parseComponents(url.searchParams.get('footer')), 'footer');
       
       const embedParam = url.searchParams.get('embed');
       const embed = embedParam === null ? true : !(embedParam === '0' || embedParam === 'false');
@@ -51,6 +67,11 @@ import PageHead from '../../components/PageHead.astro';
 
       const loadingDiv = document.getElementById('loading');
       const contentDiv = document.getElementById('content');
+
+      if (!loadingDiv || !contentDiv) {
+        console.error('Required DOM elements not found');
+        return;
+      }
 
       if (!hasContent) {
         loadingDiv.innerHTML = `
@@ -91,8 +112,27 @@ import PageHead from '../../components/PageHead.astro';
                 }
               });
               
+              // Also load stylesheets from body (Astro sometimes renders <link> tags in body)
+              doc.body.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && !loadedStylesheets.has(href)) {
+                  loadedStylesheets.add(href);
+                  const newLink = document.createElement('link');
+                  newLink.rel = 'stylesheet';
+                  newLink.href = href;
+                  document.head.appendChild(newLink);
+                }
+              });
+              
               // Load inline styles from head
               doc.head.querySelectorAll('style').forEach(style => {
+                const newStyle = document.createElement('style');
+                newStyle.textContent = style.textContent;
+                document.head.appendChild(newStyle);
+              });
+              
+              // Also load inline styles from body
+              doc.body.querySelectorAll('style').forEach(style => {
                 const newStyle = document.createElement('style');
                 newStyle.textContent = style.textContent;
                 document.head.appendChild(newStyle);
