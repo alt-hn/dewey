@@ -1,5 +1,4 @@
 ---
-import PageHead from '../../components/PageHead.astro';
 // Import component data for validation
 import componentsData from '../../data/components.json';
 ---
@@ -11,8 +10,21 @@ import componentsData from '../../data/components.json';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Assembled Preview</title>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+    /*
+      @font-face {
+        font-family: 'SVN-Articulat CF';
+        src: url('/SVN-ArticulatCF-Normal.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }*/
       :root { color-scheme: light; }
-      body { margin:0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      html, body {
+      font-family: 'Be Vietnam Pro', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
       #loading {
         padding: 40px;
         text-align: center;

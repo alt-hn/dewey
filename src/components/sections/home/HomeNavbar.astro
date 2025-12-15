@@ -23,9 +23,14 @@
 <link rel="stylesheet" href="/home/css/post-12.css" />
 <link rel="stylesheet" href="/home/css/sticky.min.css" />
 
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-  html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
+	@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+	html,body { font-family: 'Be Vietnam Pro', Arial, sans-serif; margin:0; padding:0; }
+	/* Fix: override theme bug that sets header height: 0 */
+	.elementor-12.elementor-location-header {
+		height: auto !important;
+	}
 </style>
 
 <div
