@@ -1,21 +1,18 @@
 ---
-import Navbar from '../../../components/sections/about/Navbar.astro';
-import HeroSlider from '../../../components/sections/about/HeroSlider.astro';
-import IntroSection from '../../../components/sections/about/IntroSection.astro';
-import GioiThieuSection from '../../../components/sections/about/GioiThieuSection.astro';
-import ThanhTichGridSection from '../../../components/sections/about/ThanhTichGridSection.astro';
-import ThanhTichAltSection from '../../../components/sections/about/ThanhTichAltSection.astro';
-import InfographicSection from '../../../components/sections/about/InfographicSection.astro';
-import ProgramCardsSection from '../../../components/sections/about/ProgramCardsSection.astro';
-import LifeEduSection from '../../../components/sections/about/LifeEduSection.astro';
-import CampusListSection from '../../../components/sections/about/CampusListSection.astro';
-import EnglishProgramSection from '../../../components/sections/about/EnglishProgramSection.astro';
-import ExtracurricularSection from '../../../components/sections/about/ExtracurricularSection.astro';
-import ThanhTichInfographicSection from '../../../components/sections/about/ThanhTichInfographicSection.astro';
-import Footer from '../../../components/sections/about/Footer.astro';
-import ThanhTichAltSectionEdit from '../../../components/sections/about/ThanhTichAltSectionEdit.astro';
-import SliderSection from '../../../components/sections/clone/SliderSection.astro';
-import PageHead from '../../../components/PageHead.astro';
+import IntroSection from '../../../components/sections/home/IntroSection.astro';
+import GioiThieuSection from '../../../components/sections/home/GioiThieuSection.astro';
+import ThanhTichGridSection from '../../../components/sections/home/ThanhTichGridSection.astro';
+import ThanhTichAltSection from '../../../components/sections/home/ThanhTichAltSection.astro';
+import InfographicSection from '../../../components/sections/home/InfographicSection.astro';
+import ProgramCardsSection from '../../../components/sections/home/ProgramCardsSection.astro';
+import LifeEduSection from '../../../components/sections/home/LifeEduSection.astro';
+import CampusListSection from '../../../components/sections/home/CampusListSection.astro';
+import EnglishProgramSection from '../../../components/sections/home/EnglishProgramSection.astro';
+import ExtracurricularSection from '../../../components/sections/home/ExtracurricularSection.astro';
+import ThanhTichAltSectionEdit from '../../../components/sections/home/ThanhTichAltSectionEdit.astro';
+import SliderSection from '../../../components/sections/home/SliderSection.astro';
+import HomeNavbar from '../../../components/sections/home/HomeNavbar.astro';
+import FooterSection from '../../../components/sections/home/FooterSection.astro';
 ---
 
 <!DOCTYPE html>
@@ -25,15 +22,13 @@ import PageHead from '../../../components/PageHead.astro';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Giới Thiệu - The Dewey Schools</title>
   <link rel="stylesheet" href="/src/styles/tailwind.css" />
+  <link rel="stylesheet" href="/src/styles/fonts.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-    
     *, *::before, *::after {
       box-sizing: border-box;
     }
-    
     html, body {
-      font-family: 'Be Vietnam Pro', Arial, sans-serif;
+      font-family: 'SVN-Articulat CF';
       margin: 0;
       padding: 0;
       overflow-x: hidden;
@@ -41,7 +36,7 @@ import PageHead from '../../../components/PageHead.astro';
   </style>
 </head>
 <body>
-  <Navbar />
+  <HomeNavbar />
 
   <!-- Reveal wrappers: fade-in-up when scrolled into view -->
   <div class="reveal-on-scroll"><SliderSection /></div>
@@ -57,7 +52,7 @@ import PageHead from '../../../components/PageHead.astro';
   <div class="reveal-on-scroll"><EnglishProgramSection /></div>
   <div class="reveal-on-scroll"><ExtracurricularSection /></div>
 
-  <Footer />
+  <FooterSection />
 
   <style>
     /* Fade-in up reveal */

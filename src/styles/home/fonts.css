@@ -1,0 +1,67 @@
+/* SVN-Articulat CF Font */
+
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-Normal.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-NormalItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SVN-Articulat CF';
+  src: url('/home/fonts/SVN-ArticulatCF-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Apply font globally */
+html, body {
+  font-family: 'SVN-Articulat CF', Arial, sans-serif;
+}

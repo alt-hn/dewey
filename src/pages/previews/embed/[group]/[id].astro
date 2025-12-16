@@ -1,38 +1,23 @@
 ---
-import FooterAssets from '../../../../components/FooterAssets.astro';
 // PageHead previously injected a <base> and analytics scripts which break local embeds.
 // Instead we include only the necessary stylesheet links for header rendering (no <base>, no analytics).
 
 // New home sections with local assets
 import HomeNavbar from '../../../../components/sections/home/HomeNavbar.astro';
-import HomeCertificationBadges from '../../../../components/sections/home/HomeCertificationBadges.astro';
-import HomeAboutSection from '../../../../components/sections/home/HomeAboutSection.astro';
-import HomeFeaturesGrid from '../../../../components/sections/home/HomeFeaturesGrid.astro';
-import HomeStatisticsInfographic from '../../../../components/sections/home/HomeStatisticsInfographic.astro';
-import HomeCampusSlider from '../../../../components/sections/home/HomeCampusSlider.astro';
-import HomeProgramCards from '../../../../components/sections/home/HomeProgramCards.astro';
-// Gioi thieu sections
-import Navbar from '../../../../components/sections/about/Navbar.astro';
-import GioiThieuSection from '../../../../components/sections/about/GioiThieuSection.astro';
-import HeroSlider from '../../../../components/sections/about/HeroSlider.astro';
-import IntroSection from '../../../../components/sections/about/IntroSection.astro';
-import ProgramCardsSection from '../../../../components/sections/about/ProgramCardsSection.astro';
-import InfographicSection from '../../../../components/sections/about/InfographicSection.astro';
-import LifeEduSection from '../../../../components/sections/about/LifeEduSection.astro';
-import ExtracurricularSection from '../../../../components/sections/about/ExtracurricularSection.astro';
-import EnglishProgramSection from '../../../../components/sections/about/EnglishProgramSection.astro';
-import CampusListSection from '../../../../components/sections/about/CampusListSection.astro';
-import ThanhTichAltSection from '../../../../components/sections/about/ThanhTichAltSection.astro';
-import ThanhTichAltSectionEdit from '../../../../components/sections/about/ThanhTichAltSectionEdit.astro';
-import ThanhTichGridSection from '../../../../components/sections/about/ThanhTichGridSection.astro';
-import ThanhTichInfographicSection from '../../../../components/sections/about/ThanhTichInfographicSection.astro';
-import AchievementsPremiumSection from '../../../../components/sections/about/AchievementsPremiumSection.astro';
-// Clone sections
-import SliderSection from '../../../../components/sections/clone/SliderSection.astro';
-import FooterSection from '../../../../components/sections/clone/FooterSection.astro';
-import ChuongTrinhSection from '../../../../components/sections/clone/ChuongTrinhSection.astro';
-import ProgramsElement from '../../../../components/sections/clone/ProgramsElement.astro';
-import EducationLifeElement from '../../../../components/sections/clone/EducationLifeElement.astro';
+import GioiThieuSection from '../../../../components/sections/home/GioiThieuSection.astro';
+import IntroSection from '../../../../components/sections/home/IntroSection.astro';
+import ProgramCardsSection from '../../../../components/sections/home/ProgramCardsSection.astro';
+import InfographicSection from '../../../../components/sections/home/InfographicSection.astro';
+import LifeEduSection from '../../../../components/sections/home/LifeEduSection.astro';
+import ExtracurricularSection from '../../../../components/sections/home/ExtracurricularSection.astro';
+import EnglishProgramSection from '../../../../components/sections/home/EnglishProgramSection.astro';
+import CampusListSection from '../../../../components/sections/home/CampusListSection.astro';
+import ThanhTichAltSection from '../../../../components/sections/home/ThanhTichAltSection.astro';
+import ThanhTichAltSectionEdit from '../../../../components/sections/home/ThanhTichAltSectionEdit.astro';
+import ThanhTichGridSection from '../../../../components/sections/home/ThanhTichGridSection.astro';
+import AchievementsPremiumSection from '../../../../components/sections/home/AchievementsPremiumSection.astro';
+import SliderSection from '../../../../components/sections/home/SliderSection.astro';
+import FooterSection from '../../../../components/sections/home/FooterSection.astro';
 
 const { group, id } = Astro.params;
 
@@ -46,7 +31,7 @@ const scriptOnlyComponents = new Set([
 
   // mapping object auto-generated from src/data/components.json
   import componentsData from '../../../../data/components.json';
-  const components: Record<string, any> = {EnglishProgramSection, HomeNavbar, Navbar, HomeCertificationBadges, HomeAboutSection, HomeFeaturesGrid, HomeStatisticsInfographic, HomeCampusSlider, HomeProgramCards, HeroSlider, IntroSection, ProgramCardsSection, InfographicSection, LifeEduSection, ExtracurricularSection, CampusListSection, ThanhTichAltSection, ThanhTichAltSectionEdit, ThanhTichGridSection, ThanhTichInfographicSection, AchievementsPremiumSection, GioiThieuSection, SliderSection, ChuongTrinhSection, ProgramsElement, EducationLifeElement, FooterAssets, FooterSection };
+  const components: Record<string, any> = {EnglishProgramSection, HomeNavbar, IntroSection, ProgramCardsSection, InfographicSection, LifeEduSection, ExtracurricularSection, CampusListSection, ThanhTichAltSection, ThanhTichAltSectionEdit, ThanhTichGridSection, AchievementsPremiumSection, GioiThieuSection, SliderSection, FooterSection };
   const mapping: Record<string, Record<string, any>> = {};
   for (const comp of componentsData.components) {
     if (!mapping[comp.group]) mapping[comp.group] = {};
@@ -72,25 +57,7 @@ export function getStaticPaths() {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Embed Preview: {id}</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
-      :root { color-scheme: light; }
-     
-    /*
-      @font-face {
-        font-family: 'SVN-Articulat CF';
-        src: url('/SVN-ArticulatCF-Normal.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-      }*/
-      :root { color-scheme: light; }
-      html, body {
-      font-family: 'Be Vietnam Pro', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    </style>
+    <link rel="stylesheet" href="/src/styles/fonts.css" />
   </head>
   <body>
     {scriptOnlyComponents.has(id as string) ? (
